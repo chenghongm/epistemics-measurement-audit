@@ -35,3 +35,8 @@ For a private repo, the offline upload workflow avoids embedding GitHub credenti
 Original probe and prose readings must reconstruct first. Invalid originals do not enter counterfactual comparisons. We cross the original output formats with presence/absence of the discount sentence on identical frozen histories. These old templates still differ beyond that sentence: this is a targeted wording diagnostic, **not** a fully matched-format experiment. Prose is retained for manual review; parser output is not ground truth. Selected high-disagreement checkpoints cannot estimate population disagreement rates.
 
 See [the inherited plan](docs/preexisting_frozen_history_plan.md) and [the new review](docs/direction_review_2026-11-06.md). The latter contains planning estimates, not results. Future fixed-exposure experiments are outside this initial audit.
+
+## Contributions
+
+Research direction and project ownership: chenghongm.
+Audit implementation, provenance packaging, documentation and checks were prepared collaboratively with **Codex**. AI assistance and pre-sprint work are disclosed in `PREEXISTING.md`; GPU experiment results remain pending.
