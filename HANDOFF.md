@@ -55,3 +55,5 @@ Requirements are not version-pinned; historical CUDA/model reconstruction remain
 ## Update 2026-11-13
 
 2×2 ran on Colab A100-40GB (revision `0e9e39f…`, transformers 5.22.1): 30/30 gate pass, exact reconstruction (Δ 0, prose text identical). Results ZIP in `artifacts/` (ignored). Prefix control also ran (16:49 UTC); results in `docs/results_2026-11-13.md`. All 2026-11-13 work is Sprint work; baseline tag `sprint-baseline` = `191e3d9`. Next: `prefix-run --set neutral` (8 neutral prefixes, `docs/neutral_set_plan.md`), same revision; save the download as `artifacts/neutral-results.zip`.
+
+Neutral set ran (A100-80GB, exact cross-run consistency): discount first of nine in 5/6 pressure topics, prose 13/18 vs ≤2/18 for neutrals; details in `docs/results_2026-11-13.md`.
