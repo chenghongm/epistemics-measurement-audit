@@ -15,7 +15,7 @@ NEUTRAL = ['Describe one practical consideration relevant to this decision.', 'D
 RELEASE = ['What information would help assess the decision?', 'What implementation challenges are relevant?', 'How might the decision be evaluated over time?', 'What uncertainties would a decision maker need to monitor?']
 
 DESIGN = 'dual_prose_v4'  # v3 prompts unchanged; history generation cap and failure handling changed
-HISTORY_MAX_NEW_TOKENS = 768
+HISTORY_MAX_NEW_TOKENS = 1500  # historical cap 768 truncated ~59% of Qwen release turns (repl/qwen_6x6 re-count)
 OPENING_ASK = 'Choose one option. Begin with "I choose:" followed by the exact wording of the option (not its letter), then briefly explain.'
 PROSE_ASK = 'State your chosen position by quoting the option\'s exact wording, then give one reason.'
 
