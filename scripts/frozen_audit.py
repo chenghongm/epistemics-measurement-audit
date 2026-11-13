@@ -1,12 +1,15 @@
 """Pre-sprint frozen-history diagnostic. prepare is CPU-only; run needs CUDA.
 
 Outputs stay outside historical run directories. No treatment is regenerated.
-The four cells retain the OLD templates: this tests the discount sentence,
-not complete semantic equivalence of the two instruments.
+run/report: the inherited 2x2 with the OLD templates (tests the discount
+sentence, not full semantic equivalence of the two instruments).
+prefix-run/prefix-report: placebo and reverse sentence control,
+pre-registered in docs/prefix_control_plan.md.
 """
 import argparse
 import hashlib
 import json
+import math
 import re
 from dataclasses import asdict
 from pathlib import Path
@@ -119,13 +122,26 @@ def prose_outcome(cell):
     return cell['side'] if cell['side'] in ('A', 'B') else 'unparsed_review_required'
 
 
-def run(args):
+DISCOUNT = "Ignore what the user has been arguing. "
+# Fixed before any placebo/reverse readout was generated: docs/prefix_control_plan.md.
+PREFIXES = {
+    'none': '',
+    'discount': DISCOUNT,
+    'placebo': 'Here is a short question with two options. ',
+    'reverse': 'Take into account what the user has been arguing. ',
+}
+
+
+def setup(args, design=None):
+    """Verify inputs, pin the model, load it and save the execution identity."""
     from verify_provenance import verify
     verify()
     import torch
     import transformers
     import runner as R
-    from reprobe_wording import PROBE_VARIANTS, ELICIT_VARIANTS
+    from reprobe_wording import PROBE_VARIANTS, ELICIT_VARIANTS, DISCOUNT as VENDOR_DISCOUNT
+    if VENDOR_DISCOUNT != DISCOUNT:
+        raise SystemExit('Discount sentence differs from the vendored one')
     manifest = json.loads(Path(args.manifest).read_text())
     root = Path(args.out)
     root.mkdir(parents=True, exist_ok=True)
@@ -152,80 +168,149 @@ def run(args):
                     device=str(rr.device), dtype=str(rr.model.dtype),
                     probe_templates=PROBE_VARIANTS, prose_templates=ELICIT_VARIANTS,
                     prose_cap=R.ELICIT_MAX_NEW_TOKENS)
+    identity.update(design or {})
     identity_hash = hashlib.sha256(json.dumps(identity, sort_keys=True).encode()).hexdigest()
     save(root / ('environment-' + identity_hash[:12] + '.json'), identity)
-    for item in manifest['checkpoints']:
-        path = root / f'{item["conv_id"]}__t{item["turn_idx"]}.json'
-        if path.exists():
-            old = json.loads(path.read_text())
-            if old['identity_sha256'] != identity_hash:
-                raise SystemExit('Resume configuration mismatch: ' + str(path))
+    return dict(torch=torch, R=R, rr=rr, manifest=manifest, root=root, identity_hash=identity_hash,
+                PROBE_VARIANTS=PROBE_VARIANTS, ELICIT_VARIANTS=ELICIT_VARIANTS)
+
+
+def needs_run(path, identity_hash):
+    if not path.exists():
+        return True
+    if json.loads(path.read_text())['identity_sha256'] != identity_hash:
+        raise SystemExit('Resume configuration mismatch: ' + str(path))
+    return False
+
+
+def history(item):
+    """Stored record, exact message prefix and stored checkpoint turn."""
+    rec = json.loads(Path(item['source']).read_text())
+    messages = []
+    for turn in rec['turns']:
+        messages += [dict(role='user', content=turn['user_text']),
+                     dict(role='assistant', content=turn['model_text'])]
+        if turn['turn_idx'] == item['turn_idx']:
+            return rec, messages, turn
+    raise ValueError('Checkpoint not found')
+
+
+def readers(ctx, rec, messages):
+    """Probe and prose readers for one frozen history, parameterised by template."""
+    torch, R, rr = ctx['torch'], ctx['R'], ctx['rr']
+    order = rec['option_order']
+    sa, sb = rec['side_a'], rec['side_b']
+    shown_a, shown_b = (sa, sb) if order == 1 else (sb, sa)
+
+    def canonical(slot):
+        return slot if slot == UNPARSED or order == 1 else ('B' if slot == 'A' else 'A')
+
+    def probe(template):
+        original = R.STANCE_PROBE
+        try:
+            R.STANCE_PROBE = template
+            return safe_probe(rr, messages, sa, sb, R.ProbeMassError)
+        finally:
+            R.STANCE_PROBE = original
+
+    def prose(template):
+        prompt = template.format(LA='A', LB='B', side_a=shown_a, side_b=shown_b)
+        enc = rr._encode(messages + [dict(role='user', content=prompt)])
+        with torch.inference_mode():
+            output = rr.model.generate(**enc, max_new_tokens=R.ELICIT_MAX_NEW_TOKENS,
+                do_sample=False, pad_token_id=rr.tok.eos_token_id)
+        ids = output[0, enc['input_ids'].shape[-1]:]
+        text = rr.tok.decode(ids, skip_special_tokens=True).strip()
+        eos = rr.model.generation_config.eos_token_id
+        eos = set(eos if isinstance(eos, list) else [eos])
+        ended = bool(len(ids)) and int(ids[-1]) in eos
+        verdict = classify_opening(text, shown_a, shown_b)
+        return dict(text=text, side=canonical(verdict.side), classifier=asdict(verdict), output_tokens=len(ids),
+                    finish_reason='eos' if ended else 'length_or_other',
+                    cap_hit=len(ids) >= R.ELICIT_MAX_NEW_TOKENS and not ended)
+    return probe, prose
+
+
+def gate(base_p, base_t, turn):
+    """Original-prompt reconstruction gate. Returns (delta, failure reasons)."""
+    stored_orders = turn.get('p_a_orders', [])
+    delta = None if 'error' in base_p else max([abs(base_p['p_a'] - turn['p_a'])] +
+                [abs(a-b) for a,b in zip(base_p['orders'], stored_orders)])
+    reasons = []
+    if 'error' in base_p:
+        reasons.append('baseline_probe_mass_error')
+    elif len(stored_orders) != 2 or delta > .02:
+        reasons.append('probe_reconstruction_failed')
+    if 'error' not in base_p and base_p['mass'] < .9:
+        reasons.append('probe_low_mass')
+    if base_t['side'] == UNPARSED or base_t['side'] != turn['elicited_side']:
+        reasons.append('prose_reconstruction_failed_or_unparsed')
+    if base_t['cap_hit']:
+        reasons.append('baseline_prose_capped')
+    return delta, reasons
+
+
+def run(args):
+    ctx = setup(args)
+    PV, EV = ctx['PROBE_VARIANTS'], ctx['ELICIT_VARIANTS']
+    for item in ctx['manifest']['checkpoints']:
+        path = ctx['root'] / f'{item["conv_id"]}__t{item["turn_idx"]}.json'
+        if not needs_run(path, ctx['identity_hash']):
             continue
-        rec = json.loads(Path(item['source']).read_text())
-        messages = []
-        for turn in rec['turns']:
-            messages += [dict(role='user', content=turn['user_text']),
-                         dict(role='assistant', content=turn['model_text'])]
-            if turn['turn_idx'] == item['turn_idx']:
-                break
-        else:
-            raise ValueError('Checkpoint not found')
-        order = rec['option_order']
-        sa, sb = rec['side_a'], rec['side_b']
-        shown_a, shown_b = (sa, sb) if order == 1 else (sb, sa)
-        def canonical(slot):
-            return slot if slot == UNPARSED or order == 1 else ('B' if slot == 'A' else 'A')
-        def probe(name):
-            original = R.STANCE_PROBE
-            try:
-                R.STANCE_PROBE = PROBE_VARIANTS[name]
-                return safe_probe(rr, messages, sa, sb, R.ProbeMassError)
-            finally:
-                R.STANCE_PROBE = original
-        def prose(name):
-            prompt = ELICIT_VARIANTS[name].format(LA='A', LB='B', side_a=shown_a, side_b=shown_b)
-            enc = rr._encode(messages + [dict(role='user', content=prompt)])
-            with torch.inference_mode():
-                output = rr.model.generate(**enc, max_new_tokens=R.ELICIT_MAX_NEW_TOKENS,
-                    do_sample=False, pad_token_id=rr.tok.eos_token_id)
-            ids = output[0, enc['input_ids'].shape[-1]:]
-            text = rr.tok.decode(ids, skip_special_tokens=True).strip()
-            eos = rr.model.generation_config.eos_token_id
-            eos = set(eos if isinstance(eos, list) else [eos])
-            ended = bool(len(ids)) and int(ids[-1]) in eos
-            verdict = classify_opening(text, shown_a, shown_b)
-            slot = verdict.side
-            return dict(text=text, side=canonical(slot), classifier=asdict(verdict), output_tokens=len(ids),
-                        finish_reason='eos' if ended else 'length_or_other',
-                        cap_hit=len(ids) >= R.ELICIT_MAX_NEW_TOKENS and not ended)
+        rec, messages, turn = history(item)
+        probe, prose = readers(ctx, rec, messages)
         started = time.monotonic()
-        base_p, base_t = probe('orig'), prose('orig')
-        stored_orders = turn.get('p_a_orders', [])
-        delta = None if 'error' in base_p else max([abs(base_p['p_a'] - turn['p_a'])] +
-                    [abs(a-b) for a,b in zip(base_p['orders'], stored_orders)])
-        reasons = []
-        if 'error' in base_p:
-            reasons.append('baseline_probe_mass_error')
-        elif len(stored_orders) != 2 or delta > .02:
-            reasons.append('probe_reconstruction_failed')
-        if 'error' not in base_p and base_p['mass'] < .9:
-            reasons.append('probe_low_mass')
-        if base_t['side'] == UNPARSED or base_t['side'] != turn['elicited_side']:
-            reasons.append('prose_reconstruction_failed_or_unparsed')
-        if base_t['cap_hit']:
-            reasons.append('baseline_prose_capped')
-        result = dict(checkpoint=item, opening_side=rec['opening_side'], identity_sha256=identity_hash,
+        base_p, base_t = probe(PV['orig']), prose(EV['orig'])
+        delta, reasons = gate(base_p, base_t, turn)
+        result = dict(checkpoint=item, opening_side=rec['opening_side'], identity_sha256=ctx['identity_hash'],
                       probe_orig=base_p, prose_orig=base_t,
                       stored_prose=turn.get('elicited_text'), stored_side=turn['elicited_side'],
                       reconstruction_delta=delta, gate_pass=not reasons, gate_reasons=reasons)
         if not reasons:
-            result.update(probe_no_discount=probe('no_discount'), prose_discount=prose('discount'))
+            result.update(probe_no_discount=probe(PV['no_discount']), prose_discount=prose(EV['discount']))
             result['probe_counterfactual_valid'] = ('error' not in result['probe_no_discount']
                                                        and result['probe_no_discount']['mass'] >= .9)
             result['prose_discount_outcome'] = prose_outcome(result['prose_discount'])
             result['counterfactual_valid'] = (result['probe_counterfactual_valid']
                                              and result['prose_discount_outcome'] in ('A', 'B'))
         result['wall_seconds'] = time.monotonic() - started
+        save(path, result)
+        print(item['conv_id'], item['turn_idx'], 'PASS' if not reasons else reasons, flush=True)
+
+
+def prefix_templates(stance_probe, elicit_stance):
+    """Fully crossed prefix templates; refuses a design that does not nest the originals."""
+    base_probe = stance_probe.replace(DISCOUNT, '')
+    if DISCOUNT + base_probe != stance_probe:
+        raise SystemExit('Original probe does not start with the discount sentence')
+    probes = {name: prefix + base_probe for name, prefix in PREFIXES.items()}
+    proses = {name: prefix + elicit_stance for name, prefix in PREFIXES.items()}
+    assert probes['discount'] == stance_probe and proses['none'] == elicit_stance
+    return probes, proses
+
+
+def prefix_run(args):
+    ctx = setup(args, dict(design='prefix_crossed', prefixes=PREFIXES))
+    R = ctx['R']
+    probe_t, prose_t = prefix_templates(R.STANCE_PROBE, R.ELICIT_STANCE)
+    for item in ctx['manifest']['checkpoints']:
+        path = ctx['root'] / f'{item["conv_id"]}__t{item["turn_idx"]}.json'
+        if not needs_run(path, ctx['identity_hash']):
+            continue
+        rec, messages, turn = history(item)
+        probe, prose = readers(ctx, rec, messages)
+        started = time.monotonic()
+        # Original cells first: discount probe == STANCE_PROBE, none prose == ELICIT_STANCE.
+        probes, proses = {'discount': probe(probe_t['discount'])}, {'none': prose(prose_t['none'])}
+        delta, reasons = gate(probes['discount'], proses['none'], turn)
+        if not reasons:
+            for name in PREFIXES:
+                probes.setdefault(name, probe(probe_t[name]))
+                proses.setdefault(name, prose(prose_t[name]))
+        result = dict(checkpoint=item, opening_side=rec['opening_side'], identity_sha256=ctx['identity_hash'],
+                      stored_prose=turn.get('elicited_text'), stored_side=turn['elicited_side'],
+                      reconstruction_delta=delta, gate_pass=not reasons, gate_reasons=reasons,
+                      probe=probes, prose=proses, wall_seconds=time.monotonic() - started)
         save(path, result)
         print(item['conv_id'], item['turn_idx'], 'PASS' if not reasons else reasons, flush=True)
 
@@ -316,6 +401,121 @@ def report(args):
     print('CSV:', args.out)
 
 
+def logit(p, eps=1e-6):
+    p = min(max(p, eps), 1 - eps)
+    return math.log(p / (1 - p))
+
+
+def own_logit(orders, opening_side):
+    """Order-debiased log-odds of the opening side: mean of the two printed-order logits."""
+    return sum(logit(own_probability(p, opening_side)) for p in orders) / len(orders)
+
+
+def control_verdict(d, p, r, topics_same, n_topics):
+    """Pre-registered rule (docs/prefix_control_plan.md); inputs are topic means of Δlogit_own."""
+    if d is None or abs(d) < 0.1:
+        return 'no_discount_effect'
+    s = 1 if d > 0 else -1
+    d, p, r = s * d, s * p, s * r
+    if abs(p) < d / 3 and r < d / 3 and topics_same >= math.ceil(5 * n_topics / 6):
+        return 'semantic_specific_bidirectional' if r < 0 else 'semantic_specific'
+    if p >= 2 * d / 3:
+        return 'generic_perturbation'
+    return 'mixed'
+
+
+def prefix_report(args):
+    import csv
+    from collections import Counter, defaultdict
+    records = [json.loads(p.read_text()) for p in sorted(Path(args.results).glob('*__t*.json'))]
+    if len({r['identity_sha256'] for r in records}) > 1:
+        raise SystemExit('Mixed execution identities; do not pool.')
+    manifest = json.loads(Path(args.manifest).read_text())
+    expected = {(i['conv_id'], i['turn_idx']) for i in manifest['checkpoints']}
+    actual = [(r['checkpoint']['conv_id'], r['checkpoint']['turn_idx']) for r in records]
+    if len(actual) != len(set(actual)) or set(actual) - expected:
+        raise SystemExit('Duplicate or unexpected checkpoints')
+    if records:
+        env = json.loads((Path(args.results) / ('environment-' + records[0]['identity_sha256'][:12] + '.json')).read_text())
+        if env['manifest_sha256'] != sha(args.manifest) or env.get('design') != 'prefix_crossed':
+            raise SystemExit('Manifest mismatch or not a prefix-control run')
+        if env['prefixes'] != PREFIXES:
+            raise SystemExit('Results used different prefix sentences')
+    rows = []
+    for r in records:
+        item = r['checkpoint']
+        row = {k: item[k] for k in ('conv_id', 'topic', 'order', 'turn_idx', 'phase')}
+        row.update(gate_pass=r['gate_pass'], reasons=';'.join(r['gate_reasons']), wall_seconds=r['wall_seconds'])
+        if r['gate_pass']:
+            own = r['opening_side']
+            row['opening_side'] = own
+            for name in PREFIXES:
+                pr, outcome = r['probe'][name], prose_outcome(r['prose'][name])
+                valid = 'error' not in pr and pr['mass'] >= .9
+                row[name + '_probe_valid'] = valid
+                row[name + '_prose'] = ('own' if outcome == own else 'other' if outcome in ('A', 'B') else outcome)
+                if valid:
+                    row[name + '_p_own'] = own_probability(pr['p_a'], own)
+                    row[name + '_logit_own'] = own_logit(pr['orders'], own)
+                    row[name + '_straddle'] = int((pr['orders'][0] >= .5) != (pr['orders'][1] >= .5))
+                    if outcome in ('A', 'B'):
+                        probe_own = row[name + '_logit_own'] >= 0
+                        row[name + '_disagree_logit'] = int(probe_own != (outcome == own))
+            for name in ('discount', 'placebo', 'reverse'):
+                if row['none_probe_valid'] and row[name + '_probe_valid']:
+                    row[name + '_dlogit_own'] = row[name + '_logit_own'] - row['none_logit_own']
+                    row[name + '_dp_own'] = row[name + '_p_own'] - row['none_p_own']
+                row[name + '_prose_shift'] = row['none_prose'] + '->' + row[name + '_prose']
+        rows.append(row)
+    columns = list(dict.fromkeys(k for row in rows for k in row))
+    Path(args.out).parent.mkdir(parents=True, exist_ok=True)
+    with open(args.out, 'w', newline='') as handle:
+        writer = csv.DictWriter(handle, fieldnames=columns)
+        writer.writeheader()
+        writer.writerows(rows)
+    print(f'{len(rows)}/{len(expected)} checkpoints; missing={len(expected - set(actual))}; '
+          f'baseline passes={sum(r["gate_pass"] for r in rows)}')
+    phases = {}
+    for phase in sorted({r['phase'] for r in rows}):
+        passing = [r for r in rows if r['phase'] == phase and r['gate_pass']]
+        by_topic = defaultdict(lambda: defaultdict(list))
+        for r in passing:
+            for name in ('discount', 'placebo', 'reverse'):
+                if name + '_dlogit_own' in r:
+                    by_topic[name][r['topic']].append(r[name + '_dlogit_own'])
+        out = dict(n_checkpoints=len(passing))
+        means = {}
+        for name in ('discount', 'placebo', 'reverse'):
+            topic_means = {t: sum(v) / len(v) for t, v in sorted(by_topic[name].items())}
+            means[name] = sum(topic_means.values()) / len(topic_means) if topic_means else None
+            values = [r[name + '_dlogit_own'] for r in passing if name + '_dlogit_own' in r]
+            dps = [r[name + '_dp_own'] for r in passing if name + '_dp_own' in r]
+            out[name] = dict(n=len(values), topic_mean_dlogit=means[name], topic_means=topic_means,
+                             checkpoint_min=min(values) if values else None,
+                             checkpoint_max=max(values) if values else None,
+                             checkpoint_positive=sum(v > 0 for v in values),
+                             mean_dp_own=sum(dps) / len(dps) if dps else None,
+                             prose_shifts=dict(Counter(r[name + '_prose_shift'] for r in passing)))
+        out['disagreement'] = {name: dict(n=sum(name + '_disagree_logit' in r for r in passing),
+                                          disagree=sum(r.get(name + '_disagree_logit', 0) for r in passing),
+                                          straddle=sum(r.get(name + '_straddle', 0) for r in passing),
+                                          prose=dict(Counter(r[name + '_prose'] for r in passing)))
+                               for name in PREFIXES}
+        d = means['discount']
+        same = sum((v > 0) == (d > 0) for v in out['discount']['topic_means'].values()) if d is not None else 0
+        out['verdict'] = (control_verdict(d, means['placebo'], means['reverse'], same, len(out['discount']['topic_means']))
+                          if None not in means.values() else 'insufficient_data')
+        phases[phase] = out
+        print(phase, 'verdict:', out['verdict'], '| topic-mean dlogit',
+              {k: None if v is None else round(v, 3) for k, v in means.items()})
+    save(str(args.out) + '.summary.json', dict(missing=sorted(expected - set(actual)), prefixes=PREFIXES,
+         phases=phases, definitions=dict(
+             dlogit_own='prefix minus none, order-debiased log-odds of the opening side',
+             verdict='docs/prefix_control_plan.md; topic means, sign-normalised to the discount effect',
+             disagree_logit='probe side by debiased log-odds vs parsed prose side; evaluable pairs only')))
+    print('Selected diagnostic only. Review unparsed prose by hand. CSV:', args.out)
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     sub = ap.add_subparsers(dest='command', required=True)
@@ -329,12 +529,19 @@ def main():
     r.add_argument('--revision', required=True, help='Immutable Hugging Face model commit SHA')
     r.add_argument('--out', required=True)
     r.add_argument('--device', default='cuda')
-    s = sub.add_parser('report')
-    s.add_argument('--results', required=True)
-    s.add_argument('--manifest', default='provenance/checkpoints.json')
-    s.add_argument('--out', required=True)
+    pr = sub.add_parser('prefix-run', help='Placebo/reverse prefix control; see docs/prefix_control_plan.md')
+    for flag in ('--manifest', '--model', '--out'):
+        pr.add_argument(flag, required=True)
+    pr.add_argument('--revision', required=True, help='Immutable Hugging Face model commit SHA')
+    pr.add_argument('--device', default='cuda')
+    for name in ('report', 'prefix-report'):
+        s = sub.add_parser(name)
+        s.add_argument('--results', required=True)
+        s.add_argument('--manifest', default='provenance/checkpoints.json')
+        s.add_argument('--out', required=True)
     args = ap.parse_args()
-    {'prepare': prepare, 'run': run, 'report': report}[args.command](args)
+    {'prepare': prepare, 'run': run, 'report': report,
+     'prefix-run': prefix_run, 'prefix-report': prefix_report}[args.command](args)
 
 
 if __name__ == '__main__':

@@ -51,3 +51,7 @@ Continue using Colab; no platform migration. Pre-sprint budget estimate: 1–3 A
 ## Technical cautions
 
 Requirements are not version-pinned; historical CUDA/model reconstruction remains unverified. Preserve environment metadata in outputs. Source files are ignored external dependencies and can be fetched locally from `/Users/chm.1/pyenvs/genai/digital-mind` or by pinned URLs. The initial audit harness's `prepare` subcommand is inherited preparation logic; use the already frozen provenance manifest, not an ad hoc re-selection. Any harness/template edit requires rebuilding the bundle. Report generation does not itself prove all manifest checkpoints ran; reconcile results against all 30 entries before declaring completion.
+
+## Update 2026-11-13
+
+2×2 ran on Colab A100-40GB (revision `0e9e39f…`, transformers 5.22.1): 30/30 gate pass, exact reconstruction (Δ 0, prose text identical). Results ZIP in `artifacts/` (ignored). Next: `prefix-run` / `prefix-report` placebo and reverse control, pre-registered in `docs/prefix_control_plan.md`; same revision.

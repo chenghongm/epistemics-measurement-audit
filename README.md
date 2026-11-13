@@ -56,3 +56,17 @@ counts, while probe effects use all baseline-passing, mass-qualified probe pairs
 Reports include `p_own` effects, probe/prose effect-direction pairs (scales are not differenced), and changes in mean/both-order
 disagreement, plus a topic/phase JSON summary and missing-checkpoint list.
 Schema-2 results must use a fresh output directory rather than mix with old runs.
+
+## Prefix control (placebo and reverse)
+
+Added 2026-11-13 after the 2×2, before any placebo/reverse readout existed. Each
+readout gets one prefix — none, discount, placebo or reverse — fully crossed on
+the same 30 histories; the discount probe and plain prose are the original
+prompts and keep the reconstruction gate. Sentences, the primary quantity
+(order-debiased `Δlogit_own`, averaged within topic first) and the verdict rule
+are fixed in [docs/prefix_control_plan.md](docs/prefix_control_plan.md).
+
+```bash
+python3 scripts/frozen_audit.py prefix-run --manifest provenance/checkpoints.json --model meta-llama/Llama-3.1-8B-Instruct --revision 0e9e39f249a16976918f6564b8830bc894c89659 --out results/prefix --device cuda
+python3 scripts/frozen_audit.py prefix-report --results results/prefix --out results/prefix.csv
+```

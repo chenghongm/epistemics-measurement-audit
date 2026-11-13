@@ -84,6 +84,75 @@ class AuditTests(unittest.TestCase):
             self.assertEqual(summary['discount_sign_pairs'], {'+1/+1': 1})
             self.assertEqual(summary['mean_disagreement_change']['mean'], -1)
 
+    def test_prefix_templates_nest_the_original_prompts(self):
+        import ast
+        tree = ast.parse((Path(audit.__file__).resolve().parent.parent / 'vendor/digital_mind/runner.py').read_text())
+        consts = {t.id: ast.literal_eval(n.value) for n in tree.body if isinstance(n, ast.Assign)
+                  for t in n.targets if isinstance(t, ast.Name) and t.id in ('STANCE_PROBE', 'ELICIT_STANCE')}
+        probes, proses = audit.prefix_templates(consts['STANCE_PROBE'], consts['ELICIT_STANCE'])
+        self.assertEqual(probes['discount'], consts['STANCE_PROBE'])
+        self.assertEqual(proses['none'], consts['ELICIT_STANCE'])
+        self.assertEqual(proses['discount'], audit.DISCOUNT + consts['ELICIT_STANCE'])
+        for name, prefix in audit.PREFIXES.items():
+            self.assertTrue(probes[name].startswith(prefix + 'State the position YOU'))
+            self.assertNotIn('{', prefix)
+        with self.assertRaises(SystemExit):
+            audit.prefix_templates('State the position.', consts['ELICIT_STANCE'])
+
+    def test_gate_reasons(self):
+        turn = dict(p_a=.6, p_a_orders=[.4, .8], elicited_side='A')
+        ok = dict(p_a=.6, mass=.99, orders=[.4, .8])
+        self.assertEqual(audit.gate(ok, dict(side='A', cap_hit=False), turn), (0, []))
+        _, reasons = audit.gate(dict(ok, orders=[.37, .83]), dict(side='B', cap_hit=False), turn)
+        self.assertEqual(reasons, ['probe_reconstruction_failed', 'prose_reconstruction_failed_or_unparsed'])
+        _, reasons = audit.gate(dict(error='ProbeMassError'), dict(side='A', cap_hit=False), turn)
+        self.assertEqual(reasons, ['baseline_probe_mass_error'])
+
+    def test_own_logit_is_side_symmetric(self):
+        self.assertAlmostEqual(audit.own_logit([.2, .9], 'A'), -audit.own_logit([.2, .9], 'B'))
+        self.assertAlmostEqual(audit.own_logit([.5, .5], 'A'), 0)
+
+    def test_control_verdict_rules(self):
+        v = audit.control_verdict
+        self.assertEqual(v(.05, 0, 0, 6, 6), 'no_discount_effect')
+        self.assertEqual(v(1.0, .1, -.4, 6, 6), 'semantic_specific_bidirectional')
+        self.assertEqual(v(1.0, .1, .2, 5, 6), 'semantic_specific')
+        self.assertEqual(v(1.0, .1, .2, 4, 6), 'mixed')
+        self.assertEqual(v(1.0, .8, -.4, 6, 6), 'generic_perturbation')
+        # Sign-normalised: a negative discount effect with a matching negative placebo is generic.
+        self.assertEqual(v(-1.0, -.8, .4, 6, 6), 'generic_perturbation')
+        self.assertEqual(v(-1.0, .05, .5, 6, 6), 'semantic_specific_bidirectional')
+
+    def test_prefix_report_end_to_end(self):
+        def probe(p):
+            return dict(p_a=p, mass=.99, orders=[p, p])
+        def prose(side):
+            return dict(side=side, cap_hit=False)
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            items = [dict(conv_id=f'c{i}', topic=f't{i % 2}', order=1, turn_idx=1, phase='pressure') for i in range(4)]
+            manifest = root / 'manifest.json'
+            audit.save(manifest, dict(checkpoints=items))
+            audit.save(root / 'environment-identity.json', dict(schema=2, design='prefix_crossed',
+                       prefixes=audit.PREFIXES, manifest_sha256=audit.sha(manifest)))
+            for item in items:
+                audit.save(root / f'{item["conv_id"]}__t1.json', dict(
+                    checkpoint=item, identity_sha256='identity', gate_pass=True, gate_reasons=[],
+                    wall_seconds=1, opening_side='A',
+                    probe=dict(none=probe(.3), discount=probe(.7), placebo=probe(.32), reverse=probe(.2)),
+                    prose=dict(none=prose('B'), discount=prose('A'), placebo=prose('B'),
+                               reverse=dict(side='unparsed', cap_hit=False))))
+            out = root / 'prefix.csv'
+            with contextlib.redirect_stdout(io.StringIO()):
+                audit.prefix_report(SimpleNamespace(results=str(root), manifest=str(manifest), out=str(out)))
+            phase = json.loads(Path(str(out) + '.summary.json').read_text())['phases']['pressure']
+            self.assertEqual(phase['verdict'], 'semantic_specific_bidirectional')
+            self.assertAlmostEqual(phase['discount']['topic_mean_dlogit'], 2 * audit.logit(.7))
+            self.assertEqual(phase['discount']['prose_shifts'], {'other->own': 4})
+            self.assertEqual(phase['reverse']['prose_shifts'], {'other->unparsed_review_required': 4})
+            self.assertEqual(phase['disagreement']['none'], dict(n=4, disagree=0, straddle=0, prose={'other': 4}))
+            self.assertEqual(phase['disagreement']['reverse']['n'], 0)
+
     def test_bundle_repository_metadata_without_git(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
