@@ -1,6 +1,7 @@
 """Build an offline Colab bundle from verified sources; never include weights or credentials."""
 import json
 import zipfile
+from frozen_audit import repository_identity
 from verify_provenance import ROOT, verify
 
 
@@ -14,6 +15,7 @@ def build():
     out = ROOT / 'artifacts/audit-source.zip'
     out.parent.mkdir(exist_ok=True)
     with zipfile.ZipFile(out, 'w', zipfile.ZIP_DEFLATED) as archive:
+        archive.writestr('provenance/build.json', json.dumps(repository_identity(ROOT), indent=2) + '\n')
         for name in sorted(set(names)):
             archive.write(ROOT / name, name)
     print(out)

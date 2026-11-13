@@ -33,7 +33,7 @@ Official rules allow existing work but require disclosure of pre-sprint code/res
 2. Run `python3 scripts/verify_provenance.py` and `python3 -m unittest discover -s tests -v` from this repo.
 3. Rebuild `artifacts/audit-source.zip` with `python3 scripts/build_bundle.py`; use `notebooks/colab_frozen_audit.ipynb` in Colab A100. Existing generated bundle is ignored by Git; rebuild after code changes.
 4. User must select the runtime, inspect actual CU/hour, upload the bundle and complete Hugging Face login; no active remote runtime/session is connected here. Never put credentials in committed notebooks.
-5. Run original-condition reconstruction first. Harness saves failures and gates counterfactuals per checkpoint. Inspect broad gate failures promptly rather than spending the full budget. Results go to `results/`, never historical inputs.
+5. Run original-condition reconstruction first. Harness saves reconstruction and ProbeMassError failures and gates counterfactuals per checkpoint. Other runtime errors still stop execution. Inspect broad gate failures promptly rather than spending the full budget. Results go to `results/`, never historical inputs.
 6. Download results ZIP before disconnecting. Manually review prose/ambiguous labels; parser has a known negation limitation. Check failures, straddle and probability coverage separately. Do not count repeated turns/options as independent topics.
 7. Report topic-level paired diagnostic effects and determine whether to advance, repair prompts, or change direction.
 

@@ -24,7 +24,7 @@ python3 scripts/fetch_sources.py
 python3 scripts/verify_provenance.py
 python3 -m unittest discover -s tests -v
 python3 -m pip install -r requirements.txt
-python3 scripts/frozen_audit.py run --manifest provenance/checkpoints.json --model /path/to/Llama-3.1-8B-Instruct --out results/presprint --device cuda
+python3 scripts/frozen_audit.py run --manifest provenance/checkpoints.json --model meta-llama/Llama-3.1-8B-Instruct --revision <40-character-Hub-commit-SHA> --out results/presprint --device cuda
 python3 scripts/frozen_audit.py report --results results/presprint --out results/paired.csv
 ```
 
@@ -40,3 +40,19 @@ See [the inherited plan](docs/preexisting_frozen_history_plan.md) and [the new r
 
 Research direction and project ownership: chenghongm.
 Audit implementation, provenance packaging, documentation and checks were prepared collaboratively with **Codex**. AI assistance and pre-sprint work are disclosed in `PREEXISTING.md`; GPU experiment results remain pending.
+
+The runner requires an immutable Hub revision and checks `tokenizer.json` against the
+historical manifest on CPU before loading weights. Historical weight revision and
+chat-template hashes are unavailable: this check does not establish their identity.
+Current tokenizer/config files, code hashes, repository/build commit and GPU are
+recorded in the execution identity. The notebook resolves a revision once per run;
+reuse the printed SHA for a later execution.
+
+Low probe mass is saved as a checkpoint failure and skipped on resume. Changed
+prose that is unparsed or truncated is retained and counted separately; unparsed
+answers require manual review for refusal, mixed stance or parser failure.
+Binary prose and interaction effects use evaluable pairs with explicit sample
+counts, while probe effects use all baseline-passing, mass-qualified probe pairs.
+Reports include `p_own` effects, probe/prose effect-direction pairs (scales are not differenced), and changes in mean/both-order
+disagreement, plus a topic/phase JSON summary and missing-checkpoint list.
+Schema-2 results must use a fresh output directory rather than mix with old runs.
