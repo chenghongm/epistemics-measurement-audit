@@ -210,6 +210,69 @@ class AuditTests(unittest.TestCase):
             self.assertEqual(neutral['verdicts'], dict(direction_specific=True, syntax_contributes=True,
                                                        prose_specific=True, registered=True))
 
+    def test_prose_order_templates_change_only_the_option_lines(self):
+        import ast
+        tree = ast.parse((Path(audit.__file__).resolve().parent.parent / 'vendor/digital_mind/runner.py').read_text())
+        elicit = next(ast.literal_eval(n.value) for n in tree.body if isinstance(n, ast.Assign)
+                      for t in n.targets if isinstance(t, ast.Name) and t.id == 'ELICIT_STANCE')
+        t = audit.prose_order_templates(elicit)
+        self.assertEqual(t[('none', 'labelled')], elicit)
+        self.assertEqual(t[('discount', 'labelled')], audit.DISCOUNT + elicit)
+        self.assertEqual(t[('none', 'unlabelled')].replace(audit.BULLET_OPTIONS, audit.LETTERED_OPTIONS), elicit)
+        filled = t[('none', 'unlabelled')].format(LA='A', LB='B', side_a='X', side_b='Y')
+        self.assertIn('- X\n- Y\n', filled)
+        self.assertNotIn('(A)', filled)
+        with self.assertRaises(SystemExit):
+            audit.prose_order_templates('No options here.')
+
+    def test_to_canonical_and_order_category(self):
+        # Conversation order 2 printed (B-side, A-side); swapping prints (A-side, B-side).
+        self.assertEqual(audit.to_canonical('A', 'b-text', 'a-text'), 'B')
+        self.assertEqual(audit.to_canonical('A', 'a-text', 'a-text'), 'A')
+        self.assertEqual(audit.to_canonical('B', 'b-text', 'a-text'), 'A')
+        self.assertEqual(audit.to_canonical('unparsed', 'x', 'y'), 'unparsed')
+        c = lambda side: dict(side=side, cap_hit=False)
+        self.assertEqual(audit.order_category(c('A'), c('A'), 'A', 1), 'own_both')
+        self.assertEqual(audit.order_category(c('B'), c('B'), 'A', 2), 'other_both')
+        # Order 1: conv shows A first; answering B then A = second slot both times.
+        self.assertEqual(audit.order_category(c('B'), c('A'), 'A', 1), 'split_slot2')
+        # Order 2: conv shows B first; answering B then A = first slot both times.
+        self.assertEqual(audit.order_category(c('B'), c('A'), 'A', 2), 'split_slot1')
+        self.assertEqual(audit.order_category(c('unparsed'), c('A'), 'A', 1), 'unresolved')
+        self.assertEqual(audit.order_category(dict(side='A', cap_hit=True), c('A'), 'A', 1), 'unresolved')
+
+    def test_prose_order_report_end_to_end(self):
+        c = lambda side, letter=None, wording=None: dict(side=side, cap_hit=False, letter_slot=letter,
+                                                          wording_side=wording or side)
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            items = [dict(conv_id=f'c{i}', topic=f't{i % 6}', order=1, turn_idx=1, phase='pressure') for i in range(8)]
+            manifest = root / 'manifest.json'
+            audit.save(manifest, dict(checkpoints=items))
+            audit.save(root / 'environment-identity.json', dict(design='prose_order',
+                       prefixes=audit.PROSE_ORDER_PREFIXES, manifest_sha256=audit.sha(manifest)))
+            for i, item in enumerate(items):
+                # Opening side A. none: other in both orders. discount: labelled follows the second slot
+                # (B, then A) for every checkpoint; unlabelled is own_both for 6 of 8, other_both for 2.
+                none = {k: c('B') for k in ('labelled/conv', 'labelled/swap', 'unlabelled/conv', 'unlabelled/swap')}
+                disc = {'labelled/conv': c('B', 'B'), 'labelled/swap': c('A', 'B'),
+                        'unlabelled/conv': c('A' if i < 6 else 'B'), 'unlabelled/swap': c('A' if i < 6 else 'B')}
+                if i == 0:
+                    disc['labelled/conv'] = c('A', 'A', 'B')  # letter says own, wording says other
+                audit.save(root / f'{item["conv_id"]}__t1.json', dict(
+                    checkpoint=item, identity_sha256='identity', gate_pass=True, gate_reasons=[],
+                    wall_seconds=1, opening_side='A', prose=dict(none=none, discount=disc)))
+            out = root / 'po.csv'
+            with contextlib.redirect_stdout(io.StringIO()):
+                audit.prose_order_report(SimpleNamespace(results=str(root), manifest=str(manifest), out=str(out)))
+            ph = json.loads(Path(str(out) + '.summary.json').read_text())['phases']['pressure']
+            self.assertEqual(ph['categories']['discount/labelled'], {'split_slot2': 7, 'own_both': 1})
+            self.assertEqual(ph['effect']['labelled'], dict(n=8, up=8, down=0, same=0, survives=True))
+            self.assertEqual(ph['effect']['unlabelled'], dict(n=8, up=6, down=0, same=2, survives=True))
+            self.assertEqual(ph['single_order_claim']['unlabelled'], dict(n=1, discount_own_both=1))
+            self.assertEqual(ph['letter_wording_conflicts'], 1)
+            self.assertTrue(ph['registered'])
+
     def test_bundle_repository_metadata_without_git(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

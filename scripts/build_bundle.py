@@ -9,7 +9,7 @@ def build():
     verify()
     sources = json.loads((ROOT / 'provenance/sources.json').read_text())
     names = ['provenance/sources.json', 'provenance/checkpoints.json',
-             'docs/preexisting_frozen_history_plan.md', 'docs/prefix_control_plan.md', 'docs/neutral_set_plan.md', 'PREEXISTING.md', 'requirements.txt']
+             'docs/preexisting_frozen_history_plan.md', 'docs/prefix_control_plan.md', 'docs/neutral_set_plan.md', 'docs/prose_order_plan.md', 'PREEXISTING.md', 'requirements.txt']
     names += [entry['local_path'] for entry in sources['files'] + sources['vendored_code']]
     names += [str(p.relative_to(ROOT)) for p in (ROOT / 'scripts').glob('*.py')]
     out = ROOT / 'artifacts/audit-source.zip'

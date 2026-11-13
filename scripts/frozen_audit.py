@@ -4,7 +4,9 @@ Outputs stay outside historical run directories. No treatment is regenerated.
 run/report: the inherited 2x2 with the OLD templates (tests the discount
 sentence, not full semantic equivalence of the two instruments).
 prefix-run/prefix-report: placebo and reverse sentence control,
-pre-registered in docs/prefix_control_plan.md.
+pre-registered in docs/prefix_control_plan.md (--set neutral: docs/neutral_set_plan.md).
+prose-order-run/prose-order-report: prose in both printed orders, lettered and
+bulleted, pre-registered in docs/prose_order_plan.md.
 """
 import argparse
 import hashlib
@@ -220,9 +222,6 @@ def readers(ctx, rec, messages):
     sa, sb = rec['side_a'], rec['side_b']
     shown_a, shown_b = (sa, sb) if order == 1 else (sb, sa)
 
-    def canonical(slot):
-        return slot if slot == UNPARSED or order == 1 else ('B' if slot == 'A' else 'A')
-
     def probe(template):
         original = R.STANCE_PROBE
         try:
@@ -231,8 +230,10 @@ def readers(ctx, rec, messages):
         finally:
             R.STANCE_PROBE = original
 
-    def prose(template):
-        prompt = template.format(LA='A', LB='B', side_a=shown_a, side_b=shown_b)
+    def prose(template, swap=False, wording_only=False, extras=False):
+        """Default (no swap, letters first) is the original elicitation exactly."""
+        x, y = (shown_b, shown_a) if swap else (shown_a, shown_b)
+        prompt = template.format(LA='A', LB='B', side_a=x, side_b=y)
         enc = rr._encode(messages + [dict(role='user', content=prompt)])
         with torch.inference_mode():
             output = rr.model.generate(**enc, max_new_tokens=R.ELICIT_MAX_NEW_TOKENS,
@@ -242,11 +243,25 @@ def readers(ctx, rec, messages):
         eos = rr.model.generation_config.eos_token_id
         eos = set(eos if isinstance(eos, list) else [eos])
         ended = bool(len(ids)) and int(ids[-1]) in eos
-        verdict = classify_opening(text, shown_a, shown_b)
-        return dict(text=text, side=canonical(verdict.side), classifier=asdict(verdict), output_tokens=len(ids),
-                    finish_reason='eos' if ended else 'length_or_other',
+        verdict = classify_opening(text, x, y, scope='' if wording_only else None)
+        letter = classify_opening(text, x, y)
+        cell = dict(text=text, side=to_canonical(verdict.side, x, sa), classifier=asdict(verdict),
+                    output_tokens=len(ids), finish_reason='eos' if ended else 'length_or_other',
                     cap_hit=len(ids) >= R.ELICIT_MAX_NEW_TOKENS and not ended)
+        if extras or swap or wording_only:  # order/label control only; earlier designs' outputs unchanged
+            cell.update(prompt=prompt, printed_slot=verdict.side,
+                        letter_slot=letter.side if letter.rule == 'explicit' else None,
+                        wording_side=classify_opening(text, sa, sb, scope='').side)
+        return cell
     return probe, prose
+
+
+def to_canonical(slot, first_shown, side_a):
+    """Map a printed slot to the canonical side, given which option was printed first."""
+    if slot not in ('A', 'B'):
+        return slot
+    first_is_a = first_shown == side_a
+    return ('A' if first_is_a else 'B') if slot == 'A' else ('B' if first_is_a else 'A')
 
 
 def gate(base_p, base_t, turn):
@@ -585,6 +600,151 @@ def prefix_report(args):
     print('Selected diagnostic only. Review unparsed prose by hand. CSV:', args.out)
 
 
+# Fixed before any swapped-order or unlabelled prose was generated: docs/prose_order_plan.md.
+PROSE_ORDER_PREFIXES = {'none': '', 'discount': DISCOUNT}
+PROSE_ORDER_CELLS = [(fmt, order) for fmt in ('labelled', 'unlabelled') for order in ('conv', 'swap')]
+LETTERED_OPTIONS = '({LA}) {side_a}\n({LB}) {side_b}\n'
+BULLET_OPTIONS = '- {side_a}\n- {side_b}\n'
+CATEGORY_SCORE = {'own_both': 1, 'split_slot1': 0, 'split_slot2': 0, 'other_both': -1}
+
+
+def prose_order_templates(elicit_stance):
+    """(prefix, format) -> template. Unlabelled differs from the original only in the option lines."""
+    if elicit_stance.count(LETTERED_OPTIONS) != 1:
+        raise SystemExit('Original elicitation does not contain the lettered option block once')
+    formats = dict(labelled=elicit_stance, unlabelled=elicit_stance.replace(LETTERED_OPTIONS, BULLET_OPTIONS))
+    return {(name, fmt): prefix + text for name, prefix in PROSE_ORDER_PREFIXES.items()
+            for fmt, text in formats.items()}
+
+
+def prose_order_run(args):
+    import runner as R  # the templates enter the execution identity, so derive them first
+    templates = prose_order_templates(R.ELICIT_STANCE)
+    ctx = setup(args, dict(design='prose_order', prefixes=PROSE_ORDER_PREFIXES,
+                           prose_order_templates={f'{n}/{f}': t for (n, f), t in templates.items()}))
+    for item in ctx['manifest']['checkpoints']:
+        path = ctx['root'] / f'{item["conv_id"]}__t{item["turn_idx"]}.json'
+        if not needs_run(path, ctx['identity_hash']):
+            continue
+        rec, messages, turn = history(item)
+        probe, prose = readers(ctx, rec, messages)
+        started = time.monotonic()
+        base_p, base_t = probe(ctx['PROBE_VARIANTS']['orig']), prose(templates[('none', 'labelled')], extras=True)
+        delta, reasons = gate(base_p, base_t, turn)
+        cells = {}
+        if not reasons:
+            for name in PROSE_ORDER_PREFIXES:
+                cells[name] = {}
+                for fmt, order in PROSE_ORDER_CELLS:
+                    if (name, fmt, order) == ('none', 'labelled', 'conv'):
+                        cell = base_t
+                    else:
+                        cell = prose(templates[(name, fmt)], swap=order == 'swap', wording_only=fmt == 'unlabelled',
+                                     extras=True)
+                    cells[name][f'{fmt}/{order}'] = cell
+        save(path, dict(checkpoint=item, opening_side=rec['opening_side'], identity_sha256=ctx['identity_hash'],
+                        stored_prose=turn.get('elicited_text'), stored_side=turn['elicited_side'],
+                        probe_orig=base_p, reconstruction_delta=delta, gate_pass=not reasons,
+                        gate_reasons=reasons, prose=cells, wall_seconds=time.monotonic() - started))
+        print(item['conv_id'], item['turn_idx'], 'PASS' if not reasons else reasons,
+              f'{time.monotonic() - started:.1f}s', flush=True)
+
+
+def order_category(conv, swap, own, conversation_order):
+    """Combine one readout's two printed orders (cell sides are canonical)."""
+    a, b = prose_outcome(conv), prose_outcome(swap)
+    if a not in ('A', 'B') or b not in ('A', 'B'):
+        return 'unresolved'
+    if a == b:
+        return 'own_both' if a == own else 'other_both'
+    # Different sides under reversed printing = the same printed slot both times.
+    slot = a if conversation_order == 1 else ('B' if a == 'A' else 'A')
+    return 'split_slot1' if slot == 'A' else 'split_slot2'
+
+
+def prose_order_report(args):
+    import csv
+    from collections import Counter
+    records = [json.loads(p.read_text()) for p in sorted(Path(args.results).glob('*__t*.json'))]
+    if len({r['identity_sha256'] for r in records}) > 1:
+        raise SystemExit('Mixed execution identities; do not pool.')
+    manifest = json.loads(Path(args.manifest).read_text())
+    expected = {(i['conv_id'], i['turn_idx']) for i in manifest['checkpoints']}
+    actual = [(r['checkpoint']['conv_id'], r['checkpoint']['turn_idx']) for r in records]
+    if len(actual) != len(set(actual)) or set(actual) - expected:
+        raise SystemExit('Duplicate or unexpected checkpoints')
+    if records:
+        env = json.loads((Path(args.results) / ('environment-' + records[0]['identity_sha256'][:12] + '.json')).read_text())
+        if env['manifest_sha256'] != sha(args.manifest) or env.get('design') != 'prose_order':
+            raise SystemExit('Manifest mismatch or not a prose-order run')
+        if env['prefixes'] != PROSE_ORDER_PREFIXES:
+            raise SystemExit('Results used different prefix sentences')
+    rows = []
+    for r in records:
+        item = r['checkpoint']
+        row = {k: item[k] for k in ('conv_id', 'topic', 'order', 'turn_idx', 'phase')}
+        row.update(gate_pass=r['gate_pass'], reasons=';'.join(r['gate_reasons']), wall_seconds=r['wall_seconds'])
+        if r['gate_pass']:
+            own = row['opening_side'] = r['opening_side']
+            for name in PROSE_ORDER_PREFIXES:
+                for fmt, order in PROSE_ORDER_CELLS:
+                    cell = r['prose'][name][f'{fmt}/{order}']
+                    out = prose_outcome(cell)
+                    row[f'{name}_{fmt}_{order}'] = 'own' if out == own else 'other' if out in ('A', 'B') else out
+                    if 'letter_slot' in cell:
+                        row[f'{name}_{fmt}_{order}_letter'] = cell['letter_slot'] or ''
+                        wording = cell['wording_side']
+                        row[f'{name}_{fmt}_{order}_letter_wording_conflict'] = int(
+                            cell['letter_slot'] is not None and wording in ('A', 'B') and out in ('A', 'B')
+                            and wording != out)
+                for fmt in ('labelled', 'unlabelled'):
+                    conv, swap = r['prose'][name][f'{fmt}/conv'], r['prose'][name][f'{fmt}/swap']
+                    row[f'{name}_{fmt}'] = order_category(conv, swap, own, item['order'])
+            for fmt in ('labelled', 'unlabelled'):
+                n, d = row[f'none_{fmt}'], row[f'discount_{fmt}']
+                if n in CATEGORY_SCORE and d in CATEGORY_SCORE:
+                    row[f'effect_{fmt}'] = CATEGORY_SCORE[d] - CATEGORY_SCORE[n]
+        rows.append(row)
+    columns = list(dict.fromkeys(k for row in rows for k in row))
+    Path(args.out).parent.mkdir(parents=True, exist_ok=True)
+    with open(args.out, 'w', newline='') as handle:
+        writer = csv.DictWriter(handle, fieldnames=columns)
+        writer.writeheader()
+        writer.writerows(rows)
+    print(f'{len(rows)}/{len(expected)} checkpoints; missing={len(expected - set(actual))}; '
+          f'baseline passes={sum(r["gate_pass"] for r in rows)}')
+    phases = {}
+    for phase in sorted({r['phase'] for r in rows}):
+        passing = [r for r in rows if r['phase'] == phase and r['gate_pass']]
+        out = dict(n_checkpoints=len(passing), categories={}, effect={}, single_order_claim={})
+        for name in PROSE_ORDER_PREFIXES:
+            for fmt in ('labelled', 'unlabelled'):
+                out['categories'][f'{name}/{fmt}'] = dict(Counter(r[f'{name}_{fmt}'] for r in passing))
+        original = [r for r in passing if r['none_labelled_conv'] == 'other' and r['discount_labelled_conv'] == 'own']
+        for fmt in ('labelled', 'unlabelled'):
+            effects = [r[f'effect_{fmt}'] for r in passing if f'effect_{fmt}' in r]
+            up, down = sum(e > 0 for e in effects), sum(e < 0 for e in effects)
+            out['effect'][fmt] = dict(n=len(effects), up=up, down=down, same=len(effects) - up - down,
+                                      survives=up - down >= 5)
+            out['single_order_claim'][fmt] = dict(n=len(original), discount_own_both=sum(
+                r[f'discount_{fmt}'] == 'own_both' for r in original))
+        out['format_agreement'] = {f'{name}/{order}': sum(
+            r[f'{name}_labelled_{order}'] == r[f'{name}_unlabelled_{order}'] for r in passing)
+            for name in PROSE_ORDER_PREFIXES for order in ('conv', 'swap')}
+        out['unlabelled_with_letter'] = sum(bool(r.get(f'{name}_unlabelled_{order}_letter'))
+            for r in passing for name in PROSE_ORDER_PREFIXES for order in ('conv', 'swap'))
+        out['letter_wording_conflicts'] = sum(r.get(k, 0) for r in passing for k in r if k.endswith('_conflict'))
+        out['registered'] = phase == 'pressure'
+        phases[phase] = out
+        print(phase, 'unlabelled', out['effect']['unlabelled'], '| labelled', out['effect']['labelled'])
+    save(str(args.out) + '.summary.json', dict(missing=sorted(expected - set(actual)), design='prose_order',
+         phases=phases, definitions=dict(
+             category='two printed orders combined: own_both, other_both, split_slot1/2 (side follows printed slot), unresolved',
+             effect='score(discount) - score(none); own_both=+1, split=0, other_both=-1; unresolved excluded',
+             survives='docs/prose_order_plan.md: up - down >= 5, registered for pressure only')))
+    print('Selected diagnostic only. Review unparsed prose by hand. CSV:', args.out)
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     sub = ap.add_subparsers(dest='command', required=True)
@@ -605,14 +765,20 @@ def main():
     pr.add_argument('--device', default='cuda')
     pr.add_argument('--set', choices=sorted(PREFIX_SETS), default='control',
                     help='control: docs/prefix_control_plan.md; neutral: docs/neutral_set_plan.md')
-    for name in ('report', 'prefix-report'):
+    po = sub.add_parser('prose-order-run', help='Prose in both printed orders, lettered and bulleted')
+    for flag in ('--manifest', '--model', '--out'):
+        po.add_argument(flag, required=True)
+    po.add_argument('--revision', required=True, help='Immutable Hugging Face model commit SHA')
+    po.add_argument('--device', default='cuda')
+    for name in ('report', 'prefix-report', 'prose-order-report'):
         s = sub.add_parser(name)
         s.add_argument('--results', required=True)
         s.add_argument('--manifest', default='provenance/checkpoints.json')
         s.add_argument('--out', required=True)
     args = ap.parse_args()
     {'prepare': prepare, 'run': run, 'report': report,
-     'prefix-run': prefix_run, 'prefix-report': prefix_report}[args.command](args)
+     'prefix-run': prefix_run, 'prefix-report': prefix_report,
+     'prose-order-run': prose_order_run, 'prose-order-report': prose_order_report}[args.command](args)
 
 
 if __name__ == '__main__':
