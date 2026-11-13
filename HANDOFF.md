@@ -59,3 +59,5 @@ Requirements are not version-pinned; historical CUDA/model reconstruction remain
 Neutral set ran (A100-80GB, exact cross-run consistency): discount first of nine in 5/6 pressure topics, prose 13/18 vs ≤2/18 for neutrals; details in `docs/results_2026-11-13.md`.
 
 Prose order/label control added (`docs/prose_order_plan.md`, pre-registered): the format diagnostic and a slot re-read of the neutral-set prose suggest part of the discount prose effect is a shift toward the second printed option. Next: `prose-order-run` (none/discount × lettered/bulleted × both printed orders), same revision; save the download as `artifacts/prose-order-results.zip`. Fixed-exposure pilot v2 and format diagnostic are separate (`docs/new_pilot_plan.md`, `docs/format_control_*`).
+
+Prose order control ran (A100-40GB, 30/30 gate, exact): registered verdict "survives" (bulleted 13 up / 0 down), but order-robust returns are 5/18 lettered and 8/18 bulleted, not 13/18; discount shifts prose toward the second printed option. Results doc and supported claims revised.
