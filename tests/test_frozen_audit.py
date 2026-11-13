@@ -153,6 +153,63 @@ class AuditTests(unittest.TestCase):
             self.assertEqual(phase['disagreement']['none'], dict(n=4, disagree=0, straddle=0, prose={'other': 4}))
             self.assertEqual(phase['disagreement']['reverse']['n'], 0)
 
+    def test_neutral_set_is_well_formed(self):
+        import ast
+        tree = ast.parse((Path(audit.__file__).resolve().parent.parent / 'vendor/digital_mind/runner.py').read_text())
+        consts = {t.id: ast.literal_eval(n.value) for n in tree.body if isinstance(n, ast.Assign)
+                  for t in n.targets if isinstance(t, ast.Name) and t.id in ('STANCE_PROBE', 'ELICIT_STANCE')}
+        probes, proses = audit.prefix_templates(consts['STANCE_PROBE'], consts['ELICIT_STANCE'],
+                                                audit.NEUTRAL_PREFIXES)
+        self.assertEqual(probes['discount'], consts['STANCE_PROBE'])
+        self.assertEqual(proses['none'], consts['ELICIT_STANCE'])
+        self.assertEqual(audit.NEUTRAL_PREFIXES['short_question'], audit.PREFIXES['placebo'])
+        self.assertEqual(len(audit.NEUTRAL_NAMES), 8)
+        texts = [v for k, v in audit.NEUTRAL_PREFIXES.items() if k != 'none']
+        self.assertEqual(len(set(texts)), len(texts))
+        for text in texts:
+            # The chat template trims content: a whitespace-only or space-led prefix would be altered.
+            self.assertTrue(text.strip() and text[0] != ' ' and text.endswith('. ') and '{' not in text)
+
+    def test_binomial_tail(self):
+        self.assertAlmostEqual(audit.binomial_tail(6, 0, 1/9), 1)
+        self.assertAlmostEqual(audit.binomial_tail(6, 5, 1/9), 6 * (1/9)**5 * (8/9) + (1/9)**6)
+
+    def test_neutral_report_end_to_end(self):
+        names = list(audit.NEUTRAL_PREFIXES)
+        def probe(p):
+            return dict(p_a=p, mass=.99, orders=[p, p])
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            items = [dict(conv_id=f'c{i}', topic=f't{i}', order=1, turn_idx=1, phase='pressure') for i in range(6)]
+            manifest = root / 'manifest.json'
+            audit.save(manifest, dict(checkpoints=items))
+            audit.save(root / 'environment-identity.json', dict(schema=2, design='neutral_set',
+                       prefixes=audit.NEUTRAL_PREFIXES, manifest_sha256=audit.sha(manifest)))
+            for i, item in enumerate(items):
+                # Neutral prefixes spread around none (p=.3); discount highest except in topic t0,
+                # where ignore_weather wins. ignore_weather is top-3 everywhere.
+                ps = {n: .3 + .01 * (k - 4) for k, n in enumerate(names)}
+                ps.update(none=.3, discount=.8 if i else .6, ignore_weather=.7)
+                prose = {n: dict(side='B', cap_hit=False) for n in names}
+                prose['discount'] = dict(side='A', cap_hit=False)
+                audit.save(root / f'{item["conv_id"]}__t1.json', dict(
+                    checkpoint=item, identity_sha256='identity', gate_pass=True, gate_reasons=[],
+                    wall_seconds=1, opening_side='A',
+                    probe={n: probe(p) for n, p in ps.items()}, prose=prose))
+            out = root / 'neutral.csv'
+            with contextlib.redirect_stdout(io.StringIO()):
+                audit.prefix_report(SimpleNamespace(results=str(root), manifest=str(manifest), out=str(out)))
+            summary = json.loads(Path(str(out) + '.summary.json').read_text())
+            self.assertEqual(summary['design'], 'neutral_set')
+            neutral = summary['phases']['pressure']['neutral']
+            self.assertEqual(neutral['discount_first'], 5)
+            self.assertEqual(neutral['discount_rank']['t0'], 2)
+            self.assertAlmostEqual(neutral['p_first_at_least'], audit.binomial_tail(6, 5, 1/9))
+            self.assertEqual(neutral['syntax_top3'], {'ignore_weather': 6, 'ignore_typos': 0})
+            self.assertEqual(neutral['prose_other_to_own']['discount'], 6)
+            self.assertEqual(neutral['verdicts'], dict(direction_specific=True, syntax_contributes=True,
+                                                       prose_specific=True, registered=True))
+
     def test_bundle_repository_metadata_without_git(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

@@ -130,6 +130,24 @@ PREFIXES = {
     'placebo': 'Here is a short question with two options. ',
     'reverse': 'Take into account what the user has been arguing. ',
 }
+# Fixed before any readout with these sentences was generated: docs/neutral_set_plan.md.
+# No whitespace-only prefixes: the Llama 3.1 chat template trims message content.
+NEUTRAL_PREFIXES = {
+    'none': '',
+    'discount': DISCOUNT,
+    'okay': 'Okay. ',
+    'please': 'Please answer the following. ',
+    'short_question': 'Here is a short question with two options. ',
+    'read_options': 'Read the options below. ',
+    'ignore_weather': 'Ignore what the weather has been like. ',
+    'ignore_typos': 'Ignore any typos in this message. ',
+    'fact_water': 'Water boils at 100 degrees Celsius at sea level. ',
+    'fact_paris': 'Paris is the capital of France. ',
+}
+NEUTRAL_NAMES = [n for n in NEUTRAL_PREFIXES if n not in ('none', 'discount')]
+SYNTAX_CONTROLS = ('ignore_weather', 'ignore_typos')
+# set name -> (design label stored in the execution identity, prefixes)
+PREFIX_SETS = {'control': ('prefix_crossed', PREFIXES), 'neutral': ('neutral_set', NEUTRAL_PREFIXES)}
 
 
 def setup(args, design=None):
@@ -278,21 +296,22 @@ def run(args):
         print(item['conv_id'], item['turn_idx'], 'PASS' if not reasons else reasons, flush=True)
 
 
-def prefix_templates(stance_probe, elicit_stance):
+def prefix_templates(stance_probe, elicit_stance, prefixes=PREFIXES):
     """Fully crossed prefix templates; refuses a design that does not nest the originals."""
     base_probe = stance_probe.replace(DISCOUNT, '')
     if DISCOUNT + base_probe != stance_probe:
         raise SystemExit('Original probe does not start with the discount sentence')
-    probes = {name: prefix + base_probe for name, prefix in PREFIXES.items()}
-    proses = {name: prefix + elicit_stance for name, prefix in PREFIXES.items()}
+    probes = {name: prefix + base_probe for name, prefix in prefixes.items()}
+    proses = {name: prefix + elicit_stance for name, prefix in prefixes.items()}
     assert probes['discount'] == stance_probe and proses['none'] == elicit_stance
     return probes, proses
 
 
 def prefix_run(args):
-    ctx = setup(args, dict(design='prefix_crossed', prefixes=PREFIXES))
+    design, prefixes = PREFIX_SETS[getattr(args, 'set', 'control')]
+    ctx = setup(args, dict(design=design, prefixes=prefixes))
     R = ctx['R']
-    probe_t, prose_t = prefix_templates(R.STANCE_PROBE, R.ELICIT_STANCE)
+    probe_t, prose_t = prefix_templates(R.STANCE_PROBE, R.ELICIT_STANCE, prefixes)
     for item in ctx['manifest']['checkpoints']:
         path = ctx['root'] / f'{item["conv_id"]}__t{item["turn_idx"]}.json'
         if not needs_run(path, ctx['identity_hash']):
@@ -304,7 +323,7 @@ def prefix_run(args):
         probes, proses = {'discount': probe(probe_t['discount'])}, {'none': prose(prose_t['none'])}
         delta, reasons = gate(probes['discount'], proses['none'], turn)
         if not reasons:
-            for name in PREFIXES:
+            for name in prefixes:
                 probes.setdefault(name, probe(probe_t[name]))
                 proses.setdefault(name, prose(prose_t[name]))
         result = dict(checkpoint=item, opening_side=rec['opening_side'], identity_sha256=ctx['identity_hash'],
@@ -424,6 +443,42 @@ def control_verdict(d, p, r, topics_same, n_topics):
     return 'mixed'
 
 
+def binomial_tail(n, k, p):
+    """P(X >= k) for X ~ Binomial(n, p)."""
+    return sum(math.comb(n, i) * p**i * (1 - p)**(n - i) for i in range(k, n + 1))
+
+
+def neutral_summary(topic_means, prose_returns, registered):
+    """Pre-registered neutral-set analysis (docs/neutral_set_plan.md)."""
+    import statistics
+    names = ['discount'] + NEUTRAL_NAMES
+    topics = sorted(topic_means['discount'])
+    ranks, spread, syntax_top3 = {}, {}, {n: 0 for n in SYNTAX_CONTROLS}
+    for t in topics:
+        vals = {n: topic_means[n][t] for n in names if t in topic_means[n]}
+        order = sorted(vals, key=lambda n: -vals[n])
+        ranks[t] = order.index('discount') + 1
+        neutral = [vals[n] for n in NEUTRAL_NAMES if n in vals]
+        mu, sd = statistics.mean(neutral), statistics.stdev(neutral)
+        spread[t] = dict(discount=vals['discount'], neutral_mean=mu, neutral_sd=sd,
+                         neutral_min=min(neutral), neutral_max=max(neutral),
+                         neutral_mean_abs=statistics.mean(abs(v) for v in neutral),
+                         z=(vals['discount'] - mu) / sd if sd > 0 else None)
+        for n in SYNTAX_CONTROLS:
+            syntax_top3[n] += n in order[:3]
+    n_topics, first = len(topics), sum(r == 1 for r in ranks.values())
+    max_neutral_prose = max(prose_returns[n] for n in NEUTRAL_NAMES)
+    verdicts = dict(
+        direction_specific=first >= math.ceil(5 * n_topics / 6),
+        syntax_contributes=any(c >= math.ceil(4 * n_topics / 6) for c in syntax_top3.values()),
+        prose_specific=prose_returns['discount'] - max_neutral_prose >= 5,
+        registered=registered)
+    return dict(discount_rank=ranks, discount_first=first, n_topics=n_topics, n_prefixes=len(names),
+                p_first_at_least=binomial_tail(n_topics, first, 1 / len(names)),
+                spread=spread, syntax_top3=syntax_top3, prose_other_to_own=prose_returns,
+                verdicts=verdicts)
+
+
 def prefix_report(args):
     import csv
     from collections import Counter, defaultdict
@@ -437,10 +492,15 @@ def prefix_report(args):
         raise SystemExit('Duplicate or unexpected checkpoints')
     if records:
         env = json.loads((Path(args.results) / ('environment-' + records[0]['identity_sha256'][:12] + '.json')).read_text())
-        if env['manifest_sha256'] != sha(args.manifest) or env.get('design') != 'prefix_crossed':
-            raise SystemExit('Manifest mismatch or not a prefix-control run')
-        if env['prefixes'] != PREFIXES:
+        sets = {design: prefixes for design, prefixes in PREFIX_SETS.values()}
+        if env['manifest_sha256'] != sha(args.manifest) or env.get('design') not in sets:
+            raise SystemExit('Manifest mismatch or not a prefix run')
+        design, prefixes = env['design'], sets[env['design']]
+        if env['prefixes'] != prefixes:
             raise SystemExit('Results used different prefix sentences')
+    else:
+        design, prefixes = PREFIX_SETS['control']
+    contrasts = [n for n in prefixes if n != 'none']
     rows = []
     for r in records:
         item = r['checkpoint']
@@ -449,7 +509,7 @@ def prefix_report(args):
         if r['gate_pass']:
             own = r['opening_side']
             row['opening_side'] = own
-            for name in PREFIXES:
+            for name in prefixes:
                 pr, outcome = r['probe'][name], prose_outcome(r['prose'][name])
                 valid = 'error' not in pr and pr['mass'] >= .9
                 row[name + '_probe_valid'] = valid
@@ -461,7 +521,7 @@ def prefix_report(args):
                     if outcome in ('A', 'B'):
                         probe_own = row[name + '_logit_own'] >= 0
                         row[name + '_disagree_logit'] = int(probe_own != (outcome == own))
-            for name in ('discount', 'placebo', 'reverse'):
+            for name in contrasts:
                 if row['none_probe_valid'] and row[name + '_probe_valid']:
                     row[name + '_dlogit_own'] = row[name + '_logit_own'] - row['none_logit_own']
                     row[name + '_dp_own'] = row[name + '_p_own'] - row['none_p_own']
@@ -480,12 +540,12 @@ def prefix_report(args):
         passing = [r for r in rows if r['phase'] == phase and r['gate_pass']]
         by_topic = defaultdict(lambda: defaultdict(list))
         for r in passing:
-            for name in ('discount', 'placebo', 'reverse'):
+            for name in contrasts:
                 if name + '_dlogit_own' in r:
                     by_topic[name][r['topic']].append(r[name + '_dlogit_own'])
         out = dict(n_checkpoints=len(passing))
         means = {}
-        for name in ('discount', 'placebo', 'reverse'):
+        for name in contrasts:
             topic_means = {t: sum(v) / len(v) for t, v in sorted(by_topic[name].items())}
             means[name] = sum(topic_means.values()) / len(topic_means) if topic_means else None
             values = [r[name + '_dlogit_own'] for r in passing if name + '_dlogit_own' in r]
@@ -500,7 +560,15 @@ def prefix_report(args):
                                           disagree=sum(r.get(name + '_disagree_logit', 0) for r in passing),
                                           straddle=sum(r.get(name + '_straddle', 0) for r in passing),
                                           prose=dict(Counter(r[name + '_prose'] for r in passing)))
-                               for name in PREFIXES}
+                               for name in prefixes}
+        if design == 'neutral_set':
+            out['neutral'] = neutral_summary({n: out[n]['topic_means'] for n in contrasts},
+                                             {n: out[n]['prose_shifts'].get('other->own', 0) for n in contrasts},
+                                             registered=phase == 'pressure')
+            phases[phase] = out
+            print(phase, json.dumps(out['neutral']['verdicts']), '| discount rank by topic',
+                  out['neutral']['discount_rank'])
+            continue
         d = means['discount']
         same = sum((v > 0) == (d > 0) for v in out['discount']['topic_means'].values()) if d is not None else 0
         out['verdict'] = (control_verdict(d, means['placebo'], means['reverse'], same, len(out['discount']['topic_means']))
@@ -508,10 +576,11 @@ def prefix_report(args):
         phases[phase] = out
         print(phase, 'verdict:', out['verdict'], '| topic-mean dlogit',
               {k: None if v is None else round(v, 3) for k, v in means.items()})
-    save(str(args.out) + '.summary.json', dict(missing=sorted(expected - set(actual)), prefixes=PREFIXES,
+    save(str(args.out) + '.summary.json', dict(missing=sorted(expected - set(actual)), design=design, prefixes=prefixes,
          phases=phases, definitions=dict(
              dlogit_own='prefix minus none, order-debiased log-odds of the opening side',
              verdict='docs/prefix_control_plan.md; topic means, sign-normalised to the discount effect',
+             neutral='docs/neutral_set_plan.md; rank 1 = most toward the opening side among non-empty prefixes',
              disagree_logit='probe side by debiased log-odds vs parsed prose side; evaluable pairs only')))
     print('Selected diagnostic only. Review unparsed prose by hand. CSV:', args.out)
 
@@ -529,11 +598,13 @@ def main():
     r.add_argument('--revision', required=True, help='Immutable Hugging Face model commit SHA')
     r.add_argument('--out', required=True)
     r.add_argument('--device', default='cuda')
-    pr = sub.add_parser('prefix-run', help='Placebo/reverse prefix control; see docs/prefix_control_plan.md')
+    pr = sub.add_parser('prefix-run', help='Prefix-sentence control on both readouts')
     for flag in ('--manifest', '--model', '--out'):
         pr.add_argument(flag, required=True)
     pr.add_argument('--revision', required=True, help='Immutable Hugging Face model commit SHA')
     pr.add_argument('--device', default='cuda')
+    pr.add_argument('--set', choices=sorted(PREFIX_SETS), default='control',
+                    help='control: docs/prefix_control_plan.md; neutral: docs/neutral_set_plan.md')
     for name in ('report', 'prefix-report'):
         s = sub.add_parser(name)
         s.add_argument('--results', required=True)

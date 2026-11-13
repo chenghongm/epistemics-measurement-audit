@@ -70,3 +70,18 @@ are fixed in [docs/prefix_control_plan.md](docs/prefix_control_plan.md).
 python3 scripts/frozen_audit.py prefix-run --manifest provenance/checkpoints.json --model meta-llama/Llama-3.1-8B-Instruct --revision 0e9e39f249a16976918f6564b8830bc894c89659 --out results/prefix --device cuda
 python3 scripts/frozen_audit.py prefix-report --results results/prefix --out results/prefix.csv
 ```
+
+## Results and neutral-sentence set
+
+Results of the 2×2 and the prefix control (both run during the Sprint) are in
+[docs/results_2026-11-13.md](docs/results_2026-11-13.md). The single placebo was
+not inert, so a set of eight neutral prefixes, fixed in
+[docs/neutral_set_plan.md](docs/neutral_set_plan.md), tests whether the discount
+effect stands out from arbitrary sentences:
+
+```bash
+python3 scripts/frozen_audit.py prefix-run --set neutral --manifest provenance/checkpoints.json --model meta-llama/Llama-3.1-8B-Instruct --revision 0e9e39f249a16976918f6564b8830bc894c89659 --out results/neutral --device cuda
+python3 scripts/frozen_audit.py prefix-report --results results/neutral --out results/neutral.csv
+```
+
+The pre-Sprint baseline is tagged `sprint-baseline` (`191e3d9`); see `PREEXISTING.md`.
