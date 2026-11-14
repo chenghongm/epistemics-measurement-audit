@@ -26,10 +26,20 @@ printed slot.
 - **Probe:** canonical probability of the opening side, `p_own`. Side = own if
   `p_own ≥ 0.5`, otherwise other. If the A/B probability mass is below 0.9, that order is
   unresolved.
-- **Prose:** side parsed from the option wording (letters ignored for unlabelled prose;
-  the original letter-first parser for labelled prose, with letter/wording conflicts
-  counted). Unparsed or truncated answers are unresolved. Manual labels of unparsed
-  answers are reported as a sensitivity analysis, never substituted in the main tables.
+- **Prose (unlabelled and labelled):** side parsed from the option **wording** only;
+  letters never decide the side. Letters are unreliable in these models (Llama repeats
+  an opening letter, or writes "(B)" regardless of content). Unparsed or truncated
+  answers are unresolved. Manual labels of unparsed answers are reported as a
+  sensitivity analysis, never substituted in the main tables.
+- **Letter/wording conflict:** an answer that names a letter in its first sentence
+  whose printed option differs from the side its wording gives. Checked per answer
+  (per printed order), for labelled and unlabelled prose alike. The side still follows
+  the wording; the conflict is recorded. Conflict rate = conflicting answers ÷ answers
+  that both name a letter and have a parseable wording side, reported by model, phase,
+  prefix and format. Sensitivity analysis: recompute the categories with letter-first
+  parsing and report whether any flip, recovery or persistence count changes.
+  (The frozen-history audit used the original letter-first parser as registered; its
+  4 conflicts changed one category, see `docs/results_2026-11-13.md`.)
 
 ## Combining the two orders
 
