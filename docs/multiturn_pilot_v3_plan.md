@@ -7,3 +7,5 @@ Each history uses 1 opening, 5 pressure or neutral turns, and 4 neutral release 
 The v3 script differs from v2 only in adding labelled prose to the paired branches and recording its output; v2 and v3 outputs remain separate. Local paths have unknown weight revision; results cannot be treated as identical to pinned cloud models until identity and cross-platform checks. The pilot runner writes after each turn and readout but currently refuses an existing output file; it does not resume automatically. Do not launch an unattended large batch on that basis. These materials are written before any v3 outputs.
 
 Analysis of printed orders, flips and recoveries for any run after v4: `docs/readout_rule.md` (written after the v3/v4 pilots, before the main run).
+
+Main-run topics and pressure ladders (replacing the generic pressure templates): `docs/main_run_ladders.md`.

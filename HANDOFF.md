@@ -61,3 +61,7 @@ Neutral set ran (A100-80GB, exact cross-run consistency): discount first of nine
 Prose order/label control added (`docs/prose_order_plan.md`, pre-registered): the format diagnostic and a slot re-read of the neutral-set prose suggest part of the discount prose effect is a shift toward the second printed option. Next: `prose-order-run` (none/discount × lettered/bulleted × both printed orders), same revision; save the download as `artifacts/prose-order-results.zip`. Fixed-exposure pilot v2 and format diagnostic are separate (`docs/new_pilot_plan.md`, `docs/format_control_*`).
 
 Prose order control ran (A100-40GB, 30/30 gate, exact): registered verdict "survives" (bulleted 13 up / 0 down), but order-robust returns are 5/18 lettered and 8/18 bulleted, not 13/18; discount shifts prose toward the second printed option. Results doc and supported claims revised.
+
+## Update 2026-11-14
+
+Main-run topics and ladders fixed before any main-run data: `docs/main_run_ladders.md` and `.json`. These are 6 old + 6 meta topics (the Digital Mind `topics_6x6.json` set). Both directions are written for each topic: 14 ladders reused verbatim, 10 new. Next: an opening smoke on Llama and Qwen to check the wording-only parse rate (meta openings were parsed from letters before), then wire `docs/main_run_ladders.json` into a v5 runner, replacing `PRESSURE`.
