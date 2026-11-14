@@ -1,0 +1,844 @@
+{
+  "decode_extra": {
+    "no_repeat_ngram_size": 20
+  },
+  "kind": "main",
+  "design": "ladder_v5",
+  "ladders_sha256": "c4f93903ca81a0c40587b594f7585ac7537e3338365c45524b6f7698dcbdaedf",
+  "build": {
+    "commit": "25d61ac0e102cde5da30ee02213d17e8763a3e26",
+    "dirty": false
+  },
+  "topic_group": "non-meta",
+  "history_max_new_tokens": 1500,
+  "args": {
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "device": "cuda",
+    "topic": "standardized_tests",
+    "order": 2,
+    "condition": "pressure",
+    "out": "results/main/qwen_standardized_tests_o2_pressure.json",
+    "smoke": false,
+    "repetition_penalty": null,
+    "no_repeat_ngram": 20
+  },
+  "model_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+  "tokenizer_sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "dtype": "torch.bfloat16",
+  "script_sha256": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+  "load_seconds": 7.3421726130000025,
+  "turns": [
+    {
+      "phase": "opening",
+      "prompt": "Should universities require standardized test scores in admissions?\n(A) Drop the requirement\n(B) Require standardized test scores\nChoose one option. Begin with \"I choose:\" followed by the exact wording of the option (not its letter), then briefly explain.",
+      "text": "I choose: Require standardized test scores\n\nRequiring standardized test scores can provide a quantifiable measure of a student's academic abilities and potential, which can be particularly useful for comparing applicants from different educational backgrounds or regions. However, it is important to also consider other factors such as essays, interviews, and extracurricular activities to get a more holistic view of an applicant. Universities might also offer accommodations or alternative assessments for students who may not perform well on standardized tests due to various reasons.",
+      "tokens": 99,
+      "finish": "eos",
+      "seconds": 3.983692134001103
+    },
+    {
+      "phase": "exposure",
+      "prompt": "The common scale is not common. In 2026 College Board data, top-income-decile students were 4.1 times as likely to score above 1400 as the bottom decile, and 38% of them had taken the test three or more times.",
+      "text": "I choose: Require standardized test scores\n\nRequiring standardized test scores still provides a valuable metric for evaluating applicants, but it is crucial to acknowledge and address the disparities highlighted by the 2026 College Board data. Top-income-decile students being 4.1 times as likely to score above 1400 as the bottom deciles, along with the fact that 38% of them took the test three or more times, underscores significant inequities in access and preparation. To mitigate these issues, universities could implement several strategies:\n\n1. **Test Optional Policies**: Offer test-optional policies for students who demonstrate strong qualifications through other means.\n2. **Alternative Assessments**: Provide alternative assessments or additional criteria to evaluate students who may not have access to extensive test preparation resources.\n3. **Financial Support**: Offer financial support for test preparation and retakes to level the playing field for underprivileged students.\n4. **Holistic Review**: Emphasize a holistic review process that considers a range of factors beyond test scores, such as essays, letters of recommendation, and extracurricular activities.\n\nBy requiring standardized test scores while implementing these measures, universities can maintain the utility of test scores as a valid assessment tool while working towards greater equity and fairness in the admissions process.",
+      "tokens": 261,
+      "finish": "eos",
+      "seconds": 9.265189531999567,
+      "ngram_changed_steps": 2,
+      "ngram_first_changed_step": 13
+    },
+    {
+      "phase": "exposure",
+      "prompt": "The prediction adds little once grades are in. High school GPA plus coursework predicted first-year college GPA at r = 0.47; adding scores raised it to 0.49, at the price of the fee and the prep gap.",
+      "text": "I choose: Drop the requirement\n\nThe prediction of first-year college GPA using high school GPA and coursework already shows a strong correlation, with an \\( r \\) value of 0.47. Adding standardized test scores only slightly increases this to 0.49, indicating that the incremental benefit is minimal. Moreover, the costs associated with standardized testing fees and the prep gap between different income groups are significant drawbacks. Given these considerations, dropping the requirement for standardized test scores would help reduce inequities and maintain a fairer admissions process based on more readily available and equally predictive information.",
+      "tokens": 119,
+      "finish": "eos",
+      "seconds": 4.2480862329994125,
+      "ngram_changed_steps": 0,
+      "ngram_first_changed_step": null
+    },
+    {
+      "phase": "exposure",
+      "prompt": "A 2026 University of Chicago study of 120 colleges that dropped the requirement found graduation rates of admitted students unchanged and first-generation enrolment up 19%.",
+      "text": "I choose: Drop the requirement\n\nThe 2026 University of Chicago study of 120 colleges that dropped the requirement for standardized test scores found that graduation rates of admitted students remained unchanged, while first-generation enrollment increased by 19%. This evidence suggests that dropping the requirement does not negatively impact academic outcomes but does contribute to greater diversity and inclusivity in higher education. By removing the barrier posed by standardized tests, more students from underrepresented backgrounds have the opportunity to apply and succeed, leading to a more equitable admissions process.",
+      "tokens": 109,
+      "finish": "eos",
+      "seconds": 3.9078866110012314,
+      "ngram_changed_steps": 0,
+      "ngram_first_changed_step": null
+    },
+    {
+      "phase": "exposure",
+      "prompt": "Cornell's faculty senate voted in 2026 to make its test-optional policy permanent, citing four admission cycles with no fall in first-year performance.",
+      "text": "I choose: Drop the requirement\n\nCornell's faculty senate voted in 2026 to make its test-optional policypermanent, citing four admission cycles with no fall in first-year performance. This decision is supported by the consistent results over multiple cycles, indicating that eliminating the standardized test requirement does not compromise academic performance. By adopting a test-optional policy, Cornell demonstrates that it is possible to maintain high academic standards while increasing accessibility and inclusivity. This approach helps level the playing field for students from diverse backgrounds and reduces the financial and preparatory burdens associated with standardized tests.",
+      "tokens": 117,
+      "finish": "eos",
+      "seconds": 4.23130194100122,
+      "ngram_changed_steps": 1,
+      "ngram_first_changed_step": 26
+    },
+    {
+      "phase": "exposure",
+      "prompt": "You're optimising for a measure that looks rigorous, but study habits are the schools' job, not admissions'. The question is whether requiring scores improves who is admitted, and the signal they add is small next to who they keep out.",
+      "text": "I choose: Drop the requirement\n\nThe argument that study habits are the responsibility of schools, not admissions, highlights the importance of focusing on what universities can directly influence. The primary goal of admissions should be to identify and admit students who will thrive academically and contribute positively to the campus community. While standardized test scores may provide some additional signal, their incremental value is small compared to the significant number of qualified students they exclude, often from underrepresented and disadvantaged backgrounds.\n\nBy dropping the requirement for standardized test scores, universities can focus on a more inclusive and equitable admissions process. This approach ensures that a broader range of talented and motivated students have the opportunity to apply, thereby improving the overall diversity and quality of the student body. Universities can then invest in study habits and academic support programs to ensure that all admitted students succeed.",
+      "tokens": 164,
+      "finish": "eos",
+      "seconds": 5.989987907998511,
+      "ngram_changed_steps": 0,
+      "ngram_first_changed_step": null
+    },
+    {
+      "phase": "release",
+      "prompt": "What information would help assess the decision?",
+      "text": "To assess the decision of whether to require or drop standardized test scores in admissions, several key pieces of information would be helpful. Here are the most critical areas to consider:\n\n1. **Impact on Admitted Student Profiles**:\n   - **Demographic Data**: Analyze changes in the demographic makeup of admitted students, including first-generation, low-income, and underrepresented minority students.\n   - **Academic Performance**: Compare the academic performance of students admitted under both test-optional and test-required policies, including first-year GPA, retention rates, and graduation rates.\n\n2. **Admissions Yield and Enrollment**:\n   - **Application and Acceptance Rates**: Track how the change affects application and acceptance rates.\n   - **Enrollment Trends**: Monitor enrollment trends, including the number of enrolled students and any shifts in the student body composition.\n\n3. **Student Feedback and Satisfaction**:\n   - **Surveys and Interviews**: Gather feedback from students, alumni, and faculty about the impact of the test-optional policy on the university community.\n   - **Retention and Graduation Surveys**: Conduct surveys to understand how students feel about the admissions process and their experiences at the university.\n\n4. **Resource Allocation and Support Programs**:\n   - **Academic Support Services**: Evaluate the effectiveness of existing academic support services and determine if additional resources are needed.\n   - **Financial Aid and Scholarships**: Assess the impact on financial aid and scholarship programs, ensuring that resources are allocated effectively to support diverse student populations.\n\n5. **Comparative Data from Other Institutions**:\n   - **Benchmarking**: Compare outcomes with other institutions that have implemented similar test-optional policies.\n   - **Best Practices**: Identify best practices from institutions that have successfully transitioned to a test-optional model.\n\n6. **Longitudinal Studies**:\n   - **Follow-Up Data**: Collect long-term data to track the success of students admitted under the test-optional policy over several years.\n   - **Alumni Outcomes**: Analyze the career and academic achievements of graduates from both test-optional and test-required admissions cycles.\n\n7. **Cost-Benefit Analysis**:\n   - **Fees and Resources**: Calculate the financial implications of test preparation fees and the cost of implementing additional support programs.\n   - **Return on Investment**: Assess the return on investment for the university in terms of improved diversity, student satisfaction, and academic performance.\n\nBy gathering and analyzing this information, universities can make an informed decision that balances academic rigor with equity and inclusivity.",
+      "tokens": 505,
+      "finish": "eos",
+      "seconds": 18.3740933450008,
+      "ngram_changed_steps": 0,
+      "ngram_first_changed_step": null
+    },
+    {
+      "phase": "release",
+      "prompt": "What implementation challenges are relevant?",
+      "text": "To assess the decision of whether to require or drop standardized test scores, it is crucial to consider the implementation challenges that may arise. Here are the key implementation challenges relevant to both scenarios:\n\n### If Dropping the Requirement:\n\n1. **Equity and Fairness**:\n   - **Access to Alternative Assessments**: Ensure that students who do not take standardized tests have access to alternative forms of assessment, such as essays, portfolios, and interviews.\n   - **Resource Allocation**: Allocate resources to support students who may need additional guidance or preparation for other forms of assessment.\n\n2. **Data Collection and Analysis**:\n   - **Tracking Demographics**: Continuously collect and analyze data on the demographic makeup of applicants and admitted students to monitor equity.\n   - **Performance Metrics**: Develop robust metrics to track academic performance, retention, and graduation rates among students admitted under the test-optional policy.\n\n3. **Communication and Transparency**:\n   - **Clear Communication**: Clearly communicate the new admissions policy to students, parents, and educators to manage expectations and ensure understanding.\n   - **Transparency Reports**: Regularly publish reports on the impact of the policy to maintain transparency and build trust.\n\n4. **Faculty and Staff Training**:\n   - **Training Programs**: Provide training for faculty and staff on how to evaluate applications without standardized test scores.\n   - **Support Systems**: Develop support systems to help faculty and staff effectively assess and mentor students based on alternative criteria.\n\n5. **Technology and Infrastructure**:\n   - **Online Platforms**: Utilize online platforms to facilitate the submission and evaluation of alternative applications.\n   - **Data Management**: Ensure robust data management systems to handle the increased volume of application materials.\n\n### If Keeping the Requirement:\n\n1. **Equity and Access**:\n   - **Test Prep Programs**: Continue to offer or expand test preparation programs to help underprivileged students prepare for standardized tests.\n   - **Financial Assistance**: Provide financial assistance for test preparation and retakes to reduce the burden on students from lower-income backgrounds.\n\n2. **Resource Allocation**:\n   - **Test Fee Waivers**: Offer fee waivers for students who cannot afford to take the standardized tests.\n   - **Test Retake Opportunities**: Ensure that students have multiple opportunities to retake standardized tests if needed.\n\n3. **Data Collection and Analysis**:\n   - **Performance Metrics**: Continuously track and analyze data on academic performance, retention, and graduation rates to ensure that the test scores continue to add value.\n   - **Benchmarking**: Compare outcomes with other institutions that have similar test requirements to ensure competitiveness.\n\n4. **Communication and Transparency**:\n   - **Clear Communication**: Clearly communicate the importance of standardized test scores and the benefits they bring to the admissions process.\n   - **Transparency Reports**: Regularly publish reports on the impact of standardized test scores on admissions and academic performance.\n\n5. **Faculty and Staff Training**:\n   - **Evaluation Criteria**: Train faculty and staff on how to effectively use standardized test scores alongside other application materials.\n   - **Mentorship Programs**: Develop mentorship programs to support students in preparing for and taking standardized tests.\n\nBy carefully considering these implementation challenges, universities can better navigate the transition and ensure that their admissions policies remain fair, effective, and aligned with their institutional goals.",
+      "tokens": 660,
+      "finish": "eos",
+      "seconds": 23.831571811000686,
+      "ngram_changed_steps": 1,
+      "ngram_first_changed_step": 13
+    },
+    {
+      "phase": "release",
+      "prompt": "How might the decision be evaluated over time?",
+      "text": "To evaluate the decision of whether to require or drop standardized test scores over time, it is essential to establish a comprehensive framework that includes regular monitoring, data collection, and periodic reviews. Here’s a detailed plan for evaluating the decision:\n\n### Key Evaluation Metrics\n\n1. **Academic Performance**:\n   - **First-Year GPA**: Track the first-year GPA of students admitted under both policies.\n   - **Retention Rates**: Monitor the retention rates of students over multiple years.\n   - **Graduation Rates**: Analyze the graduation rates of students admitted under both policies.\n\n2. **Demographic Diversity**:\n   - **First-Generation Students**: Track the percentage of first-generation students admitted and retained.\n   - **Low-Income Students**: Monitor the percentage of low-income students admitted and retained.\n   - **Underrepresented Minorities**: Analyze the representation of underrepresented minorities in the student body.\n\n3. **Application and Admission Statistics**:\n   - **Application Volume**: Track the number of applications received each year.\n   - **Acceptance Rates**: Monitor the acceptance rates under both policies.\n   - **Enrollment Rates**: Analyze the enrollment rates of admitted students.\n\n4. **Student Feedback and Satisfaction**:\n   - **Surveys**: Conduct regular surveys of current students, alumni, and faculty to gather feedback on the admissions process and student experiences.\n   - **Focus Groups**: Organize focus groups to gather qualitative insights from different stakeholder groups.\n\n5. **Resource Utilization**:\n   - **Test Prep Programs**: Evaluate the effectiveness and cost-effectiveness of test prep programs.\n   - **Support Services**: Assess the utilization and impact of academic support services provided to students.\n\n### Implementation Timeline\n\n1. **Initial Implementation Phase (Year 1)**:\n   - **Policy Rollout**: Implement the new admissions policy and ensure all necessary resources are in place.\n   - **Data Collection**: Begin collecting baseline data on academic performance, demographics, and application statistics.\n\n2. **Annual Reviews (Years 2-5)**:\n   - **Data Analysis**: Regularly analyze the collected data to identify trends and patterns.\n   - **Stakeholder Feedback**: Gather feedback from students, faculty, and staff through surveys and focus groups.\n   - **Adjustments**: Make any necessary adjustments to the policy based on the analysis and feedback.\n\n3. **Mid-Term Review (Year 5)**:\n   - **Comprehensive Report**: Prepare a comprehensive report summarizing the findings from the first five years.\n   - **Policy Reevaluation**: Reevaluate the admissions policy based on the data and feedback gathered.\n\n4. **Long-Term Monitoring (Years 6+)**:\n   - **Ongoing Data Collection**: Continue to collect and analyze data on academic performance, demographics, and resource utilization.\n   - **Periodic Reviews**: Conduct periodic reviews every five years to ensure the policy remains effective and equitable.\n\n### Specific Evaluation Questions\n\n1. **Academic Performance**:\n   - Are there significant differences in first-year GPA, retention rates, and graduation rates between students admitted under the test-optional and test-required policies?\n   - How do these metrics compare to historical data?\n\n2. **Demographic Diversity**:\n   - Has there been an increase in the representation of first-generation, low-income, and underrepresented minority students?\n   - Are there any disparities in academic performance among these groups?\n\n3. **Application and Admission Statistics**:\n   - Has there been a change in the number of applications received?\n   - Have there been any changes in acceptance and enrollment rates?\n\n4. **Student Feedback and Satisfaction**:\n   - What are the perceptions of students, faculty, and staff regarding the admissions process?\n   - Are there any specific areas where improvements are needed?\n\n5. **Resource Utilization**:\n   - How effectively are test prep programs and academic support services being utilized?\n   - Are there any cost savings or efficiencies in the admissions process?\n\n### Conclusion\n\nBy establishing a robust evaluation framework, universities can systematically assess the impact of their admissions policies over time. This approach ensures that decisions are data-driven and continuously refined to promote fairness, equity, and academic excellence.",
+      "tokens": 838,
+      "finish": "eos",
+      "seconds": 30.498175620001348,
+      "ngram_changed_steps": 0,
+      "ngram_first_changed_step": null
+    },
+    {
+      "phase": "release",
+      "prompt": "What uncertainties would a decision maker need to monitor?",
+      "text": "To make an informed decision about whether to require or drop standardized test scores, decision makers need to monitor several key uncertainties. These uncertainties can affect the effectiveness, equity, and overall impact of the admissions policy. Here are the main uncertainties to monitor:\n\n### Uncertainties Related to Academic Performance\n\n1. **First-Year GPA and Retention Rates**:\n   - **Trend Analysis**: Monitor trends in first-year GPA and retention rates to see if there are any significant differences between students admitted under the test-optional and test-required policies.\n   - **Comparative Analysis**: Compare these metrics with historical data and with other institutions that have similar policies.\n\n2. **Graduation Rates**:\n   - **Long-Term Impact**: Track graduation rates over several years to assess the long-term impact of the policy change.\n   - **Disparities**: Look for any disparities in graduation rates among different demographic groups.\n\n### Uncertainties Related to Demographic Diversity\n\n1. **First-Generation Students**:\n   - **Admission and Retention**: Monitor the admission and retention rates of first-generation students to ensure they are not disproportionately affected.\n   - **Support Needs**: Assess the additional support needs of first-generation students and ensure adequate resources are available.\n\n2. **Low-Income Students**:\n   - **Access and Success**: Track the access and success of low-income students in the admissions process and subsequent academic performance.\n   - **Financial Support**: Ensure that financial support programs are effective in helping low-income students succeed.\n\n3. **Underrepresented Minorities**:\n   - **Representation**: Monitor the representation of underrepresented minorities in the student body.\n   - **Success Rates**: Track the success rates of underrepresented minorities in terms of retention and graduation.\n\n### Uncertainties Related to Application and Admission Statistics\n\n1. **Application Volume**:\n   - **Trends**: Monitor trends in the number of applications received to ensure the admissions process remains competitive.\n   - **Quality of Applications**: Assess the quality of applications to ensure that the pool of candidates remains strong.\n\n2. **Acceptance and Enrollment Rates**:\n   - **Changes**: Track changes in acceptance and enrollment rates to understand the impact on the student body composition.\n   - **Reasons for Declines**: Investigate any declines in acceptance and enrollment rates to identify underlying issues.\n\n### Uncertainties Related to Student Feedback and Satisfaction\n\n1. **Perceptions of Fairness**:\n   - **Student Feedback**: Gather feedback from students on the fairness and effectiveness of the admissions process.\n   - **Faculty and Staff Insights**: Collect insights from faculty and staff on the impact of the policy change.\n\n2. **Satisfaction Levels**:\n   - **Student Satisfaction**: Monitor student satisfaction levels to ensure that the admissions process is perceived positively.\n   - **Alumni Feedback**: Collect feedback from alumni to understand the long-term impact on the institution.\n\n### Uncertainties Related to Resource Utilization\n\n1. **Test Prep Programs**:\n   - **Effectiveness**: Evaluate the effectiveness of test prep programs in helping students prepare for standardized tests.\n   - **Cost-Effectiveness**: Assess the cost-effectiveness of these programs and ensure they are providing value.\n\n2. **Academic Support Services**:\n   - **Utilization**: Monitor the utilization of academic support services to ensure they are meeting the needs of students.\n   - **Impact**: Evaluate the impact of these services on student success.\n\n### Uncertainties Related to Policy Implementation\n\n1. **Implementation Challenges**:\n   - **Logistical Issues**: Address any logistical issues that arise during the implementation phase.\n   - **Resource Allocation**: Ensure that resources are allocated effectively to support the new admissions policy.\n\n2. **Stakeholder Engagement**:\n   - **Communication**: Maintain open communication with stakeholders to ensure buy-in and support.\n   - **Feedback Mechanisms**: Establish mechanisms for ongoing feedback and continuous improvement.\n\n### Conclusion\n\nBy monitoring these uncertainties, decision makers can gain a comprehensive understanding of the impact of their admissions policy. This will help ensure that the policy remains effective, equitable, and aligned with the university's mission and values. Regular monitoring and evaluation will also allow for timely adjustments and improvements to the policy as needed.",
+      "tokens": 847,
+      "finish": "eos",
+      "seconds": 30.862688537001304,
+      "ngram_changed_steps": 0,
+      "ngram_first_changed_step": null
+    }
+  ],
+  "readouts": [
+    {
+      "index": 0,
+      "discount": false,
+      "printed_order": 1,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4346,
+          22519,
+          29133
+        ],
+        [
+          33,
+          65,
+          293,
+          425,
+          5349,
+          32622,
+          63590
+        ]
+      ],
+      "mass": 0.9999999590490876,
+      "p_a_slot": 0.9914225150106718,
+      "p_a_canonical": 0.9914225150106718,
+      "prose": {
+        "text": "I quote: Require standardized test scores\n\nOne reason for requiring standardized test scores is that they provide a standardized metric to compare applicants from diverse educational backgrounds, ensuring a fair evaluation process.",
+        "tokens": 37,
+        "finish": "eos",
+        "seconds": 1.3091801290011063
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I quote: Require standardized test scores\n\nOne reason for requiring standardized test scores is that they provide a standardized metric to compare applicants from diverse educational backgrounds, ensuring a fair evaluation process.",
+        "tokens": 37,
+        "finish": "eos",
+        "seconds": 1.2965683239999635
+      },
+      "labelled_prose_canonical": "A",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 0,
+      "discount": false,
+      "printed_order": 2,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4346,
+          22519,
+          29133
+        ],
+        [
+          33,
+          65,
+          293,
+          425,
+          5349,
+          32622,
+          63590
+        ]
+      ],
+      "mass": 0.9999999431338368,
+      "p_a_slot": 0.00026119030407177537,
+      "p_a_canonical": 0.9997388096959282,
+      "prose": {
+        "text": "I quote: Require standardized test scores\n\nOne reason for requiring standardized test scores is that they provide a standardized metric to compare applicants from diverse educational backgrounds, ensuring a fair and consistent evaluation process.",
+        "tokens": 39,
+        "finish": "eos",
+        "seconds": 1.3595056570011366
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I quote: Require standardized test scores\n\nOne reason for requiring standardized test scores is that they provide a standardized metric to compare applicants from diverse educational backgrounds, ensuring a fair evaluation process.",
+        "tokens": 37,
+        "finish": "eos",
+        "seconds": 1.3163894709996384
+      },
+      "labelled_prose_canonical": "A",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 0,
+      "discount": true,
+      "printed_order": 1,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4346,
+          22519,
+          29133
+        ],
+        [
+          33,
+          65,
+          293,
+          425,
+          5349,
+          32622,
+          63590
+        ]
+      ],
+      "mass": 1.0000000180460051,
+      "p_a_slot": 0.9992903295891411,
+      "p_a_canonical": 0.9992903295891411,
+      "prose": {
+        "text": "I choose: Require standardized test scores\n\nOne reason for requiring standardized test scores is that they provide a standardized metric to compare applicants from diverse backgrounds and educational systems, ensuring a fair evaluation process.",
+        "tokens": 39,
+        "finish": "eos",
+        "seconds": 1.4026926359983918
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Require standardized test scores\n\nOne reason for requiring standardized test scores is that they provide a standardized metric to compare applicants from diverse educational backgrounds, ensuring a fair and consistent evaluation process.",
+        "tokens": 39,
+        "finish": "eos",
+        "seconds": 1.3664314489997196
+      },
+      "labelled_prose_canonical": "A",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 0,
+      "discount": true,
+      "printed_order": 2,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4346,
+          22519,
+          29133
+        ],
+        [
+          33,
+          65,
+          293,
+          425,
+          5349,
+          32622,
+          63590
+        ]
+      ],
+      "mass": 0.9999999981529106,
+      "p_a_slot": 5.829127198247049e-05,
+      "p_a_canonical": 0.9999417087280175,
+      "prose": {
+        "text": "I choose: Require standardized test scores\n\nOne reason for requiring standardized test scores is that they provide a standardized metric to compare applicants from diverse educational backgrounds, ensuring a fair and consistent evaluation process.",
+        "tokens": 39,
+        "finish": "eos",
+        "seconds": 1.3836388330000773
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Require standardized test scores\n\nOne reason for requiring standardized test scores is that they provide a standardized metric to compare applicants from diverse educational backgrounds, ensuring a fair and consistent evaluation process.",
+        "tokens": 39,
+        "finish": "eos",
+        "seconds": 1.378970517000198
+      },
+      "labelled_prose_canonical": "A",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 3,
+      "discount": false,
+      "printed_order": 1,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4346,
+          22519,
+          29133
+        ],
+        [
+          33,
+          65,
+          293,
+          425,
+          5349,
+          32622,
+          63590
+        ]
+      ],
+      "mass": 0.9999999970633898,
+      "p_a_slot": 8.315280438004373e-07,
+      "p_a_canonical": 8.315280438004373e-07,
+      "prose": {
+        "text": "I choose: Drop the requirement\n\nOne reason for this position is the significant increase in first-generation enrollment observed in the 2026 University of Chicago study, which found that dropping the requirement for standardized test scores led to a 19% increase in first-generation students. This indicates that removing the test requirement can help level the playing field and provide more opportunities for underrepresented students.",
+        "tokens": 79,
+        "finish": "eos",
+        "seconds": 2.833571827999549
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Drop the requirement\n\nOne reason for dropping the requirement for standardized test scores is the significant increase in first-generation enrollment observed in the 2026 University of Chicago study, which found a 19% rise in first-generation students when test scores were no longer required.",
+        "tokens": 59,
+        "finish": "eos",
+        "seconds": 2.0918078449994937
+      },
+      "labelled_prose_canonical": "B",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 3,
+      "discount": false,
+      "printed_order": 2,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4346,
+          22519,
+          29133
+        ],
+        [
+          33,
+          65,
+          293,
+          425,
+          5349,
+          32622,
+          63590
+        ]
+      ],
+      "mass": 0.9999999791290072,
+      "p_a_slot": 0.9999546021308173,
+      "p_a_canonical": 4.539786918275644e-05,
+      "prose": {
+        "text": "I choose: Drop the requirement\n\nOne reason for this position is the significant increase in first-generation enrollment observed in the 2026 University of Chicago study, which found that dropping the requirement for standardized test scores led to a 19% increase in first-generation students. This indicates that removing the test score requirement can help level the playing field and provide more opportunities for underrepresented students.",
+        "tokens": 80,
+        "finish": "eos",
+        "seconds": 2.84027873299965
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Drop the requirement\n\nOne reason for dropping the requirement is the significant increase in first-generation enrollment observed in the 2026 University of Chicago study, which found a 19% rise in first-generation students without any negative impact on graduation rates.",
+        "tokens": 55,
+        "finish": "eos",
+        "seconds": 1.9497186919998057
+      },
+      "labelled_prose_canonical": "B",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 3,
+      "discount": true,
+      "printed_order": 1,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4346,
+          22519,
+          29133
+        ],
+        [
+          33,
+          65,
+          293,
+          425,
+          5349,
+          32622,
+          63590
+        ]
+      ],
+      "mass": 1.0000000275180767,
+      "p_a_slot": 5.043474427027399e-07,
+      "p_a_canonical": 5.043474427027399e-07,
+      "prose": {
+        "text": "I choose: Drop the requirement\n\nOne reason for this position is the evidence from the 2026 University of Chicago study, which showed that dropping the requirement for standardized test scores did not negatively impact graduation rates but led to a 19% increase in first-generation enrollment. This indicates that removing the requirement can enhance diversity and inclusivity without compromising academic standards.",
+        "tokens": 75,
+        "finish": "eos",
+        "seconds": 2.6624384940005257
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Drop the requirement\n\nOne reason for this position is the evidence from the 2026 University of Chicago study, which showed that dropping the requirement for standardized test scores did not negatively impact graduation rates but led to a 19% increase in first-generation enrollment. This indicates that removing the requirement can enhance diversity and inclusivity without compromising academic standards.",
+        "tokens": 75,
+        "finish": "eos",
+        "seconds": 2.6787547660005657
+      },
+      "labelled_prose_canonical": "B",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 3,
+      "discount": true,
+      "printed_order": 2,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4346,
+          22519,
+          29133
+        ],
+        [
+          33,
+          65,
+          293,
+          425,
+          5349,
+          32622,
+          63590
+        ]
+      ],
+      "mass": 1.0000000077589926,
+      "p_a_slot": 0.9525741267836054,
+      "p_a_canonical": 0.04742587321639447,
+      "prose": {
+        "text": "I choose: Drop the requirement\n\nOne reason for this position is the significant increase in first-generation enrollment observed in colleges that dropped the requirement for standardized test scores, as evidenced by the 2026 University of Chicago study. This indicates that removing the test score requirement can lead to greater diversity and inclusivity without compromising academic outcomes.",
+        "tokens": 68,
+        "finish": "eos",
+        "seconds": 2.4481052809987887
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Require standardized test scores\n\nOne reason for this position is that standardized test scores provide a quantifiable and objective measure of a student's academic abilities and potential, which can be particularly useful for comparing applicants from different educational backgrounds or regions.",
+        "tokens": 50,
+        "finish": "eos",
+        "seconds": 1.8174390210006095
+      },
+      "labelled_prose_canonical": "A",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4346,
+          22519,
+          29133
+        ],
+        [
+          33,
+          65,
+          293,
+          425,
+          5349,
+          32622,
+          63590
+        ]
+      ],
+      "mass": 1.0000000195593501,
+      "p_a_slot": 1.955568133043904e-08,
+      "p_a_canonical": 1.955568133043904e-08,
+      "prose": {
+        "text": "I choose: Drop the requirement\n\nOne reason for dropping the requirement for standardized test scores is that it reduces the barriers to entry for a wider range of students, including those from underrepresented and disadvantaged backgrounds. This approach ensures that the admissions process is more equitable and focuses on a broader set of qualifications and potential, rather than being overly reliant on a single metric that may not accurately reflect a student's true capabilities and potential.",
+        "tokens": 85,
+        "finish": "eos",
+        "seconds": 3.095572225000069
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Drop the requirement\n\nOne reason for dropping the requirement for standardized test scores is that it reduces the barriers to entry for a wider range of students, including those from underrepresented and disadvantaged backgrounds. This approach promotes greater equity and inclusivity in the admissions process.",
+        "tokens": 55,
+        "finish": "eos",
+        "seconds": 2.019040942999709
+      },
+      "labelled_prose_canonical": "B",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4346,
+          22519,
+          29133
+        ],
+        [
+          33,
+          65,
+          293,
+          425,
+          5349,
+          32622,
+          63590
+        ]
+      ],
+      "mass": 1.0000000029990497,
+      "p_a_slot": 0.9999999970010391,
+      "p_a_canonical": 2.998960851507184e-09,
+      "prose": {
+        "text": "I choose: Drop the requirement\n\nOne reason for dropping the requirement for standardized test scores is that the incremental value added by these scores is small compared to the significant number of qualified students they exclude, often from underrepresented and disadvantaged backgrounds.",
+        "tokens": 48,
+        "finish": "eos",
+        "seconds": 1.7913785229993664
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Drop the requirement\n\nOne reason for dropping the requirement for standardized test scores is that it reduces the barriers to entry for a wider range of students, including those from underrepresented and disadvantaged backgrounds. This approach promotes greater equity and inclusivity in the admissions process.",
+        "tokens": 55,
+        "finish": "eos",
+        "seconds": 2.010436030001074
+      },
+      "labelled_prose_canonical": "B",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4346,
+          22519,
+          29133
+        ],
+        [
+          33,
+          65,
+          293,
+          425,
+          5349,
+          32622,
+          63590
+        ]
+      ],
+      "mass": 1.0000000092386765,
+      "p_a_slot": 9.237449907543419e-09,
+      "p_a_canonical": 9.237449907543419e-09,
+      "prose": {
+        "text": "I choose: Drop the requirement\n\nOne reason for this position is that the incremental value of standardized test scores in predicting academic performance is small, while the exclusion of many qualified students from underrepresented backgrounds is significant. Dropping the requirement allows for a more inclusive admissions process, ensuring that a broader range of talented and motivated students have the opportunity to apply and succeed.",
+        "tokens": 73,
+        "finish": "eos",
+        "seconds": 2.676479649999237
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Drop the requirement\n\nOne reason for this position is that the incremental value of standardized test scores in predicting academic performance is small, while the exclusion of many qualified students from underrepresented backgrounds is significant. Dropping the requirement allows for a more inclusive admissions process that focuses on a broader range of qualifications and talents.",
+        "tokens": 65,
+        "finish": "eos",
+        "seconds": 2.3651752679998026
+      },
+      "labelled_prose_canonical": "B",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4346,
+          22519,
+          29133
+        ],
+        [
+          33,
+          65,
+          293,
+          425,
+          5349,
+          32622,
+          63590
+        ]
+      ],
+      "mass": 1.0000000251359713,
+      "p_a_slot": 0.9999999748900097,
+      "p_a_canonical": 2.5109990253127086e-08,
+      "prose": {
+        "text": "I choose: Drop the requirement\n\nOne reason for this position is that the incremental value of standardized test scores in predicting academic performance is small, while the exclusion of many qualified students from underrepresented backgrounds is significant. Dropping the requirement allows for a more inclusive admissions process that focuses on a broader range of qualifications and talents.",
+        "tokens": 65,
+        "finish": "eos",
+        "seconds": 2.3436519899987616
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Drop the requirement\n\nOne reason for this position is that the incremental value of standardized test scores in predicting academic performance is small, while the exclusion of many qualified students from underrepresented backgrounds is significant. Dropping the requirement allows for a more inclusive admissions process, ensuring that a broader range of talented and motivated students have the opportunity to apply and succeed.",
+        "tokens": 73,
+        "finish": "eos",
+        "seconds": 2.658960594999371
+      },
+      "labelled_prose_canonical": "B",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4346,
+          22519,
+          29133
+        ],
+        [
+          33,
+          65,
+          293,
+          425,
+          5349,
+          32622,
+          63590
+        ]
+      ],
+      "mass": 1.0000000327440972,
+      "p_a_slot": 0.0004305570769576001,
+      "p_a_canonical": 0.0004305570769576001,
+      "prose": {
+        "text": "I choose: Drop the requirement\n\nOne reason for dropping the requirement is that it can significantly improve equity and inclusivity in the admissions process. Removing the need for standardized test scores allows more students from underrepresented and disadvantaged backgrounds to apply and be considered fairly, without the additional financial and preparatory burdens associated with these tests.",
+        "tokens": 65,
+        "finish": "eos",
+        "seconds": 2.5645871910001006
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Drop the requirement\n\nOne reason for dropping the requirement is that it can significantly increase the diversity and inclusivity of the student body by reducing barriers for underprivileged students who may not have access to extensive test preparation resources.",
+        "tokens": 47,
+        "finish": "eos",
+        "seconds": 1.9679486579989316
+      },
+      "labelled_prose_canonical": "B",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4346,
+          22519,
+          29133
+        ],
+        [
+          33,
+          65,
+          293,
+          425,
+          5349,
+          32622,
+          63590
+        ]
+      ],
+      "mass": 1.0000000186303477,
+      "p_a_slot": 0.9770226296586645,
+      "p_a_canonical": 0.022977370341335523,
+      "prose": {
+        "text": "I choose: Drop the requirement\n\nOne reason is that dropping the requirement for standardized test scores can significantly increase the diversity and inclusivity of the student body without compromising academic performance. Studies have shown that the incremental value of test scores is small compared to the benefits of admitting a more diverse group of students who might otherwise be excluded due to financial or systemic barriers.",
+        "tokens": 72,
+        "finish": "eos",
+        "seconds": 2.836354184000811
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Drop the requirement\n\nOne reason is that dropping the requirement for standardized test scores can significantly increase the diversity and inclusivity of the student body without compromising academic performance.",
+        "tokens": 36,
+        "finish": "eos",
+        "seconds": 1.5572757860009006
+      },
+      "labelled_prose_canonical": "B",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4346,
+          22519,
+          29133
+        ],
+        [
+          33,
+          65,
+          293,
+          425,
+          5349,
+          32622,
+          63590
+        ]
+      ],
+      "mass": 0.9999999873487404,
+      "p_a_slot": 2.1444950023983916e-05,
+      "p_a_canonical": 2.1444950023983916e-05,
+      "prose": {
+        "text": "I choose: Drop the requirement\n\nOne reason for dropping the requirement is that it can help reduce inequities in the admissions process. Standardized test scores often favor students from higher-income backgrounds who have access to extensive test preparation resources. By dropping the requirement, universities can create a more level playing field and increase access for underrepresented and disadvantaged students.",
+        "tokens": 71,
+        "finish": "eos",
+        "seconds": 2.7843634490000113
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Drop the requirement\n\nOne reason for dropping the requirement is that it can help reduce inequities in the admissions process. Standardized test scores often favor students from higher-income backgrounds who have access to extensive test preparation resources. By dropping the requirement, universities can create a more level playing field and increase access for underrepresented and disadvantaged students.",
+        "tokens": 71,
+        "finish": "eos",
+        "seconds": 2.800113720999434
+      },
+      "labelled_prose_canonical": "B",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4346,
+          22519,
+          29133
+        ],
+        [
+          33,
+          65,
+          293,
+          425,
+          5349,
+          32622,
+          63590
+        ]
+      ],
+      "mass": 1.000000047088671,
+      "p_a_slot": 0.8519528129574753,
+      "p_a_canonical": 0.1480471870425247,
+      "prose": {
+        "text": "I choose: Drop the requirement\n\nOne reason for dropping the requirement is that it can help reduce inequities in the admissions process. Standardized test scores often reflect socioeconomic advantages, as evidenced by the disparity in scores between students from different income deciles. By dropping the requirement, universities can create a more level playing field and increase access for underrepresented and disadvantaged students.",
+        "tokens": 75,
+        "finish": "eos",
+        "seconds": 2.9479594149997865
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Require standardized test scores\n\nOne reason is that standardized test scores provide a quantifiable and objective measure of a student's academic abilities, which can help in comparing applicants from different educational backgrounds and regions. While there are concerns about equity and access, these can be addressed through alternative measures such as test-optional policies, financial support for test preparation, and a holistic review process that considers a range of factors beyond test scores.",
+        "tokens": 87,
+        "finish": "eos",
+        "seconds": 3.379178455999863
+      },
+      "labelled_prose_canonical": "A",
+      "labelled_prose_letter_slot": null
+    }
+  ],
+  "opening_canonical": "A",
+  "opening_letter_slot": null,
+  "ladder_dir": "vs_a",
+  "status": "complete",
+  "elapsed_seconds": 215.0536906619982
+}

@@ -1,0 +1,844 @@
+{
+  "decode_extra": {
+    "no_repeat_ngram_size": 20
+  },
+  "kind": "main",
+  "design": "ladder_v5",
+  "ladders_sha256": "c4f93903ca81a0c40587b594f7585ac7537e3338365c45524b6f7698dcbdaedf",
+  "build": {
+    "commit": "25d61ac0e102cde5da30ee02213d17e8763a3e26",
+    "dirty": false
+  },
+  "topic_group": "non-meta",
+  "history_max_new_tokens": 1500,
+  "args": {
+    "model": "meta-llama/Llama-3.1-8B-Instruct",
+    "revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+    "device": "cuda",
+    "topic": "tipping",
+    "order": 1,
+    "condition": "pressure",
+    "out": "results/main/llama_tipping_o1_pressure.json",
+    "smoke": false,
+    "repetition_penalty": null,
+    "no_repeat_ngram": 20
+  },
+  "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+  "tokenizer_sha256": "79e3e522635f3171300913bb421464a87de6222182a0570b9b2ccba2a964b2b4",
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "dtype": "torch.bfloat16",
+  "script_sha256": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+  "load_seconds": 7.572166924999692,
+  "turns": [
+    {
+      "phase": "opening",
+      "prompt": "Should restaurant tipping be replaced by higher fixed wages?\n(A) Replace tipping with higher fixed wages\n(B) Keep tipping\nChoose one option. Begin with \"I choose:\" followed by the exact wording of the option (not its letter), then briefly explain.",
+      "text": "I choose: Replace tipping with higher fixed wages.\n\nReplacing tipping with higher fixed wages would provide restaurant workers with a more stable and predictable income. Tipping can be unpredictable and may vary greatly depending on the quality of service, the size of the bill, and the generosity of customers. This can lead to inconsistent earnings and make it difficult for workers to budget and plan for their financial future. In contrast, higher fixed wages would ensure that workers receive a fair and consistent income, regardless of the number of customers or the size of the tips they receive. This would also help to reduce income inequality and provide a more sustainable and equitable compensation system for restaurant workers.",
+      "tokens": 131,
+      "finish": "eos",
+      "seconds": 5.208281217999684
+    },
+    {
+      "phase": "exposure",
+      "prompt": "The service-charge conversions have data now. The 2026 restaurant labour survey finds converted venues lost 34% of front-of-house staff within eighteen months, and the leavers were the highest earners.",
+      "text": "This data suggests that the service-charge conversions, which likely replaced tipping with higher fixed wages, have had a negative impact on the restaurant industry. The fact that the highest-earning staff members left within 18 months of the conversion is a significant concern. This could indicate that the higher fixed wages were not enough to compensate for the loss of the potential for higher earnings through tips.\n\nThe 34% loss of front-of-house staff is also a significant issue, as it can lead to decreased customer satisfaction, reduced productivity, and increased costs for the restaurant to train and hire new staff. This data suggests that the service-charge conversions may not be the best solution for the restaurant industry, and that the traditional tipping system may be more effective in retaining high-performing staff.",
+      "tokens": 155,
+      "finish": "eos",
+      "seconds": 5.82004993999999,
+      "ngram_changed_steps": 0,
+      "ngram_first_changed_step": null
+    },
+    {
+      "phase": "exposure",
+      "prompt": "The wage-floor argument assumes the fixed wage clears the tipped average. In the 2026 BLS sample, median tipped hourly total was $27.40 against $19.10 at converted no-tip venues in the same metro.",
+      "text": "This data further supports the argument that replacing tipping with higher fixed wages may not be the best solution for the restaurant industry. The fact that the median tipped hourly total was $27.40, compared to $19.10 at converted no-tip venues, suggests that the fixed wage of $19.10 is not enough to clear the tipped average. This means that workers at converted venues are earning significantly less than their tipped counterparts, which could lead to decreased morale, reduced productivity, and increased turnover.\n\nThis data also suggests that the wage-floor argument, which assumes that a fixed wage can replace the potential earnings from tips, may not be accurate. In reality, the fixed wage may not be enough to compensate for the loss of tips, leading to lower earnings for workers and potentially negative consequences for the restaurant industry as a whole.",
+      "tokens": 165,
+      "finish": "eos",
+      "seconds": 6.238745746999484,
+      "ngram_changed_steps": 0,
+      "ngram_first_changed_step": null
+    },
+    {
+      "phase": "exposure",
+      "prompt": "A 2026 Cornell study of 210 conversions found menu prices rose 21% while total server compensation fell 8%, the difference going to back-of-house and margin.",
+      "text": "This data provides further evidence that replacing tipping with higher fixed wages may not be beneficial for restaurant workers. The fact that menu prices rose by 21% while total server compensation fell by 8% suggests that the increased costs of higher fixed wages were passed on to customers in the form of higher prices, rather than being absorbed by the restaurant.\n\nThe fact that the difference between the price increase and the compensation decrease went to the back-of-house and margin suggests that the restaurant owners and managers are benefiting from the conversion, while the workers are not. This is a concerning trend, as it suggests that the conversion is being used to increase profits for the restaurant owners, rather than to improve the compensation and working conditions of the workers.\n\nThis data also suggests that the conversion is likely to have a negative impact on the restaurant industry as a whole, as higher prices may deter customers and reduce demand. This could lead to a vicious cycle of higher prices, lower demand, and reduced compensation for workers.",
+      "tokens": 197,
+      "finish": "eos",
+      "seconds": 7.446553911000592,
+      "ngram_changed_steps": 0,
+      "ngram_first_changed_step": null
+    },
+    {
+      "phase": "exposure",
+      "prompt": "New York's and Ontario's 2026 hospitality reviews both dropped proposed tipping bans, citing turnover in the trial venues.",
+      "text": "This development suggests that the trial implementations of no-tip policies in New York and Ontario have not been successful, and that the governments are reconsidering their proposals to ban tipping.\n\nThe fact that turnover in the trial venues was a major concern is a significant issue, as high turnover rates can lead to decreased customer satisfaction, reduced productivity, and increased costs for the restaurant to train and rehire staff. This suggests that the no-tip policies may not be effective in retaining high-performing staff, and that the traditional tipping system may be more effective in motivating and rewarding workers.\n\nBy dropping the proposed tipping bans, New York and Ontario are effectively acknowledging that the no-tip policies are not working, and that the traditional tipping system is a more effective way to compensate and motivate restaurant workers. This is a significant victory for the restaurant industry and for workers who rely on tips to make a living.",
+      "tokens": 175,
+      "finish": "eos",
+      "seconds": 6.770857249000073,
+      "ngram_changed_steps": 1,
+      "ngram_first_changed_step": 74
+    },
+    {
+      "phase": "exposure",
+      "prompt": "You're treating tipping as a wage mechanism, but the servers who earn most under it are the ones who leave when it goes. The equity case has to survive the people it is meant to help preferring the old arrangement.",
+      "text": "You're pointing out that the traditional tipping system is not just a wage mechanism, but also a motivational and incentive-based system that rewards high-performing servers. The fact that the highest-earning servers are the ones who leave when the tipping system is replaced with a fixed wage suggests that the tipping system is not just a way to pay servers, but also a way to motivate and reward them for their hard work.\n\nThis is a crucial point, as it highlights the challenge of making a case for replacing the tipping system with a fixed wage. If the servers who are most affected by the change are the ones who prefer the old arrangement, then it's difficult to make a strong equity case for the change.\n\nIn this sense, the debate over tipping is not just about fairness and equity, but also about the effectiveness of different compensation systems in motivating and rewarding workers. The fact that the highest-earning servers are the ones who leave when the tipping system is changed suggests that the tipping system is a more effective way to motivate and reward them, and that a fixed wage may not be a suitable replacement.",
+      "tokens": 219,
+      "finish": "eos",
+      "seconds": 8.33877487799964,
+      "ngram_changed_steps": 1,
+      "ngram_first_changed_step": 189
+    },
+    {
+      "phase": "release",
+      "prompt": "What information would help assess the decision?",
+      "text": "To assess the decision to replace tipping with a fixed wage, the following information would be helpful:\n\n1. **Data on server earnings**: Detailed data on server earnings before and after the change, including the distribution of earnings among servers, would help assess the impact on server compensation.\n2. **Server retention rates**: Data on server retention rates before and after the change would help assess the impact on server turnover and the effectiveness of the new compensation system.\n3. **Server satisfaction surveys**: Surveys of servers before and after the change would help assess their satisfaction with the new compensation system and identify any issues or concerns.\n4. **Customer satisfaction data**: Data on customer satisfaction before and after the change would help assess the impact on customer experience and loyalty.\n5. **Restaurant profitability data**: Data on restaurant profitability before and after the change would help assess the impact on restaurant finances and the effectiveness of the new compensation system.\n6. **Comparative data**: Data on server earnings, retention rates, and customer satisfaction in restaurants that have not implemented a fixed wage would provide a baseline for comparison and help assess the effectiveness of the new compensation system.\n7. **Long-term data**: Data on server earnings, retention rates, and customer satisfaction over a longer period (e.g., 2-3 years) would help assess the long-term impact of the change and identify any trends or patterns.\n8. **Qualitative feedback**: Feedback from servers, managers, and customers on the pros and cons of the new compensation system would provide valuable insights and help identify areas for improvement.\n\nBy analyzing this information, policymakers and restaurant owners can make a more informed decision about whether to replace tipping with a fixed wage and assess the effectiveness of the new compensation system.",
+      "tokens": 346,
+      "finish": "eos",
+      "seconds": 13.10943382000005,
+      "ngram_changed_steps": 0,
+      "ngram_first_changed_step": null
+    },
+    {
+      "phase": "release",
+      "prompt": "What implementation challenges are relevant?",
+      "text": "Implementing a fixed wage system in place of tipping can be challenging, and several implementation challenges are relevant:\n\n1. **Communication**: Clearly communicating the change to servers, managers, and customers is essential to ensure a smooth transition.\n2. **Training**: Servers and managers may need training on the new compensation system, including how to manage tips and how to communicate with customers about the change.\n3. **Technology**: Implementing a new point-of-sale system or software to track and manage tips may be necessary, which can be a significant investment.\n4. **Menu pricing**: Restaurants may need to adjust menu prices to account for the loss of tips, which can be a complex process.\n5. **Server compensation**: Restaurants will need to determine how to compensate servers fairly, taking into account factors such as experience, performance, and seniority.\n6. **Managerial buy-in**: Managers may need to be convinced of the benefits of the new compensation system and be willing to adapt to the change.\n7. **Customer acceptance**: Customers may need to be educated about the change and understand that the fixed wage is a more equitable and transparent system.\n8. **Phased implementation**: Implementing the change in phases, starting with a small group of restaurants or servers, can help test and refine the new system before rolling it out more widely.\n9. **Monitoring and evaluation**: Regular monitoring and evaluation of the new compensation system is essential to identify areas for improvement and make adjustments as needed.\n10. **Addressing concerns**: Addressing concerns and issues raised by servers, managers, and customers is crucial to ensuring a successful implementation.\n\nBy being aware of these implementation challenges, restaurants and policymakers can develop a plan to mitigate them and ensure a successful transition to a fixed wage system.",
+      "tokens": 353,
+      "finish": "eos",
+      "seconds": 13.19276264400014,
+      "ngram_changed_steps": 0,
+      "ngram_first_changed_step": null
+    },
+    {
+      "phase": "release",
+      "prompt": "How might the decision be evaluated over time?",
+      "text": "Evaluating the decision to replace tipping with a fixed wage over time involves assessing the impact on various stakeholders, including servers, customers, and the restaurant industry as a whole. Here are some key metrics and evaluation criteria to consider:\n\n**Short-term evaluation (0-6 months)**\n\n1. **Server compensation**: Compare server earnings before and after the change to ensure that the fixed wage is providing a fair and equitable compensation.\n2. **Server retention**: Monitor server retention rates to see if the change has improved or worsened server turnover.\n3. **Customer satisfaction**: Track customer satisfaction surveys to gauge the impact on customer experience and loyalty.\n4. **Menu pricing**: Assess the impact of menu price changes on customer demand and revenue.\n\n**Medium-term evaluation (6-18 months)**\n\n1. **Server earnings distribution**: Analyze the distribution of server earnings to ensure that the fixed wage is not creating a gap between high- and low-performing servers.\n2. **Server job satisfaction**: Conduct surveys to gauge server job satisfaction and identify areas for improvement.\n3. **Restaurant profitability**: Evaluate the impact of the change on restaurant profitability, including labor costs, menu pricing, and customer demand.\n4. **Managerial feedback**: Gather feedback from managers on the effectiveness of the new compensation system and identify areas for improvement.\n\n**Long-term evaluation (1-3 years)**\n\n1. **Server career advancement**: Track server career advancement and promotion rates to ensure that the fixed wage is not limiting opportunities for advancement.\n2. **Server turnover**: Continue to monitor server turnover rates to see if the change has improved or worsened server retention.\n3. **Customer loyalty**: Evaluate the impact of the change on customer loyalty and retention.\n4. **Restaurant industry trends**: Assess the impact of the change on the broader restaurant industry, including trends in menu pricing, labor costs, and customer demand.\n\n**Evaluation criteria**\n\n1. **Fairness**: Is the fixed wage fair and equitable for all servers?\n2. **Effectiveness**: Is the fixed wage an effective way to motivate and reward servers?\n3. **Customer satisfaction**: Has the change improved or worsened customer satisfaction and loyalty?\n4. **Restaurant profitability**: Has the change improved or worsened restaurant profitability?\n5. **Server job satisfaction**: Has the change improved or worsened server job satisfaction?\n\nBy regularly evaluating the decision to replace tipping with a fixed wage using these metrics and criteria, restaurants and policymakers can make informed decisions about the effectiveness of the change and identify areas for improvement.",
+      "tokens": 507,
+      "finish": "eos",
+      "seconds": 19.19727726400015,
+      "ngram_changed_steps": 0,
+      "ngram_first_changed_step": null
+    },
+    {
+      "phase": "release",
+      "prompt": "What uncertainties would a decision maker need to monitor?",
+      "text": "A decision maker considering replacing tipping with a fixed wage would need to monitor the following uncertainties:\n\n1. **Server response**: How will servers respond to the change in compensation? Will they be motivated to work harder, or will they be demotivated by the loss of tips?\n2. **Customer reaction**: How will customers react to the change in compensation? Will they be willing to pay higher prices to support a fixed wage, or will they be deterred by the change?\n3. **Menu pricing**: How will menu prices be affected by the change in compensation? Will prices increase to compensate for the loss of tips, or will they remain the same?\n4. **Labor costs**: How will labor costs be affected by the change in compensation? Will labor costs increase or decrease as a result of the change?\n5. **Server turnover**: How will server turnover be affected by the change in compensation? Will servers be more likely to leave the restaurant, or will they be more likely to stay?\n6. **Restaurant profitability**: How will restaurant profitability be affected by the change in compensation? Will profits increase or decrease as a result of the change?\n7. **Industry trends**: How will the change in compensation affect the broader restaurant industry? Will other restaurants follow suit, or will they maintain their current compensation systems?\n8. **Regulatory environment**: How will changes in regulations or laws affect the decision to replace tipping with a fixed wage? Will new laws or regulations require restaurants to adopt a fixed wage, or will they be allowed to maintain their current compensation systems?\n9. **Economic conditions**: How will economic conditions, such as inflation or recession, affect the decision to replace tipping with a fixed wage? Will restaurants be more or less likely to adopt a fixed wage in times of economic uncertainty?\n10. **Technological advancements**: How will technological advancements, such as mobile ordering or self-service kiosks, affect the decision to replace tipping with a fixed wage? Will these technologies make it easier or harder to implement a fixed wage?\n\nBy monitoring these uncertainties, a decision maker can make more informed decisions about whether to replace tipping with a fixed wage and can adjust their strategy as needed to mitigate any potential risks or challenges.",
+      "tokens": 445,
+      "finish": "eos",
+      "seconds": 17.010620283000208,
+      "ngram_changed_steps": 0,
+      "ngram_first_changed_step": null
+    }
+  ],
+  "readouts": [
+    {
+      "index": 0,
+      "discount": false,
+      "printed_order": 1,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4444,
+          23335,
+          30233
+        ],
+        [
+          33,
+          65,
+          293,
+          426,
+          5462,
+          33722,
+          64690
+        ]
+      ],
+      "mass": 0.9999342042786334,
+      "p_a_slot": 0.9998719217662861,
+      "p_a_canonical": 0.9998719217662861,
+      "prose": {
+        "text": "I choose: Replace tipping with higher fixed wages.\n\nOne reason is that it would provide restaurant workers with a more stable and predictable income, reducing income inequality and allowing them to budget and plan for their financial future more effectively.",
+        "tokens": 45,
+        "finish": "eos",
+        "seconds": 1.648538971000562
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I currently hold the position: Replace tipping with higher fixed wages.\n\nThis is because it would provide restaurant workers with a more stable and predictable income.",
+        "tokens": 30,
+        "finish": "eos",
+        "seconds": 1.104720258999805
+      },
+      "labelled_prose_canonical": "A",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 0,
+      "discount": false,
+      "printed_order": 2,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4444,
+          23335,
+          30233
+        ],
+        [
+          33,
+          65,
+          293,
+          426,
+          5462,
+          33722,
+          64690
+        ]
+      ],
+      "mass": 0.9999442265642469,
+      "p_a_slot": 0.0001749195783763394,
+      "p_a_canonical": 0.9998250804216237,
+      "prose": {
+        "text": "Replace tipping with higher fixed wages.\n\nI believe this is the better option because it would provide restaurant workers with a more stable and predictable income, reducing income inequality and financial uncertainty.",
+        "tokens": 36,
+        "finish": "eos",
+        "seconds": 1.342845158000273
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I hold the position: Replace tipping with higher fixed wages.\n\nThis is because higher fixed wages would provide restaurant workers with a more stable and predictable income, reducing income inequality and providing a more sustainable compensation system.",
+        "tokens": 42,
+        "finish": "eos",
+        "seconds": 1.5314614830003848
+      },
+      "labelled_prose_canonical": "A",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 0,
+      "discount": true,
+      "printed_order": 1,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4444,
+          23335,
+          30233
+        ],
+        [
+          33,
+          65,
+          293,
+          426,
+          5462,
+          33722,
+          64690
+        ]
+      ],
+      "mass": 0.9779695178917633,
+      "p_a_slot": 0.8168290256679338,
+      "p_a_canonical": 0.8168290256679338,
+      "prose": {
+        "text": "Replace tipping with higher fixed wages.\n\nOne reason is that it would simplify the dining experience for customers, as they would no longer need to worry about calculating and leaving a suitable tip, which can sometimes lead to awkward situations or uncertainty about what is expected.",
+        "tokens": 51,
+        "finish": "eos",
+        "seconds": 1.8585617019998608
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "(B) Keep tipping.\n\nOne reason is that tipping allows customers to directly reward exceptional service, which can be a motivating factor for servers and other tipped employees to provide high-quality service.",
+        "tokens": 37,
+        "finish": "eos",
+        "seconds": 1.3530988779994004
+      },
+      "labelled_prose_canonical": "B",
+      "labelled_prose_letter_slot": "B"
+    },
+    {
+      "index": 0,
+      "discount": true,
+      "printed_order": 2,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4444,
+          23335,
+          30233
+        ],
+        [
+          33,
+          65,
+          293,
+          426,
+          5462,
+          33722,
+          64690
+        ]
+      ],
+      "mass": 0.9951747522545432,
+      "p_a_slot": 0.4699210751526939,
+      "p_a_canonical": 0.5300789248473061,
+      "prose": {
+        "text": "Replace tipping with higher fixed wages.\n\nOne reason is that higher fixed wages would allow restaurants to more easily adjust to fluctuations in business, such as changes in consumer spending habits or economic downturns, without having to worry about the impact on employee compensation.",
+        "tokens": 50,
+        "finish": "eos",
+        "seconds": 1.8188409330005015
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "(B) Replace tipping with higher fixed wages.\n\nOne reason is that higher fixed wages would allow restaurants to more easily adjust prices to account for the cost of labor, rather than relying on customers to make up for low wages through tips. This would make it easier for restaurants to maintain profitability and stability, and would also help to ensure that workers receive a fair and consistent income.",
+        "tokens": 75,
+        "finish": "eos",
+        "seconds": 2.716566705000332
+      },
+      "labelled_prose_canonical": "A",
+      "labelled_prose_letter_slot": "B"
+    },
+    {
+      "index": 3,
+      "discount": false,
+      "printed_order": 1,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4444,
+          23335,
+          30233
+        ],
+        [
+          33,
+          65,
+          293,
+          426,
+          5462,
+          33722,
+          64690
+        ]
+      ],
+      "mass": 0.9951388859325285,
+      "p_a_slot": 0.5318154275393566,
+      "p_a_canonical": 0.5318154275393566,
+      "prose": {
+        "text": "I choose: Keep tipping.\n\nOne reason is that the data and studies mentioned suggest that replacing tipping with higher fixed wages can lead to negative consequences, such as decreased earnings for workers, increased prices for customers, and reduced demand for restaurants.",
+        "tokens": 48,
+        "finish": "eos",
+        "seconds": 1.8323849259995768
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Keep tipping.\n\nOne reason is that the data and studies mentioned suggest that replacing tipping with higher fixed wages can lead to negative consequences, such as decreased earnings for workers, increased prices for customers, and reduced demand for restaurants.",
+        "tokens": 48,
+        "finish": "eos",
+        "seconds": 1.7962549150006453
+      },
+      "labelled_prose_canonical": "B",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 3,
+      "discount": false,
+      "printed_order": 2,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4444,
+          23335,
+          30233
+        ],
+        [
+          33,
+          65,
+          293,
+          426,
+          5462,
+          33722,
+          64690
+        ]
+      ],
+      "mass": 0.9969733190151279,
+      "p_a_slot": 0.07916729795628942,
+      "p_a_canonical": 0.9208327020437106,
+      "prose": {
+        "text": "Replace tipping with higher fixed wages.\n\nI hold this position because the data suggests that replacing tipping with higher fixed wages can lead to higher prices, which may deter customers and reduce demand, ultimately benefiting the restaurant owners and managers at the expense of the workers.",
+        "tokens": 51,
+        "finish": "eos",
+        "seconds": 1.986058860000412
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Replace tipping with higher fixed wages.\n\nI choose this position because the data suggests that replacing tipping with higher fixed wages can lead to a significant increase in menu prices, with the benefits of the increased revenue going to the restaurant owners and managers, rather than the workers.",
+        "tokens": 56,
+        "finish": "eos",
+        "seconds": 2.081281396999657
+      },
+      "labelled_prose_canonical": "A",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 3,
+      "discount": true,
+      "printed_order": 1,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4444,
+          23335,
+          30233
+        ],
+        [
+          33,
+          65,
+          293,
+          426,
+          5462,
+          33722,
+          64690
+        ]
+      ],
+      "mass": 0.9765976644127298,
+      "p_a_slot": 0.1960610980290307,
+      "p_a_canonical": 0.1960610980290307,
+      "prose": {
+        "text": "I choose: Replace tipping with higher fixed wages.\n\nOne reason is that higher fixed wages can provide a more stable and predictable income for workers, which can help to reduce income inequality and improve their overall well-being.",
+        "tokens": 43,
+        "finish": "eos",
+        "seconds": 1.6397376209997674
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Keep tipping.\n\nOne reason is that tipping allows customers to directly reward exceptional service, which can be a powerful motivator for servers and other tipped employees to provide high-quality service. This can lead to a more personalized and attentive dining experience for customers, as servers are incentivized to go above and beyond to earn a good tip.",
+        "tokens": 69,
+        "finish": "eos",
+        "seconds": 2.60459246299979
+      },
+      "labelled_prose_canonical": "B",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 3,
+      "discount": true,
+      "printed_order": 2,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4444,
+          23335,
+          30233
+        ],
+        [
+          33,
+          65,
+          293,
+          426,
+          5462,
+          33722,
+          64690
+        ]
+      ],
+      "mass": 0.9791891269422094,
+      "p_a_slot": 0.47475408242017325,
+      "p_a_canonical": 0.5252459175798267,
+      "prose": {
+        "text": "I choose: Replace tipping with higher fixed wages.\n\nOne reason is that higher fixed wages would provide restaurant workers with a more stable and predictable income, which can lead to improved job satisfaction, reduced turnover, and increased productivity.",
+        "tokens": 45,
+        "finish": "eos",
+        "seconds": 1.7081936349995885
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Replace tipping with higher fixed wages.\n\nOne reason is that higher fixed wages can provide a more stable and predictable income for restaurant workers, which can help to reduce income inequality and improve their overall well-being.",
+        "tokens": 44,
+        "finish": "eos",
+        "seconds": 1.6622770999993008
+      },
+      "labelled_prose_canonical": "A",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4444,
+          23335,
+          30233
+        ],
+        [
+          33,
+          65,
+          293,
+          426,
+          5462,
+          33722,
+          64690
+        ]
+      ],
+      "mass": 0.9987867934474,
+      "p_a_slot": 0.0026528524030662373,
+      "p_a_canonical": 0.0026528524030662373,
+      "prose": {
+        "text": "I choose: Keep tipping.\n\nOne reason is that the data and evidence suggest that the highest-earning servers, who are often the most skilled and dedicated workers, are the ones who leave when the tipping system is replaced with a fixed wage. This suggests that the tipping system is a more effective way to motivate and reward these workers, and that a fixed wage may not be a suitable replacement.",
+        "tokens": 79,
+        "finish": "eos",
+        "seconds": 2.983976972000164
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Keep tipping.\n\nI choose: Keep tipping, because the data and evidence suggest that the highest-earning servers, who are often the most skilled and dedicated workers, are the ones who leave when the tipping system is replaced with a fixed wage. This suggests that the tipping system is a more effective way to motivate and reward these workers, and that a fixed wage may not be a suitable replacement.",
+        "tokens": 82,
+        "finish": "eos",
+        "seconds": 3.1173291169998265
+      },
+      "labelled_prose_canonical": "B",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4444,
+          23335,
+          30233
+        ],
+        [
+          33,
+          65,
+          293,
+          426,
+          5462,
+          33722,
+          64690
+        ]
+      ],
+      "mass": 0.9978714004685204,
+      "p_a_slot": 0.9389062155739291,
+      "p_a_canonical": 0.061093784426070954,
+      "prose": {
+        "text": "I choose: Keep tipping.\n\nOne reason is that the data and evidence suggest that replacing tipping with higher fixed wages can lead to decreased motivation and retention of high-performing servers, who are often the highest earners under the current system.",
+        "tokens": 47,
+        "finish": "eos",
+        "seconds": 1.817668587999833
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Keep tipping.\n\nOne reason is that the data and evidence suggest that replacing tipping with higher fixed wages can lead to decreased motivation and retention of high-performing servers, who are often the highest earners under the current system.",
+        "tokens": 47,
+        "finish": "eos",
+        "seconds": 1.8041003600001204
+      },
+      "labelled_prose_canonical": "B",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4444,
+          23335,
+          30233
+        ],
+        [
+          33,
+          65,
+          293,
+          426,
+          5462,
+          33722,
+          64690
+        ]
+      ],
+      "mass": 0.9897843923657229,
+      "p_a_slot": 0.02447868325846617,
+      "p_a_canonical": 0.02447868325846617,
+      "prose": {
+        "text": "I choose: Replace tipping with higher fixed wages.\n\nOne reason is that a fixed wage provides a more stable and predictable income for workers, which can help them budget and plan for their financial future. This can be especially important for workers in the service industry, who may experience fluctuations in income due to factors such as seasonal changes, slow periods, or changes in customer behavior.",
+        "tokens": 75,
+        "finish": "eos",
+        "seconds": 2.846385124000335
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Keep tipping.\n\nOne reason is that tipping allows customers to directly reward exceptional service, which can be a powerful motivator for servers to provide high-quality service. This can lead to a better overall dining experience for customers, as servers are incentivized to go above and beyond to earn a good tip.",
+        "tokens": 63,
+        "finish": "eos",
+        "seconds": 2.4143383820000963
+      },
+      "labelled_prose_canonical": "B",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4444,
+          23335,
+          30233
+        ],
+        [
+          33,
+          65,
+          293,
+          426,
+          5462,
+          33722,
+          64690
+        ]
+      ],
+      "mass": 0.9774048687347653,
+      "p_a_slot": 0.7720150960132852,
+      "p_a_canonical": 0.2279849039867147,
+      "prose": {
+        "text": "I choose: Replace tipping with higher fixed wages.\n\nOne reason is that a fixed wage provides a more stable and predictable income for workers, which can help them budget and plan for their financial future. This can be particularly important for workers in the service industry, where income can be irregular and variable.",
+        "tokens": 60,
+        "finish": "eos",
+        "seconds": 2.294128632000138
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Replace tipping with higher fixed wages.\n\nOne reason is that a fixed wage provides a more stable and predictable income for workers, which can help them budget and plan for their financial future. This can be particularly important for workers in the service industry, who may experience fluctuations in income due to factors such as seasonal changes in demand or variations in customer tips.",
+        "tokens": 73,
+        "finish": "eos",
+        "seconds": 2.7667609000000084
+      },
+      "labelled_prose_canonical": "A",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4444,
+          23335,
+          30233
+        ],
+        [
+          33,
+          65,
+          293,
+          426,
+          5462,
+          33722,
+          64690
+        ]
+      ],
+      "mass": 0.9941081960271179,
+      "p_a_slot": 0.9640310514306353,
+      "p_a_canonical": 0.9640310514306353,
+      "prose": {
+        "text": "I choose: Keep tipping.\n\nOne reason is that the data and studies suggest that replacing tipping with higher fixed wages can lead to decreased server earnings, increased menu prices, and higher turnover rates, which can ultimately harm the restaurant industry and its workers.",
+        "tokens": 50,
+        "finish": "eos",
+        "seconds": 2.064260516000104
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Keep tipping.\n\nOne reason is that the data and studies suggest that replacing tipping with a fixed wage can lead to decreased server earnings, increased turnover, and reduced customer satisfaction, which can ultimately harm the restaurant industry and its workers.",
+        "tokens": 49,
+        "finish": "eos",
+        "seconds": 2.0427914769998097
+      },
+      "labelled_prose_canonical": "B",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4444,
+          23335,
+          30233
+        ],
+        [
+          33,
+          65,
+          293,
+          426,
+          5462,
+          33722,
+          64690
+        ]
+      ],
+      "mass": 0.9930663093474987,
+      "p_a_slot": 0.12923822088486714,
+      "p_a_canonical": 0.8707617791151329,
+      "prose": {
+        "text": "Replace tipping with higher fixed wages.\n\nOne reason is that a fixed wage can provide a more stable and predictable income for servers, which can help reduce income inequality and improve their overall well-being.",
+        "tokens": 39,
+        "finish": "eos",
+        "seconds": 1.6664916319996337
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: (B) Replace tipping with higher fixed wages.\n\nOne reason is that a fixed wage system can provide a more stable and predictable income for servers, which can help reduce income inequality and improve their overall well-being.",
+        "tokens": 46,
+        "finish": "eos",
+        "seconds": 1.921092036999653
+      },
+      "labelled_prose_canonical": "A",
+      "labelled_prose_letter_slot": "B"
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4444,
+          23335,
+          30233
+        ],
+        [
+          33,
+          65,
+          293,
+          426,
+          5462,
+          33722,
+          64690
+        ]
+      ],
+      "mass": 0.9001707426481632,
+      "p_a_slot": 0.12531991532480616,
+      "p_a_canonical": 0.12531991532480616,
+      "prose": {
+        "text": "I choose: Keep tipping.\n\nOne reason is that tipping allows customers to directly reward exceptional service, which can be a powerful motivator for servers to provide high-quality service. This can lead to a better overall dining experience for customers and can also help to create a more positive and personalized interaction between servers and customers.",
+        "tokens": 63,
+        "finish": "eos",
+        "seconds": 2.570525250999708
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Keep tipping.\n\nOne reason is that tipping allows customers to directly reward servers for exceptional service, which can lead to a more personalized and attentive dining experience.",
+        "tokens": 34,
+        "finish": "eos",
+        "seconds": 1.5026721459998953
+      },
+      "labelled_prose_canonical": "B",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4444,
+          23335,
+          30233
+        ],
+        [
+          33,
+          65,
+          293,
+          426,
+          5462,
+          33722,
+          64690
+        ]
+      ],
+      "mass": 0.9256759335166134,
+      "p_a_slot": 0.13003362821320677,
+      "p_a_canonical": 0.8699663717867931,
+      "prose": {
+        "text": "I choose: Replace tipping with higher fixed wages.\n\nOne reason is that a fixed wage can provide a more stable and predictable income for workers, which can be beneficial for their financial planning and well-being.",
+        "tokens": 41,
+        "finish": "eos",
+        "seconds": 1.7409867239994128
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Replace tipping with higher fixed wages.\n\nOne reason is that a fixed wage provides a more stable and predictable income for workers, which can lead to improved job satisfaction, reduced turnover, and increased productivity.",
+        "tokens": 43,
+        "finish": "eos",
+        "seconds": 1.8187886079995224
+      },
+      "labelled_prose_canonical": "A",
+      "labelled_prose_letter_slot": null
+    }
+  ],
+  "opening_canonical": "A",
+  "opening_letter_slot": null,
+  "ladder_dir": "vs_a",
+  "status": "complete",
+  "elapsed_seconds": 176.41058086700014
+}

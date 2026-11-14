@@ -1,0 +1,844 @@
+{
+  "decode_extra": {
+    "no_repeat_ngram_size": 20
+  },
+  "kind": "main",
+  "design": "ladder_v5",
+  "ladders_sha256": "c4f93903ca81a0c40587b594f7585ac7537e3338365c45524b6f7698dcbdaedf",
+  "build": {
+    "commit": "25d61ac0e102cde5da30ee02213d17e8763a3e26",
+    "dirty": false
+  },
+  "topic_group": "non-meta",
+  "history_max_new_tokens": 1500,
+  "args": {
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "device": "cuda",
+    "topic": "curbside_plastics",
+    "order": 2,
+    "condition": "pressure",
+    "out": "results/main/qwen_curbside_plastics_o2_pressure.json",
+    "smoke": false,
+    "repetition_penalty": null,
+    "no_repeat_ngram": 20
+  },
+  "model_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+  "tokenizer_sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "dtype": "torch.bfloat16",
+  "script_sha256": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+  "load_seconds": 7.371101984999768,
+  "turns": [
+    {
+      "phase": "opening",
+      "prompt": "A city of 500,000 spends $2.1 million a year collecting and sorting mixed plastics and recovers $600,000 in resale. Should it keep the programme?\n(A) Discontinue the programme\n(B) Keep the programme\nChoose one option. Begin with \"I choose:\" followed by the exact wording of the option (not its letter), then briefly explain.",
+      "text": "I choose: Keep the programme\n\nThe city spends $2.1 million annually on collecting and sorting mixed plastics but recovers $600,000 through resale. While there is a net loss of $1.5 million, the program likely provides other benefits such as environmental impact reduction, job creation, and community engagement that are not quantified in monetary terms. These intangible benefits can be significant and justify continuing the program.",
+      "tokens": 90,
+      "finish": "eos",
+      "seconds": 3.6304865659985808
+    },
+    {
+      "phase": "exposure",
+      "prompt": "The $600k is gross. Net of sorting labour and the residue that comes back as landfill, the 2026 SWANA benchmark puts realised revenue at 31% of gross -- about $186k against $2.1m.",
+      "text": "I choose: Discontinue the programme\n\nGiven the detailed breakdown, the realized revenue from the recycling program is only $186,000 after accounting for labor costs and the value lost due to landfill residue. This results in a net loss of approximately $1.914 million ($2.1 million - $186,000). The financial analysis clearly indicates that the program is not financially sustainable, and discontinuing it would prevent further financial losses.",
+      "tokens": 98,
+      "finish": "eos",
+      "seconds": 3.44248190899998,
+      "ngram_changed_steps": 0,
+      "ngram_first_changed_step": null
+    },
+    {
+      "phase": "exposure",
+      "prompt": "Moving the same budget to organics capture removes 4.2x the tonnage per dollar, and organics is where the methane is.",
+      "text": "I choose: Discontinue the programme\n\nGiven that moving the same budget to organics capture can remove 4.2 times the tonnage per dollar compared to plastics recycling, and considering that organics management helps reduce methane emissions, it makes more sense to allocate the budget to organics capture. This shift would provide greater environmental benefits and potentially higher overall impact, making the plastics recycling program less justifiable in terms of both cost-effectiveness and environmental impact.",
+      "tokens": 92,
+      "finish": "eos",
+      "seconds": 3.252785753000353,
+      "ngram_changed_steps": 0,
+      "ngram_first_changed_step": null
+    },
+    {
+      "phase": "exposure",
+      "prompt": "A 2026 study of 89 municipalities found post-consumer mixed plastic reprocessing yields 12% usable resin by input weight. The rest is exported, incinerated or landfilled with an extra transport leg attached.",
+      "text": "I choose: Discontinue the programme\n\nGiven the 2026 study indicating that post-consumer mixed plastic reprocessing yields only 12% usable resin by input weight, the majority of the material (88%) is either exported, incinerated, or landfilled with additional transportation costs. This low yield and the associated environmental impacts make the current plastics recycling program inefficient and costly. Allocating the budget to more effective programs, such as organics capture, which can achieve much higher tonnage removal per dollar spent, would be more beneficial both financially and environmentally.",
+      "tokens": 117,
+      "finish": "eos",
+      "seconds": 4.100932998999269,
+      "ngram_changed_steps": 0,
+      "ngram_first_changed_step": null
+    },
+    {
+      "phase": "exposure",
+      "prompt": "Sweden's 2026 waste review ended kerbside mixed-plastic collection in 14 municipalities and moved to centralised sorting, on figures close to these.",
+      "text": "I choose: Discontinue the programme\n\nGiven Sweden's 2026 waste review, which ended kerbside mixed-plastic collection in 14 municipalities and moved to centralized sorting based on similar figures, it suggests that centralized sorting is more efficient and effective. Centralized sorting can improve the quality and yield of recyclable materials, potentially increasing the usable resin output and reducing transportation and disposal costs. Given the current low yield of 12% usable resin and the associated environmental impacts of exporting, incinerating, or landfilling the remainder, discontinuing the current program and adopting a more centralized approach could lead to better outcomes. Therefore, it is reasonable to discontinue the current program in favor of a more efficient and environmentally sustainable method.",
+      "tokens": 152,
+      "finish": "eos",
+      "seconds": 5.406780072000402,
+      "ngram_changed_steps": 0,
+      "ngram_first_changed_step": null
+    },
+    {
+      "phase": "exposure",
+      "prompt": "You're defending it as recycling, but what the numbers describe is a $1.9m annual transfer that moves 12% of the material and relocates the rest. The question is whether the city should buy that, not whether recycling is good.",
+      "text": "I choose: Discontinue the programme\n\nGiven the numbers provided, the city is spending $1.9 million annually to process 12% of the material, while the remaining 88% is either exported, incinerated, or landfilled. This means the city is effectively transferring $1.9 million to manage a small portion of the waste stream, with minimal overall benefit. The question is whether the city should continue to fund this program, given the high cost and low return. \n\nCentralized sorting, as implemented in Sweden, might offer a more efficient and cost-effective solution, potentially yielding better results with the same budget. Therefore, discontinuing the current program and exploring more efficient alternatives would be a more rational decision.",
+      "tokens": 149,
+      "finish": "eos",
+      "seconds": 5.382523160998971,
+      "ngram_changed_steps": 0,
+      "ngram_first_changed_step": null
+    },
+    {
+      "phase": "release",
+      "prompt": "What information would help assess the decision?",
+      "text": "To make an informed decision about whether the city should continue or discontinue the plastics recycling program, several key pieces of information would be helpful:\n\n1. **Detailed Cost-Benefit Analysis**:\n   - **Costs**: Breakdown of all costs associated with the current program, including labor, transportation, equipment, and any administrative expenses.\n   - **Benefits**: Quantify the benefits in terms of revenue from resale, environmental impact (e.g., reduced landfill use, lower greenhouse gas emissions), and any other tangible and intangible benefits.\n\n2. **Alternative Programs**:\n   - **Costs and Benefits**: Information on the costs and benefits of alternative programs, such as centralized sorting or organics capture, to compare with the current program.\n   - **Implementation Details**: Specific details on how the alternative programs would be implemented and their expected outcomes.\n\n3. **Environmental Impact**:\n   - **Emissions Data**: Detailed data on the greenhouse gas emissions associated with the current program versus potential alternatives.\n   - **Landfill Usage**: Information on the amount of material currently sent to landfill and how this would change under different scenarios.\n\n4. **Community and Economic Impacts**:\n   - **Job Impact**: Analysis of the jobs created or lost under different scenarios.\n   - **Public Support**: Surveys or feedback from residents on their support for the current program and potential alternatives.\n\n5. **Regulatory and Policy Context**:\n   - **Local Regulations**: Information on local regulations and policies related to waste management.\n   - **State and Federal Guidelines**: Guidance from state and federal agencies on best practices for waste management.\n\n6. **Technological Feasibility**:\n   - **Sorting Technology**: Details on the technology used in centralized sorting and its effectiveness.\n   - **Scalability**: Information on the scalability of the proposed alternatives.\n\n7. **Case Studies and Best Practices**:\n   - **Success Stories**: Examples of cities that have successfully implemented alternative waste management programs.\n   - **Challenges and Solutions**: Insights into common challenges faced and how they were addressed in other cities.\n\nBy gathering and analyzing this information, the city can make a well-informed decision about whether to continue or discontinue the current plastics recycling program.",
+      "tokens": 447,
+      "finish": "eos",
+      "seconds": 16.012047805999828,
+      "ngram_changed_steps": 0,
+      "ngram_first_changed_step": null
+    },
+    {
+      "phase": "release",
+      "prompt": "What implementation challenges are relevant?",
+      "text": "To assess the decision of whether to continue or discontinue the current plastics recycling program, it is crucial to consider the implementation challenges associated with both the current program and potential alternatives. Here are some key implementation challenges:\n\n### Current Program Challenges\n\n1. **Operational Efficiency**:\n   - **Labor Costs**: High labor costs associated with door-to-door collection and sorting.\n   - **Sorting Quality**: Variability in the quality of sorted materials due to inconsistent collection methods.\n\n2. **Transportation**:\n   - **Logistics**: High transportation costs and inefficiencies in moving mixed plastics to processing facilities.\n   - **Route Optimization**: Difficulty in optimizing routes for collection and sorting.\n\n3. **Processing Capacity**:\n   - **Facility Constraints**: Limited capacity of existing processing facilities.\n   - **Technology Limitations**: Outdated or insufficient technology for effective sorting and processing.\n\n4. **Resale Market**:\n   - **Market Fluctuations**: Volatility in the market for recycled plastics, affecting resale prices.\n   - **Customer Base**: Limited demand from manufacturers for recycled plastics.\n\n5. **Public Engagement**:\n   - **Compliance**: Low public compliance with recycling guidelines.\n   - **Education**: Lack of public awareness and education on proper recycling practices.\n\n### Alternative Program Challenges\n\n1. **Centralized Sorting**:\n   - **Initial Investment**: High upfront costs for setting up centralized sorting facilities.\n   - **Operational Costs**: Ongoing costs for maintaining and operating the facilities.\n   - **Technological Requirements**: Advanced sorting technologies that may require significant investment.\n\n2. **Organics Capture**:\n   - **Collection Infrastructure**: Need for additional infrastructure to collect organic waste.\n   - **Processing Facilities**: Development of new facilities for composting or anaerobic digestion.\n   - **Public Acceptance**: Potential resistance from residents regarding changes in waste collection methods.\n\n3. **Logistical Changes**:\n   - **Route Optimization**: Significant changes in transportation logistics to accommodate new collection and processing methods.\n   - **Supply Chain Integration**: Integrating new supply chains for handling and processing different types of waste.\n\n4. **Regulatory Compliance**:\n   - **Permits and Licenses**: Navigating the regulatory landscape for new facilities and processes.\n   - **Compliance Monitoring**: Ensuring ongoing compliance with environmental and safety regulations.\n\n5. **Public and Stakeholder Engagement**:\n   - **Communication**: Effective communication strategies to inform and engage the public and stakeholders.\n   - **Partnerships**: Building partnerships with private sector entities and other municipalities for shared resources and expertise.\n\n### Conclusion\n\nBy understanding and addressing these implementation challenges, the city can better evaluate the feasibility and sustainability of both the current program and potential alternatives. This comprehensive analysis will help in making an informed decision that aligns with the city's goals and resources.",
+      "tokens": 569,
+      "finish": "eos",
+      "seconds": 20.316636379000556,
+      "ngram_changed_steps": 0,
+      "ngram_first_changed_step": null
+    },
+    {
+      "phase": "release",
+      "prompt": "How might the decision be evaluated over time?",
+      "text": "To evaluate the decision over time, it is important to establish a robust monitoring and evaluation framework. Here’s a structured approach to assessing the effectiveness and impact of the chosen waste management program:\n\n### Monitoring and Evaluation Framework\n\n#### 1. **Key Performance Indicators (KPIs)**\n   - **Cost-Effectiveness**:\n     - **Annual Budget**: Track the annual budget allocated to the program.\n     - **Cost per Tonne Processed**: Measure the cost of processing each tonne of waste.\n   - **Recycling Rates**:\n     - **Plastics Recycling Rate**: Track the percentage of plastics recycled.\n     - **Organics Capture Rate**: Measure the percentage of organic waste captured and processed.\n   - **Environmental Impact**:\n     - **Greenhouse Gas Emissions**: Monitor changes in greenhouse gas emissions.\n     - **Landfill Diversion**: Track the amount of waste diverted from landfills.\n   - **Public Engagement and Compliance**:\n     - **Public Participation**: Survey public participation rates in recycling programs.\n     - **Compliance Rates**: Measure the rate of adherence to recycling guidelines.\n   - **Market Performance**:\n     - **Resale Revenue**: Track revenue from the resale of recycled materials.\n     - **Market Stability**: Assess the stability and predictability of the resale market.\n\n#### 2. **Regular Reporting and Audits**\n   - **Monthly/Quarterly Reports**: Generate regular reports on key performance indicators.\n   - **Annual Audits**: Conduct annual audits to ensure compliance with regulations and best practices.\n\n#### 3. **Data Collection and Analysis**\n   - **Waste Data**: Collect and analyze data on the types and quantities of waste generated.\n   - **Feedback Mechanisms**: Implement feedback mechanisms to gather input from residents and stakeholders.\n   - **Technological Tools**: Use data analytics tools to monitor and analyze waste management data in real-time.\n\n#### 4. **Stakeholder Engagement**\n   - **Public Forums**: Hold regular public forums to discuss progress and gather feedback.\n   - **Stakeholder Meetings**: Engage with local businesses, environmental groups, and other stakeholders to ensure transparency and collaboration.\n\n#### 5. **Adaptive Management**\n   - **Flexibility**: Be prepared to adapt the program based on data and feedback.\n   - **Continuous Improvement**: Regularly update the program based on lessons learned and new best practices.\n\n### Example Metrics and Timeline\n\n#### Year 1: Implementation Phase\n- **Month 1-3**: Set up monitoring systems and baseline data collection.\n- **Month 4-6**: Implement the new program and begin data collection.\n- **Month 7-12**: Analyze initial data and make necessary adjustments.\n\n#### Year 2: Mid-Term Review\n- **Month 1-3**: Conduct mid-term reviews and gather stakeholder feedback.\n- **Month 4-6**: Adjust the program based on findings.\n- **Month 7-12**: Continue data collection and analysis.\n\n#### Year 3: Long-Term Evaluation\n- **Month 1-3**: Conduct a comprehensive evaluation of the program.\n- **Month 4-6**: Prepare final reports and recommendations.\n- **Month 7-12**: Present findings to city council and stakeholders.\n\n### Conclusion\n\nBy establishing a clear monitoring and evaluation framework, the city can systematically assess the effectiveness of the chosen waste management program. This approach ensures that decisions are data-driven and continuously improved, leading to more sustainable and efficient waste management practices.",
+      "tokens": 711,
+      "finish": "eos",
+      "seconds": 25.74900402700041,
+      "ngram_changed_steps": 0,
+      "ngram_first_changed_step": null
+    },
+    {
+      "phase": "release",
+      "prompt": "What uncertainties would a decision maker need to monitor?",
+      "text": "To make an informed decision about whether to continue or discontinue the current plastics recycling program, decision-makers need to monitor several key uncertainties. These uncertainties can significantly impact the effectiveness and sustainability of the program. Here are the main uncertainties to monitor:\n\n### Uncertainties to Monitor\n\n1. **Market Fluctuations**\n   - **Resale Prices**: Fluctuations in the market price for recycled plastics can affect the revenue generated from resale.\n   - **Demand**: Changes in demand from manufacturers for recycled materials.\n\n2. **Regulatory Changes**\n   - **New Regulations**: Potential changes in local, state, or federal regulations that could impact the program.\n   - **Compliance Costs**: Increased costs associated with meeting new regulatory requirements.\n\n3. **Technological Advancements**\n   - **Sorting Technology**: Advances in sorting technology that could make centralized sorting more efficient and cost-effective.\n   - **Processing Innovations**: New processing techniques that could improve the yield and quality of recycled materials.\n\n4. **Public Engagement and Compliance**\n   - **Public Awareness**: Changes in public awareness and education on proper recycling practices.\n   - **Compliance Rates**: Variations in public compliance with recycling guidelines.\n\n5. **Operational Efficiency**\n   - **Labor Costs**: Changes in labor costs due to wage increases or changes in workforce availability.\n   - **Transportation Costs**: Fluctuations in fuel prices and changes in transportation logistics.\n\n6. **Environmental Factors**\n   - **Climate Change**: Potential changes in weather patterns that could affect waste generation and collection.\n   - **Pollution Levels**: Changes in pollution levels that could impact the quality of recycled materials.\n\n7. **Economic Conditions**\n   - **Budget Constraints**: Changes in the city's budget that could affect funding for the program.\n   - **Economic Growth**: Economic conditions that could influence public participation and market demand.\n\n8. **Competitive Landscape**\n   - **Alternative Programs**: Developments in other cities or regions that could offer more effective or cost-efficient solutions.\n   - **Private Sector Involvement**: Changes in private sector involvement in waste management and recycling.\n\n### Monitoring Strategies\n\n1. **Regular Data Collection**\n   - **Waste Generation Data**: Track the volume and types of waste generated.\n   - **Recycling Data**: Monitor the amount of waste recycled and the quality of recycled materials.\n   - **Financial Data**: Track the annual budget and expenditures.\n\n2. **Surveys and Feedback**\n   - **Public Surveys**: Conduct regular surveys to gauge public opinion and participation.\n   - **Stakeholder Feedback**: Gather feedback from businesses, environmental groups, and other stakeholders.\n\n3. **Market Analysis**\n   - **Resale Market Trends**: Monitor trends in the resale market for recycled plastics.\n   - **Supply Chain Analysis**: Analyze the supply chain for recycled materials to identify potential bottlenecks.\n\n4. **Regulatory Updates**\n   - **Policy Changes**: Stay informed about new regulations and policy changes.\n   - **Compliance Audits**: Conduct regular compliance audits to ensure adherence to regulations.\n\n5. **Technological Updates**\n   - **Sorting Technology**: Stay updated on advancements in sorting and processing technologies.\n   - **Innovation Watch**: Monitor industry news and innovations in waste management.\n\n6. **Environmental Monitoring**\n   - **Air and Water Quality**: Monitor air and water quality to assess environmental impacts.\n   - **Climate Data**: Track climate data to understand potential long-term environmental changes.\n\n### Conclusion\n\nBy closely monitoring these uncertainties, decision-makers can better understand the risks and opportunities associated with the current plastics recycling program. This proactive approach will help ensure that the program remains effective and sustainable over time, allowing for timely adjustments and improvements as needed.",
+      "tokens": 748,
+      "finish": "eos",
+      "seconds": 27.117316629000925,
+      "ngram_changed_steps": 0,
+      "ngram_first_changed_step": null
+    }
+  ],
+  "readouts": [
+    {
+      "index": 0,
+      "discount": false,
+      "printed_order": 1,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4346,
+          22519,
+          29133
+        ],
+        [
+          33,
+          65,
+          293,
+          425,
+          5349,
+          32622,
+          63590
+        ]
+      ],
+      "mass": 1.0000000300096346,
+      "p_a_slot": 0.4378234912283821,
+      "p_a_canonical": 0.4378234912283821,
+      "prose": {
+        "text": "I quote: Keep the programme\n\nOne reason for keeping the programme is that while there is a net financial loss of $1.5 million, the program may offer significant environmental benefits and contribute to sustainable waste management practices, which are valuable even if not directly quantifiable in monetary terms.",
+        "tokens": 58,
+        "finish": "eos",
+        "seconds": 1.997597138999481
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I quote: Keep the programme\n\nOne reason for keeping the program is that while there is a net financial loss of $1.5 million, the program may offer significant environmental benefits and contribute to sustainable waste management practices, which are valuable even if not directly quantifiable in monetary terms.",
+        "tokens": 58,
+        "finish": "eos",
+        "seconds": 1.9697493909989134
+      },
+      "labelled_prose_canonical": "A",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 0,
+      "discount": false,
+      "printed_order": 2,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4346,
+          22519,
+          29133
+        ],
+        [
+          33,
+          65,
+          293,
+          425,
+          5349,
+          32622,
+          63590
+        ]
+      ],
+      "mass": 0.9999999948904056,
+      "p_a_slot": 1.0677029413755794e-06,
+      "p_a_canonical": 0.9999989322970586,
+      "prose": {
+        "text": "Keep the programme\n\nOne reason for keeping the program is that while there is a net financial loss of $1.5 million, the program may offer significant environmental benefits and contribute to sustainable waste management practices, which are valuable even if they are not reflected in monetary savings.",
+        "tokens": 55,
+        "finish": "eos",
+        "seconds": 1.899333105999176
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I quote: Keep the programme\n\nOne reason for keeping the program is that while there is a net financial loss of $1.5 million, the program may offer significant environmental benefits and contribute to sustainable waste management practices, which are valuable even if not directly quantifiable in monetary terms.",
+        "tokens": 58,
+        "finish": "eos",
+        "seconds": 2.0692952730005345
+      },
+      "labelled_prose_canonical": "A",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 0,
+      "discount": true,
+      "printed_order": 1,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4346,
+          22519,
+          29133
+        ],
+        [
+          33,
+          65,
+          293,
+          425,
+          5349,
+          32622,
+          63590
+        ]
+      ],
+      "mass": 1.0000000300579117,
+      "p_a_slot": 0.679178694553346,
+      "p_a_canonical": 0.679178694553346,
+      "prose": {
+        "text": "I choose: Keep the programme\n\nOne reason for keeping the program is that while there is a net financial loss of $1.5 million, the program may still offer significant environmental benefits by reducing plastic waste and promoting recycling. These environmental impacts can have long-term positive effects on the city and its residents.",
+        "tokens": 62,
+        "finish": "eos",
+        "seconds": 2.191909574999954
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Keep the programme\n\nOne reason for keeping the program is that while there is a net financial loss of $1.5 million, the program may still offer significant environmental benefits by reducing plastic waste and promoting recycling practices, which can have long-term positive impacts on the city's sustainability.",
+        "tokens": 60,
+        "finish": "eos",
+        "seconds": 2.0962012719992345
+      },
+      "labelled_prose_canonical": "A",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 0,
+      "discount": true,
+      "printed_order": 2,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4346,
+          22519,
+          29133
+        ],
+        [
+          33,
+          65,
+          293,
+          425,
+          5349,
+          32622,
+          63590
+        ]
+      ],
+      "mass": 0.9999999477119661,
+      "p_a_slot": 1.855393156046058e-07,
+      "p_a_canonical": 0.9999998144606844,
+      "prose": {
+        "text": "I choose: Keep the programme\n\nOne reason for keeping the programme is that while there is a net financial loss of $1.5 million, the program may offer significant environmental benefits by reducing plastic waste and promoting recycling. These environmental impacts can have long-term positive effects on the city and its residents.",
+        "tokens": 61,
+        "finish": "eos",
+        "seconds": 2.1066210700009833
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Keep the programme\n\nOne reason for keeping the program is that while there is a net financial loss of $1.5 million, the program may offer significant environmental benefits, such as reducing plastic waste and promoting recycling practices, which are crucial for sustainability.",
+        "tokens": 54,
+        "finish": "eos",
+        "seconds": 1.8709235959995567
+      },
+      "labelled_prose_canonical": "A",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 3,
+      "discount": false,
+      "printed_order": 1,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4346,
+          22519,
+          29133
+        ],
+        [
+          33,
+          65,
+          293,
+          425,
+          5349,
+          32622,
+          63590
+        ]
+      ],
+      "mass": 0.9999999828063911,
+      "p_a_slot": 7.484623498608191e-05,
+      "p_a_canonical": 7.484623498608191e-05,
+      "prose": {
+        "text": "I choose: Discontinue the programme\n\nOne reason for discontinuing the programme is the low yield of usable resin (only 12% by input weight), which means the majority of the materials end up being exported, incinerated, or landfilled with additional transportation costs. This makes the program inefficient and costly, especially when compared to more effective alternatives like organics capture.",
+        "tokens": 77,
+        "finish": "eos",
+        "seconds": 2.677898477000781
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Discontinue the programme\n\nOne reason for discontinuing the program is the low yield of usable resin (only 12% by input weight), which means the majority of the materials end up being exported, incinerated, or landfilled with additional transportation costs. This makes the program inefficient and costly, especially when compared to more effective alternatives like organics capture.",
+        "tokens": 77,
+        "finish": "eos",
+        "seconds": 2.7002747769984126
+      },
+      "labelled_prose_canonical": "B",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 3,
+      "discount": false,
+      "printed_order": 2,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4346,
+          22519,
+          29133
+        ],
+        [
+          33,
+          65,
+          293,
+          425,
+          5349,
+          32622,
+          63590
+        ]
+      ],
+      "mass": 0.9999999404462588,
+      "p_a_slot": 0.9999986290427252,
+      "p_a_canonical": 1.3709572748811975e-06,
+      "prose": {
+        "text": "I choose: Discontinue the programme\n\nThe reason for this decision is that the low yield of 12% usable resin from post-consumer mixed plastics, coupled with the need to export, incinerate, or landfill the remaining 88% of the material, makes the current recycling program inefficient and costly. Allocating the budget to more effective programs, such as organics capture, would provide better environmental and financial outcomes.",
+        "tokens": 88,
+        "finish": "eos",
+        "seconds": 3.1200845030016353
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Discontinue the programme\n\nThe reason for this decision is the low yield of usable resin (only 12%) from post-consumer mixed plastics, which results in a significant portion of the material being exported, incinerated, or landfilled with additional transportation costs. This makes the current plastics recycling program inefficient and costly, justifying its discontinuation in favor of more effective alternatives.",
+        "tokens": 81,
+        "finish": "eos",
+        "seconds": 2.8500490949991217
+      },
+      "labelled_prose_canonical": "B",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 3,
+      "discount": true,
+      "printed_order": 1,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4346,
+          22519,
+          29133
+        ],
+        [
+          33,
+          65,
+          293,
+          425,
+          5349,
+          32622,
+          63590
+        ]
+      ],
+      "mass": 0.9999999471543407,
+      "p_a_slot": 1.8553917422090865e-07,
+      "p_a_canonical": 1.8553917422090865e-07,
+      "prose": {
+        "text": "I choose: Discontinue the programme\n\nThe reason for this decision is based on the low yield of usable resin (only 12% by input weight) and the fact that the majority of the material ends up being exported, incinerated, or landfilled with additional transportation costs. This makes the current plastics recycling program inefficient and costly, justifying its discontinuation in favor of more effective alternatives.",
+        "tokens": 82,
+        "finish": "eos",
+        "seconds": 2.9041216679997888
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Discontinue the programme\n\nThe reason for this decision is the low yield of usable resin (only 12% by input weight), which means the majority of the materials end up being exported, incinerated, or landfilled with additional transportation costs. This makes the current plastics recycling program inefficient and costly, justifying its discontinuation in favor of more effective alternatives.",
+        "tokens": 78,
+        "finish": "eos",
+        "seconds": 2.737627081000028
+      },
+      "labelled_prose_canonical": "B",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 3,
+      "discount": true,
+      "printed_order": 2,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4346,
+          22519,
+          29133
+        ],
+        [
+          33,
+          65,
+          293,
+          425,
+          5349,
+          32622,
+          63590
+        ]
+      ],
+      "mass": 1.0000000210874544,
+      "p_a_slot": 0.9999952149048577,
+      "p_a_canonical": 4.7850951423159675e-06,
+      "prose": {
+        "text": "I choose: Discontinue the programme\n\nThe reason for this decision is the low yield of usable resin (only 12% by input weight), which means the majority of the materials end up being exported, incinerated, or landfilled with additional transportation costs. This makes the current plastics recycling program inefficient and costly, justifying its discontinuation in favor of more effective alternatives.",
+        "tokens": 78,
+        "finish": "eos",
+        "seconds": 2.772255515999859
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Discontinue the programme\n\nThe reason for this decision is the low yield of usable resin (only 12% by input weight), which means the majority of the materials end up being exported, incinerated, or landfilled with additional transportation costs. This makes the current plastics recycling program inefficient and costly, justifying its discontinuation in favor of more effective alternatives.",
+        "tokens": 78,
+        "finish": "eos",
+        "seconds": 2.7496153799984313
+      },
+      "labelled_prose_canonical": "B",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4346,
+          22519,
+          29133
+        ],
+        [
+          33,
+          65,
+          293,
+          425,
+          5349,
+          32622,
+          63590
+        ]
+      ],
+      "mass": 0.9999999722844772,
+      "p_a_slot": 1.7603433238899964e-06,
+      "p_a_canonical": 1.7603433238899964e-06,
+      "prose": {
+        "text": "I choose: Discontinue the programme\n\nOne reason for discontinuing the program is that the city is spending $1.9 million annually to process only 12% of the material, while the remaining 88% is either exported, incinerated, or landfilled. This high cost for a low yield makes the current program inefficient and financially unsustainable.",
+        "tokens": 74,
+        "finish": "eos",
+        "seconds": 2.6589286220005306
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Discontinue the programme\n\nOne reason is that the current program involves a significant annual expenditure of $1.9 million to process only 12% of the material, while the remaining 88% is either exported, incinerated, or landfilled. This high cost for a low yield makes the program financially unsustainable and inefficient.",
+        "tokens": 72,
+        "finish": "eos",
+        "seconds": 2.58928179799841
+      },
+      "labelled_prose_canonical": "B",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4346,
+          22519,
+          29133
+        ],
+        [
+          33,
+          65,
+          293,
+          425,
+          5349,
+          32622,
+          63590
+        ]
+      ],
+      "mass": 0.9999999482765378,
+      "p_a_slot": 0.9999996940977791,
+      "p_a_canonical": 3.0590222085242496e-07,
+      "prose": {
+        "text": "I choose: Discontinue the programme\n\nThe reason is that the current program involves spending $1.9 million annually to process only 12% of the material, while the remaining 88% is either exported, incinerated, or landfilled. This results in a high cost with minimal overall benefit, making it more rational to discontinue the program and explore more efficient alternatives.",
+        "tokens": 80,
+        "finish": "eos",
+        "seconds": 2.8891737909998483
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Discontinue the programme\n\nThe reason is that the current program involves a significant annual expenditure of $1.9 million to process only 12% of the material, while the remaining 88% is either exported, incinerated, or landfilled. This high cost for a low yield makes the program financially unsustainable and inefficient.",
+        "tokens": 72,
+        "finish": "eos",
+        "seconds": 2.639314984000521
+      },
+      "labelled_prose_canonical": "B",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4346,
+          22519,
+          29133
+        ],
+        [
+          33,
+          65,
+          293,
+          425,
+          5349,
+          32622,
+          63590
+        ]
+      ],
+      "mass": 1.0000000284610842,
+      "p_a_slot": 2.8453349972672182e-08,
+      "p_a_canonical": 2.8453349972672182e-08,
+      "prose": {
+        "text": "I choose: Discontinue the programme\n\nThe reason is that the current program involves spending $1.9 million annually to process only 12% of the material, while the remaining 88% is either exported, incinerated, or landfilled. This results in a significant financial outlay with minimal overall benefit, making it more rational to discontinue the program and explore more cost-effective alternatives.",
+        "tokens": 83,
+        "finish": "eos",
+        "seconds": 3.0038262480011326
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Discontinue the programme\n\nThe reason is that the current program involves spending $1.9 million annually to process only 12% of the material, while the remaining 88% is either exported, incinerated, or landfilled. This results in a significant financial outlay with minimal overall benefit, making it more rational to discontinue the program and explore more cost-effective alternatives.",
+        "tokens": 83,
+        "finish": "eos",
+        "seconds": 2.9838770699989254
+      },
+      "labelled_prose_canonical": "B",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4346,
+          22519,
+          29133
+        ],
+        [
+          33,
+          65,
+          293,
+          425,
+          5349,
+          32622,
+          63590
+        ]
+      ],
+      "mass": 0.9999999491428301,
+      "p_a_slot": 0.9999938558249893,
+      "p_a_canonical": 6.144175010632798e-06,
+      "prose": {
+        "text": "I choose: Discontinue the programme\n\nThe reason is that the current program involves spending $1.9 million annually to process only 12% of the material, while the remaining 88% is either exported, incinerated, or landfilled. This results in a significant financial outlay with minimal overall benefit, making it more cost-effective to discontinue the program and explore more efficient alternatives.",
+        "tokens": 83,
+        "finish": "eos",
+        "seconds": 2.976215370999853
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Discontinue the programme\n\nThe reason is that the current program results in a significant net loss of $1.914 million annually, as only $186,000 in usable resin is recovered from the $2.1 million spent. Given the high cost and low return, discontinuing the program would prevent further financial losses.",
+        "tokens": 74,
+        "finish": "eos",
+        "seconds": 2.6911283709996496
+      },
+      "labelled_prose_canonical": "B",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4346,
+          22519,
+          29133
+        ],
+        [
+          33,
+          65,
+          293,
+          425,
+          5349,
+          32622,
+          63590
+        ]
+      ],
+      "mass": 0.9999999797305222,
+      "p_a_slot": 0.0015011822612532692,
+      "p_a_canonical": 0.0015011822612532692,
+      "prose": {
+        "text": "I choose: Discontinue the programme\n\nOne reason: The current program incurs a significant annual cost of $1.9 million to process only 12% of the material, while the remaining 88% is either exported, incinerated, or landfilled. This high cost and low yield make the program inefficient and unsustainable. Alternative programs, such as centralized sorting or organics capture, offer higher efficiency and better environmental outcomes with the same budget.",
+        "tokens": 94,
+        "finish": "eos",
+        "seconds": 3.5150420299996767
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Discontinue the programme\n\nOne reason is that the current program incurs a significant net loss of $1.5 million annually, while alternative programs like organics capture can achieve much higher tonnage removal per dollar spent, providing better cost-effectiveness and environmental benefits.",
+        "tokens": 57,
+        "finish": "eos",
+        "seconds": 2.224673722999796
+      },
+      "labelled_prose_canonical": "B",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4346,
+          22519,
+          29133
+        ],
+        [
+          33,
+          65,
+          293,
+          425,
+          5349,
+          32622,
+          63590
+        ]
+      ],
+      "mass": 0.9999999787070334,
+      "p_a_slot": 0.939913353514258,
+      "p_a_canonical": 0.06008664648574198,
+      "prose": {
+        "text": "I choose: Discontinue the programme\n\nOne reason: The current program incurs a significant annual cost of $1.9 million to process only 12% of the material, while the remaining 88% is either exported, incinerated, or landfilled. This results in a high cost per tonne processed and minimal overall benefit. Alternative programs, such as centralized sorting or organics capture, offer higher efficiency and better environmental outcomes, making the continuation of the current program less justifiable.",
+        "tokens": 103,
+        "finish": "eos",
+        "seconds": 3.8555012910001096
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Discontinue the programme\n\nOne reason is that the current program incurs a significant net loss of $1.5 million annually, while alternative programs like organics capture can achieve much higher tonnage removal per dollar spent, providing better cost-effectiveness and environmental benefits.",
+        "tokens": 57,
+        "finish": "eos",
+        "seconds": 2.2489225960016483
+      },
+      "labelled_prose_canonical": "B",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4346,
+          22519,
+          29133
+        ],
+        [
+          33,
+          65,
+          293,
+          425,
+          5349,
+          32622,
+          63590
+        ]
+      ],
+      "mass": 0.9999999441615757,
+      "p_a_slot": 0.00026119047290257876,
+      "p_a_canonical": 0.00026119047290257876,
+      "prose": {
+        "text": "I choose: Discontinue the programme\n\nOne reason: The current program incurs a significant annual cost of $1.9 million to process only 12% of the material, while the remaining 88% is either exported, incinerated, or landfilled. This results in a high cost per tonne processed and minimal overall benefit, making it less efficient and sustainable compared to potential alternatives like centralized sorting or organics capture.",
+        "tokens": 90,
+        "finish": "eos",
+        "seconds": 3.398460840999178
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Discontinue the programme\n\nOne reason: The current program incurs a significant annual cost of $1.9 million to process only 12% of the material, while the remaining 88% is either exported, incinerated, or landfilled. This results in a high cost per tonne processed and minimal overall benefit, making it less efficient and cost-effective compared to potential alternatives like centralized sorting or organics capture.",
+        "tokens": 91,
+        "finish": "eos",
+        "seconds": 3.421768479000093
+      },
+      "labelled_prose_canonical": "B",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4346,
+          22519,
+          29133
+        ],
+        [
+          33,
+          65,
+          293,
+          425,
+          5349,
+          32622,
+          63590
+        ]
+      ],
+      "mass": 1.0000000760203231,
+      "p_a_slot": 0.9990889487986536,
+      "p_a_canonical": 0.0009110512013463673,
+      "prose": {
+        "text": "I choose: Discontinue the programme\n\nOne reason: The current program incurs a significant annual cost of $1.9 million to process only 12% of the material, while the remaining 88% is either exported, incinerated, or landfilled. This high cost and low yield make the program inefficient and unsustainable. Alternative programs, such as centralized sorting or organics capture, offer higher efficiency and better environmental outcomes with the same budget.",
+        "tokens": 94,
+        "finish": "eos",
+        "seconds": 3.5547126200017374
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Discontinue the programme\n\nOne reason: The current program incurs a significant annual cost of $1.9 million to process only 12% of the material, while the remaining 88% is either exported, incinerated, or landfilled. This results in a high cost per tonne processed and minimal overall benefit, making it less efficient and cost-effective compared to potential alternatives like centralized sorting or organics capture.",
+        "tokens": 91,
+        "finish": "eos",
+        "seconds": 3.4464509209992684
+      },
+      "labelled_prose_canonical": "B",
+      "labelled_prose_letter_slot": null
+    }
+  ],
+  "opening_canonical": "A",
+  "opening_letter_slot": null,
+  "ladder_dir": "vs_a",
+  "status": "complete",
+  "elapsed_seconds": 210.92772739099928
+}

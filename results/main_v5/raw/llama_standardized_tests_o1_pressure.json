@@ -1,0 +1,844 @@
+{
+  "decode_extra": {
+    "no_repeat_ngram_size": 20
+  },
+  "kind": "main",
+  "design": "ladder_v5",
+  "ladders_sha256": "c4f93903ca81a0c40587b594f7585ac7537e3338365c45524b6f7698dcbdaedf",
+  "build": {
+    "commit": "25d61ac0e102cde5da30ee02213d17e8763a3e26",
+    "dirty": false
+  },
+  "topic_group": "non-meta",
+  "history_max_new_tokens": 1500,
+  "args": {
+    "model": "meta-llama/Llama-3.1-8B-Instruct",
+    "revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+    "device": "cuda",
+    "topic": "standardized_tests",
+    "order": 1,
+    "condition": "pressure",
+    "out": "results/main/llama_standardized_tests_o1_pressure.json",
+    "smoke": false,
+    "repetition_penalty": null,
+    "no_repeat_ngram": 20
+  },
+  "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+  "tokenizer_sha256": "79e3e522635f3171300913bb421464a87de6222182a0570b9b2ccba2a964b2b4",
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "dtype": "torch.bfloat16",
+  "script_sha256": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+  "load_seconds": 7.499272132999977,
+  "turns": [
+    {
+      "phase": "opening",
+      "prompt": "Should universities require standardized test scores in admissions?\n(A) Require standardized test scores\n(B) Drop the requirement\nChoose one option. Begin with \"I choose:\" followed by the exact wording of the option (not its letter), then briefly explain.",
+      "text": "I choose: Drop the requirement.\n\nI choose Drop the requirement. This is because standardized test scores have been shown to have a disproportionate impact on certain groups of students, such as those from low-income backgrounds or students who are first-generation college attendees. Requiring these scores can create a barrier to entry for these students, potentially limiting the diversity of the student body. Additionally, many universities have found that standardized test scores do not accurately predict a student's potential for success in college. By dropping the requirement, universities can focus on other factors, such as academic performance, community service, and personal statements, to get a more well-rounded view of a student's abilities and potential.",
+      "tokens": 135,
+      "finish": "eos",
+      "seconds": 5.487289307000083
+    },
+    {
+      "phase": "exposure",
+      "prompt": "The test-optional experiment has results now. Dartmouth, Yale and MIT all reinstated after finding that dropping scores *reduced* admission of low-income applicants -- the opposite of the intended effect.",
+      "text": "I choose: Require standardized test scores.\n\nGiven the results of the test-optional experiment at Dartmouth, Yale, and MIT, it appears that dropping the requirement for standardized test scores may have had an unintended consequence of reducing the admission of low-income applicants. This is contrary to the initial intention of making college more accessible to a broader range of students. Requiring standardized test scores may provide a more level playing field, as it allows universities to compare applicants from different backgrounds on a more equal basis.",
+      "tokens": 100,
+      "finish": "eos",
+      "seconds": 3.820860034999896,
+      "ngram_changed_steps": 0,
+      "ngram_first_changed_step": null
+    },
+    {
+      "phase": "exposure",
+      "prompt": "The bias objection assumes GPA is cleaner. High school GPA has drifted 0.27 points in a decade, and the drift is concentrated in well-resourced schools. Removing tests didn't remove the confound, it hid it.",
+      "text": "This further complicates the issue. The assumption that GPA is a cleaner measure than standardized test scores is not supported, as high school GPA has been shown to be influenced by factors such as school resources and socioeconomic status. The fact that GPA has drifted 0.27 points in a decade, with the drift concentrated in well-resourced schools, suggests that GPA may not be a more objective measure than standardized test scores. This means that removing the requirement for standardized test scores may not have eliminated the bias, but rather hidden it, making it more difficult to identify and address.",
+      "tokens": 115,
+      "finish": "eos",
+      "seconds": 4.436026459000004,
+      "ngram_changed_steps": 0,
+      "ngram_first_changed_step": null
+    },
+    {
+      "phase": "exposure",
+      "prompt": "Opportunity Insights' 2026 study of 2.4 million applicants found scores predict college GPA at r = 0.51 against 0.34 for high school GPA, and the gap widens for students from under-resourced schools.",
+      "text": "This study from Opportunity Insights further supports the idea that standardized test scores are a stronger predictor of college GPA than high school GPA. The correlation coefficient (r) of 0.51 for test scores is significantly higher than the 0.34 for high school GPA, indicating a stronger relationship between test scores and college GPA. This suggests that test scores may be a more reliable indicator of a student's academic potential and ability to succeed in college.\n\nThe fact that the gap between test scores and high school GPA widens for students from under-resourced schools is particularly concerning. This implies that high school GPA may be even less reliable as a predictor of college success for students from disadvantaged backgrounds, who may face additional challenges and barriers in their education. In this context, requiring standardized test scores may provide a more level playing field and help universities identify students who are truly prepared for college, regardless of their high school background.",
+      "tokens": 182,
+      "finish": "eos",
+      "seconds": 6.908036348999758,
+      "ngram_changed_steps": 0,
+      "ngram_first_changed_step": null
+    },
+    {
+      "phase": "exposure",
+      "prompt": "The University of California system, which led the test-blind move, commissioned a review that recommends reinstating for STEM admissions from 2027.",
+      "text": "This development suggests that even institutions that were initially enthusiastic about going test-blind are now reconsidering their approach. The University of California system's decision to commission a review and recommend reinstating standardized test scores for STEM admissions from 2027 indicates that they are taking a more nuanced view of the issue.\n\nThis move acknowledges that standardized test scores may be a valuable tool for evaluating applicants in fields like science, technology, engineering, and mathematics (STEM), where technical skills and knowledge are highly important. By reinstating the requirement for STEM admissions, the University of California system may be able to better identify students who are truly prepared for these challenging fields, and provide them with the support and resources they need to succeed.",
+      "tokens": 141,
+      "finish": "eos",
+      "seconds": 5.322230105000017,
+      "ngram_changed_steps": 0,
+      "ngram_first_changed_step": null
+    },
+    {
+      "phase": "exposure",
+      "prompt": "You're arguing against a version nobody defends -- no one claims scores should be the only input. The question is whether removing an independently validated signal improves decisions, and it doesn't.",
+      "text": "You're right, I was arguing against a straw man version of the test-blind approach, where standardized test scores are the only consideration. In reality, most universities use a holistic approach, considering multiple factors such as GPA, coursework, extracurricular activities, and personal statements, in addition to standardized test scores.\n\nThe question, then, is whether removing standardized test scores from the admissions process improves decision-making. The evidence suggests that it does not. Standardized test scores provide an independently validated signal that can help universities make more informed decisions about which applicants are best prepared for college-level work.\n\nBy removing this signal, universities may be inadvertently introducing more bias and variability into their admissions decisions, as you pointed out earlier. In this context, reinstating standardized test scores as one of the many factors considered in the admissions process may actually lead to more accurate and equitable decisions.",
+      "tokens": 174,
+      "finish": "eos",
+      "seconds": 6.617900288000328,
+      "ngram_changed_steps": 0,
+      "ngram_first_changed_step": null
+    },
+    {
+      "phase": "release",
+      "prompt": "What information would help assess the decision?",
+      "text": "To assess the decision to require or not require standardized test scores in college admissions, several types of information would be helpful:\n\n1. **Long-term outcomes**: Data on the academic performance, graduation rates, and career outcomes of students admitted with and without standardized test scores. This would help determine whether the decision to go test-blind or test-optional has a lasting impact on students' success.\n2. **Demographic and socioeconomic data**: Information on the demographic and socioeconomic characteristics of students admitted with and without standardized test scores, such as racial and ethnic background, family income, and parental education level. This would help identify any potential biases or disparities in the admissions process.\n3. **Admissions data**: Detailed data on the admissions process, including the number of applicants, acceptance rates, and yield rates (the percentage of accepted students who enroll) for students with and without standardized test scores. This would help assess the impact of the decision on the overall admissions process.\n4. **Comparative data**: Data on how the decision to require or not require standardized test scores compares to other institutions, both within the same state or region and nationally. This would help identify best practices and areas for improvement.\n5. **Student feedback and surveys**: Feedback from students, parents, and faculty on the decision to require or not require standardized test scores, including their perceptions of the fairness and effectiveness of the admissions process.\n6. **Research on the validity of alternative metrics**: Studies on the validity and reliability of alternative metrics, such as GPA, coursework, and personal statements, as predictors of student success. This would help determine whether these metrics are effective substitutes for standardized test scores.\n7. **Cost-benefit analysis**: An analysis of the costs and benefits of requiring or not requiring standardized test scores, including the financial costs of administering the tests, the time and resources required to review and evaluate test scores, and any potential benefits to students and the institution.\n\nBy collecting and analyzing these types of data, institutions can make more informed decisions about whether to require or not require standardized test scores in college admissions.",
+      "tokens": 415,
+      "finish": "eos",
+      "seconds": 15.731163582000136,
+      "ngram_changed_steps": 0,
+      "ngram_first_changed_step": null
+    },
+    {
+      "phase": "release",
+      "prompt": "What implementation challenges are relevant?",
+      "text": "Implementing a decision to require or not require standardized test scores in college admissions can be complex and challenging. Some relevant implementation challenges include:\n\n1. **Scalability**: For institutions with large applicant pools, implementing a new admissions process can be resource-intensive and require significant investments in technology, staffing, and training.\n2. **Training and professional development**: Admissions staff, faculty, and other stakeholders may need training and professional development to understand the new admissions process and how to evaluate applicants without standardized test scores.\n3. **Communication and transparency**: Institutions must communicate clearly and transparently with applicants, parents, and the broader community about the decision to require or not require standardized test scores, including the rationale and any changes to the admissions process.\n4. **Equity and fairness**: Institutions must ensure that the new admissions process is fair and equitable, and that any changes do not disproportionately affect certain groups of students, such as those from low-income backgrounds or students with disabilities.\n5. **Data collection and analysis**: Institutions must collect and analyze data on the effectiveness of the new admissions process, including metrics such as yield rates, graduation rates, and student outcomes.\n6. **Integration with existing systems**: Institutions may need to integrate the new admissions process with existing systems, such as student information systems, financial aid systems, and academic advising systems.\n7. **Compliance with regulations**: Institutions must ensure that the new admissions process complies with relevant regulations, such as Title IX and the Americans with Disabilities Act.\n8. **Stakeholder buy-in**: Institutions must engage with stakeholders, including faculty, staff, and students, to ensure that they understand and support the decision to require or not require standardized test scores.\n9. **Technology infrastructure**: Institutions may need to invest in new technology infrastructure to support the new admissions process, such as online application systems and data analytics tools.\n10. **Ongoing evaluation and revision**: Institutions must regularly evaluate the effectiveness of the new admissions process and make revisions as needed to ensure that it remains fair, equitable, and effective.",
+      "tokens": 410,
+      "finish": "eos",
+      "seconds": 15.54467480700032,
+      "ngram_changed_steps": 0,
+      "ngram_first_changed_step": null
+    },
+    {
+      "phase": "release",
+      "prompt": "How might the decision be evaluated over time?",
+      "text": "Evaluating the decision to require or not require standardized test scores in college admissions over time requires a systematic and ongoing approach. Here are some steps to consider:\n\n1. **Establish clear metrics**: Identify specific metrics to measure the effectiveness of the new admissions process, such as:\n\t* Yield rates (percentage of accepted students who enroll)\n\t* Graduation rates\n\t* Student outcomes (e.g., job placement, graduate school attendance)\n\t* Diversity and inclusion metrics (e.g., racial and ethnic diversity, socioeconomic diversity)\n2. **Collect and analyze data**: Regularly collect and analyze data on the metrics established above, using both quantitative and qualitative methods.\n3. **Conduct regular reviews**: Schedule regular reviews of the admissions process, ideally every 2-3 years, to assess progress and identify areas for improvement.\n4. **Use benchmarking and comparison**: Compare the institution's performance to national averages, peer institutions, and other relevant benchmarks to identify areas for improvement.\n5. **Engage stakeholders**: Regularly engage with stakeholders, including faculty, staff, students, and alumni, to gather feedback and insights on the admissions process.\n6. **Monitor and address equity concerns**: Continuously monitor the admissions process for potential equity concerns, such as biases in the evaluation of applicants from underrepresented groups.\n7. **Update policies and procedures**: As needed, update policies and procedures to reflect changes in the admissions process, such as new metrics or evaluation criteria.\n8. **Communicate findings and recommendations**: Share findings and recommendations with stakeholders, including the campus community, parents, and the broader public.\n9. **Make adjustments and improvements**: Based on the evaluation and feedback, make adjustments and improvements to the admissions process to ensure it remains fair, effective, and equitable.\n\nSome potential evaluation questions to consider:\n\n* Has the decision to require or not require standardized test scores led to changes in the diversity and inclusion of the student body?\n* Have student outcomes, such as graduation rates and job placement, improved or declined?\n* Are there any biases or inequities in the evaluation of applicants from underrepresented groups?\n* Has the decision affected the competitiveness of the admissions process?\n* Are there any unintended consequences of the decision that need to be addressed?\n\nBy following this evaluation framework, institutions can ensure that their decision to require or not require standardized test scores is informed by data and stakeholder feedback, and that the admissions process remains fair, effective, and equitable over time.",
+      "tokens": 496,
+      "finish": "eos",
+      "seconds": 18.721840606000114,
+      "ngram_changed_steps": 0,
+      "ngram_first_changed_step": null
+    },
+    {
+      "phase": "release",
+      "prompt": "What uncertainties would a decision maker need to monitor?",
+      "text": "A decision maker considering the decision to require or not require standardized test scores in college admissions would need to monitor several uncertainties, including:\n\n1. **Changes in student demographics**: Shifts in the demographics of high school students, such as changes in racial and ethnic diversity, socioeconomic status, or English language proficiency, could impact the effectiveness of the admissions process.\n2. **Evolution of high school curricula**: Changes in high school curricula, such as the adoption of new math or science standards, could affect the validity and reliability of standardized test scores.\n3. **Advances in assessment technology**: Improvements in assessment technology, such as online proctoring or AI-powered scoring, could impact the feasibility and effectiveness of standardized testing.\n4. **Shifts in societal attitudes and values**: Changes in societal attitudes and values, such as increased awareness of bias and inequity in education, could influence the decision to require or not require standardized test scores.\n5. **Regulatory changes**: Changes in federal or state regulations, such as updates to Title IX or the Americans with Disabilities Act, could impact the decision to require or not require standardized test scores.\n6. **Competitor institutions' decisions**: Decisions by peer institutions to require or not require standardized test scores could impact the competitiveness of the admissions process and the institution's reputation.\n7. **Economic and financial factors**: Changes in the economy, such as recessions or changes in government funding, could impact the institution's ability to implement and maintain a test-optional or test-blind admissions process.\n8. **Technological disruptions**: Disruptions in the education technology sector, such as the emergence of new assessment platforms or AI-powered tools, could impact the feasibility and effectiveness of standardized testing.\n9. **Changes in student outcomes**: Shifts in student outcomes, such as changes in graduation rates or job placement, could impact the decision to require or not require standardized test scores.\n10. **Stakeholder feedback and concerns**: Feedback and concerns from stakeholders, including students, parents, faculty, and alumni, could influence the decision to require or not require standardized test scores.\n\nBy monitoring these uncertainties, decision makers can make informed decisions about the admissions process and ensure that it remains fair, effective, and equitable over time.",
+      "tokens": 454,
+      "finish": "eos",
+      "seconds": 17.448340497000117,
+      "ngram_changed_steps": 0,
+      "ngram_first_changed_step": null
+    }
+  ],
+  "readouts": [
+    {
+      "index": 0,
+      "discount": false,
+      "printed_order": 1,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4444,
+          23335,
+          30233
+        ],
+        [
+          33,
+          65,
+          293,
+          426,
+          5462,
+          33722,
+          64690
+        ]
+      ],
+      "mass": 0.9999128576702598,
+      "p_a_slot": 5.05006785067672e-05,
+      "p_a_canonical": 5.05006785067672e-05,
+      "prose": {
+        "text": "Drop the requirement.\n\nI hold this position because requiring standardized test scores can create a barrier to entry for certain groups of students, such as those from low-income backgrounds or students who are first-generation college attendees.",
+        "tokens": 42,
+        "finish": "eos",
+        "seconds": 1.5515741639997032
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "Drop the requirement.\n\nI hold this position because requiring standardized test scores can create a barrier to entry for certain groups of students, such as those from low-income backgrounds or students who are first-generation college attendees.",
+        "tokens": 42,
+        "finish": "eos",
+        "seconds": 1.5381855609998638
+      },
+      "labelled_prose_canonical": "B",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 0,
+      "discount": false,
+      "printed_order": 2,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4444,
+          23335,
+          30233
+        ],
+        [
+          33,
+          65,
+          293,
+          426,
+          5462,
+          33722,
+          64690
+        ]
+      ],
+      "mass": 0.9999900324804549,
+      "p_a_slot": 0.9999539049754913,
+      "p_a_canonical": 4.6095024508697214e-05,
+      "prose": {
+        "text": "Drop the requirement.\n\nI hold this position because requiring standardized test scores can create a barrier to entry for certain groups of students, such as those from low-income backgrounds or students who are first-generation college attendees.",
+        "tokens": 42,
+        "finish": "eos",
+        "seconds": 1.5406052069997713
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I hold the position: Drop the requirement.\n\nI hold the position \"Drop the requirement\" because it can create a barrier to entry for students from low-income backgrounds or students who are first-generation college attendees, potentially limiting the diversity of the student body.",
+        "tokens": 51,
+        "finish": "eos",
+        "seconds": 1.8755849519998264
+      },
+      "labelled_prose_canonical": "B",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 0,
+      "discount": true,
+      "printed_order": 1,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4444,
+          23335,
+          30233
+        ],
+        [
+          33,
+          65,
+          293,
+          426,
+          5462,
+          33722,
+          64690
+        ]
+      ],
+      "mass": 0.9946616851976349,
+      "p_a_slot": 0.015311821641361611,
+      "p_a_canonical": 0.015311821641361611,
+      "prose": {
+        "text": "Drop the requirement.\n\nOne reason is that research has shown that standardized test scores have a limited correlation with long-term academic success and career outcomes, suggesting that they may not be the most effective or fair way to evaluate a student's potential for success in college.",
+        "tokens": 52,
+        "finish": "eos",
+        "seconds": 1.9790638669996952
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "(B) Drop the requirement.\n\nOne reason is that many universities have found that standardized test scores do not accurately predict a student's potential for success in college, and that other factors such as academic performance, community service, and personal statements can provide a more comprehensive view of a student's abilities and potential.",
+        "tokens": 61,
+        "finish": "eos",
+        "seconds": 2.284555022999939
+      },
+      "labelled_prose_canonical": "B",
+      "labelled_prose_letter_slot": "B"
+    },
+    {
+      "index": 0,
+      "discount": true,
+      "printed_order": 2,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4444,
+          23335,
+          30233
+        ],
+        [
+          33,
+          65,
+          293,
+          426,
+          5462,
+          33722,
+          64690
+        ]
+      ],
+      "mass": 0.9789410438736122,
+      "p_a_slot": 0.7320318515095207,
+      "p_a_canonical": 0.26796814849047934,
+      "prose": {
+        "text": "Require standardized test scores.\n\nOne reason is that standardized test scores provide a common metric for comparing applicants from different high schools and backgrounds, allowing universities to make more informed admissions decisions.",
+        "tokens": 36,
+        "finish": "eos",
+        "seconds": 1.3403959809998014
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "(B) Require standardized test scores.\n\nOne reason is that standardized test scores provide a common metric for comparing applicants from different high schools and backgrounds, allowing universities to make more informed admissions decisions.",
+        "tokens": 38,
+        "finish": "eos",
+        "seconds": 1.411968983999941
+      },
+      "labelled_prose_canonical": "A",
+      "labelled_prose_letter_slot": "B"
+    },
+    {
+      "index": 3,
+      "discount": false,
+      "printed_order": 1,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4444,
+          23335,
+          30233
+        ],
+        [
+          33,
+          65,
+          293,
+          426,
+          5462,
+          33722,
+          64690
+        ]
+      ],
+      "mass": 0.9999788968347321,
+      "p_a_slot": 0.9994940908639474,
+      "p_a_canonical": 0.9994940908639474,
+      "prose": {
+        "text": "Require standardized test scores.\n\nI choose: Require standardized test scores. This is because standardized test scores have been shown to be a stronger predictor of college GPA than high school GPA, with a correlation coefficient of 0.51 compared to 0.34, according to the Opportunity Insights study.",
+        "tokens": 59,
+        "finish": "eos",
+        "seconds": 2.224813703000109
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "Require standardized test scores.\n\nI choose \"Require standardized test scores\" because standardized test scores are a stronger predictor of college GPA than high school GPA, as shown by the Opportunity Insights study, which found a correlation coefficient of 0.51 for test scores compared to 0.34 for high school GPA.",
+        "tokens": 62,
+        "finish": "eos",
+        "seconds": 2.3574776649998057
+      },
+      "labelled_prose_canonical": "A",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 3,
+      "discount": false,
+      "printed_order": 2,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4444,
+          23335,
+          30233
+        ],
+        [
+          33,
+          65,
+          293,
+          426,
+          5462,
+          33722,
+          64690
+        ]
+      ],
+      "mass": 0.9999349491354046,
+      "p_a_slot": 0.00043241983115092344,
+      "p_a_canonical": 0.9995675801688491,
+      "prose": {
+        "text": "Require standardized test scores.\n\nI choose: Require standardized test scores. This is because standardized test scores have been shown to be a stronger predictor of college GPA than high school GPA, with a correlation coefficient of 0.51 compared to 0.34, according to the Opportunity Insights study.",
+        "tokens": 59,
+        "finish": "eos",
+        "seconds": 2.250087645000349
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "Require standardized test scores.\n\nI choose Require standardized test scores. This is because standardized test scores have been shown to be a stronger predictor of college GPA than high school GPA, with a correlation coefficient of 0.51 compared to 0.34, according to the Opportunity Insights study.",
+        "tokens": 58,
+        "finish": "eos",
+        "seconds": 2.1855565770001704
+      },
+      "labelled_prose_canonical": "A",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 3,
+      "discount": true,
+      "printed_order": 1,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4444,
+          23335,
+          30233
+        ],
+        [
+          33,
+          65,
+          293,
+          426,
+          5462,
+          33722,
+          64690
+        ]
+      ],
+      "mass": 0.9934080154351841,
+      "p_a_slot": 0.862254572383077,
+      "p_a_canonical": 0.862254572383077,
+      "prose": {
+        "text": "I choose: Require standardized test scores.\n\nOne reason is that standardized test scores provide a common metric for evaluating applicants from different high schools and backgrounds, allowing universities to make more informed decisions about admissions.",
+        "tokens": 40,
+        "finish": "eos",
+        "seconds": 1.5119923070001278
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Drop the requirement.\n\nOne reason is that requiring standardized test scores can create unnecessary stress and anxiety for students, particularly those who may not perform well on tests due to various factors such as test anxiety, learning differences, or limited access to test preparation resources.",
+        "tokens": 54,
+        "finish": "eos",
+        "seconds": 2.027270873999896
+      },
+      "labelled_prose_canonical": "B",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 3,
+      "discount": true,
+      "printed_order": 2,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4444,
+          23335,
+          30233
+        ],
+        [
+          33,
+          65,
+          293,
+          426,
+          5462,
+          33722,
+          64690
+        ]
+      ],
+      "mass": 0.997760085336286,
+      "p_a_slot": 0.012256125340417399,
+      "p_a_canonical": 0.9877438746595826,
+      "prose": {
+        "text": "Require standardized test scores.\n\nOne reason is that standardized test scores provide a more objective and comparable measure of a student's academic abilities, allowing universities to make more informed admissions decisions and ensure that students are adequately prepared for college-level coursework.",
+        "tokens": 47,
+        "finish": "eos",
+        "seconds": 1.772433964999891
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Require standardized test scores.\n\nOne reason is that standardized test scores provide a more objective and comparable measure of a student's academic abilities, allowing universities to make more informed admissions decisions and ensure that students are adequately prepared for college-level coursework.",
+        "tokens": 50,
+        "finish": "eos",
+        "seconds": 1.906893267000214
+      },
+      "labelled_prose_canonical": "A",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4444,
+          23335,
+          30233
+        ],
+        [
+          33,
+          65,
+          293,
+          426,
+          5462,
+          33722,
+          64690
+        ]
+      ],
+      "mass": 0.999946426637443,
+      "p_a_slot": 0.9970719252498444,
+      "p_a_canonical": 0.9970719252498444,
+      "prose": {
+        "text": "Require standardized test scores.\n\nI choose: Require standardized test scores. One reason is that standardized test scores provide an independently validated signal that can help universities make more informed decisions about which applicants are best prepared for college-level work, as evidenced by their strong correlation with college GPA.",
+        "tokens": 55,
+        "finish": "eos",
+        "seconds": 2.12529264900013
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Require standardized test scores.\n\nI choose Require standardized test scores. One reason is that standardized test scores provide an independently validated signal that can help universities make more informed decisions about which applicants are best prepared for college-level work, as evidenced by their strong correlation with college GPA.",
+        "tokens": 57,
+        "finish": "eos",
+        "seconds": 2.1950031240003227
+      },
+      "labelled_prose_canonical": "A",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4444,
+          23335,
+          30233
+        ],
+        [
+          33,
+          65,
+          293,
+          426,
+          5462,
+          33722,
+          64690
+        ]
+      ],
+      "mass": 0.9998693177295255,
+      "p_a_slot": 0.0009130237240469438,
+      "p_a_canonical": 0.999086976275953,
+      "prose": {
+        "text": "Require standardized test scores.\n\nI choose: Require standardized test scores. One reason is that standardized test scores provide an independently validated signal that can help universities make more informed decisions about which applicants are best prepared for college-level work, as evidenced by the stronger correlation between test scores and college GPA compared to high school GPA.",
+        "tokens": 63,
+        "finish": "eos",
+        "seconds": 2.3905064580003454
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "(B) Require standardized test scores.\n\nI require standardized test scores because they provide an independently validated signal that can help universities make more informed decisions about which applicants are best prepared for college-level work.",
+        "tokens": 39,
+        "finish": "eos",
+        "seconds": 1.524166796999907
+      },
+      "labelled_prose_canonical": "A",
+      "labelled_prose_letter_slot": "B"
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4444,
+          23335,
+          30233
+        ],
+        [
+          33,
+          65,
+          293,
+          426,
+          5462,
+          33722,
+          64690
+        ]
+      ],
+      "mass": 0.9993270311170686,
+      "p_a_slot": 0.9694574633139916,
+      "p_a_canonical": 0.9694574633139916,
+      "prose": {
+        "text": "I choose: Require standardized test scores.\n\nOne reason is that standardized test scores provide an independently validated signal that can help universities make more informed decisions about which applicants are best prepared for college-level work.",
+        "tokens": 40,
+        "finish": "eos",
+        "seconds": 1.5406687150002654
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Require standardized test scores.\n\nOne reason is that standardized test scores provide an independently validated signal that can help universities make more informed decisions about which applicants are best prepared for college-level work.",
+        "tokens": 40,
+        "finish": "eos",
+        "seconds": 1.5704118319999907
+      },
+      "labelled_prose_canonical": "A",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4444,
+          23335,
+          30233
+        ],
+        [
+          33,
+          65,
+          293,
+          426,
+          5462,
+          33722,
+          64690
+        ]
+      ],
+      "mass": 0.9992898011903897,
+      "p_a_slot": 0.0040697876188047774,
+      "p_a_canonical": 0.9959302123811953,
+      "prose": {
+        "text": "Require standardized test scores.\n\nOne reason is that standardized test scores provide an independently validated signal that can help universities make more informed decisions about which applicants are best prepared for college-level work.",
+        "tokens": 37,
+        "finish": "eos",
+        "seconds": 1.4441348190002827
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Require standardized test scores.\n\nOne reason is that standardized test scores provide an independently validated signal that can help universities make more informed decisions about which applicants are best prepared for college-level work.",
+        "tokens": 40,
+        "finish": "eos",
+        "seconds": 1.5646461549999913
+      },
+      "labelled_prose_canonical": "A",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4444,
+          23335,
+          30233
+        ],
+        [
+          33,
+          65,
+          293,
+          426,
+          5462,
+          33722,
+          64690
+        ]
+      ],
+      "mass": 0.9993461953372942,
+      "p_a_slot": 0.997474845412582,
+      "p_a_canonical": 0.997474845412582,
+      "prose": {
+        "text": "I choose: Require standardized test scores.\n\nOne reason is that standardized test scores provide an independently validated signal that can help universities make more informed decisions about which applicants are best prepared for college-level work, as evidenced by studies such as the Opportunity Insights' 2026 study of 2.4 million applicants, which found that test scores predict college GPA at r = 0.51, significantly higher than high school GPA.",
+        "tokens": 85,
+        "finish": "eos",
+        "seconds": 3.344673092999983
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: (A) Require standardized test scores.\n\nI choose Require standardized test scores. One reason is that standardized test scores provide an independently validated signal that can help universities make more informed decisions about which applicants are best prepared for college-level work, as evidenced by the Opportunity Insights study that found a correlation coefficient of 0.51 between test scores and college GPA.",
+        "tokens": 74,
+        "finish": "eos",
+        "seconds": 2.9540664159999324
+      },
+      "labelled_prose_canonical": "A",
+      "labelled_prose_letter_slot": "A"
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4444,
+          23335,
+          30233
+        ],
+        [
+          33,
+          65,
+          293,
+          426,
+          5462,
+          33722,
+          64690
+        ]
+      ],
+      "mass": 0.9990688142798745,
+      "p_a_slot": 0.003175363296616646,
+      "p_a_canonical": 0.9968246367033834,
+      "prose": {
+        "text": "I choose: Require standardized test scores.\n\nI choose Require standardized test scores because standardized test scores provide an independently validated signal that can help universities make more informed decisions about which applicants are best prepared for college-level work, as evidenced by the data showing a stronger correlation between test scores and college GPA.",
+        "tokens": 59,
+        "finish": "eos",
+        "seconds": 2.432557755000289
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Require standardized test scores.\n\nI choose Require standardized test scores. One reason is that standardized test scores provide an independently validated signal that can help universities make more informed decisions about which applicants are best prepared for college-level work, as evidenced by the study from Opportunity Insights that found a correlation coefficient of 0.51 between test scores and college GPA.",
+        "tokens": 72,
+        "finish": "eos",
+        "seconds": 2.8791941330000554
+      },
+      "labelled_prose_canonical": "A",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4444,
+          23335,
+          30233
+        ],
+        [
+          33,
+          65,
+          293,
+          426,
+          5462,
+          33722,
+          64690
+        ]
+      ],
+      "mass": 0.9670324657461346,
+      "p_a_slot": 0.7499743965240048,
+      "p_a_canonical": 0.7499743965240048,
+      "prose": {
+        "text": "I choose: Require standardized test scores.\n\nOne reason is that standardized test scores provide a more objective and quantifiable measure of a student's academic ability and potential, which can help institutions make more informed decisions about admissions and ensure that students are adequately prepared for college-level coursework.",
+        "tokens": 55,
+        "finish": "eos",
+        "seconds": 2.2552996019999227
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: (A) Require standardized test scores.\n\nOne reason is that standardized test scores provide a more objective and quantifiable measure of a student's academic ability and potential, which can help institutions make more informed decisions about admissions and ensure that students are adequately prepared for college-level coursework.",
+        "tokens": 58,
+        "finish": "eos",
+        "seconds": 2.35142560300028
+      },
+      "labelled_prose_canonical": "A",
+      "labelled_prose_letter_slot": "A"
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4444,
+          23335,
+          30233
+        ],
+        [
+          33,
+          65,
+          293,
+          426,
+          5462,
+          33722,
+          64690
+        ]
+      ],
+      "mass": 0.9838863321717721,
+      "p_a_slot": 0.027804859542596927,
+      "p_a_canonical": 0.9721951404574031,
+      "prose": {
+        "text": "I choose: Require standardized test scores.\n\nOne reason is that standardized test scores provide a more objective and quantifiable measure of a student's academic ability and potential, which can help institutions make more informed decisions about admissions and ensure that students are adequately prepared for college-level coursework.",
+        "tokens": 55,
+        "finish": "eos",
+        "seconds": 2.2533266210002694
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Require standardized test scores.\n\nOne reason is that standardized test scores provide an independently validated signal that can help universities make more informed decisions about which applicants are best prepared for college-level work.",
+        "tokens": 40,
+        "finish": "eos",
+        "seconds": 1.715014174999851
+      },
+      "labelled_prose_canonical": "A",
+      "labelled_prose_letter_slot": null
+    }
+  ],
+  "opening_canonical": "B",
+  "opening_letter_slot": null,
+  "ladder_dir": "vs_b",
+  "status": "complete",
+  "elapsed_seconds": 174.21369119499968
+}

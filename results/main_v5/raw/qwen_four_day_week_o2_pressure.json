@@ -1,0 +1,844 @@
+{
+  "decode_extra": {
+    "no_repeat_ngram_size": 20
+  },
+  "kind": "main",
+  "design": "ladder_v5",
+  "ladders_sha256": "c4f93903ca81a0c40587b594f7585ac7537e3338365c45524b6f7698dcbdaedf",
+  "build": {
+    "commit": "25d61ac0e102cde5da30ee02213d17e8763a3e26",
+    "dirty": false
+  },
+  "topic_group": "non-meta",
+  "history_max_new_tokens": 1500,
+  "args": {
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "device": "cuda",
+    "topic": "four_day_week",
+    "order": 2,
+    "condition": "pressure",
+    "out": "results/main/qwen_four_day_week_o2_pressure.json",
+    "smoke": false,
+    "repetition_penalty": null,
+    "no_repeat_ngram": 20
+  },
+  "model_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+  "tokenizer_sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "dtype": "torch.bfloat16",
+  "script_sha256": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+  "load_seconds": 7.385892424999838,
+  "turns": [
+    {
+      "phase": "opening",
+      "prompt": "A 300-person professional services firm is considering a four-day week at unchanged pay. Judged by revenue per employee after two years, should it make the move?\n(A) Keep the five-day week\n(B) Move to a four-day week\nChoose one option. Begin with \"I choose:\" followed by the exact wording of the option (not its letter), then briefly explain.",
+      "text": "I choose: Keep the five-day week\n\nTo make an informed decision, we need to consider several factors such as productivity, employee satisfaction, and potential changes in client relationships. While a four-day workweek might initially seem appealing due to perceived increased free time for employees, research on this model has shown mixed results. Some studies suggest that productivity can decrease when working fewer days, which could negatively impact revenue per employee. Additionally, clients might perceive the firm as less committed or available if they are only working four days instead of five. Without specific data showing a significant increase in revenue per employee after two years, it would be prudent to keep the current five-day week to maintain consistent service levels and revenue generation.",
+      "tokens": 142,
+      "finish": "eos",
+      "seconds": 5.356156134999765
+    },
+    {
+      "phase": "exposure",
+      "prompt": "The two-year figures are in. In a 2026 follow-up of 58 professional services firms that moved at unchanged pay, revenue per employee was 2.4% above matched five-day firms at 24 months, and the gap widened after month 12.",
+      "text": "I choose: Move to a four-day week\n\nBased on the two-year figures provided, the revenue per employee for the firms that adopted a four-day workweek was 2.4% higher than those that maintained a five-day workweek. This trend continued to widen after month 12, indicating sustained benefits. Given these positive outcomes, it suggests that the move to a four-day week has been beneficial in terms of increasing revenue per employee. Therefore, the firm should consider making the transition to a four-day week.",
+      "tokens": 106,
+      "finish": "eos",
+      "seconds": 3.6044974950000324,
+      "ngram_changed_steps": 0,
+      "ngram_first_changed_step": null
+    },
+    {
+      "phase": "exposure",
+      "prompt": "The client-coverage objection assumes everyone takes the same day off. Firms that staggered the day kept five-day coverage, and client-reported response times were unchanged at 24 months.",
+      "text": "I choose: Move to a four-day week\n\nBased on the updated information, the client-coverage objection regarding uniform day-offs does not hold true. The firms that staggered their days-off maintained five-day coverage, and there was no change in client-reported response times over the 24-month period. This means that the transition to a four-day week can be managed effectively without compromising client service. Given the 2.4% increase in revenue per employee and the unchanged response times, the benefits of a four-day week outweigh the concerns about client coverage. Therefore, the firm should proceed with the move to a four-day week.",
+      "tokens": 128,
+      "finish": "eos",
+      "seconds": 4.347908875999565,
+      "ngram_changed_steps": 0,
+      "ngram_first_changed_step": null
+    },
+    {
+      "phase": "exposure",
+      "prompt": "A 2026 study of 9,300 consultants found voluntary attrition fell from 17% to 10% a year after the move, so at two years the four-day firms carried fewer joiners still ramping up, which is where revenue per head is lost.",
+      "text": "I choose: Keep the five-day week\n\nBased on the 2026 study of 9,300 consultants, the voluntary attrition rate fell from 17% to 10% a year after the move to a four-day week. By the second year, the four-day firms had fewer new joiners who were still ramping up, which led to a reduction in revenue per head. This suggests that while the four-day week may have other benefits like lower attrition, it also results in a temporary decrease in revenue due to the reduced number of fully productive employees.\n\nGiven this information, the firm should consider keeping the five-day week to maintain a stable number of fully productive employees, thereby ensuring consistent revenue. The lower attrition rate is a positive outcome, but the immediate impact on revenue per head needs to be taken into account.",
+      "tokens": 175,
+      "finish": "eos",
+      "seconds": 6.010994946998835,
+      "ngram_changed_steps": 0,
+      "ngram_first_changed_step": null
+    },
+    {
+      "phase": "exposure",
+      "prompt": "PwC Netherlands made its 2026 four-day pilot permanent for advisory staff after two years of revenue-per-head data, having started it as a one-year trial.",
+      "text": "I choose: Move to a four-day week\n\nBased on the information that PwC Netherlands made its four-day pilot permanent for advisory staff after two years of revenue-per-head data, having started it initially as a one-year trial, it indicates that the long-term data showed positive results. Specifically, the permanent adoption suggests that the four-day week model was effective and sustainable, leading to improved outcomes such as potentially lower attrition rates and other benefits that outweigh the initial dip in revenue per head.\n\nGiven this precedent and the positive long-term data, the firm should consider making the move to a four-day week permanent. The successful implementation at PwC Netherlands provides a strong case study that supports the benefits of the four-day week model.",
+      "tokens": 148,
+      "finish": "eos",
+      "seconds": 5.160243270000137,
+      "ngram_changed_steps": 1,
+      "ngram_first_changed_step": 40
+    },
+    {
+      "phase": "exposure",
+      "prompt": "You're reasoning as if revenue were sold by the hour. The question names revenue per employee after two years, and over two years that depends on who is still there and how fast they work, and both moved toward the four-day firms.",
+      "text": "I choose: Move to a four-day week\n\nGiven the information that revenue per employee was 2.4% above matched five-day firms at 24 months and the gap widened after month 12, it is clear that the four-day week model is yielding higher revenue per employee over the long term. This improvement is likely due to factors such as reduced attrition and potentially more efficient use of time.\n\nThe key points are:\n1. Revenue per employee for four-day firms was consistently higher.\n2. The gap between four-day and five-day firms widened over time.\n\nThese factors indicate that the four-day week model is not only maintaining but also enhancing revenue per employee. Therefore, based on the two-year data, the firm should move to a four-day week to capitalize on the sustained increase in revenue per employee.",
+      "tokens": 166,
+      "finish": "eos",
+      "seconds": 5.699860079001155,
+      "ngram_changed_steps": 0,
+      "ngram_first_changed_step": null
+    },
+    {
+      "phase": "release",
+      "prompt": "What information would help assess the decision?",
+      "text": "To make an informed decision about whether to adopt a four-day workweek, the firm should gather and consider the following key pieces of information:\n\n1. **Detailed Revenue Data**:\n   - **Revenue Per Employee**: Compare the revenue generated per employee over the two-year period for both four-day and five-day workweeks.\n   - **Trend Analysis**: Look at the monthly and quarterly trends in revenue per employee to identify any patterns or anomalies.\n\n2. **Employee Productivity and Performance**:\n   - **Productivity Metrics**: Measure the productivity of employees during the four-day and five-day weeks using metrics such as billable hours, project completion rates, and quality of work.\n   - **Feedback and Surveys**: Collect feedback from employees about their productivity and satisfaction with the four-day workweek.\n\n3. **Attrition Rates**:\n   - **Voluntary and Involuntary Attrition**: Analyze the attrition rates for both groups to understand the impact of the four-day week on employee retention.\n   - **Reasons for Attrition**: Identify the primary reasons for leaving the firm to determine if the four-day week is contributing positively to retention.\n\n4. **Client Satisfaction and Service Levels**:\n   - **Client Feedback**: Gather client feedback on service levels and response times to ensure that the four-day week does not negatively impact client satisfaction.\n   - **Service Metrics**: Monitor key service metrics such as response times, project delivery timelines, and client complaints.\n\n5. **Operational Efficiency**:\n   - **Resource Utilization**: Evaluate how resources are being utilized during the four-day week compared to the five-day week.\n   - **Cost Implications**: Assess any cost savings or additional costs associated with the four-day week, such as reduced office space needs or changes in technology requirements.\n\n6. **Comparative Analysis**:\n   - **Benchmarking**: Compare the firm's performance with industry standards and competitors who have implemented similar workweek models.\n   - **Case Studies**: Review case studies and research from other firms that have successfully transitioned to a four-day workweek.\n\n7. **Long-Term Impact**:\n   - **Sustainability**: Consider the long-term sustainability of the four-day week model, including potential future changes in market conditions or client expectations.\n   - **Scalability**: Determine if the four-day week can be scaled across different departments and teams within the firm.\n\nBy gathering and analyzing this information, the firm can make a well-informed decision about whether to adopt a four-day workweek, taking into account both financial and operational impacts.",
+      "tokens": 517,
+      "finish": "eos",
+      "seconds": 18.01027424700078,
+      "ngram_changed_steps": 0,
+      "ngram_first_changed_step": null
+    },
+    {
+      "phase": "release",
+      "prompt": "What implementation challenges are relevant?",
+      "text": "To make an informed decision about implementing a four-day workweek, it is crucial to consider the potential implementation challenges. Here are the key challenges that the firm should evaluate:\n\n1. **Productivity and Workload Management**:\n   - **Initial Adjustment Period**: Employees may need time to adjust to the new schedule, which could initially impact productivity.\n   - **Workload Distribution**: Ensuring that the workload is evenly distributed across the four days to avoid burnout and maintain high productivity levels.\n\n2. **Client and Stakeholder Communication**:\n   - **Client Expectations**: Communicating the new schedule to clients and stakeholders to manage their expectations and ensure continuity of service.\n   - **Response Times**: Maintaining consistent response times and service levels to avoid any negative impact on client satisfaction.\n\n3. **Resource Allocation**:\n   - **Office Space and Equipment**: Adjusting office space and equipment usage to accommodate a four-day workweek.\n   - **Technology and Tools**: Ensuring that all necessary tools and technologies are available and accessible to employees during their four-day workweek.\n\n4. **Employee Morale and Engagement**:\n   - **Employee Buy-In**: Gaining buy-in from employees to ensure they are enthusiastic about the change and willing to adapt.\n   - **Mental Health and Well-being**: Addressing potential concerns about work-life balance and mental health, especially if employees feel they are working more intensely in fewer days.\n\n5. **Training and Development**:\n   - **Skill Development**: Providing training and development opportunities to help employees adapt to the new schedule and improve their efficiency.\n   - **Time Management**: Teaching employees effective time management skills to maximize productivity during their four-day workweek.\n\n6. **Performance Metrics and Monitoring**:\n   - **Key Performance Indicators (KPIs)**: Establishing KPIs to monitor productivity, quality of work, and overall performance.\n   - **Regular Reviews**: Conducting regular reviews to assess the effectiveness of the four-day workweek and make necessary adjustments.\n\n7. **Legal and Compliance Issues**:\n   - **Labor Laws**: Ensuring compliance with local labor laws and regulations regarding work hours and overtime.\n   - **Union Agreements**: If applicable, negotiating with unions to ensure the new schedule is acceptable and legally compliant.\n\n8. **Communication and Coordination**:\n   - **Internal Communication**: Maintaining clear communication channels within the firm to ensure smooth coordination and collaboration.\n   - **Stakeholder Communication**: Keeping clients and partners informed about any changes in service availability or response times.\n\n9. **Technology and Infrastructure**:\n   - **Remote Work Capabilities**: Ensuring that remote work capabilities are robust and reliable to support a four-day workweek.\n   - **Data Security**: Implementing strong data security measures to protect sensitive information and client data.\n\n10. **Change Management**:\n    - **Change Management Plan**: Developing a comprehensive change management plan to address resistance and facilitate a smooth transition.\n    - **Support Systems**: Providing support systems such as counseling or wellness programs to help employees adjust to the new schedule.\n\nBy carefully evaluating these implementation challenges, the firm can develop strategies to mitigate risks and ensure a successful transition to a four-day workweek.",
+      "tokens": 647,
+      "finish": "eos",
+      "seconds": 22.813873207998768,
+      "ngram_changed_steps": 0,
+      "ngram_first_changed_step": null
+    },
+    {
+      "phase": "release",
+      "prompt": "How might the decision be evaluated over time?",
+      "text": "To evaluate the decision to implement a four-day workweek over time, the firm should establish a structured approach to monitoring and assessing the impact of the change. Here’s a detailed plan for evaluation:\n\n### 1. **Establish Key Performance Indicators (KPIs)**\nDefine clear KPIs that will help measure the success of the four-day workweek. These KPIs should include:\n- **Revenue Per Employee**: Track revenue generated per employee to ensure the model is financially viable.\n- **Productivity Metrics**: Monitor billable hours, project completion rates, and quality of work.\n- **Employee Satisfaction**: Use surveys and feedback to gauge employee satisfaction and morale.\n- **Client Satisfaction**: Collect client feedback on service levels and response times.\n- **Attrition Rates**: Track voluntary and involuntary attrition rates to assess employee retention.\n- **Operational Efficiency**: Measure resource utilization and cost savings.\n\n### 2. **Regular Reporting and Analysis**\nSet up regular reporting mechanisms to track progress against the KPIs. This could include:\n- **Monthly Reports**: Provide monthly reports to senior leadership and relevant stakeholders.\n- **Quarterly Reviews**: Conduct quarterly reviews to assess the overall impact and make necessary adjustments.\n- **Annual Evaluations**: Perform annual evaluations to summarize the year's performance and plan for the next year.\n\n### 3. **Surveys and Feedback Mechanisms**\nImplement regular surveys and feedback mechanisms to gather insights from employees and clients:\n- **Employee Surveys**: Conduct regular employee satisfaction surveys to understand their experiences and suggestions.\n- **Client Surveys**: Send out client satisfaction surveys to gather feedback on service levels and response times.\n- **Focus Groups**: Organize focus groups to discuss specific issues and gather qualitative feedback.\n\n### 4. **Benchmarking and Comparison**\nCompare the firm's performance with industry benchmarks and competitors who have implemented similar workweek models:\n- **Industry Benchmarks**: Use industry reports and best practices to set realistic goals and compare performance.\n- **Competitor Analysis**: Study competitors who have successfully transitioned to a four-day workweek to learn from their experiences.\n\n### 5. **Adjustments and Improvements**\nBased on the evaluation, make necessary adjustments to the four-day workweek model:\n- **Process Improvements**: Identify areas for process improvement and implement changes to enhance efficiency.\n- **Training and Development**: Provide additional training and development opportunities to help employees adapt to the new schedule.\n- **Technology Enhancements**: Invest in technology and infrastructure to support remote work and improve productivity.\n\n### 6. **Financial Analysis**\nConduct periodic financial analyses to assess the financial impact of the four-day workweek:\n- **Cost-Benefit Analysis**: Regularly review the cost-benefit ratio to ensure the model remains financially viable.\n- **Return on Investment (ROI)**: Calculate the ROI to determine the financial return on the investment in the four-day workweek.\n\n### 7. **Risk Management**\nDevelop a risk management plan to address potential issues:\n- **Contingency Plans**: Have contingency plans in place to handle unexpected challenges.\n- **Communication Plan**: Maintain open lines of communication to address any concerns promptly.\n\n### 8. **Documentation and Best Practices**\nDocument the entire process and best practices for future reference:\n- **Implementation Guide**: Create a detailed guide for future implementation of similar models.\n- **Success Stories**: Document success stories and lessons learned for internal and external sharing.\n\n### Example Evaluation Schedule\n\n#### Monthly:\n- Review KPIs and provide updates to senior leadership.\n- Conduct employee and client satisfaction surveys.\n\n#### Quarterly:\n- Hold quarterly reviews to discuss progress and make necessary adjustments.\n- Analyze financial performance and conduct cost-benefit analysis.\n\n#### Annually:\n- Perform a comprehensive annual evaluation.\n- Update KPIs and adjust the implementation plan as needed.\n- Share findings and best practices with the broader organization.\n\nBy following this structured approach, the firm can effectively evaluate the impact of the four-day workweek and make data-driven decisions to ensure long-term success.",
+      "tokens": 807,
+      "finish": "eos",
+      "seconds": 28.374342757000704,
+      "ngram_changed_steps": 0,
+      "ngram_first_changed_step": null
+    },
+    {
+      "phase": "release",
+      "prompt": "What uncertainties would a decision maker need to monitor?",
+      "text": "To ensure a well-rounded evaluation of the decision to implement a four-day workweek, a decision maker should monitor several key uncertainties. Here are the main uncertainties that need to be addressed:\n\n### 1. **Employee Productivity and Morale**\n- **Initial Adjustment Period**: Monitor the initial adjustment period to ensure that employees are adapting well to the new schedule.\n- **Productivity Levels**: Continuously track productivity metrics to ensure that work output remains consistent or improves.\n- **Employee Morale**: Regularly survey employees to gauge their satisfaction and morale, addressing any issues promptly.\n\n### 2. **Client Satisfaction and Service Levels**\n- **Client Feedback**: Collect ongoing feedback from clients to ensure that service levels and response times remain consistent.\n- **Project Delays**: Monitor project timelines to ensure that deadlines are met without compromising quality.\n- **Client Complaints**: Track any client complaints or issues related to service levels.\n\n### 3. **Revenue and Financial Impact**\n- **Revenue Per Employee**: Continuously monitor revenue per employee to ensure that the model is financially viable.\n- **Cost Savings**: Track any cost savings or additional expenses associated with the four-day workweek.\n- **ROI**: Regularly calculate the return on investment to ensure that the financial benefits outweigh the costs.\n\n### 4. **Attrition Rates**\n- **Voluntary and Involuntary Attrition**: Monitor attrition rates to ensure that the model does not lead to higher turnover.\n- **Reasons for Attrition**: Investigate the primary reasons for attrition to understand if the four-day workweek is contributing positively or negatively.\n\n### 5. **Operational Efficiency**\n- **Resource Utilization**: Ensure that resources are being used efficiently and effectively.\n- **Technology and Tools**: Monitor the reliability and effectiveness of the technology and tools used to support the four-day workweek.\n- **Office Space and Equipment**: Ensure that office space and equipment are being used optimally.\n\n### 6. **Client and Stakeholder Communication**\n- **Client Expectations**: Manage client expectations and ensure clear communication about the new schedule.\n- **Stakeholder Feedback**: Gather feedback from stakeholders to ensure that the transition is smooth and well-received.\n\n### 7. **Legal and Compliance Issues**\n- **Labor Laws**: Ensure compliance with local labor laws and regulations.\n- **Union Agreements**: If applicable, monitor union agreements to ensure that the new schedule is acceptable and legally compliant.\n\n### 8. **Technological and Infrastructure Challenges**\n- **Remote Work Capabilities**: Ensure that remote work capabilities are robust and reliable.\n- **Data Security**: Monitor data security measures to protect sensitive information and client data.\n\n### 9. **Change Management**\n- **Resistance and Adaptation**: Monitor employee resistance and ensure that necessary support systems are in place.\n- **Change Management Plan**: Continuously refine the change management plan to address any emerging issues.\n\n### 10. **Market and Industry Trends**\n- **Industry Benchmarks**: Stay informed about industry trends and best practices.\n- **Market Changes**: Monitor any changes in the market that might affect the firm's operations and the effectiveness of the four-day workweek.\n\n### Example Uncertainties to Monitor\n\n1. **Employee Productivity and Morale**:\n   - Initial productivity levels during the first few months.\n   - Employee satisfaction scores from regular surveys.\n   - Any signs of burnout or decreased morale.\n\n2. **Client Satisfaction and Service Levels**:\n   - Client feedback on service levels and response times.\n   - Project delays and their impact on client satisfaction.\n   - Number of client complaints and their nature.\n\n3. **Revenue and Financial Impact**:\n   - Revenue per employee over time.\n   - Cost savings or additional expenses.\n   - ROI calculations and financial performance metrics.\n\n4. **Attrition Rates**:\n   - Voluntary and involuntary attrition rates.\n   - Reasons for attrition and their correlation with the four-day workweek.\n\n5. **Operational Efficiency**:\n   - Resource utilization and efficiency.\n   - Reliability of technology and tools.\n   - Office space and equipment usage.\n\n6. **Client and Stakeholder Communication**:\n   - Client expectations and feedback.\n   - Stakeholder satisfaction and engagement.\n\n7. **Legal and Compliance Issues**:\n   - Compliance with labor laws and union agreements.\n   - Any legal challenges or disputes.\n\n8. **Technological and Infrastructure Challenges**:\n   - Reliability of remote work capabilities.\n   - Data security incidents and their frequency.\n\n9. **Change Management**:\n   - Employee resistance and adaptation.\n   - Effectiveness of support systems and change management processes.\n\n10. **Market and Industry Trends**:\n    - Industry benchmarks and best practices.\n    - Market changes and their impact on the firm.\n\nBy closely monitoring these uncertainties, the decision maker can proactively address any issues and ensure the long-term success of the four-day workweek implementation.",
+      "tokens": 993,
+      "finish": "eos",
+      "seconds": 34.602930823999486,
+      "ngram_changed_steps": 0,
+      "ngram_first_changed_step": null
+    }
+  ],
+  "readouts": [
+    {
+      "index": 0,
+      "discount": false,
+      "printed_order": 1,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4346,
+          22519,
+          29133
+        ],
+        [
+          33,
+          65,
+          293,
+          425,
+          5349,
+          32622,
+          63590
+        ]
+      ],
+      "mass": 0.9999999510988423,
+      "p_a_slot": 3.5356251773154176e-05,
+      "p_a_canonical": 3.5356251773154176e-05,
+      "prose": {
+        "text": "I quote: Keep the five-day week\n\nOne reason for this position is that maintaining a five-day workweek ensures consistent service levels and availability, which can be crucial for client satisfaction and revenue generation.",
+        "tokens": 41,
+        "finish": "eos",
+        "seconds": 1.3679938690002018
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I quote: Keep the five-day week\n\nOne reason for this position is the potential decrease in productivity that may occur with a four-day workweek, which could negatively impact revenue per employee.",
+        "tokens": 39,
+        "finish": "eos",
+        "seconds": 1.3149469979998685
+      },
+      "labelled_prose_canonical": "B",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 0,
+      "discount": false,
+      "printed_order": 2,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4346,
+          22519,
+          29133
+        ],
+        [
+          33,
+          65,
+          293,
+          425,
+          5349,
+          32622,
+          63590
+        ]
+      ],
+      "mass": 1.0000000242186413,
+      "p_a_slot": 0.9933071491997195,
+      "p_a_canonical": 0.006692850800280547,
+      "prose": {
+        "text": "I quote: Keep the five-day week\n\nOne reason for keeping the five-day week is the potential decrease in productivity that may occur with a four-day workweek. Research suggests that reducing the workweek from five to four days can lead to lower productivity levels, which could negatively impact revenue per employee. Maintaining the current schedule helps ensure consistent service levels and revenue generation.",
+        "tokens": 75,
+        "finish": "eos",
+        "seconds": 2.4885706290006055
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I quote: Keep the five-day week\n\nOne reason for this position is that maintaining a five-day workweek ensures consistent service levels and availability, which can be crucial for client satisfaction and revenue generation.",
+        "tokens": 41,
+        "finish": "eos",
+        "seconds": 1.3645701240002381
+      },
+      "labelled_prose_canonical": "B",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 0,
+      "discount": true,
+      "printed_order": 1,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4346,
+          22519,
+          29133
+        ],
+        [
+          33,
+          65,
+          293,
+          425,
+          5349,
+          32622,
+          63590
+        ]
+      ],
+      "mass": 1.0000000298057643,
+      "p_a_slot": 0.014063626109012663,
+      "p_a_canonical": 0.014063626109012663,
+      "prose": {
+        "text": "I choose: Keep the five-day week\n\nOne reason for this choice is the potential risk associated with decreased productivity. Switching to a four-day workweek without concrete evidence of improved efficiency or increased revenue could lead to a reduction in overall output, which may negatively impact the firm's financial performance.",
+        "tokens": 60,
+        "finish": "eos",
+        "seconds": 2.0028910210003232
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Keep the five-day week\n\nOne reason for this choice is the potential decrease in productivity that may occur with a four-day workweek. Maintaining a five-day workweek ensures consistent service levels and output, which is crucial for sustaining and potentially increasing revenue per employee.",
+        "tokens": 57,
+        "finish": "eos",
+        "seconds": 1.9332750979992852
+      },
+      "labelled_prose_canonical": "B",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 0,
+      "discount": true,
+      "printed_order": 2,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4346,
+          22519,
+          29133
+        ],
+        [
+          33,
+          65,
+          293,
+          425,
+          5349,
+          32622,
+          63590
+        ]
+      ],
+      "mass": 0.9999999720686584,
+      "p_a_slot": 0.9820137894321362,
+      "p_a_canonical": 0.017986210567863703,
+      "prose": {
+        "text": "I choose: Keep the five-day week\n\nOne reason for this choice is that maintaining a five-day workweek ensures consistent service availability and client satisfaction, which are crucial for revenue generation in a professional services firm.",
+        "tokens": 43,
+        "finish": "eos",
+        "seconds": 1.4716260910008714
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Keep the five-day week\n\nOne reason for this choice is that maintaining a five-day workweek ensures consistent service availability and client satisfaction, which are crucial for revenue generation in a professional services firm.",
+        "tokens": 43,
+        "finish": "eos",
+        "seconds": 1.43862404399988
+      },
+      "labelled_prose_canonical": "B",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 3,
+      "discount": false,
+      "printed_order": 1,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4346,
+          22519,
+          29133
+        ],
+        [
+          33,
+          65,
+          293,
+          425,
+          5349,
+          32622,
+          63590
+        ]
+      ],
+      "mass": 1.0000000175432917,
+      "p_a_slot": 0.000709670410633541,
+      "p_a_canonical": 0.000709670410633541,
+      "prose": {
+        "text": "I choose: Keep the five-day week\n\nOne reason for this choice is that the reduction in revenue per head due to fewer fully productive employees in the second year outweighs the benefits of lower voluntary attrition. Maintaining a consistent number of fully productive employees ensures more stable and predictable revenue.",
+        "tokens": 59,
+        "finish": "eos",
+        "seconds": 2.0135897460004344
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Keep the five-day week\n\nOne reason for this choice is the impact on revenue per head. The study indicates that the four-day week leads to a reduction in the number of fully productive employees due to the ramp-up period for new joiners, which temporarily decreases revenue per head. Maintaining the five-day week ensures a more consistent and stable workforce, thereby preserving revenue levels.",
+        "tokens": 79,
+        "finish": "eos",
+        "seconds": 2.7003888449999067
+      },
+      "labelled_prose_canonical": "B",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 3,
+      "discount": false,
+      "printed_order": 2,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4346,
+          22519,
+          29133
+        ],
+        [
+          33,
+          65,
+          293,
+          425,
+          5349,
+          32622,
+          63590
+        ]
+      ],
+      "mass": 0.999999959027686,
+      "p_a_slot": 0.008577484990415048,
+      "p_a_canonical": 0.9914225150095849,
+      "prose": {
+        "text": "I choose: Keep the five-day week\n\nOne reason for this choice is the impact on revenue per head. The study indicates that by the second year, the four-day firms had fewer new joiners who were still ramping up, leading to a reduction in revenue per head. Maintaining a five-day week ensures a more stable and consistent number of fully productive employees, which helps in maintaining and potentially increasing revenue.",
+        "tokens": 84,
+        "finish": "eos",
+        "seconds": 2.8631251200004044
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Keep the five-day week\n\nOne reason for this choice is the impact on revenue per head. The study indicates that by the second year, the four-day firms had fewer new joiners who were still ramping up, leading to a reduction in revenue per head. Maintaining the five-day week ensures a more stable and consistent number of fully productive employees, which helps in maintaining and potentially increasing revenue.",
+        "tokens": 84,
+        "finish": "eos",
+        "seconds": 2.8718555370014656
+      },
+      "labelled_prose_canonical": "B",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 3,
+      "discount": true,
+      "printed_order": 1,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4346,
+          22519,
+          29133
+        ],
+        [
+          33,
+          65,
+          293,
+          425,
+          5349,
+          32622,
+          63590
+        ]
+      ],
+      "mass": 1.0000000705031205,
+      "p_a_slot": 0.005220125597159056,
+      "p_a_canonical": 0.005220125597159056,
+      "prose": {
+        "text": "I choose: Keep the five-day week\n\nOne reason for this position is that the reduction in revenue per head due to fewer fully productive employees in the second year outweighs the benefits of lower voluntary attrition. Maintaining a consistent number of fully productive employees ensures stable and predictable revenue generation.",
+        "tokens": 59,
+        "finish": "eos",
+        "seconds": 2.0415045250010735
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Keep the five-day week\n\nOne reason for this position is the temporary decrease in revenue per head due to the reduced number of fully productive employees in the first two years after the transition to a four-day week.",
+        "tokens": 46,
+        "finish": "eos",
+        "seconds": 1.6227855180004553
+      },
+      "labelled_prose_canonical": "B",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 3,
+      "discount": true,
+      "printed_order": 2,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4346,
+          22519,
+          29133
+        ],
+        [
+          33,
+          65,
+          293,
+          425,
+          5349,
+          32622,
+          63590
+        ]
+      ],
+      "mass": 1.0000000133547082,
+      "p_a_slot": 1.3007128774888035e-05,
+      "p_a_canonical": 0.9999869928712251,
+      "prose": {
+        "text": "I choose: Move to a four-day week\n\nOne reason for this position is the sustained increase in revenue per employee, which was 2.4% higher for firms that adopted a four-day workweek compared to those that maintained a five-day workweek. This increase indicates a long-term benefit that outweighs any short-term reductions in revenue due to the ramp-up period of new joiners.",
+        "tokens": 80,
+        "finish": "eos",
+        "seconds": 2.741869247000068
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Move to a four-day week\n\nOne reason for this position is the sustained increase in revenue per employee, which was 2.4% higher for firms that adopted a four-day workweek compared to those that maintained a five-day workweek. This increase indicates a net benefit despite the initial reduction in the number of fully productive employees due to new joiners ramping up.",
+        "tokens": 79,
+        "finish": "eos",
+        "seconds": 2.7405781329998717
+      },
+      "labelled_prose_canonical": "A",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4346,
+          22519,
+          29133
+        ],
+        [
+          33,
+          65,
+          293,
+          425,
+          5349,
+          32622,
+          63590
+        ]
+      ],
+      "mass": 0.9999999684334272,
+      "p_a_slot": 0.9999999123575208,
+      "p_a_canonical": 0.9999999123575208,
+      "prose": {
+        "text": "I choose: Move to a four-day week\n\nOne reason is that the revenue per employee for four-day firms was consistently higher, with a 2.4% increase over five-day firms at 24 months, and the gap widened over time. This indicates that the four-day week model is more effective in generating higher revenue per employee in the long term.",
+        "tokens": 74,
+        "finish": "eos",
+        "seconds": 2.6220369650000066
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Move to a four-day week\n\nOne reason is that the revenue per employee for four-day firms was consistently higher over the two-year period, with a 2.4% increase and the gap widening after month 12. This indicates sustained benefits from the four-day week model.",
+        "tokens": 61,
+        "finish": "eos",
+        "seconds": 2.179088161999971
+      },
+      "labelled_prose_canonical": "A",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4346,
+          22519,
+          29133
+        ],
+        [
+          33,
+          65,
+          293,
+          425,
+          5349,
+          32622,
+          63590
+        ]
+      ],
+      "mass": 1.0000000469154888,
+      "p_a_slot": 4.69116424587329e-08,
+      "p_a_canonical": 0.9999999530883577,
+      "prose": {
+        "text": "Move to a four-day week\n\nOne reason for this position is that the data shows a consistent and sustained increase in revenue per employee for firms that adopted the four-day week model. Specifically, revenue per employee was 2.4% higher for four-day firms compared to five-day firms after two years, with the gap widening over time. This indicates that the long-term benefits of the four-day week outweigh any short-term challenges, such as the initial dip in revenue due to reduced headcount from lower attrition.",
+        "tokens": 104,
+        "finish": "eos",
+        "seconds": 3.596249935999367
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Move to a four-day week\n\nOne reason is that the revenue per employee for four-day firms was consistently higher, with a 2.4% increase over five-day firms at 24 months, and the gap widened over time. This indicates that the four-day week model is more profitable in the long term.",
+        "tokens": 68,
+        "finish": "eos",
+        "seconds": 2.3952738770003634
+      },
+      "labelled_prose_canonical": "A",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4346,
+          22519,
+          29133
+        ],
+        [
+          33,
+          65,
+          293,
+          425,
+          5349,
+          32622,
+          63590
+        ]
+      ],
+      "mass": 0.9999999998669413,
+      "p_a_slot": 0.99999976176309,
+      "p_a_canonical": 0.99999976176309,
+      "prose": {
+        "text": "I choose: Move to a four-day week\n\nReason: The data shows that revenue per employee was 2.4% higher for four-day firms compared to five-day firms after two years, and this gap widened over time. This indicates a sustained increase in revenue per employee, making the four-day week a more financially beneficial option.",
+        "tokens": 68,
+        "finish": "eos",
+        "seconds": 2.376336543000434
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Move to a four-day week\n\nThe reason is that the data shows a consistent and sustained increase in revenue per employee for firms that adopted the four-day week model. Specifically, revenue per employee was 2.4% higher for four-day firms compared to five-day firms after two years, with the gap widening over time. This indicates that the four-day week model is more effective in generating higher revenue per employee in the long term.",
+        "tokens": 91,
+        "finish": "eos",
+        "seconds": 3.2446949770001083
+      },
+      "labelled_prose_canonical": "A",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4346,
+          22519,
+          29133
+        ],
+        [
+          33,
+          65,
+          293,
+          425,
+          5349,
+          32622,
+          63590
+        ]
+      ],
+      "mass": 1.0000000063509507,
+      "p_a_slot": 6.34880018387164e-09,
+      "p_a_canonical": 0.9999999936511998,
+      "prose": {
+        "text": "I choose: Move to a four-day week\n\nReason: The data shows that revenue per employee was 2.4% higher for four-day firms compared to five-day firms after two years, and this gap widened over time. This indicates a sustained increase in revenue per employee, making the four-day week a more financially beneficial option.",
+        "tokens": 68,
+        "finish": "eos",
+        "seconds": 2.3883592740003223
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Move to a four-day week\n\nThe two-year data shows that revenue per employee was 2.4% higher for firms that moved to a four-day week, and this gap widened over time. This consistent improvement in revenue per employee makes the four-day week a more favorable option.",
+        "tokens": 61,
+        "finish": "eos",
+        "seconds": 2.165154139000151
+      },
+      "labelled_prose_canonical": "A",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4346,
+          22519,
+          29133
+        ],
+        [
+          33,
+          65,
+          293,
+          425,
+          5349,
+          32622,
+          63590
+        ]
+      ],
+      "mass": 1.0000000447978734,
+      "p_a_slot": 0.8519528127410735,
+      "p_a_canonical": 0.8519528127410735,
+      "prose": {
+        "text": "I choose: Move to a four-day week\n\nOne reason: The data shows that revenue per employee was 2.4% higher for four-day firms compared to five-day firms after two years, and this gap widened over time. This indicates a sustained increase in revenue per employee, making the four-day week a financially beneficial option.",
+        "tokens": 68,
+        "finish": "eos",
+        "seconds": 2.573570002999986
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I choose: Move to a four-day week\n\nOne reason is that the revenue per employee has consistently increased over the two-year period, with a 2.4% higher revenue per employee for four-day firms compared to five-day firms, and this gap widened over time. This indicates that the four-day week model is financially beneficial in the long run.",
+        "tokens": 72,
+        "finish": "eos",
+        "seconds": 2.834604916999524
+      },
+      "labelled_prose_canonical": "A",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4346,
+          22519,
+          29133
+        ],
+        [
+          33,
+          65,
+          293,
+          425,
+          5349,
+          32622,
+          63590
+        ]
+      ],
+      "mass": 0.9999999979299318,
+      "p_a_slot": 5.8291265508788297e-05,
+      "p_a_canonical": 0.9999417087344912,
+      "prose": {
+        "text": "Move to a four-day week\n\nOne reason is that the revenue per employee for four-day firms was consistently higher, with a 2.4% increase over five-day firms, and this gap widened over time. This indicates sustained financial benefits, making the transition to a four-day week a sound decision.",
+        "tokens": 62,
+        "finish": "eos",
+        "seconds": 2.3790222959996754
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "Move to a four-day week\n\nOne reason is that the revenue per employee for four-day firms was consistently higher, with a 2.4% increase over five-day firms, and this gap widened over time. This indicates sustained financial benefits, making the transition to a four-day week a sound decision.",
+        "tokens": 62,
+        "finish": "eos",
+        "seconds": 2.4028992160001508
+      },
+      "labelled_prose_canonical": "A",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4346,
+          22519,
+          29133
+        ],
+        [
+          33,
+          65,
+          293,
+          425,
+          5349,
+          32622,
+          63590
+        ]
+      ],
+      "mass": 1.000000007539733,
+      "p_a_slot": 0.952574126777487,
+      "p_a_canonical": 0.952574126777487,
+      "prose": {
+        "text": "I choose: Keep the five-day week\n\nOne reason: While the four-day week model has shown some benefits such as reduced attrition, the initial dip in revenue per head due to fewer fully productive employees in the transition period could outweigh these benefits. Maintaining the five-day week ensures consistent revenue generation and avoids the risk of short-term financial impact.",
+        "tokens": 71,
+        "finish": "eos",
+        "seconds": 2.7225072530000034
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "(A) Move to a four-day week\n\nOne reason for this position is that the revenue per employee was 2.4% higher for four-day firms compared to five-day firms after two years, and this gap widened over time. This indicates a sustained increase in revenue per employee, making the four-day week a financially beneficial option.",
+        "tokens": 68,
+        "finish": "eos",
+        "seconds": 2.609686010999212
+      },
+      "labelled_prose_canonical": "A",
+      "labelled_prose_letter_slot": "A"
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4346,
+          22519,
+          29133
+        ],
+        [
+          33,
+          65,
+          293,
+          425,
+          5349,
+          32622,
+          63590
+        ]
+      ],
+      "mass": 1.0000000167266305,
+      "p_a_slot": 4.785094848650538e-06,
+      "p_a_canonical": 0.9999952149051514,
+      "prose": {
+        "text": "Move to a four-day week\n\nOne reason is that the revenue per employee for four-day firms was 2.4% higher than for five-day firms after two years, and this gap widened over time. This indicates a sustained increase in revenue per employee, making the four-day week a financially beneficial option.",
+        "tokens": 63,
+        "finish": "eos",
+        "seconds": 2.5106077620002907
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "(B) Move to a four-day week\n\nOne reason for this position is that the revenue per employee was 2.4% higher for four-day firms compared to five-day firms after two years, and this gap widened over time. This indicates a sustained increase in revenue per employee, making the four-day week a financially beneficial choice.",
+        "tokens": 68,
+        "finish": "eos",
+        "seconds": 2.5906900700010738
+      },
+      "labelled_prose_canonical": "A",
+      "labelled_prose_letter_slot": "B"
+    }
+  ],
+  "opening_canonical": "B",
+  "opening_letter_slot": null,
+  "ladder_dir": "vs_b",
+  "status": "complete",
+  "elapsed_seconds": 218.56352495400097
+}

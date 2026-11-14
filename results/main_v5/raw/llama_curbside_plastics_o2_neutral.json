@@ -1,0 +1,844 @@
+{
+  "decode_extra": {
+    "no_repeat_ngram_size": 20
+  },
+  "kind": "main",
+  "design": "ladder_v5",
+  "ladders_sha256": "c4f93903ca81a0c40587b594f7585ac7537e3338365c45524b6f7698dcbdaedf",
+  "build": {
+    "commit": "25d61ac0e102cde5da30ee02213d17e8763a3e26",
+    "dirty": false
+  },
+  "topic_group": "non-meta",
+  "history_max_new_tokens": 1500,
+  "args": {
+    "model": "meta-llama/Llama-3.1-8B-Instruct",
+    "revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+    "device": "cuda",
+    "topic": "curbside_plastics",
+    "order": 2,
+    "condition": "neutral",
+    "out": "results/main/llama_curbside_plastics_o2_neutral.json",
+    "smoke": false,
+    "repetition_penalty": null,
+    "no_repeat_ngram": 20
+  },
+  "model_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+  "tokenizer_sha256": "79e3e522635f3171300913bb421464a87de6222182a0570b9b2ccba2a964b2b4",
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "dtype": "torch.bfloat16",
+  "script_sha256": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+  "load_seconds": 7.399686074999863,
+  "turns": [
+    {
+      "phase": "opening",
+      "prompt": "A city of 500,000 spends $2.1 million a year collecting and sorting mixed plastics and recovers $600,000 in resale. Should it keep the programme?\n(A) Discontinue the programme\n(B) Keep the programme\nChoose one option. Begin with \"I choose:\" followed by the exact wording of the option (not its letter), then briefly explain.",
+      "text": "I choose: Discontinue the programme.\n\nThe city spends $2.1 million a year on the programme but only recovers $600,000 in resale. This means the programme is operating at a loss of $1.5 million annually. Given the significant financial burden, it would be more cost-effective for the city to discontinue the programme and allocate the funds to other essential services or initiatives.",
+      "tokens": 81,
+      "finish": "eos",
+      "seconds": 3.49036455400028
+    },
+    {
+      "phase": "exposure",
+      "prompt": "Describe one practical consideration relevant to this decision.",
+      "text": "One practical consideration relevant to this decision is the potential environmental impact of discontinuing the programme. If the city stops collecting and sorting mixed plastics, it may lead to an increase in litter and pollution, as well as a decrease in the amount of recyclable materials being processed. This could have long-term consequences for the city's environment and public health.",
+      "tokens": 70,
+      "finish": "eos",
+      "seconds": 2.6830124399998567,
+      "ngram_changed_steps": 0,
+      "ngram_first_changed_step": null
+    },
+    {
+      "phase": "exposure",
+      "prompt": "Describe an implementation cost that a decision maker should examine.",
+      "text": "One implementation cost that a decision maker should examine is the cost of transitioning from the current programme to a new system or alternative approach. This could include costs such as:\n\n* Disposal fees for the existing stockpiles of mixed plastics\n* Equipment costs for new collection or processing systems\n* Training costs for city staff on new procedures or technologies\n* Potential fines or penalties for non-compliance with environmental regulations if the city is unable to meet recycling targets\n\nThese costs should be factored into the decision to discontinue the programme to ensure that the city is not left with additional financial burdens.",
+      "tokens": 119,
+      "finish": "eos",
+      "seconds": 4.505305208999744,
+      "ngram_changed_steps": 0,
+      "ngram_first_changed_step": null
+    },
+    {
+      "phase": "exposure",
+      "prompt": "Describe a hypothetical scenario that could affect the expected outcome.",
+      "text": "A hypothetical scenario that could affect the expected outcome is a significant increase in the market value of recyclable materials, such as mixed plastics. If the city's resale revenue were to increase by 50% or more, the programme's financial performance would improve, and the decision to discontinue the programme might be reconsidered.\n\nFor example, if the resale revenue were to increase from $600,000 to $900,000, the programme would break even, and the city might decide to continue the programme to maintain its environmental benefits and community engagement. This scenario highlights the importance of regularly monitoring market trends and adjusting the programme accordingly to ensure its long-term sustainability.",
+      "tokens": 132,
+      "finish": "eos",
+      "seconds": 5.037569322999843,
+      "ngram_changed_steps": 0,
+      "ngram_first_changed_step": null
+    },
+    {
+      "phase": "exposure",
+      "prompt": "Describe a risk a decision maker should consider.",
+      "text": "A risk a decision maker should consider is the potential for increased costs or liabilities associated with the disposal of the existing stockpiles of mixed plastics if the programme is discontinued. If the city is unable to find a suitable buyer for the recyclable materials, it may be forced to dispose of them through more expensive and environmentally unfriendly methods, such as landfilling or incineration.\n\nThis risk could result in significant additional costs for the city, potentially exceeding the current annual operating costs of the programme. The decision maker should consider the potential financial and environmental implications of this risk and factor it into the decision-making process.",
+      "tokens": 123,
+      "finish": "eos",
+      "seconds": 4.677395869000065,
+      "ngram_changed_steps": 0,
+      "ngram_first_changed_step": null
+    },
+    {
+      "phase": "exposure",
+      "prompt": "Summarize the considerations discussed so far.",
+      "text": "The considerations discussed so far include:\n\n1. **Financial burden**: The programme is operating at a loss of $1.5 million annually, making it a significant financial burden on the city.\n2. **Environmental impact**: Discontinuing the programme could lead to an increase in litter and pollution, and a decrease in the amount of recyclable materials being processed.\n3. **Implementation costs**: The city may incur additional costs, such as disposal fees, equipment costs, and training costs, if it decides to transition to a new system or alternative approach.\n4. **Market fluctuations**: Changes in the market value of recyclable materials could affect the programme's financial performance and the decision to continue or discontinue it.\n5. **Risk of increased costs or liabilities**: Discontinuing the programme could result in significant additional costs for the city, potentially exceeding the current annual operating costs of the program, if it is unable to find a suitable buyer for the recyclable materials.",
+      "tokens": 194,
+      "finish": "eos",
+      "seconds": 7.327622993000205,
+      "ngram_changed_steps": 1,
+      "ngram_first_changed_step": 176
+    },
+    {
+      "phase": "release",
+      "prompt": "What information would help assess the decision?",
+      "text": "The following information would help assess the decision to discontinue the mixed plastics collection and sorting programme:\n\n1. **Long-term projections**: A detailed analysis of the programme's financial performance over the next 5-10 years, including projected revenue and expenses, would help determine whether the programme is sustainable in the long term.\n2. **Alternative revenue streams**: Information on potential alternative revenue streams, such as grants, sponsorships, or partnerships, could help offset the programme's financial losses.\n3. **Community engagement and education**: Data on the level of community engagement and education on recycling practices, as well as the programme's impact on public awareness and behavior, would help assess the programme's non-financial benefits.\n4. **Environmental impact assessments**: Studies on the environmental impact of discontinuing the programme, including the potential increase in litter and pollution, would provide a more comprehensive understanding of the programme's effects.\n5. **Comparison with other waste management options**: Information on the costs and benefits of alternative waste management options, such as single-stream recycling or waste-to-energy facilities, would help determine whether the programme is the most effective and efficient approach.\n6. **Market trends and forecasts**: Data on market trends and forecasts for recyclable materials, including prices and demand, would help assess the programme's financial viability and potential for growth.\n7. **Cost-benefit analysis**: A detailed cost-benefit analysis of the programme, including both financial and non-financial benefits, would help decision-makers weigh the pros and cons of continuing or discontinuing the programme.",
+      "tokens": 309,
+      "finish": "eos",
+      "seconds": 11.827684566000244,
+      "ngram_changed_steps": 0,
+      "ngram_first_changed_step": null
+    },
+    {
+      "phase": "release",
+      "prompt": "What implementation challenges are relevant?",
+      "text": "The following implementation challenges are relevant to the decision to discontinue the mixed plastics collection and sorting programme:\n\n1. **Transitioning to a new system**: The city would need to implement a new system for collecting and processing waste, which could be complex and time-consuming.\n2. **Staff training and reassignment**: City staff who are currently working on the mixed plastics programme would need to be trained on new procedures and potentially reassigned to other roles.\n3. **Equipment disposal or repurposing**: The city would need to dispose of or repurpose the equipment currently used for the mixed plastics programme, which could be a logistical challenge.\n4. **Community notification and education**: The city would need to notify the public about the changes to the waste collection and sorting programme, which could be a challenge, especially if the programme is being discontinued.\n5. **Ensuring compliance with regulations**: The city would need to ensure that it is complying with all relevant regulations and laws related to waste management, which could be a challenge, especially if the programme is being discontinued.\n6. **Managing public expectations**: The city would need to manage public expectations and potential backlash if the programme is being discontinued, which could be a challenge, especially if the public is invested in the programme.\n7. **Coordinating with waste management contractors**: The city would need to coordinate with waste management contractors to ensure a smooth transition to a new system, which could be a challenge, especially if the contractors are not prepared for the changes.",
+      "tokens": 301,
+      "finish": "eos",
+      "seconds": 11.48957532400027,
+      "ngram_changed_steps": 0,
+      "ngram_first_changed_step": null
+    },
+    {
+      "phase": "release",
+      "prompt": "How might the decision be evaluated over time?",
+      "text": "The decision to discontinue the mixed plastics collection and sorting programme could be evaluated over time by tracking and analyzing the following metrics:\n\n1. **Financial performance**: Monitor the city's financial savings or expenses related to the programme's discontinuation, including any costs associated with transitioning to a new system.\n2. **Waste diversion rates**: Track the city's waste diversion rates to ensure that the programme's discontinuation has not led to an increase in litter and pollution.\n3. **Community engagement and education**: Monitor public awareness and behavior related to recycling practices, as well as any changes in community engagement and education efforts.\n4. **Environmental impact**: Assess the programme's environmental impact, including any changes in greenhouse gas emissions, air and water pollution, and waste management practices.\n5. **Public satisfaction**: Conduct surveys or gather feedback from the public to assess their satisfaction with the programme's discontinuation and any changes to waste management services.\n6. **Compliance with regulations**: Ensure that the city is complying with all relevant regulations and laws related to waste management, including any changes to recycling targets or requirements.\n7. **Alternative waste management options**: Evaluate the effectiveness of alternative waste management options, such as single-stream recycling or waste-to-energy facilities, and assess their impact on the city's waste management practices.\n\nRegular evaluation and monitoring of these metrics would help the city assess the effectiveness of the decision to discontinue the mixed plastics collection and sorting programme and make any necessary adjustments to ensure that the city's waste management practices are effective, efficient, and environmentally sustainable.",
+      "tokens": 310,
+      "finish": "eos",
+      "seconds": 11.797636495000006,
+      "ngram_changed_steps": 0,
+      "ngram_first_changed_step": null
+    },
+    {
+      "phase": "release",
+      "prompt": "What uncertainties would a decision maker need to monitor?",
+      "text": "A decision maker would need to monitor the following uncertainties related to the decision to discontinue the mixed plastics collection and sorting programme:\n\n1. **Market fluctuations**: Changes in the market value of recyclable materials, including mixed plastics, could affect the programme's financial performance and the decision to continue or discontinue it.\n2. **Regulatory changes**: Changes in regulations and laws related to waste management, including recycling targets and requirements, could impact the programme's effectiveness and the city's compliance with regulations.\n3. **Public opinion and behavior**: Changes in public opinion and behavior related to recycling practices, including participation rates and waste diversion rates, could affect the programme's effectiveness and the city's waste management practices.\n4. **Technological advancements**: Advances in technology related to waste management, including recycling and waste-to-energy facilities, could impact the programme's effectiveness and the city's waste management practices.\n5. **Economic conditions**: Changes in economic conditions, including inflation, recession, or economic growth, could impact the programme's financial performance and the city's ability to fund waste management services.\n6. **Demographic changes**: Changes in the city's demographics, including population growth, age, and income, could impact the programme's effectiveness and the city's waste management practices.\n7. **Environmental concerns**: Changes in environmental concerns, including climate change, pollution, and sustainability, could impact the programme's effectiveness and the city's waste management practices.\n\nMonitoring these uncertainties would help the decision maker to:\n\n* Identify potential risks and opportunities\n* Adjust the programme's strategy and budget accordingly\n* Ensure that the programme remains effective and efficient\n* Make informed decisions about the programme's continuation or discontinuation\n\nRegular monitoring and analysis of these uncertainties would help the decision maker to stay ahead of potential challenges and opportunities, and to make informed decisions that align with the city's waste management goals and objectives.",
+      "tokens": 376,
+      "finish": "eos",
+      "seconds": 14.380431820000013,
+      "ngram_changed_steps": 0,
+      "ngram_first_changed_step": null
+    }
+  ],
+  "readouts": [
+    {
+      "index": 0,
+      "discount": false,
+      "printed_order": 1,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4444,
+          23335,
+          30233
+        ],
+        [
+          33,
+          65,
+          293,
+          426,
+          5462,
+          33722,
+          64690
+        ]
+      ],
+      "mass": 0.9999138853694143,
+      "p_a_slot": 0.001396828196702988,
+      "p_a_canonical": 0.001396828196702988,
+      "prose": {
+        "text": "Discontinue the programme.\n\nI chose this option because the programme is operating at a significant financial loss, which could be better utilized for other essential services or initiatives.",
+        "tokens": 33,
+        "finish": "eos",
+        "seconds": 1.224092900999949
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "(B) Discontinue the programme\n\nI chose to discontinue the programme because it is operating at a significant financial loss, with the city spending $1.5 million more than it recovers in resale.",
+        "tokens": 42,
+        "finish": "eos",
+        "seconds": 1.5547340729999632
+      },
+      "labelled_prose_canonical": "B",
+      "labelled_prose_letter_slot": "B"
+    },
+    {
+      "index": 0,
+      "discount": false,
+      "printed_order": 2,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4444,
+          23335,
+          30233
+        ],
+        [
+          33,
+          65,
+          293,
+          426,
+          5462,
+          33722,
+          64690
+        ]
+      ],
+      "mass": 0.9999503706598152,
+      "p_a_slot": 0.9999574180680957,
+      "p_a_canonical": 4.258193190428514e-05,
+      "prose": {
+        "text": "Keep the programme.\n\nI choose: Keep the programme. \n\nOne reason is that the programme recovers $600,000 in resale, which can be used to offset some of the costs and potentially make the programme more sustainable in the long run.",
+        "tokens": 50,
+        "finish": "eos",
+        "seconds": 1.8642464260001361
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "I am neutral, as I'm an AI assistant providing information and answering questions. I don't hold a position or make decisions.",
+        "tokens": 27,
+        "finish": "eos",
+        "seconds": 1.0055361370000355
+      },
+      "labelled_prose_canonical": "unparsed",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 0,
+      "discount": true,
+      "printed_order": 1,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4444,
+          23335,
+          30233
+        ],
+        [
+          33,
+          65,
+          293,
+          426,
+          5462,
+          33722,
+          64690
+        ]
+      ],
+      "mass": 0.9992887917216582,
+      "p_a_slot": 0.07252350519790195,
+      "p_a_canonical": 0.07252350519790195,
+      "prose": {
+        "text": "Keep the programme.\n\nI believe the city should keep the programme because it recovers $600,000 in resale, which is a revenue stream that can be used to offset the costs of the programme.",
+        "tokens": 41,
+        "finish": "eos",
+        "seconds": 1.513905369999975
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "(B) Discontinue the programme.\n\nI hold this position because the city spends $2.1 million a year on the programme but only recovers $600,000 in resale, indicating a significant financial loss.",
+        "tokens": 43,
+        "finish": "eos",
+        "seconds": 1.589780102000077
+      },
+      "labelled_prose_canonical": "B",
+      "labelled_prose_letter_slot": "B"
+    },
+    {
+      "index": 0,
+      "discount": true,
+      "printed_order": 2,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4444,
+          23335,
+          30233
+        ],
+        [
+          33,
+          65,
+          293,
+          426,
+          5462,
+          33722,
+          64690
+        ]
+      ],
+      "mass": 0.9995411905550708,
+      "p_a_slot": 0.007680473073900123,
+      "p_a_canonical": 0.9923195269260999,
+      "prose": {
+        "text": "Keep the programme.\n\nI choose: Keep the programme.\n\nOne reason is that recycling helps reduce waste and conserve natural resources, which is beneficial for the environment and public health.",
+        "tokens": 35,
+        "finish": "eos",
+        "seconds": 1.3071606640000937
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "(B) Keep the programme.\n\nThe programme recovers $600,000 in resale, which is a positive outcome and suggests that the programme has some value and potential for further improvement.",
+        "tokens": 37,
+        "finish": "eos",
+        "seconds": 1.3743411489999744
+      },
+      "labelled_prose_canonical": "A",
+      "labelled_prose_letter_slot": "B"
+    },
+    {
+      "index": 3,
+      "discount": false,
+      "printed_order": 1,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4444,
+          23335,
+          30233
+        ],
+        [
+          33,
+          65,
+          293,
+          426,
+          5462,
+          33722,
+          64690
+        ]
+      ],
+      "mass": 0.9999625535974063,
+      "p_a_slot": 0.009986581034265593,
+      "p_a_canonical": 0.009986581034265593,
+      "prose": {
+        "text": "Discontinue the programme.\n\nI choose: Discontinue the programme.\n\nOne reason is that the programme is operating at a significant financial loss, with a deficit of $1.5 million per year.",
+        "tokens": 40,
+        "finish": "eos",
+        "seconds": 1.4927861729997858
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "Discontinue the programme.\n\nI choose: Discontinue the programme.\n\nOne reason is that the programme is operating at a significant financial loss, with a deficit of $1.5 million per year, which could be better allocated to other essential city services or initiatives.",
+        "tokens": 53,
+        "finish": "eos",
+        "seconds": 1.9878606620000028
+      },
+      "labelled_prose_canonical": "B",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 3,
+      "discount": false,
+      "printed_order": 2,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4444,
+          23335,
+          30233
+        ],
+        [
+          33,
+          65,
+          293,
+          426,
+          5462,
+          33722,
+          64690
+        ]
+      ],
+      "mass": 0.9999980991899612,
+      "p_a_slot": 0.9996650653787439,
+      "p_a_canonical": 0.0003349346212561143,
+      "prose": {
+        "text": "Keep the programme.\n\nI choose: Keep the programme.\n\nOne reason is that the programme has some environmental benefits, even if it is not financially viable. The city is still collecting and sorting mixed plastics, which helps to reduce litter and pollution in the community.",
+        "tokens": 52,
+        "finish": "eos",
+        "seconds": 1.9252881259999413
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "Keep the programme.\n\nI choose: Keep the programme.\n\nOne reason is that the programme provides a community benefit, even if it is not financially sustainable. The city's residents may be invested in the programme and see it as an important aspect of their community's environmental efforts.",
+        "tokens": 55,
+        "finish": "eos",
+        "seconds": 2.0371634279999853
+      },
+      "labelled_prose_canonical": "A",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 3,
+      "discount": true,
+      "printed_order": 1,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4444,
+          23335,
+          30233
+        ],
+        [
+          33,
+          65,
+          293,
+          426,
+          5462,
+          33722,
+          64690
+        ]
+      ],
+      "mass": 0.9846348459521738,
+      "p_a_slot": 0.09044608549095083,
+      "p_a_canonical": 0.09044608549095083,
+      "prose": {
+        "text": "Keep the programme.\n\nThe city recovers $600,000 in resale, which suggests that the programme has some economic value and is worth continuing.",
+        "tokens": 30,
+        "finish": "eos",
+        "seconds": 1.115827567999986
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "(B) Discontinue the programme.\n\nI hold this position because the city is recovering only $600,000 in resale from a programme that costs $2.1 million to operate, resulting in a significant financial loss.",
+        "tokens": 44,
+        "finish": "eos",
+        "seconds": 1.6663106719997813
+      },
+      "labelled_prose_canonical": "B",
+      "labelled_prose_letter_slot": "B"
+    },
+    {
+      "index": 3,
+      "discount": true,
+      "printed_order": 2,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4444,
+          23335,
+          30233
+        ],
+        [
+          33,
+          65,
+          293,
+          426,
+          5462,
+          33722,
+          64690
+        ]
+      ],
+      "mass": 0.9885838546060693,
+      "p_a_slot": 0.008420800439814878,
+      "p_a_canonical": 0.9915791995601851,
+      "prose": {
+        "text": "Keep the programme.\n\nThe city recovers $600,000 in resale, which suggests that the programme has some economic value and is worth continuing.",
+        "tokens": 30,
+        "finish": "eos",
+        "seconds": 1.1299718769996616
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "(B) Keep the programme.\n\nThe city recovers $600,000 in resale, which suggests that the programme has some economic value and is worth continuing.",
+        "tokens": 32,
+        "finish": "eos",
+        "seconds": 1.2131821969996963
+      },
+      "labelled_prose_canonical": "A",
+      "labelled_prose_letter_slot": "B"
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4444,
+          23335,
+          30233
+        ],
+        [
+          33,
+          65,
+          293,
+          426,
+          5462,
+          33722,
+          64690
+        ]
+      ],
+      "mass": 0.9998697437425821,
+      "p_a_slot": 0.017702395792447253,
+      "p_a_canonical": 0.017702395792447253,
+      "prose": {
+        "text": "Discontinue the programme.\n\nThe city spends $2.1 million a year on the programme but only recovers $600,000 in resale, resulting in a significant financial burden.",
+        "tokens": 37,
+        "finish": "eos",
+        "seconds": 1.4696748500000467
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "Discontinue the programme.\n\nThe programme is operating at a significant financial loss, with costs exceeding benefits by $1.5 million annually.",
+        "tokens": 28,
+        "finish": "eos",
+        "seconds": 1.0909276509996744
+      },
+      "labelled_prose_canonical": "B",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4444,
+          23335,
+          30233
+        ],
+        [
+          33,
+          65,
+          293,
+          426,
+          5462,
+          33722,
+          64690
+        ]
+      ],
+      "mass": 0.9999566287772579,
+      "p_a_slot": 0.9973139018347382,
+      "p_a_canonical": 0.0026860981652617934,
+      "prose": {
+        "text": "Keep the programme.\n\nI choose: Keep the programme.\n\nOne reason is that the programme has the potential to recover $600,000 in resale, which is a significant revenue stream for the city.",
+        "tokens": 40,
+        "finish": "eos",
+        "seconds": 1.555762378000054
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "Keep the programme.\n\nI choose: Keep the programme.\n\nOne reason is that the programme has some environmental benefits, even if it is not financially sustainable.",
+        "tokens": 31,
+        "finish": "eos",
+        "seconds": 1.2145345760000055
+      },
+      "labelled_prose_canonical": "A",
+      "labelled_prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4444,
+          23335,
+          30233
+        ],
+        [
+          33,
+          65,
+          293,
+          426,
+          5462,
+          33722,
+          64690
+        ]
+      ],
+      "mass": 0.9881802567936728,
+      "p_a_slot": 0.040691330860885534,
+      "p_a_canonical": 0.040691330860885534,
+      "prose": {
+        "text": "Discontinue the programme.\n\nThe city spends $2.1 million a year on the programme but only recovers $600,000 in resale, resulting in a significant financial loss.",
+        "tokens": 37,
+        "finish": "eos",
+        "seconds": 1.4302646329997515
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "(B) Discontinue the programme.\n\nI choose to discontinue the programme because it is not generating enough revenue to justify its costs, resulting in a significant financial loss for the city.",
+        "tokens": 37,
+        "finish": "eos",
+        "seconds": 1.4162908010002866
+      },
+      "labelled_prose_canonical": "B",
+      "labelled_prose_letter_slot": "B"
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4444,
+          23335,
+          30233
+        ],
+        [
+          33,
+          65,
+          293,
+          426,
+          5462,
+          33722,
+          64690
+        ]
+      ],
+      "mass": 0.9906380437416863,
+      "p_a_slot": 0.005707177098144143,
+      "p_a_canonical": 0.9942928229018558,
+      "prose": {
+        "text": "I choose: Keep the programme.\n\nOne reason is that the programme recovers $600,000 in resale, which suggests that it has some value and is worth continuing, even if it operates at a loss.",
+        "tokens": 43,
+        "finish": "eos",
+        "seconds": 1.6764632539998274
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "(B) Keep the programme.\n\nI choose to keep the programme because it recovers $600,000 in resale, which is a tangible benefit that can be used to offset the costs of the programme.",
+        "tokens": 41,
+        "finish": "eos",
+        "seconds": 1.5943548479999663
+      },
+      "labelled_prose_canonical": "A",
+      "labelled_prose_letter_slot": "B"
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4444,
+          23335,
+          30233
+        ],
+        [
+          33,
+          65,
+          293,
+          426,
+          5462,
+          33722,
+          64690
+        ]
+      ],
+      "mass": 0.9993059478150917,
+      "p_a_slot": 0.06581422604058733,
+      "p_a_canonical": 0.06581422604058733,
+      "prose": {
+        "text": "Discontinue the programme.\n\nOne reason is that the programme is operating at a significant financial loss, with the city spending $2.1 million a year but only recovering $600,000 in resale, resulting in a net loss of $1.5 million annually.",
+        "tokens": 54,
+        "finish": "eos",
+        "seconds": 2.1684428560001834
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "(B) Discontinue the programme.\n\nI choose to discontinue the programme because it is operating at a significant financial loss of $1.5 million annually, which could be better allocated to other essential services or initiatives.",
+        "tokens": 44,
+        "finish": "eos",
+        "seconds": 1.8410993130000861
+      },
+      "labelled_prose_canonical": "B",
+      "labelled_prose_letter_slot": "B"
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4444,
+          23335,
+          30233
+        ],
+        [
+          33,
+          65,
+          293,
+          426,
+          5462,
+          33722,
+          64690
+        ]
+      ],
+      "mass": 0.9998793938318093,
+      "p_a_slot": 0.9987800117258908,
+      "p_a_canonical": 0.0012199882741091425,
+      "prose": {
+        "text": "I choose: Discontinue the programme.\n\nOne reason is that the programme is operating at a significant financial loss, with the city spending $2.1 million a year but only recovering $600,000 in resale, resulting in a net loss of $1.5 million annually.",
+        "tokens": 57,
+        "finish": "eos",
+        "seconds": 2.2775084849999985
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "(B) Keep the programme.\n\nI recommend keeping the programme because it provides a valuable service to the community by promoting recycling and reducing waste, even if it operates at a financial loss.",
+        "tokens": 37,
+        "finish": "eos",
+        "seconds": 1.5367506630000207
+      },
+      "labelled_prose_canonical": "A",
+      "labelled_prose_letter_slot": "B"
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4444,
+          23335,
+          30233
+        ],
+        [
+          33,
+          65,
+          293,
+          426,
+          5462,
+          33722,
+          64690
+        ]
+      ],
+      "mass": 0.9585606784981894,
+      "p_a_slot": 0.15194760167557242,
+      "p_a_canonical": 0.15194760167557242,
+      "prose": {
+        "text": "I choose: Keep the programme.\n\nOne reason is that recycling and waste management are essential for maintaining a clean and healthy environment, and the programme provides a valuable service to the community by promoting sustainable practices and reducing waste.",
+        "tokens": 44,
+        "finish": "eos",
+        "seconds": 1.7955907109999316
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "(B) Discontinue the programme.\n\nI choose to discontinue the programme because it is operating at a significant financial loss, with the city spending $2.1 million a year and only recovering $600,000 in resale.",
+        "tokens": 46,
+        "finish": "eos",
+        "seconds": 1.8688933850003195
+      },
+      "labelled_prose_canonical": "B",
+      "labelled_prose_letter_slot": "B"
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "letter_ids": [
+        [
+          32,
+          64,
+          264,
+          362,
+          4444,
+          23335,
+          30233
+        ],
+        [
+          33,
+          65,
+          293,
+          426,
+          5462,
+          33722,
+          64690
+        ]
+      ],
+      "mass": 0.9771713993325469,
+      "p_a_slot": 0.024309880895417087,
+      "p_a_canonical": 0.9756901191045829,
+      "prose": {
+        "text": "I choose: Keep the programme.\n\nOne reason is that recycling and waste management are essential for maintaining a clean and healthy environment, and the programme provides a valuable service to the community by promoting sustainable practices and reducing waste.",
+        "tokens": 44,
+        "finish": "eos",
+        "seconds": 1.7988788749999003
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "labelled_prose": {
+        "text": "(B) Keep the programme.\n\nI choose to keep the programme because it has the potential to recover $600,000 in resale revenue, which is a significant amount that can be used to offset the costs of the programme.",
+        "tokens": 45,
+        "finish": "eos",
+        "seconds": 1.8459613529998933
+      },
+      "labelled_prose_canonical": "A",
+      "labelled_prose_letter_slot": "B"
+    }
+  ],
+  "opening_canonical": "B",
+  "opening_letter_slot": null,
+  "ladder_dir": "vs_b",
+  "status": "complete",
+  "elapsed_seconds": 137.13112334599964
+}

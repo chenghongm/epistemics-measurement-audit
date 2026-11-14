@@ -44,3 +44,7 @@ Statuses: `complete`; `truncated_history` (a main turn hit 1500 tokens: stopped,
 ## Compute
 
 Unknown until step 4b. Pilot v3 took about 10 minutes for 4 histories at a 256-token cap; v5 uses a 1500-token cap and longer ladder turns.
+
+## Main run result (step 5, 2026-11-14)
+
+Archived in `results/main_v5/` (raw histories, analysis, sha256 manifest; see its README). 95/96 `complete`; Qwen `nuclear_power` o2 neutral was truncated at release turn 9 by a long answer, not a loop. The n-gram block touched 66/96 histories, mostly in 1–3 steps per turn; Qwen pressure was touched most (20/24 histories, 122 changed steps). A sensitivity check on untouched histories is still to do.

@@ -84,3 +84,13 @@ Results are in chm.1's Drive under `multiturn-v5-results` (shared read-only with
 Step 4c ran on an A100 (a first try on a 16 GB GPU ran out of memory while loading the model and produced nothing). `none` reproduced the 4b loop exactly; `ngram20` completed with the same stances as `none` up to the loop; `rep1.1` completed but held the opening through exposure 4 (no flag: yields at exposure 1), so it changes the measured behaviour and is rejected. Decision: `--no-repeat-ngram 20` on exposure and release turns for all main histories; this reverses the earlier recommendation of `repetition_penalty`. The block now runs through `scripts/ngram_counter.py`, which records per turn where it changed the greedy token; `analyze_v5.py` reports touched/untouched histories and adds `ngram_touched` to `trajectories.csv`. Table and reasoning: `docs/run_v5.md` ("Decode setting for main turns"). Notebook: step 4b/5 pass `MAIN_DECODE` and move the 4 pre-decision timing histories to `results/main_noflag/` before rerunning them. Next: rebuild the bundle, rerun step 4b (setup cells first, A100), check the projection and the n-gram line per history, then step 5.
 
 Step 4b rerun with ngram20 done (bundle `25d61ac`): 4/4 `complete`, about 5.3 GPU hours projected for 96. The block touched 3 of 4 histories in 1–3 steps each, and untouched turns are identical to the no-flag run, which confirms the counter. Details in `docs/run_v5.md`. Next: step 5.
+
+### 2026-11-14 main run done (step 5)
+
+96 histories downloaded from Drive and archived in git at `results/main_v5/` (`raw/`, `analysis/`, step 4c `decode_test/`, pre-decision `main_noflag/`, `MANIFEST.sha256`); `analyze_v5.py` reproduces `analysis/` byte-for-byte. 95/96 complete (Qwen `nuclear_power` o2 neutral truncated at release turn 9 by a long answer). First reading, primary readout after the opening:
+- Pressure flips 32 of 43 eligible histories and almost all persist; neutral flips 0.
+- Llama prose split rate is 22% under pressure vs 6% neutral; Qwen is 1% vs 6%.
+- Probe/prose disagreement is 29% vs 10% for Llama and 6% vs 6% for Qwen. Nearly all of it is prose splitting; only 2 checkpoints give opposite own/other answers.
+- 8/24 Llama openings are order-dependent and therefore ineligible.
+
+Open: a sensitivity check on n-gram-untouched histories, and settling the paper angle (pressure-induced order-dependence looks stronger than says-vs-scores). The step 4 smoke files are still only on Drive.
