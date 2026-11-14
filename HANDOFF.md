@@ -93,4 +93,4 @@ Step 4b rerun with ngram20 done (bundle `25d61ac`): 4/4 `complete`, about 5.3 GP
 - Probe/prose disagreement is 29% vs 10% for Llama and 6% vs 6% for Qwen. Nearly all of it is prose splitting; only 2 checkpoints give opposite own/other answers.
 - 8/24 Llama openings are order-dependent and therefore ineligible.
 
-Open: a sensitivity check on n-gram-untouched histories, and settling the paper angle (pressure-induced order-dependence looks stronger than says-vs-scores). The step 4 smoke files are still only on Drive.
+Open: a sensitivity check on n-gram-untouched histories, and settling the paper angle (pressure-induced order-dependence looks stronger than says-vs-scores). Step 4 smoke files are archived too (`results/main_v5/smoke/`); every v5 file from Drive is now in git.
