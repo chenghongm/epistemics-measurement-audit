@@ -72,7 +72,8 @@ so every split is either `split_first` or `split_second`.
 The same definitions are applied to the probe, labelled prose and discount readouts as
 secondary analyses. A discount readout that is `own_both` where the no-discount readout
 is `other_both` is a discount-dependent return; a discount readout that is a split is
-reported as position-driven, not as a return.
+reported as order-dependent (the answer is sensitive to printed position), not as a
+return.
 
 ## Continuous probe measure
 
@@ -87,8 +88,8 @@ not define a stance or a flip.
    history condition, phase and prefix.
 2. **Orders pointing opposite ways** (one order own, the other other): the mean is still
    computed, but every checkpoint also reports the order gap `|logit₁ − logit₂|` as the
-   size of the position effect. A mean near zero with a large gap is a position effect,
-   not indifference; the stance category (a split) is what is interpreted.
+   size of the order sensitivity. A mean near zero with a large gap reflects order
+   sensitivity, not indifference; the stance category (a split) is what is interpreted.
 3. **Saturation:** each order's log-odds is clipped to ±6.9 (probability 0.001–0.999)
    before averaging, so one saturated order cannot dominate the mean. Sensitivity
    analysis: the order-averaged probability `mean(p_own)` instead of log-odds.
