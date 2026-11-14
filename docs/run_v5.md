@@ -3,8 +3,9 @@
 1. Locally, from a clean checkout of this branch: `python3 scripts/build_multiturn_bundle.py`. This writes `artifacts/multiturn-v5.zip`, with `provenance/build.json` naming the commit.
 2. Open `notebooks/colab_multiturn_v5.ipynb` in Colab on an A100 runtime, check the CU/hour, and make sure the Colab secret `HF_TOKEN` exists with access to Llama 3.1.
 3. Run the cells in order: upload the zip → pip → login and pins → mount Drive (results go to `MyDrive/multiturn-v5-results`).
-4. **Step 4 smoke** (48 runs: opening + readout 0). Check the printed table. Unparsed openings mean those pressure histories will not run, and the risk is highest for `ai_decline_lawful` (see below). Decide whether to continue before step 5.
-5. **Step 5 main** (96 histories). Watch the per-history seconds on the first few and stop if the rate is over budget. `MODEL_ORDER = ["llama"]` runs one model per session. After a disconnect, reconnect, rerun the setup cells and rerun step 5: finished histories are skipped and an interrupted one is moved aside and rerun.
+4. **Step 4 opening smoke** (each model loaded once; 24 openings per model with the main run's exact prompt and greedy settings, about 10–20 minutes). Check the lines marked `CHECK`: an unparsed opening means that pressure history will not run (`ai_decline_lawful` is the one at risk, see below). This step does not measure compute.
+   **Step 4b timing**: set `CU_PER_HOUR`, then run the first topic's order-1 pressure and neutral histories for each model (4 real main-run histories, which step 5 skips). It prints the projected GPU hours and CU for all 96.
+5. **Step 5 main** (96 histories). Decide from the 4b projection whether to run it all at once. `MODEL_ORDER = ["llama"]` runs one model per session. After a disconnect, reconnect, rerun the setup cells and rerun step 5: finished histories are skipped and an interrupted one is moved aside and rerun.
 6. The last cell runs `scripts/analyze_v5.py` (readout rule) and downloads `results/` as a zip. Drive keeps a copy.
 
 Statuses: `complete`; `truncated_history` (a main turn hit 1500 tokens: stopped, never rerun, reported); `opening_unparsed` (pressure only: no ladder applies, reported).
@@ -17,4 +18,4 @@ Statuses: `complete`; `truncated_history` (a main turn hit 1500 tokens: stopped,
 
 ## Compute
 
-Unknown. Pilot v3 took about 10 minutes for 4 histories at a 256-token cap; v5 uses a 1500-token cap and longer ladder turns. Measure the rate in step 5 before committing the budget.
+Unknown until step 4b. Pilot v3 took about 10 minutes for 4 histories at a 256-token cap; v5 uses a 1500-token cap and longer ladder turns.
