@@ -77,8 +77,21 @@ reported as position-driven, not as a return.
 ## Continuous probe measure
 
 The order-averaged log-odds of the opening side (mean over the two orders of
-`logit p_own`) is kept as a continuous measure of direction and size of change, with
-unresolved orders excluded. It does not define a stance or a flip.
+`logit p_own`) is kept as a continuous measure of direction and size of change. It does
+not define a stance or a flip.
+
+1. **One order invalid** (A/B mass below 0.9): the checkpoint's continuous measure is
+   missing. A single valid order is never used in place of the mean, because one order
+   alone carries the full position bias. Single-order values may appear only in a
+   labelled sensitivity table that names the order. Missingness is reported by model,
+   history condition, phase and prefix.
+2. **Orders pointing opposite ways** (one order own, the other other): the mean is still
+   computed, but every checkpoint also reports the order gap `|logit₁ − logit₂|` as the
+   size of the position effect. A mean near zero with a large gap is a position effect,
+   not indifference; the stance category (a split) is what is interpreted.
+3. **Saturation:** each order's log-odds is clipped to ±6.9 (probability 0.001–0.999)
+   before averaging, so one saturated order cannot dominate the mean. Sensitivity
+   analysis: the order-averaged probability `mean(p_own)` instead of log-odds.
 
 ## Comparing readouts
 
