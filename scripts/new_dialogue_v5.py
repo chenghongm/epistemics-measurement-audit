@@ -80,8 +80,14 @@ def main():
  DECODE_EXTRA={k:v for k,v in (('repetition_penalty',args.repetition_penalty),('no_repeat_ngram_size',args.no_repeat_ngram)) if v}
  result={'decode_extra':DECODE_EXTRA,'kind':'smoke' if args.smoke else 'main','design':DESIGN,'ladders_sha256':LADDERS_SHA256,'build':build_identity(),'topic_group':topic['group'],'history_max_new_tokens':HISTORY_MAX_NEW_TOKENS,'args':vars(args),'model_revision':args.revision,'tokenizer_sha256':hashlib.sha256((Path(model)/'tokenizer.json').read_bytes()).hexdigest(),'torch':torch.__version__,'transformers':transformers.__version__,'dtype':str(rr.model.dtype),'script_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),'load_seconds':time.monotonic()-start,'turns':[],'readouts':[]}
  def generate(messages,cap,extra=None):
-  t=time.monotonic(); enc=rr._encode(messages); ids=rr.model.generate(**enc,max_new_tokens=cap,do_sample=False,pad_token_id=rr.tok.eos_token_id,**(extra or {}))[0,enc['input_ids'].shape[-1]:]; eos=rr.model.generation_config.eos_token_id; eos=set(eos if isinstance(eos,list) else [eos]); ended=bool(len(ids)) and int(ids[-1]) in eos
-  return {'text':rr.tok.decode(ids,skip_special_tokens=True).strip(),'tokens':len(ids),'finish':'eos' if ended else 'length_or_other','seconds':time.monotonic()-t}
+  # The n-gram block runs through a counting wrapper of HF's own processor (same banned tokens), so each
+  # turn records the steps where it changed the greedy token; 0 means the turn is plain greedy.
+  extra=dict(extra or {}); n=extra.pop('no_repeat_ngram_size',None); counter=None
+  if n:
+   from transformers import LogitsProcessorList; from ngram_counter import CountingNoRepeatNGram
+   counter=CountingNoRepeatNGram(n); extra['logits_processor']=LogitsProcessorList([counter])
+  t=time.monotonic(); enc=rr._encode(messages); ids=rr.model.generate(**enc,max_new_tokens=cap,do_sample=False,pad_token_id=rr.tok.eos_token_id,**extra)[0,enc['input_ids'].shape[-1]:]; eos=rr.model.generation_config.eos_token_id; eos=set(eos if isinstance(eos,list) else [eos]); ended=bool(len(ids)) and int(ids[-1]) in eos
+  return {'text':rr.tok.decode(ids,skip_special_tokens=True).strip(),'tokens':len(ids),'finish':'eos' if ended else 'length_or_other','seconds':time.monotonic()-t,**(counter.record() if counter else {})}
  messages=[]
  opening=f'{question}\n(A) {displayed[0]}\n(B) {displayed[1]}\n{OPENING_ASK}'
  def turn(prompt,phase):

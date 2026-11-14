@@ -144,6 +144,20 @@ def load(results_dir):
     return hs
 
 
+def ngram_touch(h):
+    """Whether the n-gram block changed any greedy token in this history's main turns.
+    None when the history ran without the counting wrapper (no flag, or an older output);
+    False means every turn, and so every readout, equals the plain-greedy run."""
+    if not h.get('decode_extra', {}).get('no_repeat_ngram_size'):
+        return None
+    turns = [t for t in h.get('turns', []) if t.get('phase') in ('exposure', 'release')]
+    if any('ngram_changed_steps' not in t for t in turns):
+        return None
+    hit = [i for i, t in enumerate(h['turns']) if t.get('ngram_changed_steps')]
+    return {'touched': bool(hit), 'turns': len(hit), 'steps': sum(t.get('ngram_changed_steps') or 0 for t in turns),
+            'first_turn': hit[0] if hit else None}
+
+
 def table(rows, header):
     lines = ['| ' + ' | '.join(header) + ' |', '|' + '---|' * len(header)]
     lines += ['| ' + ' | '.join(str(x) for x in r) + ' |' for r in rows]
@@ -156,7 +170,35 @@ def analyse(hs):
           'Histories are not independent topics: report within topic, then across topics, models separately.', '']
     status = Counter((history_id(h)[0], h.get('status')) for h in hs)
     md += ['## Run status', '', table(sorted((m, s, n) for (m, s), n in status.items()), ['model', 'status', 'histories']), '']
+    settings = Counter(json.dumps(h.get('decode_extra', {}), sort_keys=True) for h in hs)
+    md += ['Decode settings for main turns: ' + ', '.join(f'`{k}` ({n})' for k, n in sorted(settings.items()))
+           + (' **MIXED: histories are not comparable across settings.**' if len(settings) > 1 else ''), '']
     groups = {h.get('topic_group') for h in hs}
+
+    # Decoding: where the n-gram block changed the greedy token (docs/run_v5.md, step 4c).
+    md += ['## Decoding: n-gram block', '',
+           'A history is untouched when the block never changed a greedy token in any main turn: its text and '
+           'readouts are then identical to the no-flag run. "not counted" means the history ran without the '
+           'counting wrapper. For a sensitivity check, filter `trajectories.csv` on `ngram_touched = False`.', '']
+    dec = defaultdict(lambda: [0, 0, 0, 0, 0])
+    touched_list = []
+    for h in hs:
+        m, topic, order, cond = history_id(h)
+        n = ngram_touch(h)
+        row = dec[(m, cond)]
+        if n is None:
+            row[0] += 1
+        else:
+            row[1 if not n['touched'] else 2] += 1
+            row[3] += n['turns']; row[4] += n['steps']
+            if n['touched']:
+                touched_list.append([m, topic, order, cond, h.get('status'), n['first_turn'], n['turns'], n['steps']])
+    md += [table([[*k, *v] for k, v in sorted(dec.items())],
+                 ['model', 'condition', 'not counted', 'untouched', 'touched', 'touched turns', 'changed steps']), '']
+    if touched_list:
+        md += ['Touched histories (turn 0 is the opening, 1-5 exposure, 6-9 release):', '',
+               table(sorted(touched_list, key=lambda r: [str(x) for x in r]),
+                     ['model', 'topic', 'order', 'condition', 'status', 'first touched turn', 'touched turns', 'changed steps']), '']
 
     ck_rows, tr_rows = [], []
     traj = {}
@@ -164,6 +206,7 @@ def analyse(hs):
         hid = history_id(h)
         cats, cont = checkpoints(h)
         cats_lf, _ = checkpoints(h, letter_first=True)
+        touch = ngram_touch(h)
         for (idx, disc, ro), cat in sorted(cats.items()):
             lo, gap, pm = cont.get((idx, disc), (None, None, None))
             ck_rows.append([*hid, h.get('topic_group'), h.get('opening_canonical'), idx, disc, ro, cat,
@@ -175,7 +218,8 @@ def analyse(hs):
                 t_lf = trajectory(cats_lf, ro, disc) if ro != 'probe' else t
                 traj[(hid, ro, disc)] = (t, t_lf, h)
                 tr_rows.append([*hid, h.get('topic_group'), h.get('status'), h.get('ladder_dir'), ro, disc,
-                                t['eligible'], t['opening'], t['flip'], t['release'], t['outcome'], t_lf['outcome']])
+                                t['eligible'], t['opening'], t['flip'], t['release'], t['outcome'], t_lf['outcome'],
+                                '' if touch is None else touch['touched']])
 
     # Primary: unlabelled prose, no discount
     md += ['## Primary trajectories (unlabelled prose, no discount)', '']
@@ -306,7 +350,7 @@ def main():
     with open(out / 'trajectories.csv', 'w', newline='') as f:
         w = csv.writer(f)
         w.writerow(['model', 'topic', 'order', 'condition', 'group', 'status', 'ladder_dir', 'readout', 'discount',
-                    'eligible', 'opening', 'flip', 'release', 'outcome', 'outcome_letter_first'])
+                    'eligible', 'opening', 'flip', 'release', 'outcome', 'outcome_letter_first', 'ngram_touched'])
         w.writerows(tr)
     print(f'{len(hs)} histories -> {out}')
 

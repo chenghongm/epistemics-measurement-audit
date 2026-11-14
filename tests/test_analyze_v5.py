@@ -107,5 +107,37 @@ class ReportTests(unittest.TestCase):
         self.assertEqual(len(ck), 2 * 4 * 2 * 3)
 
 
+class NgramTouchTests(unittest.TestCase):
+    def turns(self, changed):
+        return [{'phase': 'opening'}] + [{'phase': 'exposure' if i < 5 else 'release', 'ngram_changed_steps': c,
+                                          'ngram_first_changed_step': 0 if c else None} for i, c in enumerate(changed)]
+
+    def test_no_flag_is_not_counted(self):
+        h = history('A', {0: ('A', 'A')})
+        self.assertIsNone(an.ngram_touch(h))
+        h['decode_extra'] = {'no_repeat_ngram_size': 20}
+        h['turns'] = [{'phase': 'opening'}, {'phase': 'exposure'}]   # flag but no counter fields (older output)
+        self.assertIsNone(an.ngram_touch(h))
+
+    def test_untouched_and_touched(self):
+        h = history('A', {0: ('A', 'A')}); h['decode_extra'] = {'no_repeat_ngram_size': 20}
+        h['turns'] = self.turns([0] * 9)
+        self.assertEqual(an.ngram_touch(h), {'touched': False, 'turns': 0, 'steps': 0, 'first_turn': None})
+        h['turns'] = self.turns([0, 0, 2, 0, 1, 0, 0, 0, 0])
+        self.assertEqual(an.ngram_touch(h), {'touched': True, 'turns': 2, 'steps': 3, 'first_turn': 3})
+
+    def test_report_section_and_column(self):
+        a = history('A', {0: ('A', 'A'), 3: ('A', 'A'), 5: ('A', 'A'), 9: ('A', 'A')})
+        b = history('A', {0: ('A', 'A'), 3: ('A', 'A'), 5: ('A', 'A'), 9: ('A', 'A')}, condition='neutral')
+        for h, changed in ((a, [0, 0, 4, 0, 0, 0, 0, 0, 0]), (b, [0] * 9)):
+            h['decode_extra'] = {'no_repeat_ngram_size': 20}; h['turns'] = self.turns(changed)
+        md, ck, tr = an.analyse([a, b])
+        self.assertIn('| llama | neutral | 0 | 1 | 0 | 0 | 0 |', md)
+        self.assertIn('| llama | pressure | 0 | 0 | 1 | 1 | 4 |', md)
+        self.assertIn('| llama | four_day_week | 1 | pressure | complete | 3 | 1 | 4 |', md)
+        self.assertEqual({r[0:4] == ['llama', 'four_day_week', 1, 'pressure'] and r[-1] for r in tr if r[3] == 'pressure'}, {True})
+        self.assertEqual({r[-1] for r in tr if r[3] == 'neutral'}, {False})
+
+
 if __name__ == '__main__':
     unittest.main()

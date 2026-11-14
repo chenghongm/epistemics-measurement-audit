@@ -71,11 +71,35 @@ class _Model:
         self.generation_config = types.SimpleNamespace(eos_token_id=1)
 
     def generate(self, **kw):
-        self.r.calls.append((self.r._last[-1]['content'], {k: kw[k] for k in ('repetition_penalty', 'no_repeat_ngram_size') if k in kw}))
+        seen = {k: kw[k] for k in ('repetition_penalty', 'no_repeat_ngram_size') if k in kw}
+        procs = kw.get('logits_processor') or []
+        for p in procs:   # the counting wrapper stands in for no_repeat_ngram_size
+            seen['ngram_counter'] = p.n
+            # Two decoding steps: the block leaves step 0 alone and changes the greedy token at step 1.
+            p(None, [_Scores([0.1, 0.9])])
+            p(None, [_Scores([0.1, 0.9])])
+        self.r.calls.append((self.r._last[-1]['content'], seen))
         return _Rows(self.r._generate(**kw))
 
     def __call__(self, **kw):
         return types.SimpleNamespace(logits=_Vec([0.7, 0.3]))
+
+
+class _Scores(list):
+    def argmax(self):
+        return max(range(len(self)), key=self.__getitem__)
+
+
+class _FakeNoRepeat:
+    """Stands in for HF's NoRepeatNGramLogitsProcessor: bans token 1 on its second call."""
+    def __init__(self, n):
+        self.calls = 0
+
+    def __call__(self, ids, scores):
+        self.calls += 1
+        if self.calls == 2:
+            return [_Scores([0.1, float('-inf')])]
+        return scores
 
 
 class _Rows(list):
@@ -114,6 +138,7 @@ class HistoryTests(unittest.TestCase):
         made = []
         runner_mod.Runner = lambda m, device: made.append(_FakeRunner(m, device)) or made[-1]
         tf = types.ModuleType('transformers'); tf.__version__ = 'fake'
+        tf.LogitsProcessorList = list; tf.NoRepeatNGramLogitsProcessor = _FakeNoRepeat
         with tempfile.TemporaryDirectory() as d:
             model = Path(d) / 'm'; model.mkdir(); (model / 'tokenizer.json').write_text('{}')
             out = Path(d) / 'out.json'
@@ -162,18 +187,69 @@ class HistoryTests(unittest.TestCase):
         main = {p for p in t['ladders']['vs_a']} | set(v5.RELEASE)
         for prompt, kw in self.runner.calls:
             if prompt in main:
-                self.assertEqual(kw, {'repetition_penalty': 1.1, 'no_repeat_ngram_size': 20}, prompt[:40])
+                # The n-gram block goes through the counting wrapper, never the plain HF kwarg.
+                self.assertEqual(kw, {'repetition_penalty': 1.1, 'ngram_counter': 20}, prompt[:40])
             else:   # opening and every readout branch
                 self.assertEqual(kw, {}, prompt[:40])
+        for turn in res['turns']:
+            if turn['phase'] == 'opening':
+                self.assertNotIn('ngram_changed_steps', turn)
+            else:
+                self.assertEqual((turn['ngram_changed_steps'], turn['ngram_first_changed_step']), (1, 1))
+        for r in res['readouts']:
+            self.assertNotIn('ngram_changed_steps', r['prose'])
 
     def test_decode_extra_off_by_default(self):
         res, code, _ = self.run_history('four_day_week', 'A', 'pressure')
         self.assertEqual(res['decode_extra'], {})
         self.assertTrue(all(kw == {} for _, kw in self.runner.calls))
+        self.assertTrue(all('ngram_changed_steps' not in x for x in res['turns']))
+
 
     def test_unparsed_opening_neutral_continues(self):
         res, code, _ = self.run_history('tipping', None, 'neutral')
         self.assertEqual(res['status'], 'complete')
+
+
+class CounterTests(unittest.TestCase):
+    def test_counts_only_changed_greedy_steps(self):
+        from ngram_counter import CountingNoRepeatNGram
+        bans = {1, 3}   # steps at which the fake block bans the current argmax
+
+        class Inner:
+            step = 0
+
+            def __call__(self, ids, scores):
+                row = list(scores[0])
+                if Inner.step in bans:
+                    row[row.index(max(row))] = float('-inf')
+                if Inner.step == 2:   # bans a token that is not the argmax: no change
+                    row[0] = float('-inf')
+                Inner.step += 1
+                return [_Scores(row)]
+
+        c = CountingNoRepeatNGram(20, inner=Inner())
+        for _ in range(5):
+            c(None, [_Scores([0.2, 0.5, 0.3])])
+        self.assertEqual(c.record(), {'ngram_changed_steps': 2, 'ngram_first_changed_step': 1})
+        self.assertEqual(c.steps, 5)
+
+    def test_in_place_edit_still_counted(self):
+        from ngram_counter import CountingNoRepeatNGram
+
+        def inner(ids, scores):   # edits the caller's row, as an in-place processor would
+            scores[0][1] = float('-inf')
+            return scores
+
+        c = CountingNoRepeatNGram(20, inner=inner)
+        c(None, [_Scores([0.2, 0.5, 0.3])])
+        self.assertEqual(c.record(), {'ngram_changed_steps': 1, 'ngram_first_changed_step': 0})
+
+    def test_untouched_turn(self):
+        from ngram_counter import CountingNoRepeatNGram
+        c = CountingNoRepeatNGram(20, inner=lambda ids, s: s)
+        c(None, [_Scores([0.2, 0.5])])
+        self.assertEqual(c.record(), {'ngram_changed_steps': 0, 'ngram_first_changed_step': None})
 
 
 if __name__ == '__main__':
