@@ -39,6 +39,7 @@ class _FakeRunner:
 
     def __init__(self, model, device):
         self.prompts = []
+        self.calls = []
         self.option_ids = [[0], [1]]
         self.tok = types.SimpleNamespace(eos_token_id=1, decode=self._decode)
         self.model = _Model(self)
@@ -70,6 +71,7 @@ class _Model:
         self.generation_config = types.SimpleNamespace(eos_token_id=1)
 
     def generate(self, **kw):
+        self.r.calls.append((self.r._last[-1]['content'], {k: kw[k] for k in ('repetition_penalty', 'no_repeat_ngram_size') if k in kw}))
         return _Rows(self.r._generate(**kw))
 
     def __call__(self, **kw):
@@ -104,7 +106,7 @@ class LadderFileTests(unittest.TestCase):
 
 
 class HistoryTests(unittest.TestCase):
-    def run_history(self, topic, opening_side, condition, order=1):
+    def run_history(self, topic, opening_side, condition, order=1, extra=()):
         t = v5.load_topics()[topic]
         side_text = {'A': t['side_a'], 'B': t['side_b'], None: 'Something else entirely.'}[opening_side]
         _FakeRunner.opening_text = f'I choose: {side_text}. Because.'
@@ -116,7 +118,7 @@ class HistoryTests(unittest.TestCase):
             model = Path(d) / 'm'; model.mkdir(); (model / 'tokenizer.json').write_text('{}')
             out = Path(d) / 'out.json'
             argv = ['v5', '--model', str(model), '--device', 'cpu', '--topic', topic,
-                    '--order', str(order), '--condition', condition, '--out', str(out)]
+                    '--order', str(order), '--condition', condition, '--out', str(out), *extra]
             mods = {'torch': _fake_torch(), 'transformers': tf, 'runner': runner_mod}
             with mock.patch.dict(sys.modules, mods), mock.patch.object(sys, 'argv', argv), \
                  mock.patch.object(v5, 'log', lambda *a: None):
@@ -125,6 +127,7 @@ class HistoryTests(unittest.TestCase):
                     code = None
                 except SystemExit as e:
                     code = str(e)
+            self.runner = made[0] if made else None
             return json.loads(out.read_text()), code, t
 
     def test_pressure_uses_ladder_in_order(self):
@@ -151,6 +154,22 @@ class HistoryTests(unittest.TestCase):
         self.assertIsNone(res['ladder_dir'])
         self.assertEqual(len(res['turns']), 1)
         self.assertIn('no ladder', code)
+
+    def test_decode_extra_only_on_exposure_and_release(self):
+        res, code, t = self.run_history('four_day_week', 'A', 'pressure',
+                                        extra=('--repetition-penalty', '1.1', '--no-repeat-ngram', '20'))
+        self.assertEqual(res['decode_extra'], {'repetition_penalty': 1.1, 'no_repeat_ngram_size': 20})
+        main = {p for p in t['ladders']['vs_a']} | set(v5.RELEASE)
+        for prompt, kw in self.runner.calls:
+            if prompt in main:
+                self.assertEqual(kw, {'repetition_penalty': 1.1, 'no_repeat_ngram_size': 20}, prompt[:40])
+            else:   # opening and every readout branch
+                self.assertEqual(kw, {}, prompt[:40])
+
+    def test_decode_extra_off_by_default(self):
+        res, code, _ = self.run_history('four_day_week', 'A', 'pressure')
+        self.assertEqual(res['decode_extra'], {})
+        self.assertTrue(all(kw == {} for _, kw in self.runner.calls))
 
     def test_unparsed_opening_neutral_continues(self):
         res, code, _ = self.run_history('tipping', None, 'neutral')

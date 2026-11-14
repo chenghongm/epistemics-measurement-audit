@@ -60,7 +60,7 @@ def save(path, value):
  path.parent.mkdir(parents=True, exist_ok=True); tmp=path.with_suffix('.tmp'); tmp.write_text(json.dumps(value,indent=2,ensure_ascii=False)+'\n'); tmp.replace(path)
 
 def main():
- ap=argparse.ArgumentParser();ap.add_argument('--model',required=True);ap.add_argument('--revision');ap.add_argument('--device',required=True);ap.add_argument('--topic',required=True);ap.add_argument('--order',type=int,choices=[1,2],default=1);ap.add_argument('--condition',choices=['pressure','neutral'],required=True);ap.add_argument('--out',required=True);ap.add_argument('--smoke',action='store_true');args=ap.parse_args()
+ ap=argparse.ArgumentParser();ap.add_argument('--model',required=True);ap.add_argument('--revision');ap.add_argument('--device',required=True);ap.add_argument('--topic',required=True);ap.add_argument('--order',type=int,choices=[1,2],default=1);ap.add_argument('--condition',choices=['pressure','neutral'],required=True);ap.add_argument('--out',required=True);ap.add_argument('--smoke',action='store_true');ap.add_argument('--repetition-penalty',type=float,help='main exposure/release turns only; off by default');ap.add_argument('--no-repeat-ngram',type=int,help='main exposure/release turns only; off by default');args=ap.parse_args()
  TOPICS=load_topics()
  if args.topic not in TOPICS: raise SystemExit(f'Unknown topic {args.topic}; choose from {sorted(TOPICS)}')
  import torch, transformers
@@ -75,14 +75,17 @@ def main():
  start=time.monotonic();rr=Runner(model,device=args.device);torch.set_grad_enabled(False)
  topic=TOPICS[args.topic]; question,sa,sb=topic['question'],topic['side_a'],topic['side_b']; displayed=(sa,sb) if args.order==1 else (sb,sa)
  log('loaded',args.model,'on',args.device,f'{time.monotonic()-start:.1f}s')
- result={'kind':'smoke' if args.smoke else 'main','design':DESIGN,'ladders_sha256':LADDERS_SHA256,'build':build_identity(),'topic_group':topic['group'],'history_max_new_tokens':HISTORY_MAX_NEW_TOKENS,'args':vars(args),'model_revision':args.revision,'tokenizer_sha256':hashlib.sha256((Path(model)/'tokenizer.json').read_bytes()).hexdigest(),'torch':torch.__version__,'transformers':transformers.__version__,'dtype':str(rr.model.dtype),'script_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),'load_seconds':time.monotonic()-start,'turns':[],'readouts':[]}
- def generate(messages,cap):
-  t=time.monotonic(); enc=rr._encode(messages); ids=rr.model.generate(**enc,max_new_tokens=cap,do_sample=False,pad_token_id=rr.tok.eos_token_id)[0,enc['input_ids'].shape[-1]:]; eos=rr.model.generation_config.eos_token_id; eos=set(eos if isinstance(eos,list) else [eos]); ended=bool(len(ids)) and int(ids[-1]) in eos
+ # Anti-repetition settings apply to main exposure/release turns only: never to the opening (it must quote the
+ # option wording) or to readouts. Off by default, so default runs are unchanged.
+ DECODE_EXTRA={k:v for k,v in (('repetition_penalty',args.repetition_penalty),('no_repeat_ngram_size',args.no_repeat_ngram)) if v}
+ result={'decode_extra':DECODE_EXTRA,'kind':'smoke' if args.smoke else 'main','design':DESIGN,'ladders_sha256':LADDERS_SHA256,'build':build_identity(),'topic_group':topic['group'],'history_max_new_tokens':HISTORY_MAX_NEW_TOKENS,'args':vars(args),'model_revision':args.revision,'tokenizer_sha256':hashlib.sha256((Path(model)/'tokenizer.json').read_bytes()).hexdigest(),'torch':torch.__version__,'transformers':transformers.__version__,'dtype':str(rr.model.dtype),'script_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),'load_seconds':time.monotonic()-start,'turns':[],'readouts':[]}
+ def generate(messages,cap,extra=None):
+  t=time.monotonic(); enc=rr._encode(messages); ids=rr.model.generate(**enc,max_new_tokens=cap,do_sample=False,pad_token_id=rr.tok.eos_token_id,**(extra or {}))[0,enc['input_ids'].shape[-1]:]; eos=rr.model.generation_config.eos_token_id; eos=set(eos if isinstance(eos,list) else [eos]); ended=bool(len(ids)) and int(ids[-1]) in eos
   return {'text':rr.tok.decode(ids,skip_special_tokens=True).strip(),'tokens':len(ids),'finish':'eos' if ended else 'length_or_other','seconds':time.monotonic()-t}
  messages=[]
  opening=f'{question}\n(A) {displayed[0]}\n(B) {displayed[1]}\n{OPENING_ASK}'
  def turn(prompt,phase):
-  log(f'turn {len(result["turns"])} ({phase}) start');g=generate(messages+[{'role':'user','content':prompt}],HISTORY_MAX_NEW_TOKENS);log(f'turn {len(result["turns"])} done: {g["tokens"]} tokens, {g["seconds"]:.1f}s, {g["finish"]}');result['turns'].append({'phase':phase,'prompt':prompt,**g});save(out,result)
+  log(f'turn {len(result["turns"])} ({phase}) start');g=generate(messages+[{'role':'user','content':prompt}],HISTORY_MAX_NEW_TOKENS,DECODE_EXTRA if phase in ('exposure','release') else None);log(f'turn {len(result["turns"])} done: {g["tokens"]} tokens, {g["seconds"]:.1f}s, {g["finish"]}');result['turns'].append({'phase':phase,'prompt':prompt,**g});save(out,result)
   if g['finish'] != 'eos':
    result['status']='truncated_history';save(out,result);raise SystemExit(f'History turn truncated at {HISTORY_MAX_NEW_TOKENS} tokens; saved and stopped before continuing')
   messages.extend([{'role':'user','content':prompt},{'role':'assistant','content':g['text']}]);return g
