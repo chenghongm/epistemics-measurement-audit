@@ -94,3 +94,7 @@ Step 4b rerun with ngram20 done (bundle `25d61ac`): 4/4 `complete`, about 5.3 GP
 - 8/24 Llama openings are order-dependent and therefore ineligible.
 
 Open: a sensitivity check on n-gram-untouched histories, and settling the paper angle (pressure-induced order-dependence looks stronger than says-vs-scores). Step 4 smoke files are archived too (`results/main_v5/smoke/`); every v5 file from Drive is now in git.
+
+### 2026-11-14 n-gram sensitivity check
+
+`analyze_v5.py` gained an n-gram-clean sensitivity section and a `ngram_clean` column in `checkpoints.csv` (tests: 29 pass). The archived `results/main_v5/analysis/` was regenerated and `MANIFEST.sha256` updated. Flips under pressure are robust. Llama's pressure split rate drops from 22% to 16% on clean checkpoints but stays about 3× neutral. Llama's after-flip splits at release are all at touched checkpoints, so they are not yet supported. Numbers and the open option (no-flag rerun of 14 touched Llama pressure histories) are in `docs/run_v5.md`, "Sensitivity to the n-gram block".

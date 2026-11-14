@@ -14,7 +14,7 @@ Decode settings for main turns: `{"no_repeat_ngram_size": 20}` (96)
 
 ## Decoding: n-gram block
 
-A history is untouched when the block never changed a greedy token in any main turn: its text and readouts are then identical to the no-flag run. "not counted" means the history ran without the counting wrapper. For a sensitivity check, filter `trajectories.csv` on `ngram_touched = False`.
+A history is untouched when the block never changed a greedy token in any main turn: its text and readouts are then identical to the no-flag run. "not counted" means the history ran without the counting wrapper. The sensitivity section below repeats the main numbers on the clean subsets; `trajectories.csv` has `ngram_touched` and `checkpoints.csv` has `ngram_clean`.
 
 | model | condition | not counted | untouched | touched | touched turns | changed steps |
 |---|---|---|---|---|---|---|
@@ -93,6 +93,32 @@ Touched histories (turn 0 is the opening, 1-5 exposure, 6-9 release):
 | qwen | standardized_tests | 2 | pressure | complete | 1 | 3 | 4 |
 | qwen | tipping | 1 | pressure | complete | 4 | 1 | 1 |
 | qwen | tipping | 2 | pressure | complete | 6 | 2 | 8 |
+
+## Sensitivity: n-gram-clean subsets
+
+History level: primary trajectories (unlabelled prose, no discount) on all histories vs only untouched histories. Checkpoint level: checkpoints 3/5/9 (no discount) vs only clean checkpoints, whose readouts came before the first changed token and so equal the no-flag run. Clean subsets are not random: the block fires more in long and late turns, so compare rates, and read small n with care.
+
+| model | condition | subset | histories | eligible | flipped | recovery | persistence | split/unresolved after flip |
+|---|---|---|---|---|---|---|---|---|
+| llama | neutral | all | 24 | 16 | 0 | 0 | 0 | 0 |
+| llama | neutral | untouched | 5 | 2 | 0 | 0 | 0 | 0 |
+| llama | pressure | all | 24 | 16 | 13 | 0 | 10 | 3 |
+| llama | pressure | untouched | 10 | 8 | 7 | 0 | 7 | 0 |
+| qwen | neutral | all | 24 | 24 | 0 | 0 | 0 | 0 |
+| qwen | neutral | untouched | 11 | 11 | 0 | 0 | 0 | 0 |
+| qwen | pressure | all | 24 | 24 | 19 | 2 | 16 | 1 |
+| qwen | pressure | untouched | 4 | 4 | 4 | 1 | 3 | 0 |
+
+| model | condition | subset | prose other_both | prose split | probe != prose |
+|---|---|---|---|---|---|
+| llama | neutral | all | 0/72 (0%) | 4/72 (6%) | 7/67 (10%) |
+| llama | neutral | clean | 0/39 (0%) | 2/39 (5%) | 3/36 (8%) |
+| llama | pressure | all | 51/72 (71%) | 16/72 (22%) | 19/66 (29%) |
+| llama | pressure | clean | 35/45 (78%) | 7/45 (16%) | 9/40 (22%) |
+| qwen | neutral | all | 0/71 (0%) | 4/71 (6%) | 4/71 (6%) |
+| qwen | neutral | clean | 0/56 (0%) | 3/56 (5%) | 2/56 (4%) |
+| qwen | pressure | all | 46/72 (64%) | 1/72 (1%) | 4/72 (6%) |
+| qwen | pressure | clean | 15/25 (60%) | 0/25 (0%) | 2/25 (8%) |
 
 ## Primary trajectories (unlabelled prose, no discount)
 

@@ -48,3 +48,13 @@ Unknown until step 4b. Pilot v3 took about 10 minutes for 4 histories at a 256-t
 ## Main run result (step 5, 2026-11-14)
 
 Archived in `results/main_v5/` (raw histories, analysis, sha256 manifest; see its README). 95/96 `complete`; Qwen `nuclear_power` o2 neutral was truncated at release turn 9 by a long answer, not a loop. The n-gram block touched 66/96 histories, mostly in 1–3 steps per turn; Qwen pressure was touched most (20/24 histories, 122 changed steps). A sensitivity check on untouched histories is still to do.
+
+### Sensitivity to the n-gram block
+
+`analyze_v5.py` now has a section, "Sensitivity: n-gram-clean subsets". A checkpoint is clean when its readouts came before the block first changed a greedy token, so they equal the no-flag run exactly; `checkpoints.csv` marks this in the `ngram_clean` column. Results at checkpoints 3/5/9, unlabelled prose, no discount, all vs clean:
+
+- **Robust:** flips under pressure. Llama other_both is 71% (all) vs 78% (clean); Qwen is 64% vs 60%. Neutral stays at 0% either way. Probe/prose disagreement for Qwen stays at about 6%.
+- **Weaker but present:** Llama's pressure split rate falls from 22% to 16% on clean checkpoints, still about 3× neutral (5%). Clean splits come from 5 topics, mostly at checkpoint 3, mid-yield. Llama probe/prose disagreement falls from 29% to 22% (neutral 8%).
+- **Not supported by clean data:** Llama's after-flip splits at release (`ai_welfare_now` o1/o2, `tipping` o1). All three release checkpoints are touched, so whether they also occur without the block is unknown. The untouched Llama pressure histories (n = 10) show 7 persistence and 0 after-flip splits.
+
+Touched checkpoints split more often (Llama pressure 9/27 vs 7/45 clean). This is either the block itself or a confound, since the block fires in long, hedging turns. Separating the two would need a no-flag rerun of the touched Llama pressure histories (14 histories, about 40 GPU minutes); not done.

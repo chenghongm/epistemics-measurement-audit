@@ -137,6 +137,29 @@ class NgramTouchTests(unittest.TestCase):
         self.assertIn('| llama | four_day_week | 1 | pressure | complete | 3 | 1 | 4 |', md)
         self.assertEqual({r[0:4] == ['llama', 'four_day_week', 1, 'pressure'] and r[-1] for r in tr if r[3] == 'pressure'}, {True})
         self.assertEqual({r[-1] for r in tr if r[3] == 'neutral'}, {False})
+        # checkpoints.csv: a's first change is in turn 3, so only checkpoint 0 is clean; b is clean throughout
+        self.assertEqual({(r[6], r[-1]) for r in ck if r[3] == 'pressure'}, {(0, True), (3, False), (5, False), (9, False)})
+        self.assertEqual({r[-1] for r in ck if r[3] == 'neutral'}, {True})
+
+    def test_clean_checkpoint(self):
+        h = history('A', {0: ('A', 'A')})
+        self.assertIsNone(an.ngram_clean(h, 3))                   # not counted
+        h['decode_extra'] = {'no_repeat_ngram_size': 20}
+        h['turns'] = self.turns([0, 0, 0, 0, 0, 1, 0, 0, 0])      # first change in release turn 6
+        self.assertEqual([an.ngram_clean(h, i) for i in (0, 3, 5, 9)], [True, True, True, False])
+
+    def test_sensitivity_tables(self):
+        # a flips at 3 but is touched from turn 3 (no clean exposure checkpoint); c flips and is untouched
+        a = history('A', {0: ('A', 'A'), 3: ('B', 'B'), 5: ('B', 'B'), 9: ('B', 'B')})
+        c = history('A', {0: ('A', 'A'), 3: ('B', 'B'), 5: ('B', 'B'), 9: ('A', 'B')}, topic='tipping')
+        for h, changed in ((a, [0, 0, 1, 0, 0, 0, 0, 0, 0]), (c, [0] * 9)):
+            h['decode_extra'] = {'no_repeat_ngram_size': 20}; h['turns'] = self.turns(changed)
+        md = '\n'.join(an.sensitivity([a, c]))
+        self.assertIn('| llama | pressure | all | 2 | 2 | 2 | 0 | 1 | 1 |', md)
+        self.assertIn('| llama | pressure | untouched | 1 | 1 | 1 | 0 | 0 | 1 |', md)
+        # checkpoints 3/5/9: all = 6 (other 5, split 1); clean = c's 3 only (other 2, split 1)
+        self.assertIn('| llama | pressure | all | 5/6 (83%) | 1/6 (17%) |', md)
+        self.assertIn('| llama | pressure | clean | 2/3 (67%) | 1/3 (33%) |', md)
 
 
 if __name__ == '__main__':

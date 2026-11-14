@@ -158,6 +158,62 @@ def ngram_touch(h):
             'first_turn': hit[0] if hit else None}
 
 
+def ngram_clean(h, idx):
+    """True when checkpoint idx's readouts were taken before the block first changed a greedy token, so they
+    equal the no-flag run exactly (readout idx follows main turn idx). None when the history was not counted."""
+    n = ngram_touch(h)
+    if n is None:
+        return None
+    return not n['touched'] or n['first_turn'] > idx
+
+
+def sensitivity(hs):
+    """Summary lines: primary results on all histories vs the n-gram-clean subsets."""
+    md = ['## Sensitivity: n-gram-clean subsets', '',
+          'History level: primary trajectories (unlabelled prose, no discount) on all histories vs only untouched '
+          'histories. Checkpoint level: checkpoints 3/5/9 (no discount) vs only clean checkpoints, whose readouts '
+          'came before the first changed token and so equal the no-flag run. Clean subsets are not random: the '
+          'block fires more in long and late turns, so compare rates, and read small n with care.', '']
+    rows = []
+    for subset in ('all', 'untouched'):
+        acc = defaultdict(Counter)
+        for h in hs:
+            n = ngram_touch(h)
+            if subset == 'untouched' and (n is None or n['touched']):
+                continue
+            hid = history_id(h)
+            t = trajectory(checkpoints(h)[0])
+            c = acc[(hid[0], hid[3])]
+            c['histories'] += 1; c['eligible'] += t['eligible']; c[t['outcome']] += 1
+            c['flipped'] += t['flip'] is not None
+        for (m, cond), c in sorted(acc.items()):
+            rows.append([m, cond, subset, c['histories'], c['eligible'], c['flipped'], c['recovery'], c['persistence'],
+                         sum(v for k, v in c.items() if k.startswith('after_flip'))])
+    md += [table(sorted(rows), ['model', 'condition', 'subset', 'histories', 'eligible', 'flipped', 'recovery',
+                                'persistence', 'split/unresolved after flip']), '']
+    rate = lambda a, b: f'{a}/{b} ({a / b:.0%})' if b else '-'
+    rows = []
+    for subset in ('all', 'clean'):
+        acc = defaultdict(Counter)
+        for h in hs:
+            hid = history_id(h)
+            cats, _ = checkpoints(h)
+            for idx in (3, 5, 9):
+                if subset == 'clean' and not ngram_clean(h, idx):
+                    continue
+                pr, pb = cats.get((idx, False, 'prose')), cats.get((idx, False, 'probe'))
+                c = acc[(hid[0], hid[3])]
+                if pr and pr != 'unresolved':
+                    c['n'] += 1; c['other'] += pr == 'other_both'; c['split'] += pr.startswith('split')
+                if pr and pb and 'unresolved' not in (pr, pb):
+                    c['pair'] += 1; c['diff'] += pr != pb
+        for (m, cond), c in sorted(acc.items()):
+            rows.append([m, cond, subset, rate(c['other'], c['n']), rate(c['split'], c['n']), rate(c['diff'], c['pair'])])
+    md += [table(sorted(rows), ['model', 'condition', 'subset', 'prose other_both', 'prose split',
+                                'probe != prose']), '']
+    return md
+
+
 def table(rows, header):
     lines = ['| ' + ' | '.join(header) + ' |', '|' + '---|' * len(header)]
     lines += ['| ' + ' | '.join(str(x) for x in r) + ' |' for r in rows]
@@ -179,7 +235,8 @@ def analyse(hs):
     md += ['## Decoding: n-gram block', '',
            'A history is untouched when the block never changed a greedy token in any main turn: its text and '
            'readouts are then identical to the no-flag run. "not counted" means the history ran without the '
-           'counting wrapper. For a sensitivity check, filter `trajectories.csv` on `ngram_touched = False`.', '']
+           'counting wrapper. The sensitivity section below repeats the main numbers on the clean subsets; '
+           '`trajectories.csv` has `ngram_touched` and `checkpoints.csv` has `ngram_clean`.', '']
     dec = defaultdict(lambda: [0, 0, 0, 0, 0])
     touched_list = []
     for h in hs:
@@ -211,7 +268,8 @@ def analyse(hs):
             lo, gap, pm = cont.get((idx, disc), (None, None, None))
             ck_rows.append([*hid, h.get('topic_group'), h.get('opening_canonical'), idx, disc, ro, cat,
                             cats_lf.get((idx, disc, ro)), '' if lo is None else round(lo, 3),
-                            '' if gap is None else round(gap, 3), '' if pm is None else round(pm, 3)])
+                            '' if gap is None else round(gap, 3), '' if pm is None else round(pm, 3),
+                            '' if touch is None else ngram_clean(h, idx)])
         for ro in READOUTS:
             for disc in (False, True):
                 t = trajectory(cats, ro, disc)
@@ -220,6 +278,8 @@ def analyse(hs):
                 tr_rows.append([*hid, h.get('topic_group'), h.get('status'), h.get('ladder_dir'), ro, disc,
                                 t['eligible'], t['opening'], t['flip'], t['release'], t['outcome'], t_lf['outcome'],
                                 '' if touch is None else touch['touched']])
+
+    md += sensitivity(hs)
 
     # Primary: unlabelled prose, no discount
     md += ['## Primary trajectories (unlabelled prose, no discount)', '']
@@ -345,7 +405,7 @@ def main():
     with open(out / 'checkpoints.csv', 'w', newline='') as f:
         w = csv.writer(f)
         w.writerow(['model', 'topic', 'order', 'condition', 'group', 'opening', 'checkpoint', 'discount', 'readout',
-                    'category', 'category_letter_first', 'logodds_own', 'order_gap', 'mean_p_own'])
+                    'category', 'category_letter_first', 'logodds_own', 'order_gap', 'mean_p_own', 'ngram_clean'])
         w.writerows(ck)
     with open(out / 'trajectories.csv', 'w', newline='') as f:
         w = csv.writer(f)
