@@ -102,3 +102,23 @@ Open: a sensitivity check on n-gram-untouched histories, and settling the paper 
 ### 2026-11-14 step 6: no-flag rerun done
 
 All 13 histories completed (`results/main_v5/sensitivity_noflag/`). With the 4b `four_day_week` o1 run that makes 14 pairs, all identical before the first touched turn, and their primary outcomes are unchanged in 14/14. Llama's after-flip release splits occur without the flag too. Prose split at touched checkpoints is 9/27 (flag) vs 9/25 (no flag), so the block does not create splits. Details: `docs/run_v5.md`, `results/main_v5/analysis/compare_noflag.md`. Next candidate: the context ablation (`docs/context_ablation_v5_plan.md`, draft, untracked).
+
+### 2026-11-14 context ablation prepared (step 7, not run)
+
+`scripts/fill_v5.py` (filler corpus, fixed before generation) and `scripts/ablation_v5.py` (A–D replay with an A reconstruction gate); tests in `tests/test_ablation_v5.py` (46 v5 tests pass). The notebook has step 7a/7b/7c; the bundle now carries the 48 pressure histories under `archive/main_v5_raw/`. Fixed choices: `docs/run_v5.md`, "Step 7". Next: run 7a, review the filler lengths and rejects, freeze its sha256, then 7b. The ablation analysis script must be written and frozen before 7c. `docs/context_ablation_v5_plan.md` is the design and is referenced by the notebook.
+
+### 2026-11-14 Codex review applied; step 8 (old-ablation re-read) prepared
+
+The Codex review (`docs/context_ablation_review_2026-11-14.md`) is applied to step 7:
+- provenance-checked resume;
+- a failed cell-A reconstruction blocks B/C/D;
+- 7b is A-only (`--strict`);
+- `scripts/analyze_ablation_v5.py` is frozen before 7b;
+- filler answers get a manual neutrality review before freezing.
+
+Both ablations will be done (user decision). Step 8 re-reads the two old Digital Mind ablations (72 conversations, all 3 arms) with v5 readouts at end of pressure and release 4/8/12. Files:
+- `scripts/reread_old_ablation.py` and `scripts/analyze_reread_old.py`;
+- inputs in `provenance/reread_sources.json` (fetch into `data/external/digital-mind/`);
+- old stitching vendored as `vendor/digital_mind/context_ablation.py`.
+
+The analysis's bridge reproduces the old headlines from the old files exactly. Gate 8a (old probe reproduces the old cell files within 0.02) runs before any new readout. 64 tests pass. Nothing has run on a GPU. Details: `docs/run_v5.md`, steps 7 and 8.

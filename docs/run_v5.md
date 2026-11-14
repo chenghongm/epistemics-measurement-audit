@@ -65,3 +65,62 @@ Step 6 (run 2026-11-14, bundle `1c30f29`, same run code as `25d61ac`): 13 touche
 - **Primary outcome unchanged in 14/14:** the 3 after-flip splits at release (`ai_welfare_now` o1/o2, `tipping` o1) also occur without the flag. The earlier "not supported by clean data" caveat is resolved: they are the model's own behaviour.
 - **Splits are not produced by the block.** Prose split at touched checkpoints is 9/27 with the flag vs 9/25 without. Five touched checkpoints changed category, in both directions. The higher split rate at touched checkpoints is therefore a confound (the block fires in long, hedging turns), not an effect of the block. Llama's 22% pressure split rate stands.
 - Without the flag, only `four_day_week` o1 loops (as in 4b), so ngram20 remains needed for that history.
+
+## Step 7: context ablation (prepared 2026-11-14, before any ablation readout)
+
+Design: `docs/context_ablation_v5_plan.md`. Fixed choices:
+
+- **Filler** (`scripts/fill_v5.py`, spec sha256 `df30d3e4…`):
+  - Per topic, 8 on-topic questions built from a neutral subject phrase and fixed templates. Each asks for a description "without arguing for or against any particular choice" in about 120 words.
+  - No question names either option (checked with the v5 wording parser). Median length is 223 characters, against 204 for the pressure messages.
+  - Each model answers greedily in a fresh conversation. An answer is kept only if it ends with EOS and quotes neither option's wording; the first 5 kept, in template order, fill exposure positions 1–5 for both opening orders. Fewer than 5 stops the build.
+  - The matched neutral histories were rejected as filler: 39/120 Llama and 25/120 Qwen neutral exposure replies quote the opening side's wording, which would bias cell C toward a return.
+- **Review before freezing:** the selected answers' median token length should fall within ±30% of the model's median pressure-phase reply (Llama 154, Qwen 152). If it doesn't, the word instruction may be changed once, and that change is recorded, before any ablation readout. The reviewed file's sha256 then goes into notebook cell 7b.
+- **Runner** (`scripts/ablation_v5.py`):
+  - Cells A–D replace exposure turns 1–5 by role; the opening is kept in every cell, and the release exchanges are kept at checkpoint 9.
+  - Readouts at checkpoints 5 and 9 use the v5 templates verbatim (a test checks them against the runner's prompts): probe and unlabelled prose, none/discount, both orders.
+  - Each cell records context tokens per checkpoint and per-position token lengths of original vs filler text.
+- **Reconstruction gate:** cell A must reproduce each archived readout, with probe `p_a_canonical` within 0.02 and prose text identical. 7b checks `four_day_week` o1 for both models before the full grid; any failure stops the run. In the full grid, histories whose A fails are excluded from paired claims.
+- **Filler review, before freezing (Codex review, `docs/context_ablation_review_2026-11-14.md`):** not quoting an option's wording does not make an answer neutral. Every selected answer (5 × 12 topics × 2 models) is read for directional recommendations, unsupported factual claims and gross mismatch with the surrounding turns. A rejected answer is marked `directional_on_review` (or the matching reason) in the corpus file and replaced by the next accepted candidate in template order. Every rejection is listed. This happens before any ablation readout and never uses B/C/D outcomes. Length is reported per topic, role and position, not only as the model-wide median.
+- **Execution changes from the review:**
+  - A finished cell is reused only if its provenance (model, revision, filler sha256, source-history sha256, settings, code hashes) matches; a mismatch stops the run.
+  - A failed cell-A reconstruction writes status `reconstruction_failed`, and B/C/D are not run for that history.
+  - 7b is A-only (`--cells A --strict`) and exits non-zero on failure, so no intervention readout exists before the full grid.
+- **Analysis, frozen before 7b:** `scripts/analyze_ablation_v5.py` (tests: `tests/test_analyze_ablation_v5.py`).
+  - It re-applies the reconstruction gate itself, per history and checkpoint.
+  - Primary: B vs C keeps-the-shift (`other_both`) under no-discount unlabelled prose, paired 2×2 with an exact sign test, at checkpoint 5 and at checkpoint 9 separately. Cohorts: all pressure histories, and the fixed main-run primary-flipped cohort, with separate denominators.
+  - Secondary: the same under discount; probe log-odds paired differences (B−D, C−D, B−C), with no retention ratio as an endpoint; strata by topic group and n-gram status; per-topic cells.
+  - Diagnostics: context and token ratios by role, position and topic, and D against the matched neutral history.
+- **Interpretation limits (from the review):** at checkpoint 9, the original release replies stay in every cell and may already carry the shift, so checkpoint 5 is reported first. A B-over-C contrast concerns these texts and this replacement; it does not separate authorship from argument content, and it is not evidence of an internal commitment. This v5 ablation is a new-protocol study, and its retention numbers are not comparable with the earlier Digital Mind ablation. A separate measurement-only re-read of the old contexts addresses that (step 8).
+
+## Step 8: measurement-only re-read of the old context ablations (prepared 2026-11-14, before any readout)
+
+Purpose: test whether the earlier source-of-persistence result survives the v5 readouts when **only the readout changes**. That result was: own replies carry ≈59% of the residual shift and the user's argument ≈8% (Llama `repl_b1`); for Qwen meta, B median +0.92 and C +0.31. The v5 ablation (step 7) is a new-protocol study and cannot answer this (Codex review, `docs/context_ablation_review_2026-11-14.md`).
+
+- **Inputs** (`provenance/reread_sources.json`, Digital Mind commit `ba77b47`): the 72 pressure conversations the two old ablations read (36 Llama `repl_b1`, 36 Qwen `qwen_6x6` meta; 3 arms × 6 topics × 2 orders each), their filler (`fill_v4`, `fill_meta_v5`), the old cell files (`ablation_v4`, `ablation_meta`) and the topics files. The old stitching code is vendored unchanged (`vendor/digital_mind/context_ablation.py`). Bundled under `archive/digital_mind/`.
+- **Contexts:** rebuilt with the old code: content-based pressure turns, `replace`, the stored filler, and the stored system turn (Qwen ran under the Llama default system turn). A test checks that the rebuilt contexts replace exactly as many turns as the old ablation recorded, in all 288 conversation × cell combinations.
+- **Checkpoints** (by phase label): end of pressure, and release turns 4, 8 and 12.
+- **Gate** (8a, forward passes only, before any new readout): in all four cells and at every checkpoint, the old probe (`probe_stance_averaged`) must reproduce the old cell file's `p_a` and both per-order values within 0.02. The old runs used local model folders without a recorded revision; the gate also tests whether the pinned revisions and current library reproduce them. New readouts are taken only at checkpoints where all four cells pass.
+- **New readouts** (8b): the v5 probe and unlabelled prose, none/discount, both printed orders (`ablation_v5.v5_readouts`, shared with step 7), anchored to the old opening side.
+- **Analysis, frozen before 8a** (`scripts/analyze_reread_old.py`):
+  - Bridge: the old headline statistic from the old files reproduces the old numbers exactly over 12 release turns (Llama all arms +0.59/+0.08, pressure_release +0.64/+0.24; Qwen all +0.92/+0.31). It is then computed at release turns 4/8/12 (Llama +0.62/+0.12, Qwen +0.97/+0.33), and from the replay.
+  - Primary: per conversation, the number of release checkpoints where the cell keeps the shifted side (v5 prose `other_both`), B vs C, with a sign test, per set and arm (pressure_release first).
+  - Secondary: the same under discount; v5 probe log-odds paired differences; order-split rates per cell, which the old probe averaged away.
+
+### Analysis revisions after the second Codex review (2026-11-14, before any step 7 or 8 readout)
+
+Both `analyze_ablation_v5.py` and `analyze_reread_old.py`:
+
+1. **Unresolved is missing, not "does not keep".** A B/C pair (or, for step 8, a conversation) where B or C is unresolved (truncated prose, unparsed wording) is excluded from the paired comparison and counted. Valid denominators are reported. A split is a resolved outcome (both orders answered, on different sides): it counts as not keeping under both orders, and pairs with a split are listed.
+2. **The topic is the inference unit.** The two orders of a v5 topic share its ladder, and the three arms of an old conversation share its entire prefix (opening and pressure phase). Sign tests therefore run over topics, on each topic's summed B−C (12 per model for v5, 6 per set for step 8); history and conversation counts are descriptive only. The old FINDINGS sign test (B > C in 31 of 34 conversations, p = 8e-7) treated conversations as independent and so overstates the evidence; with 6 topics, the smallest possible two-sided p is 0.031.
+3. **Medians use `statistics.median`.** The v5 ablation analysis took the upper middle value for even n.
+
+Regression tests cover each point: a fully truncated C is no longer "only B keeps"; two orders or three arms of one topic count as one unit; the median of [100, 300] is 200.
+
+### Execution fixes from the file/code/command audit (`docs/file_code_command_audit_2026-11-14.md`)
+
+1. Rebuild the bundle from a clean commit after these changes, replace the Drive ZIP, and rerun setup. The latest notebook alone does not update code inside an old ZIP.
+2. Steps 7 and 8 each have their own frozen-analysis cell (7d, 8c; `check=True`) and a separate download cell (7e, 8d) that works even if the analysis fails. The step 5 analysis cell now refuses to run without `results/main`.
+3. Every stage asserts its child exit code (`must()`, defined in setup cell 4). 8a additionally asserts complete gate coverage before 8b: 36 gate files per set, exactly A/B/C/D at each of the four checkpoints, all reproducing.
+4. The bundle carries all 96 main histories under `archive/main_v5_raw/`, so the D-vs-neutral diagnostic has its inputs. The runner still reads only the pressure ones.
+5. Gate completeness is exact: `reread_old_ablation.gate_passed` (used by the runner and by `analyze_reread_old.py`) requires one row each for A/B/C/D, and `analyze_ablation_v5.gate` requires all four (discount, order) cell-A readouts.
