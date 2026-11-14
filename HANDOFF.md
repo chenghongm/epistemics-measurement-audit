@@ -98,3 +98,7 @@ Open: a sensitivity check on n-gram-untouched histories, and settling the paper 
 ### 2026-11-14 n-gram sensitivity check
 
 `analyze_v5.py` gained an n-gram-clean sensitivity section and a `ngram_clean` column in `checkpoints.csv` (tests: 29 pass). The archived `results/main_v5/analysis/` was regenerated and `MANIFEST.sha256` updated. Flips under pressure are robust. Llama's pressure split rate drops from 22% to 16% on clean checkpoints but stays about 3× neutral. Llama's after-flip splits at release are all at touched checkpoints, so they are not yet supported. Numbers and the open option (no-flag rerun of 14 touched Llama pressure histories) are in `docs/run_v5.md`, "Sensitivity to the n-gram block".
+
+### 2026-11-14 step 6: no-flag rerun done
+
+All 13 histories completed (`results/main_v5/sensitivity_noflag/`). With the 4b `four_day_week` o1 run that makes 14 pairs, all identical before the first touched turn, and their primary outcomes are unchanged in 14/14. Llama's after-flip release splits occur without the flag too. Prose split at touched checkpoints is 9/27 (flag) vs 9/25 (no flag), so the block does not create splits. Details: `docs/run_v5.md`, `results/main_v5/analysis/compare_noflag.md`. Next candidate: the context ablation (`docs/context_ablation_v5_plan.md`, draft, untracked).

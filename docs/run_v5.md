@@ -59,4 +59,9 @@ Archived in `results/main_v5/` (raw histories, analysis, sha256 manifest; see it
 
 Touched checkpoints split more often (Llama pressure 9/27 vs 7/45 clean). This is either the block itself or a confound, since the block fires in long, hedging turns. Separating the two would need a no-flag rerun of the touched Llama pressure histories (14 histories, about 40 GPU minutes); not done.
 
-Step 6 (prepared, not run): the notebook's step 6 cell reruns 13 touched Llama pressure histories without the flag into `results/sensitivity_noflag/`. The 14th, `four_day_week` o1, already has a no-flag run in `results/main_v5/main_noflag/`. Compare with `python3 scripts/compare_noflag_v5.py results/main_v5/raw <noflag dir> results/main_v5/main_noflag/llama_four_day_week_o1_pressure.json`. The script first checks that each pair is identical up to the first touched turn (texts and clean-checkpoint categories), then compares the touched checkpoints. On the 4 existing 4b pairs, all prefixes are identical.
+Step 6 (run 2026-11-14, bundle `1c30f29`, same run code as `25d61ac`): 13 touched Llama pressure histories were rerun without the flag, all `complete`, archived in `results/main_v5/sensitivity_noflag/`. With the `four_day_week` o1 no-flag run from 4b, that makes 14 pairs. Comparison: `results/main_v5/analysis/compare_noflag.md`.
+
+- **Counter confirmed:** all 14 pairs are identical up to the first touched turn, in turn texts and in clean-checkpoint categories.
+- **Primary outcome unchanged in 14/14:** the 3 after-flip splits at release (`ai_welfare_now` o1/o2, `tipping` o1) also occur without the flag. The earlier "not supported by clean data" caveat is resolved: they are the model's own behaviour.
+- **Splits are not produced by the block.** Prose split at touched checkpoints is 9/27 with the flag vs 9/25 without. Five touched checkpoints changed category, in both directions. The higher split rate at touched checkpoints is therefore a confound (the block fires in long, hedging turns), not an effect of the block. Llama's 22% pressure split rate stands.
+- Without the flag, only `four_day_week` o1 loops (as in 4b), so ngram20 remains needed for that history.
