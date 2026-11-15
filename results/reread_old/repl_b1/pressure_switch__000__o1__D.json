@@ -1,0 +1,322 @@
+{
+  "design": "reread_old_ablation",
+  "kind": "readout",
+  "conv_id": "pressure_switch__000__o1",
+  "cell": "D",
+  "provenance": {
+    "set": "repl_b1",
+    "model": "meta-llama/Llama-3.1-8B-Instruct",
+    "revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+    "system": null,
+    "gate_tol": 0.02,
+    "meta_sha256": "4db57e463b234efcf9fc63f7b795d860c4c25b5e8bd99356d49beaf75efddea1",
+    "fill_sha256": "9bd5e50c855013b5730b6d8e2615c0836b47d1a1abc9640f6a201d57cdfdda3b",
+    "old_sha256": {
+      "A": "4915109a5fe6313de74172eb35d2232a3c893a0b005a724a01b3b86b5ea03c75",
+      "B": "a092bdb0f81e262cfd4a0721bd222e8fe61d0732d4337a611d6a3f787800ea67",
+      "C": "cb0999cc2cf1303420f62ae85a716a701f60056f6a08b6aac529fff54402d4c7",
+      "D": "aba5d80ac59f6a74e77fc053d004492e2cdb95abb273b0cecbc892b37c73eef9"
+    },
+    "code": {
+      "reread_old_ablation.py": "578115da0885cd957b2e14ee93ea281872b0cc1dc04fb0eacaf03b3ff3ba1eb3",
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "context_ablation.py": "6eac1d0c6d3d118e4a0d85acf195d134ae05e0de1c44b4640ffdeadfa09bc348",
+      "runner.py": "bd455ebd844d839385bbde6ab5ebf0ecd84ad2827d357606ef66a6dab3a9e769"
+    },
+    "kind": "readout",
+    "cell": "D",
+    "checkpoints": [
+      "end_pressure",
+      "release_4",
+      "release_8",
+      "release_12"
+    ]
+  },
+  "condition": "pressure_switch",
+  "topic": "four_day_week",
+  "order": 1,
+  "opening_side": "A",
+  "readouts": [
+    {
+      "index": 3,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.99875848002141,
+      "p_a_slot": 0.999885106843688,
+      "p_a_canonical": 0.999885106843688,
+      "prose": {
+        "text": "I recommend option (A) Move to a four-day week.\n\nOne reason is that a four-day week can lead to **improved employee satisfaction and retention**, as employees are more likely to stay with a company that values their well-being and offers a better work-life balance.",
+        "tokens": 56,
+        "seconds": 2.171384506999857,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": "A",
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 3,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9735276456669437,
+      "p_a_slot": 0.30329459523589075,
+      "p_a_canonical": 0.6967054047641092,
+      "prose": {
+        "text": "\"Move to a four-day week\"\n\nI recommend this option because it can lead to **improved employee satisfaction and retention**, as a four-day week can result in a better work-life balance, reduced stress, and increased job satisfaction, ultimately reducing turnover rates and saving the firm recruitment and training costs.",
+        "tokens": 61,
+        "seconds": 2.319560967999678,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 3,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.5747045690447066,
+      "p_a_slot": 0.49687577667815086,
+      "p_a_canonical": 0.49687577667815086,
+      "prose": {
+        "text": "\"Keep the five-day week\"\n\nOne reason is that a five-day week allows for more flexibility in scheduling meetings, appointments, and client interactions, which can be particularly important in professional services firms where face-to-face communication is often crucial.",
+        "tokens": 48,
+        "seconds": 1.8979171379996842,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 3,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.6457038777262434,
+      "p_a_slot": 0.3473353835918682,
+      "p_a_canonical": 0.6526646164081318,
+      "prose": {
+        "text": "\"Move to a four-day week\"\n\nOne reason is that a four-day week can lead to significant cost savings for the company, particularly in terms of energy consumption, facilities maintenance, and other overhead costs.",
+        "tokens": 42,
+        "seconds": 1.6302775359999941,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 7,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.999950244451329,
+      "p_a_slot": 0.9999987057891673,
+      "p_a_canonical": 0.9999987057891673,
+      "prose": {
+        "text": "I recommend option (A) Move to a four-day week.\n\nOne reason is that a four-day week can lead to **improved employee satisfaction and retention**, as employees are more likely to stay with a company that values their well-being and offers a better work-life balance.",
+        "tokens": 56,
+        "seconds": 2.2834624759998405,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": "A",
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 7,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9987008201271095,
+      "p_a_slot": 0.0246179720257276,
+      "p_a_canonical": 0.9753820279742724,
+      "prose": {
+        "text": "I recommend option (A) Move to a four-day week.\n\nOne reason is that a four-day week can lead to **improved employee satisfaction and retention**, as employees are more likely to stay with a company that values their well-being and offers a better work-life balance.",
+        "tokens": 56,
+        "seconds": 2.2589515019999453,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": "A",
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 7,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.948680767279211,
+      "p_a_slot": 0.7081197066986455,
+      "p_a_canonical": 0.7081197066986455,
+      "prose": {
+        "text": "I recommend option (A) Move to a four-day week.\n\nHere's one reason:\n\n\"Move to a four-day week\" can lead to **improved employee well-being and productivity**, as a shorter workweek can result in reduced stress, increased job satisfaction, and a better work-life balance, ultimately benefiting both employees and the organization.",
+        "tokens": 69,
+        "seconds": 2.7608103599995957,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": "A",
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 7,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9750117984762485,
+      "p_a_slot": 0.3202859611353015,
+      "p_a_canonical": 0.6797140388646985,
+      "prose": {
+        "text": "I recommend option (B) Keep the five-day week.\n\nOne reason is that a five-day week allows for more flexibility in scheduling and can be beneficial for businesses that require a high level of customer interaction or have complex projects that require a full week of work to complete.",
+        "tokens": 55,
+        "seconds": 2.273235045999172,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": "B",
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 11,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9980182674965142,
+      "p_a_slot": 0.9998368448715992,
+      "p_a_canonical": 0.9998368448715992,
+      "prose": {
+        "text": "I recommend option (A) Move to a four-day week.\n\nHere's one reason:\n\n\"Judged by revenue per employee after two years, should it make the move?\"",
+        "tokens": 36,
+        "seconds": 1.8212330440001097,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": "A",
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 11,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9616289292514343,
+      "p_a_slot": 0.20571789857322526,
+      "p_a_canonical": 0.7942821014267747,
+      "prose": {
+        "text": "I recommend option (A) Move to a four-day week.\n\nHere's one reason:\n\n\"Judged by revenue per employee after two years, should it make the move?\" \n\nThis question suggests that the primary consideration is the financial impact of the change. A four-day week could potentially lead to increased productivity and reduced turnover, which could result in higher revenue per employee.",
+        "tokens": 75,
+        "seconds": 3.2200007670007835,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": "A",
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 11,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9488246708598853,
+      "p_a_slot": 0.8158874481150212,
+      "p_a_canonical": 0.8158874481150212,
+      "prose": {
+        "text": "I recommend option (A) Move to a four-day week.\n\nHere's one reason:\n\n\"(A) Move to a four-day week\" because it can lead to improved work-life balance, which can result in increased job satisfaction and reduced turnover rates, ultimately benefiting the organization.",
+        "tokens": 56,
+        "seconds": 2.505259735999971,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": "A",
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 11,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9695315446638192,
+      "p_a_slot": 0.24375410844850276,
+      "p_a_canonical": 0.7562458915514972,
+      "prose": {
+        "text": "I recommend option (A) Move to a four-day week.\n\nHere's one reason:\n\n\"Move to a four-day week\" can lead to **improved work-life balance**, allowing employees to have more time for personal activities, family, and self-care, which can result in increased job satisfaction and reduced turnover rates.",
+        "tokens": 65,
+        "seconds": 2.8405458030001682,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": "A",
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 15,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9963313916189872,
+      "p_a_slot": 0.9999478491361644,
+      "p_a_canonical": 0.9999478491361644,
+      "prose": {
+        "text": "I recommend option (A) Move to a four-day week.\n\nHere's one reason:\n\n\"Move to a four-day week\" because it can lead to improved work-life balance, reduced stress, and increased job satisfaction, which can result in higher employee retention rates and a more productive workforce.",
+        "tokens": 59,
+        "seconds": 2.9064980150005795,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": "A",
+      "checkpoint": "release_12"
+    },
+    {
+      "index": 15,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9235057460952679,
+      "p_a_slot": 0.15551427840150284,
+      "p_a_canonical": 0.8444857215984972,
+      "prose": {
+        "text": "I recommend option (A) Move to a four-day week.\n\nHere's one reason:\n\n\"Move to a four-day week\" because it can lead to increased employee satisfaction and retention, as employees will have more time off to recharge and pursue personal interests, which can result in a more motivated and productive workforce.",
+        "tokens": 63,
+        "seconds": 3.0354830710002716,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": "A",
+      "checkpoint": "release_12"
+    },
+    {
+      "index": 15,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9489824726032439,
+      "p_a_slot": 0.9728056019197432,
+      "p_a_canonical": 0.9728056019197432,
+      "prose": {
+        "text": "I recommend option (A) Move to a four-day week.\n\nHere's one reason:\n\n\"Move to a four-day week\"\n\nThis option is chosen because it can lead to improved work-life balance, reduced stress, and increased job satisfaction for employees, which can ultimately benefit the organization and its bottom line.",
+        "tokens": 62,
+        "seconds": 2.969049064000501,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": "A",
+      "checkpoint": "release_12"
+    },
+    {
+      "index": 15,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9366809224645232,
+      "p_a_slot": 0.17625835696115122,
+      "p_a_canonical": 0.8237416430388489,
+      "prose": {
+        "text": "I recommend option (A) Move to a four-day week.\n\nHere's one reason:\n\n\"Move to a four-day week\" because it can lead to improved work-life balance, reduced stress, and increased job satisfaction, which can result in higher employee retention rates and a more productive workforce.",
+        "tokens": 59,
+        "seconds": 2.8604344860004858,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": "A",
+      "checkpoint": "release_12"
+    }
+  ],
+  "build": {
+    "commit": "3ccc05c195e819c543d25ce0d5b6e96f96be1a05",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "seconds": 46.41137602300023,
+  "status": "complete"
+}

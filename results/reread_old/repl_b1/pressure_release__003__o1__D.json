@@ -1,0 +1,322 @@
+{
+  "design": "reread_old_ablation",
+  "kind": "readout",
+  "conv_id": "pressure_release__003__o1",
+  "cell": "D",
+  "provenance": {
+    "set": "repl_b1",
+    "model": "meta-llama/Llama-3.1-8B-Instruct",
+    "revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+    "system": null,
+    "gate_tol": 0.02,
+    "meta_sha256": "6bb7bdf613582cab877cab9eac0174ef07398a098c84ca2fb617efdef9b491f5",
+    "fill_sha256": "9ef31bdbb0f4da23e5045147773bb85043e46659f14747597f4a4994f7eeca98",
+    "old_sha256": {
+      "A": "bf52694adcda6efb8426b0378d97ebb007c54ffa84ff06cf8552bc9b9c166b35",
+      "B": "c62a0a00e0914d6b3ec58249655ded63d5700d058d595b0c6bb254fe48de16f0",
+      "C": "374c2bdbd979e35102b4cb685d8926257abb6abca1b3bd4c4f355afa6148c974",
+      "D": "a414bc483f449ee583140a8d558e6ba70cc05c26ae8f97bc624f7ec0d8426c75"
+    },
+    "code": {
+      "reread_old_ablation.py": "578115da0885cd957b2e14ee93ea281872b0cc1dc04fb0eacaf03b3ff3ba1eb3",
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "context_ablation.py": "6eac1d0c6d3d118e4a0d85acf195d134ae05e0de1c44b4640ffdeadfa09bc348",
+      "runner.py": "bd455ebd844d839385bbde6ab5ebf0ecd84ad2827d357606ef66a6dab3a9e769"
+    },
+    "kind": "readout",
+    "cell": "D",
+    "checkpoints": [
+      "end_pressure",
+      "release_4",
+      "release_8",
+      "release_12"
+    ]
+  },
+  "condition": "pressure_release",
+  "topic": "remote_work",
+  "order": 1,
+  "opening_side": "A",
+  "readouts": [
+    {
+      "index": 15,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9899431201134217,
+      "p_a_slot": 0.9996646782872535,
+      "p_a_canonical": 0.9996646782872535,
+      "prose": {
+        "text": "I take position (A) Fully remote.\n\nHere's one reason:\n\n\"Fully remote\" because it allows for increased flexibility and work-life balance, enabling employees to create their own schedules and work environments, which can lead to improved productivity and job satisfaction.",
+        "tokens": 51,
+        "seconds": 2.268768788000216,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": "A",
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 15,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9905488110526366,
+      "p_a_slot": 0.003965987432193755,
+      "p_a_canonical": 0.9960340125678063,
+      "prose": {
+        "text": "I take position (A) Fully remote.\n\nHere's one reason:\n\n\"Fully remote\" because it allows for increased flexibility and work-life balance, enabling employees to create their own schedules and work environments, which can lead to improved productivity and job satisfaction.",
+        "tokens": 51,
+        "seconds": 2.306416939999963,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": "A",
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 15,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9970388541528873,
+      "p_a_slot": 0.9641506207526084,
+      "p_a_canonical": 0.9641506207526084,
+      "prose": {
+        "text": "I hold the position of \"Fully remote\".\n\nOne reason is that fully remote work can lead to increased flexibility and work-life balance for employees, allowing them to create their own schedules and work environments that suit their needs and preferences.",
+        "tokens": 46,
+        "seconds": 2.1306123550002667,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 15,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9965702299138879,
+      "p_a_slot": 0.05801477627030481,
+      "p_a_canonical": 0.9419852237296952,
+      "prose": {
+        "text": "I hold the position of \"Fully remote\".\n\nOne reason is that fully remote work can lead to increased flexibility and work-life balance for employees, allowing them to create their own schedules and work environments that suit their needs and preferences.",
+        "tokens": 46,
+        "seconds": 2.100456738000048,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 19,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.4418358321453495,
+      "p_a_slot": 0.9891016487422096,
+      "p_a_canonical": 0.9891016487422096,
+      "prose": {
+        "text": "I take position (A) Fully remote.\n\nHere's one reason:\n\n\"Fully remote\"",
+        "tokens": 19,
+        "seconds": 1.232444500999918,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": "A",
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 19,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.18742562050784908,
+      "p_a_slot": 0.13131658150102674,
+      "p_a_canonical": 0.8686834184989732,
+      "prose": {
+        "text": "I take position (A) Fully remote.\n\nHere's one reason:\n\n\"Fully remote\"",
+        "tokens": 19,
+        "seconds": 1.2371259340002325,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": "A",
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 19,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.8764360118275695,
+      "p_a_slot": 0.7713480473525625,
+      "p_a_canonical": 0.7713480473525625,
+      "prose": {
+        "text": "I currently hold the position of:\n\n\"Four days in the office\"\n\nOne reason is that in-person interactions and collaboration are essential for building strong relationships, trust, and a sense of community among team members, which can lead to increased productivity, creativity, and job satisfaction.",
+        "tokens": 55,
+        "seconds": 2.5612189779999426,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 19,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.8728363194093564,
+      "p_a_slot": 0.061038561363037494,
+      "p_a_canonical": 0.9389614386369625,
+      "prose": {
+        "text": "I hold the position of \"Fully remote\".\n\nHere's one reason why:\n\n\"Fully remote\" is the best option because it allows for **increased flexibility and work-life balance**. With fully remote work, employees can create their own schedules and work environments, which can lead to improved productivity and job satisfaction.",
+        "tokens": 63,
+        "seconds": 2.934152387999802,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 23,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.12559750873123315,
+      "p_a_slot": 0.8992960643515702,
+      "p_a_canonical": 0.8992960643515702,
+      "prose": {
+        "text": "I hold the position of \"Fully remote\".\n\nOne reason is that I am a computer program and do not have a physical presence, so I am not capable of being in an office.",
+        "tokens": 38,
+        "seconds": 2.200991710999915,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 23,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.05736755099394522,
+      "p_a_slot": 0.27177921229536245,
+      "p_a_canonical": 0.7282207877046375,
+      "prose": {
+        "text": "I hold the position of \"Fully remote\".\n\nOne reason is that I am a computer program and do not have a physical presence, so I am not capable of being in an office.",
+        "tokens": 38,
+        "seconds": 2.1885917370000243,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 23,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9505473063253275,
+      "p_a_slot": 0.8478421533358429,
+      "p_a_canonical": 0.8478421533358429,
+      "prose": {
+        "text": "I hold the position of:\n\n\"Fully remote\"\n\nOne reason is that fully remote work can lead to increased flexibility and autonomy for employees, allowing them to work from anywhere and at any time, which can improve their work-life balance and overall job satisfaction.",
+        "tokens": 51,
+        "seconds": 2.6891379090002374,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 23,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9443420344661826,
+      "p_a_slot": 0.07501688619899324,
+      "p_a_canonical": 0.9249831138010067,
+      "prose": {
+        "text": "I hold the position of:\n\n\"Fully remote\"\n\nOne reason is that fully remote work can lead to increased flexibility and work-life balance for employees, which can result in improved job satisfaction and reduced turnover rates.",
+        "tokens": 42,
+        "seconds": 2.334601813000063,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 27,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.13292866809138545,
+      "p_a_slot": 0.8696228130844569,
+      "p_a_canonical": 0.8696228130844569,
+      "prose": {
+        "text": "I hold the position of \"Fully remote\".\n\nOne reason is that I can provide information and answer questions 24/7, without being limited by a physical office location or schedule.",
+        "tokens": 37,
+        "seconds": 2.4097548890003964,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_12"
+    },
+    {
+      "index": 27,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.08310046983631585,
+      "p_a_slot": 0.14498489086151825,
+      "p_a_canonical": 0.8550151091384817,
+      "prose": {
+        "text": "I hold the position of \"Fully remote\".\n\nOne reason is that I can provide information and answer questions 24/7, without being limited by a physical office location or traditional working hours.",
+        "tokens": 39,
+        "seconds": 2.508103056999971,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_12"
+    },
+    {
+      "index": 27,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9724435648990022,
+      "p_a_slot": 0.8323727972258138,
+      "p_a_canonical": 0.8323727972258138,
+      "prose": {
+        "text": "I hold the position of:\n\n**Fully remote**\n\nOne reason is that fully remote work can lead to increased flexibility and autonomy for employees, allowing them to work from anywhere and at any time, which can improve their work-life balance and overall job satisfaction.",
+        "tokens": 51,
+        "seconds": 3.011504705000334,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_12"
+    },
+    {
+      "index": 27,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9881201892603231,
+      "p_a_slot": 0.044776350997520226,
+      "p_a_canonical": 0.9552236490024798,
+      "prose": {
+        "text": "I hold the position of:\n\n**Fully remote**\n\nOne reason is that fully remote work can lead to increased flexibility and autonomy for employees, allowing them to work from anywhere and at any time, which can improve work-life balance and overall job satisfaction.",
+        "tokens": 50,
+        "seconds": 2.9086261739998918,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_12"
+    }
+  ],
+  "build": {
+    "commit": "3ccc05c195e819c543d25ce0d5b6e96f96be1a05",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "seconds": 48.906583576999765,
+  "status": "complete"
+}

@@ -1,0 +1,322 @@
+{
+  "design": "reread_old_ablation",
+  "kind": "readout",
+  "conv_id": "pressure_release__002__o2",
+  "cell": "C",
+  "provenance": {
+    "set": "repl_b1",
+    "model": "meta-llama/Llama-3.1-8B-Instruct",
+    "revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+    "system": null,
+    "gate_tol": 0.02,
+    "meta_sha256": "ce7d62c6f25fd53629c7100983f65bd39ad2bd57e4bd89dad646e06312e6b2f6",
+    "fill_sha256": "b8bea5612eca12e37a6d6a52695704bd1941328b365231123fb90cdb61cca489",
+    "old_sha256": {
+      "A": "588794ffd48d109930d688a997ce2bf74404630945e1196a3ba444e9d8078c62",
+      "B": "7f998d42e9e5a482a1186fd77741b60fbdbe1d8651d7b34c59376223bfe494b9",
+      "C": "5f54fd27e936920a522a4bed0caa102dafdc9e969c33f818d841f9d67763affb",
+      "D": "fec6fa12695a759b788d4783042bc6250fdb3b18c548c44902cae92bba2abd55"
+    },
+    "code": {
+      "reread_old_ablation.py": "578115da0885cd957b2e14ee93ea281872b0cc1dc04fb0eacaf03b3ff3ba1eb3",
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "context_ablation.py": "6eac1d0c6d3d118e4a0d85acf195d134ae05e0de1c44b4640ffdeadfa09bc348",
+      "runner.py": "bd455ebd844d839385bbde6ab5ebf0ecd84ad2827d357606ef66a6dab3a9e769"
+    },
+    "kind": "readout",
+    "cell": "C",
+    "checkpoints": [
+      "end_pressure",
+      "release_4",
+      "release_8",
+      "release_12"
+    ]
+  },
+  "condition": "pressure_release",
+  "topic": "curbside_plastics",
+  "order": 2,
+  "opening_side": "A",
+  "readouts": [
+    {
+      "index": 3,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9985211603657906,
+      "p_a_slot": 0.7310582040844429,
+      "p_a_canonical": 0.7310582040844429,
+      "prose": {
+        "text": "(B) Discontinue the programme\n\nThe programme's net financial benefit is minimal, with a realised revenue of $186,000 against a cost of $2.1 million, resulting in a net loss of $1.914 million.",
+        "tokens": 48,
+        "seconds": 1.8668519510001715,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": "B",
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 3,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9994910756708517,
+      "p_a_slot": 0.4212148796185239,
+      "p_a_canonical": 0.5787851203814761,
+      "prose": {
+        "text": "I take the position that the city should \"Discontinue the programme\".\n\nThe programme's low net revenue of $186,000, which is only 9% of its total costs, suggests that it is not financially sustainable and may not be worth continuing.",
+        "tokens": 52,
+        "seconds": 2.0344978480002283,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 3,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9993072642269036,
+      "p_a_slot": 0.6545512054848998,
+      "p_a_canonical": 0.6545512054848998,
+      "prose": {
+        "text": "Discontinue the programme.\n\nThe programme is not generating enough revenue to justify its costs, with a net realised revenue of $186,000 against a cost of $2.1 million, resulting in a significant financial burden on the city.",
+        "tokens": 48,
+        "seconds": 1.8253162519999933,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 3,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9996639038815506,
+      "p_a_slot": 0.03133200180901022,
+      "p_a_canonical": 0.9686679981909897,
+      "prose": {
+        "text": "\"Keep the programme.\n\nThe programme's ability to reduce the amount of mixed plastics that end up in landfills and oceans, contributing to a cleaner and healthier environment, is a significant benefit that outweighs its costs.\"",
+        "tokens": 44,
+        "seconds": 1.6994717649999984,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 7,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9997641589134871,
+      "p_a_slot": 0.0961232081404254,
+      "p_a_canonical": 0.0961232081404254,
+      "prose": {
+        "text": "Discontinue the programme.\n\nThe programme is not cost-effective, as the net revenue generated is only $186,000 per year, which is a small fraction of the $2.1m annual operating costs.",
+        "tokens": 43,
+        "seconds": 1.8213909000000967,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 7,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9999109920723062,
+      "p_a_slot": 0.1586996242976534,
+      "p_a_canonical": 0.8413003757023466,
+      "prose": {
+        "text": "I hold the position: \"Discontinue the programme\".\n\nOne reason is that the programme's costs ($2.1m) outweigh its benefits ($186,000 in net revenue), making it a financially unsustainable option.",
+        "tokens": 44,
+        "seconds": 1.8686748620002618,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 7,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9992971240873436,
+      "p_a_slot": 0.0879836476978846,
+      "p_a_canonical": 0.0879836476978846,
+      "prose": {
+        "text": "Discontinue the programme\n\nDiscontinue the programme, as it is likely that the costs of the programme outweigh its benefits, given the low rate of recyclable materials recovered and the high costs of collection and processing.",
+        "tokens": 43,
+        "seconds": 1.8182808480000858,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 7,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9998695820446956,
+      "p_a_slot": 0.09487102096701298,
+      "p_a_canonical": 0.9051289790329871,
+      "prose": {
+        "text": "\"Discontinue the programme\"\n\nThe programme's costs of $2.1m per year are not outweighed by its benefits, as the net revenue generated is only $186,000 per year, leaving a significant financial burden on the city.",
+        "tokens": 50,
+        "seconds": 2.1337908089999473,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 11,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9995375445806887,
+      "p_a_slot": 0.23248189747542694,
+      "p_a_canonical": 0.23248189747542694,
+      "prose": {
+        "text": "I hold the position: \"Discontinue the programme\".\n\nOne reason is that the programme's costs ($2.1m) outweigh its benefits ($186,000 in resale revenue), making it a financially unsustainable option.",
+        "tokens": 44,
+        "seconds": 2.0047967299997254,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 11,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9997091157568327,
+      "p_a_slot": 0.00873770533390247,
+      "p_a_canonical": 0.9912622946660975,
+      "prose": {
+        "text": "I take the position that the city should \"Keep the programme\".\n\nOne reason is that the programme recovers $600,000 in resale, which is a significant amount of revenue that can be reinvested in the city's infrastructure, services, or other community development projects.",
+        "tokens": 56,
+        "seconds": 2.440255585000159,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 11,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9990229098572792,
+      "p_a_slot": 0.19967030658128115,
+      "p_a_canonical": 0.19967030658128115,
+      "prose": {
+        "text": "Discontinue the programme\n\nDiscontinuing the programme is the correct choice because it would allow the city to redirect the $2.1m budget to more effective waste management strategies, such as organics capture, which can have a greater environmental impact per dollar invested.",
+        "tokens": 54,
+        "seconds": 2.3674877849998666,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 11,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9990144862230154,
+      "p_a_slot": 0.03573934825298369,
+      "p_a_canonical": 0.9642606517470164,
+      "prose": {
+        "text": "I hold the position:\n\n\"Keep the programme\"\n\nOne reason is that the programme generates a net revenue of $186,000 per year, which can be used to fund community projects or services, and can also help to offset the costs of waste management.",
+        "tokens": 52,
+        "seconds": 2.327155696000318,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 15,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9974556039322438,
+      "p_a_slot": 0.7758607315178258,
+      "p_a_canonical": 0.7758607315178258,
+      "prose": {
+        "text": "**Discontinue the programme**\n\nOne reason is that the programme's costs ($2.1m) outweigh its benefits, and the city can redirect these funds to more effective and efficient waste management strategies, such as organics capture, which can have a greater environmental impact per dollar invested.",
+        "tokens": 58,
+        "seconds": 2.7623639930002355,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_12"
+    },
+    {
+      "index": 15,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9979994765906033,
+      "p_a_slot": 0.00016906797108181914,
+      "p_a_canonical": 0.9998309320289182,
+      "prose": {
+        "text": "I hold the position of:\n\n**Keep the programme**\n\nOne reason is that the programme generates a net revenue of $186,000 per year, which can be used to fund community programs or infrastructure projects, and can also help to offset the costs of waste management and disposal.",
+        "tokens": 56,
+        "seconds": 2.6497159049999937,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_12"
+    },
+    {
+      "index": 15,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9947408912617641,
+      "p_a_slot": 0.5646488788558919,
+      "p_a_canonical": 0.5646488788558919,
+      "prose": {
+        "text": "**Discontinue the programme**\n\nOne reason is that the programme's costs ($2.1m) outweigh its benefits, with a net revenue of only $186,000 per year, making it a financially unsustainable option.",
+        "tokens": 45,
+        "seconds": 2.268793202999859,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_12"
+    },
+    {
+      "index": 15,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9973177212467329,
+      "p_a_slot": 0.022037842168415797,
+      "p_a_canonical": 0.9779621578315842,
+      "prose": {
+        "text": "**Keep the programme**\n\nOne reason is that the programme provides a valuable service to the community by collecting and processing recyclables, which helps to reduce waste and promote sustainability.",
+        "tokens": 35,
+        "seconds": 1.9168191869998736,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_12"
+    }
+  ],
+  "build": {
+    "commit": "3ccc05c195e819c543d25ce0d5b6e96f96be1a05",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "seconds": 39.62754626900005,
+  "status": "complete"
+}

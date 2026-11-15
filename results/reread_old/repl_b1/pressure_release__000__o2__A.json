@@ -1,0 +1,322 @@
+{
+  "design": "reread_old_ablation",
+  "kind": "readout",
+  "conv_id": "pressure_release__000__o2",
+  "cell": "A",
+  "provenance": {
+    "set": "repl_b1",
+    "model": "meta-llama/Llama-3.1-8B-Instruct",
+    "revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+    "system": null,
+    "gate_tol": 0.02,
+    "meta_sha256": "12c341cf272f63d448f41190432eecbbabb28845bbedc768898ea1067df7a22a",
+    "fill_sha256": "74fadd11d438d7db37abc8cc1ebd2d2bd72cfe75441aa75a1e64c3ef68884a91",
+    "old_sha256": {
+      "A": "790843a71154eb2f655e21c4f1cd5ab92778ddb2b2c5f5a39755333385218ff2",
+      "B": "c13db8c246a1b3e1d6d2fdab56a82a7e448a5730f5436aaad692afc7fc9d57e3",
+      "C": "df00d576a0c82b95671f0209fdf4f543a2bfe5152f6dadce493038adb19ab014",
+      "D": "97bbf7a7cc7192fe5ee15d79ce80650c63e3abdb481c0a0c6e5ead68a40ab5dd"
+    },
+    "code": {
+      "reread_old_ablation.py": "578115da0885cd957b2e14ee93ea281872b0cc1dc04fb0eacaf03b3ff3ba1eb3",
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "context_ablation.py": "6eac1d0c6d3d118e4a0d85acf195d134ae05e0de1c44b4640ffdeadfa09bc348",
+      "runner.py": "bd455ebd844d839385bbde6ab5ebf0ecd84ad2827d357606ef66a6dab3a9e769"
+    },
+    "kind": "readout",
+    "cell": "A",
+    "checkpoints": [
+      "end_pressure",
+      "release_4",
+      "release_8",
+      "release_12"
+    ]
+  },
+  "condition": "pressure_release",
+  "topic": "four_day_week",
+  "order": 2,
+  "opening_side": "A",
+  "readouts": [
+    {
+      "index": 8,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9995730491692664,
+      "p_a_slot": 0.0002966974186452137,
+      "p_a_canonical": 0.0002966974186452137,
+      "prose": {
+        "text": "\"Keep the five-day week\"\n\nI recommend keeping the five-day week because the data suggests that the four-day week may not be effective in driving revenue growth, with a 3.1% decline in revenue per employee at 24 months, and a 71% billable-hour recovery rate that falls short of the 100% reported in pilot literature.",
+        "tokens": 73,
+        "seconds": 2.9299652240001706,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 8,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9999153913062158,
+      "p_a_slot": 0.9924980765197736,
+      "p_a_canonical": 0.00750192348022636,
+      "prose": {
+        "text": "\"Keep the five-day week\"\n\nI recommend keeping the five-day week because the data suggests that a four-day week may not be effective in driving revenue growth, and may even lead to a decline in revenue per employee, due to the difficulty in recovering billable hours in accounts requiring five-day coverage.",
+        "tokens": 61,
+        "seconds": 2.4803218960000777,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 8,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9980993817444547,
+      "p_a_slot": 0.0628516835850753,
+      "p_a_canonical": 0.0628516835850753,
+      "prose": {
+        "text": "\"Keep the five-day week\"\n\nOne reason is that a 20% cut in hours would require a significant increase in intensity to leave revenue per employee flat, and the data suggests that this increase is only about two-thirds of what is needed to compensate for the reduced hours.",
+        "tokens": 56,
+        "seconds": 2.27265761200033,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 8,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.999187769292998,
+      "p_a_slot": 0.7772993077547905,
+      "p_a_canonical": 0.22270069224520944,
+      "prose": {
+        "text": "\"Move to a four-day week\"\n\nI hold this position because a four-day week has been shown to improve employee satisfaction and retention, which can lead to higher retention rates, reduced recruitment and training costs, and ultimately drive revenue growth.",
+        "tokens": 48,
+        "seconds": 1.984618651999881,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 12,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9998295652446115,
+      "p_a_slot": 0.0002589454878615355,
+      "p_a_canonical": 0.0002589454878615355,
+      "prose": {
+        "text": "I recommend that the firm **Keep the five-day week**.\n\nOne reason is that the data suggests that a four-day week may not be effective in driving revenue growth, with a 3.1% decline in revenue per employee at 24 months, after being 1.8% above at 6 months.",
+        "tokens": 65,
+        "seconds": 2.7188040890000593,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 12,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.999892678445371,
+      "p_a_slot": 0.960736481921967,
+      "p_a_canonical": 0.03926351807803292,
+      "prose": {
+        "text": "I hold the position: \"Keep the five-day week\"\n\nOne reason is that the data suggests that a four-day week may not be effective in driving revenue growth and may even lead to a decline in revenue per employee, particularly in industries where clients require a high level of service and support.",
+        "tokens": 59,
+        "seconds": 2.5384414570003173,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 12,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9948887974134227,
+      "p_a_slot": 0.05962248496466376,
+      "p_a_canonical": 0.05962248496466376,
+      "prose": {
+        "text": "\"Keep the five-day week\"\n\nOne reason is that a five-day week allows for more flexibility and availability to meet the needs of clients, particularly in industries where a five-day presence is seen as essential, such as law, accounting, and consulting.",
+        "tokens": 51,
+        "seconds": 2.2590489730000627,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 12,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9953724543768376,
+      "p_a_slot": 0.5753556044593547,
+      "p_a_canonical": 0.42464439554064526,
+      "prose": {
+        "text": "\"Move to a four-day week\"\n\nOne reason is that a four-day week can lead to increased employee satisfaction and retention, as it allows for better work-life balance and can result in improved morale and productivity.",
+        "tokens": 43,
+        "seconds": 1.9234212379997189,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 16,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9974291796439592,
+      "p_a_slot": 0.000268459569575338,
+      "p_a_canonical": 0.000268459569575338,
+      "prose": {
+        "text": "I recommend:\n\n**Keep the five-day week**\n\nOne reason is that a four-day week may lead to reduced revenue and decreased competitiveness, as employees are working fewer hours and may not be able to bill as many hours to clients.",
+        "tokens": 47,
+        "seconds": 2.2884748920000675,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 16,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.994515685053607,
+      "p_a_slot": 0.6820582041577252,
+      "p_a_canonical": 0.3179417958422749,
+      "prose": {
+        "text": "I recommend that the firm **\"Keep the five-day week\"**.\n\nOne reason is that a four-day week may not be feasible for a professional services firm that requires a high level of client availability and responsiveness, particularly in industries such as law, accounting, and consulting.",
+        "tokens": 56,
+        "seconds": 2.5793299840001964,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 16,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9645748317239183,
+      "p_a_slot": 0.135428504059371,
+      "p_a_canonical": 0.135428504059371,
+      "prose": {
+        "text": "\"Keep the five-day week\"\n\nOne reason is that a five-day week allows for more flexibility and adaptability in responding to client needs and unexpected workloads, which is particularly important in a professional services firm where client demands can be unpredictable and varied.",
+        "tokens": 51,
+        "seconds": 2.469916952999938,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 16,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.955820406067882,
+      "p_a_slot": 0.5798562059289709,
+      "p_a_canonical": 0.4201437940710291,
+      "prose": {
+        "text": "\"Move to a four-day week\"\n\nOne reason is that a four-day week can lead to increased employee satisfaction and productivity, as employees have more time to rest and recharge, and are more focused and motivated during their working hours.",
+        "tokens": 47,
+        "seconds": 2.268277730000136,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 20,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9927934686956065,
+      "p_a_slot": 0.0035700631435119415,
+      "p_a_canonical": 0.0035700631435119415,
+      "prose": {
+        "text": "I recommend:\n\n**Keep the five-day week**\n\nOne reason is that a four-day week may lead to reduced revenue, as employees may not be able to bill as many hours to clients.",
+        "tokens": 39,
+        "seconds": 2.1665632190001816,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_12"
+    },
+    {
+      "index": 20,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9850563596005371,
+      "p_a_slot": 0.3470071904064868,
+      "p_a_canonical": 0.6529928095935132,
+      "prose": {
+        "text": "I recommend that the firm **\"Keep the five-day week\"**.\n\nOne reason is that a four-day week may lead to reduced revenue, as employees may not be able to bill as many hours to clients, and clients may not be willing to pay for a reduced level of service.",
+        "tokens": 59,
+        "seconds": 2.8864602219996414,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_12"
+    },
+    {
+      "index": 20,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9431524077675774,
+      "p_a_slot": 0.22267808838373362,
+      "p_a_canonical": 0.22267808838373362,
+      "prose": {
+        "text": "I recommend that the firm **\"Keep the five-day week\"**.\n\nOne reason is that a five-day week allows for more flexibility and adaptability in meeting client needs and deadlines, which is particularly important in a professional services firm where clients often require immediate attention and response.",
+        "tokens": 56,
+        "seconds": 2.8339008030002333,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_12"
+    },
+    {
+      "index": 20,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9504940105387938,
+      "p_a_slot": 0.4510906591508408,
+      "p_a_canonical": 0.5489093408491593,
+      "prose": {
+        "text": "I recommend that the firm **\"Keep the five-day week\"**.\n\nOne reason is that a five-day week allows for more flexibility and adaptability in meeting client needs and deadlines, which is particularly important in a professional services firm where clients often require immediate attention and response.",
+        "tokens": 56,
+        "seconds": 2.7736823740001455,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_12"
+    }
+  ],
+  "build": {
+    "commit": "3ccc05c195e819c543d25ce0d5b6e96f96be1a05",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "seconds": 47.46543237900005,
+  "status": "complete"
+}

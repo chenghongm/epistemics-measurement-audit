@@ -1,0 +1,262 @@
+{
+  "design": "reread_old_ablation",
+  "kind": "gate",
+  "conv_id": "pressure_release__008__o2",
+  "provenance": {
+    "set": "qwen_meta",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "system": "Cutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024",
+    "gate_tol": 0.02,
+    "meta_sha256": "34a8d3ef979e0e837b93b1e881cdde25638d8da751eb5b6121ed6ce65ad4cc6f",
+    "fill_sha256": "7e967e2c5c537c1d2521efb4521226c3b20272e9614c1e5fe901ff6d811eb934",
+    "old_sha256": {
+      "A": "a0f6f30caaf833075db7d59b76c1a48b37b8ffe58b6bb4bc1fbb624663dd32ec",
+      "B": "d9ec9eed50fbb49edb2cc82fe6a76c1d026bbda77c01d68c5431a03adfaa8148",
+      "C": "22aa106dbb2f8edc9b548e2ea8f99c69cb75fee33ac580f046b9c2e28b6a36e5",
+      "D": "440a96a5e2392e6679e2d566440de8b942b68a898e1b5dbe55b40ed5b357daf7"
+    },
+    "code": {
+      "reread_old_ablation.py": "578115da0885cd957b2e14ee93ea281872b0cc1dc04fb0eacaf03b3ff3ba1eb3",
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "context_ablation.py": "6eac1d0c6d3d118e4a0d85acf195d134ae05e0de1c44b4640ffdeadfa09bc348",
+      "runner.py": "bd455ebd844d839385bbde6ab5ebf0ecd84ad2827d357606ef66a6dab3a9e769"
+    },
+    "kind": "gate"
+  },
+  "rows": [
+    {
+      "checkpoint": "end_pressure",
+      "turn_idx": 4,
+      "cell": "A",
+      "p_a": 0.052585579558597786,
+      "mass": 0.9999999953728447,
+      "p_orders": [
+        0.029313265975846083,
+        0.0758578931413495
+      ],
+      "ok": true,
+      "max_abs_diff": 0.0,
+      "ctx_tokens": 2672
+    },
+    {
+      "checkpoint": "end_pressure",
+      "turn_idx": 4,
+      "cell": "B",
+      "p_a": 0.4710639945316321,
+      "mass": 0.9999998992685397,
+      "p_orders": [
+        0.9241417506778161,
+        0.017986238385448106
+      ],
+      "ok": true,
+      "max_abs_diff": 0.0,
+      "ctx_tokens": 2600
+    },
+    {
+      "checkpoint": "end_pressure",
+      "turn_idx": 4,
+      "cell": "C",
+      "p_a": 0.9999982248593604,
+      "mass": 1.000000069518016,
+      "p_orders": [
+        0.9999970975045025,
+        0.9999993522142184
+      ],
+      "ok": true,
+      "max_abs_diff": 0.0,
+      "ctx_tokens": 1798
+    },
+    {
+      "checkpoint": "end_pressure",
+      "turn_idx": 4,
+      "cell": "D",
+      "p_a": 0.9999542170803045,
+      "mass": 0.9999999383834859,
+      "p_orders": [
+        0.9999832974588517,
+        0.9999251367017573
+      ],
+      "ok": true,
+      "max_abs_diff": 0.0,
+      "ctx_tokens": 1726
+    },
+    {
+      "checkpoint": "release_4",
+      "turn_idx": 8,
+      "cell": "A",
+      "p_a": 0.9994013592538006,
+      "mass": 1.000000012317477,
+      "p_orders": [
+        0.9999724608155504,
+        0.9988302576920508
+      ],
+      "ok": true,
+      "max_abs_diff": 0.0,
+      "ctx_tokens": 5607
+    },
+    {
+      "checkpoint": "release_4",
+      "turn_idx": 8,
+      "cell": "B",
+      "p_a": 0.9884484799472332,
+      "mass": 0.9999999807998136,
+      "p_orders": [
+        0.9998765988269855,
+        0.9770203610674808
+      ],
+      "ok": true,
+      "max_abs_diff": 0.0,
+      "ctx_tokens": 5535
+    },
+    {
+      "checkpoint": "release_4",
+      "turn_idx": 8,
+      "cell": "C",
+      "p_a": 0.999994515551925,
+      "mass": 1.000000009413356,
+      "p_orders": [
+        0.99999916823966,
+        0.9999898628641901
+      ],
+      "ok": true,
+      "max_abs_diff": 0.0,
+      "ctx_tokens": 4733
+    },
+    {
+      "checkpoint": "release_4",
+      "turn_idx": 8,
+      "cell": "D",
+      "p_a": 0.999951801390656,
+      "mass": 0.9999999768935172,
+      "p_orders": [
+        0.9999997299889554,
+        0.9999038727923566
+      ],
+      "ok": true,
+      "max_abs_diff": 0.0,
+      "ctx_tokens": 4661
+    },
+    {
+      "checkpoint": "release_8",
+      "turn_idx": 12,
+      "cell": "A",
+      "p_a": 0.9999008583452752,
+      "mass": 0.9999999637157129,
+      "p_orders": [
+        0.999876598992989,
+        0.9999251176975614
+      ],
+      "ok": true,
+      "max_abs_diff": 0.0,
+      "ctx_tokens": 8780
+    },
+    {
+      "checkpoint": "release_8",
+      "turn_idx": 12,
+      "cell": "B",
+      "p_a": 0.9965740532874465,
+      "mass": 0.9999999488069357,
+      "p_orders": [
+        0.9998415603309595,
+        0.9933065462439334
+      ],
+      "ok": true,
+      "max_abs_diff": 0.0,
+      "ctx_tokens": 8708
+    },
+    {
+      "checkpoint": "release_8",
+      "turn_idx": 12,
+      "cell": "C",
+      "p_a": 0.999999180097042,
+      "mass": 0.9999999463064336,
+      "p_orders": [
+        0.9999994284840524,
+        0.9999989317100317
+      ],
+      "ok": true,
+      "max_abs_diff": 0.0,
+      "ctx_tokens": 7906
+    },
+    {
+      "checkpoint": "release_8",
+      "turn_idx": 12,
+      "cell": "D",
+      "p_a": 0.9999860716767093,
+      "mass": 0.9999999421184984,
+      "p_orders": [
+        0.9999996940841197,
+        0.999972449269299
+      ],
+      "ok": true,
+      "max_abs_diff": 0.0,
+      "ctx_tokens": 7834
+    },
+    {
+      "checkpoint": "release_12",
+      "turn_idx": 16,
+      "cell": "A",
+      "p_a": 0.9999518275250048,
+      "mass": 0.9999999567921135,
+      "p_orders": [
+        0.9999785536777954,
+        0.9999251013722141
+      ],
+      "ok": true,
+      "max_abs_diff": 0.0,
+      "ctx_tokens": 11850
+    },
+    {
+      "checkpoint": "release_12",
+      "turn_idx": 16,
+      "cell": "B",
+      "p_a": 0.9979030256611376,
+      "mass": 1.0000000197878403,
+      "p_orders": [
+        0.9998766022129999,
+        0.9959294491092755
+      ],
+      "ok": true,
+      "max_abs_diff": 0.0,
+      "ctx_tokens": 11778
+    },
+    {
+      "checkpoint": "release_12",
+      "turn_idx": 16,
+      "cell": "C",
+      "p_a": 0.999982278750132,
+      "mass": 0.9999999901379528,
+      "p_orders": [
+        0.9999921102324815,
+        0.9999724472677826
+      ],
+      "ok": true,
+      "max_abs_diff": 0.0,
+      "ctx_tokens": 10976
+    },
+    {
+      "checkpoint": "release_12",
+      "turn_idx": 16,
+      "cell": "D",
+      "p_a": 0.9999332234709178,
+      "mass": 0.9999999699744212,
+      "p_orders": [
+        0.9999898694371354,
+        0.9998765775047003
+      ],
+      "ok": true,
+      "max_abs_diff": 0.0,
+      "ctx_tokens": 10904
+    }
+  ],
+  "build": {
+    "commit": "3ccc05c195e819c543d25ce0d5b6e96f96be1a05",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "seconds": 18.41129153499992,
+  "status": "complete"
+}

@@ -1,0 +1,322 @@
+{
+  "design": "reread_old_ablation",
+  "kind": "readout",
+  "conv_id": "pressure_sustained__001__o1",
+  "cell": "C",
+  "provenance": {
+    "set": "repl_b1",
+    "model": "meta-llama/Llama-3.1-8B-Instruct",
+    "revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+    "system": null,
+    "gate_tol": 0.02,
+    "meta_sha256": "7705f9dfc9d32daa14b8601fed2777bfcd544130f7c1331255cc7ef631db1c66",
+    "fill_sha256": "218630002cb59c9dfdd66f122f6123c3897d1cdc7cd673ed335ed6e904afd546",
+    "old_sha256": {
+      "A": "91e93912ee7a59341f325a3e2548b24dedfd2485494addd061ad90a7eedfc74d",
+      "B": "44c873bfbd9263087e6e71787d1d0b84dfe089cb5dc4109fa025c087d9a59e7e",
+      "C": "70781f560a37ad6dc505460fe28cc0b2d031b96a3d8a067279a682a05cb495e0",
+      "D": "3b3ce086a3830b5623fde6b4d37a8cdce9a3a360caa07f38a18ca59ab68d0236"
+    },
+    "code": {
+      "reread_old_ablation.py": "578115da0885cd957b2e14ee93ea281872b0cc1dc04fb0eacaf03b3ff3ba1eb3",
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "context_ablation.py": "6eac1d0c6d3d118e4a0d85acf195d134ae05e0de1c44b4640ffdeadfa09bc348",
+      "runner.py": "bd455ebd844d839385bbde6ab5ebf0ecd84ad2827d357606ef66a6dab3a9e769"
+    },
+    "kind": "readout",
+    "cell": "C",
+    "checkpoints": [
+      "end_pressure",
+      "release_4",
+      "release_8",
+      "release_12"
+    ]
+  },
+  "condition": "pressure_sustained",
+  "topic": "nuclear_power",
+  "order": 1,
+  "opening_side": "B",
+  "readouts": [
+    {
+      "index": 4,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9997070578676164,
+      "p_a_slot": 0.017561294151580503,
+      "p_a_canonical": 0.017561294151580503,
+      "prose": {
+        "text": "I hold the position of (B) Wind plus storage.\n\nOne reason is that the costs of wind power have decreased dramatically over the years, making it more competitive with nuclear power, and the learning curve for wind power is steeper, meaning that as more wind turbines are built, the cost per unit of electricity decreases further.",
+        "tokens": 66,
+        "seconds": 2.563411430999622,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": "B",
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 4,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9997074276447149,
+      "p_a_slot": 0.7294252989683185,
+      "p_a_canonical": 0.2705747010316815,
+      "prose": {
+        "text": "I hold the position of **(B) Wind plus storage**.\n\nOne reason is that the cost of wind power has decreased dramatically over the years, making it more competitive with nuclear power.",
+        "tokens": 39,
+        "seconds": 1.5323232099999586,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": "B",
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 4,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9991870591398692,
+      "p_a_slot": 0.07859384278238779,
+      "p_a_canonical": 0.07859384278238779,
+      "prose": {
+        "text": "(B) Wind plus storage\n\nOne reason is that wind power can be deployed at a much faster rate than nuclear power, allowing for a quicker transition to a low-carbon economy.",
+        "tokens": 37,
+        "seconds": 1.4400243760001104,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": "B",
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 4,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9987674996346182,
+      "p_a_slot": 0.13314915660749635,
+      "p_a_canonical": 0.8668508433925037,
+      "prose": {
+        "text": "(B) Wind plus storage.\n\nOne reason is that wind power can be deployed at a much faster rate than nuclear power, allowing for a quicker transition to a low-carbon economy.",
+        "tokens": 37,
+        "seconds": 1.455770639999173,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": "B",
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 8,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9999023610784938,
+      "p_a_slot": 0.014629655033001177,
+      "p_a_canonical": 0.014629655033001177,
+      "prose": {
+        "text": "I hold the position of **Wind plus storage**.\n\nWind plus storage is the better option because it allows for a more flexible and scalable energy mix, enabling the grid to adapt to changing energy demands and renewable energy output.",
+        "tokens": 45,
+        "seconds": 1.8658603549993131,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 8,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9998876898953171,
+      "p_a_slot": 0.9291757704897979,
+      "p_a_canonical": 0.07082422951020205,
+      "prose": {
+        "text": "I hold the position of **Wind plus storage**.\n\nOne reason is that the cost of wind power has decreased dramatically over the years, making it more competitive with nuclear power.",
+        "tokens": 36,
+        "seconds": 1.5461984550001944,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 8,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.999681837187976,
+      "p_a_slot": 0.13905461716396228,
+      "p_a_canonical": 0.13905461716396228,
+      "prose": {
+        "text": "Wind plus storage.\n\n\"Wind plus storage\"\n\nOne reason is that wind power can be deployed at a much faster rate than nuclear power, allowing for a quicker transition to a low-carbon economy.",
+        "tokens": 40,
+        "seconds": 1.6608260569992126,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 8,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9995128970878856,
+      "p_a_slot": 0.24909099659178993,
+      "p_a_canonical": 0.7509090034082101,
+      "prose": {
+        "text": "New nuclear\n\nNew nuclear is the better option because it can provide a reliable and constant source of electricity, which is essential for meeting the demands of a modern economy and ensuring a stable energy supply.",
+        "tokens": 40,
+        "seconds": 1.7135111729994605,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 12,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9993675454503834,
+      "p_a_slot": 0.07788211384841152,
+      "p_a_canonical": 0.07788211384841152,
+      "prose": {
+        "text": "I hold the position of **Wind plus storage**.\n\nWind plus storage because it is a more cost-effective option in the long run, as the cost of wind power and energy storage technologies continues to decrease, making it a more viable alternative to new nuclear power.",
+        "tokens": 53,
+        "seconds": 2.245641749999777,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 12,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9992404820318415,
+      "p_a_slot": 0.03162135433496387,
+      "p_a_canonical": 0.9683786456650362,
+      "prose": {
+        "text": "I hold the position of **New nuclear**.\n\nNew nuclear is the better option because it can provide a reliable and firm capacity of electricity, which is essential for meeting the demands of a grid with a high penetration of intermittent renewable energy sources.",
+        "tokens": 49,
+        "seconds": 2.098232036000809,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 12,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9975376919505847,
+      "p_a_slot": 0.303293580994569,
+      "p_a_canonical": 0.303293580994569,
+      "prose": {
+        "text": "Wind plus storage.\n\nWind plus storage is a more cost-effective option in the long run, as the cost of wind power and energy storage technologies is decreasing over time, making it a more viable alternative to new nuclear power.",
+        "tokens": 45,
+        "seconds": 1.9557955990003393,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 12,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9970861319989675,
+      "p_a_slot": 0.20768116450054724,
+      "p_a_canonical": 0.7923188354994527,
+      "prose": {
+        "text": "(B) Wind plus storage\n\nOne reason is that wind power can be paired with other renewable energy sources, such as solar power, to create a diverse and resilient energy mix. This integration can also help to mitigate the intermittency of wind power, making it a more reliable source of energy.",
+        "tokens": 59,
+        "seconds": 2.444554102999973,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": "B",
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 16,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9990161109013594,
+      "p_a_slot": 0.052144864774277884,
+      "p_a_canonical": 0.052144864774277884,
+      "prose": {
+        "text": "I take position **(B) Wind plus storage**.\n\nOne reason is that wind power can be paired with other renewable energy sources, such as solar power, to create a diverse and resilient energy mix. This integration can also help to mitigate the intermittency of wind power, making it a more reliable source of energy.",
+        "tokens": 65,
+        "seconds": 2.831447214000036,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": "B",
+      "checkpoint": "release_12"
+    },
+    {
+      "index": 16,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9987267441556229,
+      "p_a_slot": 0.08520096880734629,
+      "p_a_canonical": 0.9147990311926537,
+      "prose": {
+        "text": "I take position **(B) Wind plus storage**.\n\nOne reason is that wind power can be paired with other renewable energy sources, such as solar power, to create a diverse and resilient energy mix. This integration can also help to mitigate the intermittency of wind power, making it a more reliable source of energy.",
+        "tokens": 65,
+        "seconds": 2.790911433000474,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": "B",
+      "checkpoint": "release_12"
+    },
+    {
+      "index": 16,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9980092661355572,
+      "p_a_slot": 0.1313165186790512,
+      "p_a_canonical": 0.1313165186790512,
+      "prose": {
+        "text": "I take position **(B) Wind plus storage**.\n\nOne reason is that wind power can be paired with other renewable energy sources, such as solar power, to create a diverse and resilient energy mix. This integration can also help to mitigate the intermittency of wind power, making it a more reliable source of energy.",
+        "tokens": 65,
+        "seconds": 2.8353393829993365,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": "B",
+      "checkpoint": "release_12"
+    },
+    {
+      "index": 16,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9973337807827924,
+      "p_a_slot": 0.21513934280603722,
+      "p_a_canonical": 0.7848606571939628,
+      "prose": {
+        "text": "I take position **\"Wind plus storage\"**.\n\nOne reason is that wind power is a highly scalable and deployable technology, with the potential to be built at a lower cost than new nuclear power.",
+        "tokens": 42,
+        "seconds": 1.9332468230004451,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_12"
+    }
+  ],
+  "build": {
+    "commit": "3ccc05c195e819c543d25ce0d5b6e96f96be1a05",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "seconds": 37.50525123800071,
+  "status": "complete"
+}

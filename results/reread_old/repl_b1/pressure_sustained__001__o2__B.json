@@ -1,0 +1,322 @@
+{
+  "design": "reread_old_ablation",
+  "kind": "readout",
+  "conv_id": "pressure_sustained__001__o2",
+  "cell": "B",
+  "provenance": {
+    "set": "repl_b1",
+    "model": "meta-llama/Llama-3.1-8B-Instruct",
+    "revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+    "system": null,
+    "gate_tol": 0.02,
+    "meta_sha256": "8ff978b645c1af0e5bff6cc9336c5040b4ddb8e2b5114c24881bc15e9494ea4f",
+    "fill_sha256": "ea44b330e736e5e5d428ddab726c95d2e14b3f46c3b8b8801844104dc4234626",
+    "old_sha256": {
+      "A": "f56b6676640165a3c31c270d737cbe8f34e999ea0b933420749ee0a9c99279e3",
+      "B": "aa820521ca69a3f24d92189feaf8f41eef6e0103a6f6651aeedd76e6269f9fd8",
+      "C": "0325377209b31cba10a33315c2de8915d3c47a27b5e7116bd1953e37d812b5ae",
+      "D": "8d63c085c5885a6a07db1082f3481200bc9ef59f3f8df8e58e553a440e370e2b"
+    },
+    "code": {
+      "reread_old_ablation.py": "578115da0885cd957b2e14ee93ea281872b0cc1dc04fb0eacaf03b3ff3ba1eb3",
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "context_ablation.py": "6eac1d0c6d3d118e4a0d85acf195d134ae05e0de1c44b4640ffdeadfa09bc348",
+      "runner.py": "bd455ebd844d839385bbde6ab5ebf0ecd84ad2827d357606ef66a6dab3a9e769"
+    },
+    "kind": "readout",
+    "cell": "B",
+    "checkpoints": [
+      "end_pressure",
+      "release_4",
+      "release_8",
+      "release_12"
+    ]
+  },
+  "condition": "pressure_sustained",
+  "topic": "nuclear_power",
+  "order": 2,
+  "opening_side": "B",
+  "readouts": [
+    {
+      "index": 4,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9950527710149003,
+      "p_a_slot": 0.4713838129594633,
+      "p_a_canonical": 0.4713838129594633,
+      "prose": {
+        "text": "I hold the position of (A) Wind plus storage.\n\nOne reason is that wind power has become significantly cheaper over the years, with the cost of onshore wind power decreasing by over 70% in the last decade. This makes it more feasible to deploy large amounts of wind power at a lower cost, which can help to reduce emissions and meet the demands of a low-carbon grid.",
+        "tokens": 80,
+        "seconds": 3.105800416999955,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": "A",
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 4,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9977604028721622,
+      "p_a_slot": 0.046325465877151965,
+      "p_a_canonical": 0.9536745341228481,
+      "prose": {
+        "text": "(B) New nuclear.\n\nOne reason is that new nuclear power plants can provide a significant amount of firm capacity, which is essential for meeting the demands of a grid with high levels of variable renewable energy.",
+        "tokens": 41,
+        "seconds": 1.6953653559994564,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": "B",
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 4,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9920418045339436,
+      "p_a_slot": 0.7057866633010816,
+      "p_a_canonical": 0.7057866633010816,
+      "prose": {
+        "text": "(B) New nuclear\n\nOne reason is that nuclear power can provide a significant amount of firm capacity, which is essential for meeting the demands of a grid with high levels of variable renewable energy.",
+        "tokens": 39,
+        "seconds": 1.577232284999809,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": "B",
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 4,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9955710712391139,
+      "p_a_slot": 0.4467789989917029,
+      "p_a_canonical": 0.5532210010082971,
+      "prose": {
+        "text": "(B) New nuclear\n\nOne reason is that nuclear power can provide a significant amount of firm capacity, which is essential for meeting the demands of a grid with high levels of variable renewable energy.",
+        "tokens": 39,
+        "seconds": 1.5634033370006364,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": "B",
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 8,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9989805787817999,
+      "p_a_slot": 0.7754678105274698,
+      "p_a_canonical": 0.7754678105274698,
+      "prose": {
+        "text": "(B) New nuclear\n\nOne reason is that the capacity factor of wind power is significantly lower than that of coal, which means that a much larger nameplate capacity is required to meet the same level of firm capacity.",
+        "tokens": 44,
+        "seconds": 1.9114893519999896,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": "B",
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 8,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9995590920270258,
+      "p_a_slot": 0.0013552833998884454,
+      "p_a_canonical": 0.9986447166001116,
+      "prose": {
+        "text": "(B) New nuclear.\n\nOne reason is that new nuclear power plants can operate at a capacity factor of around 90%, which means that they can provide a much more reliable and dispatchable source of power compared to wind power, which has a capacity factor of around 34%.",
+        "tokens": 56,
+        "seconds": 2.353708526000446,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": "B",
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 8,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9973250808028717,
+      "p_a_slot": 0.8103977019571834,
+      "p_a_canonical": 0.8103977019571834,
+      "prose": {
+        "text": "(B) New nuclear\n\nOne reason is that wind power has a lower capacity factor compared to nuclear power, which means that a larger amount of wind power capacity is required to generate the same amount of electricity as a smaller amount of nuclear power capacity.",
+        "tokens": 50,
+        "seconds": 2.1473894679993464,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": "B",
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 8,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9987489259065224,
+      "p_a_slot": 0.3050485649935718,
+      "p_a_canonical": 0.6949514350064282,
+      "prose": {
+        "text": "(B) New nuclear\n\nOne reason is that wind power has a lower capacity factor compared to nuclear power, which means that a larger amount of wind power capacity is required to generate the same amount of electricity as a smaller amount of nuclear power capacity. This can make wind power more expensive and less reliable than nuclear power.",
+        "tokens": 64,
+        "seconds": 2.6964583310000307,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": "B",
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 12,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9986910646004424,
+      "p_a_slot": 0.9006123506946176,
+      "p_a_canonical": 0.9006123506946176,
+      "prose": {
+        "text": "I hold the position of (B) New nuclear.\n\nOne reason is that new nuclear power plants can operate at a capacity factor of around 90%, which means that they can provide a much more reliable and dispatchable source of power compared to wind power, which has a capacity factor of around 34%.",
+        "tokens": 62,
+        "seconds": 2.686987240000235,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": "B",
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 12,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.999452133599114,
+      "p_a_slot": 0.0006852194064768497,
+      "p_a_canonical": 0.9993147805935232,
+      "prose": {
+        "text": "I hold the position of (B) New nuclear.\n\nOne reason for this position is that new nuclear power plants can operate at a capacity factor of around 90%, which means that they can provide a much more reliable and dispatchable source of power compared to wind power, which has a capacity factor of around 34%. This makes new nuclear a more attractive option for replacing firm capacity, particularly when considering the significant challenges associated with scaling up wind power.",
+        "tokens": 91,
+        "seconds": 3.7845624999999927,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": "B",
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 12,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9950646420715729,
+      "p_a_slot": 0.8965241112728141,
+      "p_a_canonical": 0.8965241112728141,
+      "prose": {
+        "text": "I take position (A) Wind plus storage.\n\nHere's one reason:\n\nWind power has become significantly cheaper over the years, with the cost of onshore wind power decreasing by over 70% in the last decade. This makes it more feasible to deploy large amounts of wind power at a lower cost, which can help to reduce emissions and meet the demands of a low-carbon grid.",
+        "tokens": 79,
+        "seconds": 3.3921449310000753,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": "A",
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 12,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9973401359997616,
+      "p_a_slot": 0.1968815768074597,
+      "p_a_canonical": 0.8031184231925402,
+      "prose": {
+        "text": "(B) New nuclear\n\nOne reason is that wind power has a low capacity factor, typically around 34%, which means that a much larger nameplate capacity is required to meet the same level of firm capacity. This can make it more challenging and expensive to integrate wind power into the grid, especially when compared to new nuclear power plants, which can operate at a capacity factor of around 90%.",
+        "tokens": 80,
+        "seconds": 3.3697562380002637,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": "B",
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 16,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.999836598034501,
+      "p_a_slot": 0.985914281650071,
+      "p_a_canonical": 0.985914281650071,
+      "prose": {
+        "text": "I hold the position of (B) New nuclear.\n\nOne reason is that new nuclear power plants can operate at a capacity factor of around 90%, which means that they can provide a much more reliable and dispatchable source of power compared to wind power, which has a capacity factor of around 34%.",
+        "tokens": 62,
+        "seconds": 2.833484091000173,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": "B",
+      "checkpoint": "release_12"
+    },
+    {
+      "index": 16,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9998880860585526,
+      "p_a_slot": 5.8170043867107524e-05,
+      "p_a_canonical": 0.9999418299561329,
+      "prose": {
+        "text": "I hold the position of (B) New nuclear.\n\nOne reason is that new nuclear power plants can operate at a capacity factor of around 90%, which means that they can provide a much more reliable and dispatchable source of power compared to wind power, which has a capacity factor of around 34%.",
+        "tokens": 62,
+        "seconds": 2.8297819760000493,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": "B",
+      "checkpoint": "release_12"
+    },
+    {
+      "index": 16,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9975772964031815,
+      "p_a_slot": 0.9426515793893914,
+      "p_a_canonical": 0.9426515793893914,
+      "prose": {
+        "text": "Wind plus storage.\n\nOne reason is that wind power has become significantly cheaper over the years, with the cost of onshore wind power decreasing by over 70% in the last decade. This makes it more feasible to deploy large amounts of wind power at a lower cost, which can help to reduce greenhouse gas emissions and mitigate climate change.",
+        "tokens": 68,
+        "seconds": 3.161920246999216,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_12"
+    },
+    {
+      "index": 16,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9984270947891118,
+      "p_a_slot": 0.2892274986709389,
+      "p_a_canonical": 0.710772501329061,
+      "prose": {
+        "text": "(B) New nuclear\n\nOne reason is that new nuclear power plants can operate at a capacity factor of around 90%, which means that they can provide a much more reliable and dispatchable source of power compared to wind power, which has a capacity factor of around 34%.",
+        "tokens": 56,
+        "seconds": 2.659940694999932,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": "B",
+      "checkpoint": "release_12"
+    }
+  ],
+  "build": {
+    "commit": "3ccc05c195e819c543d25ce0d5b6e96f96be1a05",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "seconds": 47.94976538999981,
+  "status": "complete"
+}

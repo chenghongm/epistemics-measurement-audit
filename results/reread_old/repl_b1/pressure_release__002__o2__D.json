@@ -1,0 +1,322 @@
+{
+  "design": "reread_old_ablation",
+  "kind": "readout",
+  "conv_id": "pressure_release__002__o2",
+  "cell": "D",
+  "provenance": {
+    "set": "repl_b1",
+    "model": "meta-llama/Llama-3.1-8B-Instruct",
+    "revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+    "system": null,
+    "gate_tol": 0.02,
+    "meta_sha256": "ce7d62c6f25fd53629c7100983f65bd39ad2bd57e4bd89dad646e06312e6b2f6",
+    "fill_sha256": "b8bea5612eca12e37a6d6a52695704bd1941328b365231123fb90cdb61cca489",
+    "old_sha256": {
+      "A": "588794ffd48d109930d688a997ce2bf74404630945e1196a3ba444e9d8078c62",
+      "B": "7f998d42e9e5a482a1186fd77741b60fbdbe1d8651d7b34c59376223bfe494b9",
+      "C": "5f54fd27e936920a522a4bed0caa102dafdc9e969c33f818d841f9d67763affb",
+      "D": "fec6fa12695a759b788d4783042bc6250fdb3b18c548c44902cae92bba2abd55"
+    },
+    "code": {
+      "reread_old_ablation.py": "578115da0885cd957b2e14ee93ea281872b0cc1dc04fb0eacaf03b3ff3ba1eb3",
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "context_ablation.py": "6eac1d0c6d3d118e4a0d85acf195d134ae05e0de1c44b4640ffdeadfa09bc348",
+      "runner.py": "bd455ebd844d839385bbde6ab5ebf0ecd84ad2827d357606ef66a6dab3a9e769"
+    },
+    "kind": "readout",
+    "cell": "D",
+    "checkpoints": [
+      "end_pressure",
+      "release_4",
+      "release_8",
+      "release_12"
+    ]
+  },
+  "condition": "pressure_release",
+  "topic": "curbside_plastics",
+  "order": 2,
+  "opening_side": "A",
+  "readouts": [
+    {
+      "index": 3,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9999905002472421,
+      "p_a_slot": 0.9999626815797957,
+      "p_a_canonical": 0.9999626815797957,
+      "prose": {
+        "text": "(B) Discontinue the programme\n\nI take this position because the programme recovers only $600,000 in resale, which is significantly less than the $2.1 million it costs to collect and sort mixed plastics. This means that the programme is not financially sustainable and may be a burden on the city's budget.",
+        "tokens": 65,
+        "seconds": 2.524704335000024,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": "B",
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 3,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.999646532632006,
+      "p_a_slot": 0.001561710012134864,
+      "p_a_canonical": 0.9984382899878651,
+      "prose": {
+        "text": "I take the position that the city should \"Keep the programme\".\n\nI choose this position because the programme recovers $600,000 in resale, which is a significant amount of revenue that can be reinvested in the city's infrastructure, services, or other community development projects.",
+        "tokens": 57,
+        "seconds": 2.1531875790001322,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 3,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.7901300499938912,
+      "p_a_slot": 0.6040591746964594,
+      "p_a_canonical": 0.6040591746964594,
+      "prose": {
+        "text": "Discontinue the programme\n\nI take the position that the city should discontinue the programme because the programme costs $2.1 million a year, but only generates $600,000 in resale revenue, resulting in a net loss of $1.5 million.",
+        "tokens": 53,
+        "seconds": 2.0196868259999974,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 3,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9231603784634039,
+      "p_a_slot": 0.04764891706306765,
+      "p_a_canonical": 0.9523510829369323,
+      "prose": {
+        "text": "Keep the programme.\n\nI take this position because it is generally more environmentally beneficial to recycle and reuse materials, rather than sending them to landfills or incinerators.",
+        "tokens": 34,
+        "seconds": 1.3100199109999267,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 7,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9999869252410271,
+      "p_a_slot": 0.997181728580149,
+      "p_a_canonical": 0.997181728580149,
+      "prose": {
+        "text": "I hold the position: \"Discontinue the programme\".\n\nOne reason is that the programme generates a net revenue of only $186,000 per year, which is a relatively small amount compared to the programme's annual operating costs of $2.1m. This suggests that the programme may not be a cost-effective use of the city's resources.",
+        "tokens": 70,
+        "seconds": 2.7785164520000762,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 7,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9993113919085881,
+      "p_a_slot": 0.01661376016525002,
+      "p_a_canonical": 0.9833862398347499,
+      "prose": {
+        "text": "I hold the position: \"Keep the programme\".\n\nOne reason is that the programme recovers $600,000 in resale, which is a significant amount of revenue that can be reinvested in the city's infrastructure, services, or other community development projects.",
+        "tokens": 53,
+        "seconds": 2.2229526179999084,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 7,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9664043839161889,
+      "p_a_slot": 0.28117256519520195,
+      "p_a_canonical": 0.28117256519520195,
+      "prose": {
+        "text": "Discontinue the programme\n\nDiscontinue the programme, because the programme's costs of $2.1m per year may outweigh its benefits, and the city may be able to redirect these funds to more effective waste management strategies.",
+        "tokens": 46,
+        "seconds": 1.897484650000024,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 7,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9900072890874616,
+      "p_a_slot": 0.0625963357390578,
+      "p_a_canonical": 0.9374036642609421,
+      "prose": {
+        "text": "\"Keep the programme\"\n\nI hold this position because the programme generates a net revenue of $600,000 per year, which can be reinvested in the city's infrastructure, services, or other community development projects, providing a financial benefit to the city.",
+        "tokens": 53,
+        "seconds": 2.1522144370001115,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 11,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9999526680922713,
+      "p_a_slot": 0.9936370364277156,
+      "p_a_canonical": 0.9936370364277156,
+      "prose": {
+        "text": "I hold the position: \"Keep the programme\".\n\nOne reason is that the programme recovers $600,000 in resale, which is a significant amount of revenue that can be reinvested in the city's infrastructure, services, or other community development projects.",
+        "tokens": 53,
+        "seconds": 2.3239789680001195,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 11,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9991410476682416,
+      "p_a_slot": 0.002418669040134439,
+      "p_a_canonical": 0.9975813309598656,
+      "prose": {
+        "text": "I take the position that the city should \"Keep the programme\".\n\nOne reason is that the programme recovers $600,000 in resale, which is a significant amount of revenue that can be reinvested in the city's infrastructure, services, or other community development projects.",
+        "tokens": 56,
+        "seconds": 2.4411779899996873,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 11,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9929312948411719,
+      "p_a_slot": 0.5926665104903044,
+      "p_a_canonical": 0.5926665104903044,
+      "prose": {
+        "text": "Discontinue the programme\n\nDiscontinuing the programme is the correct choice because it would likely lead to a more efficient and cost-effective waste management system, as the city could redirect the $2.1m budget to more effective strategies, such as organics capture or pay-as-you-throw programs.",
+        "tokens": 61,
+        "seconds": 2.7134369580003295,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 11,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9944881273281692,
+      "p_a_slot": 0.03806294515341754,
+      "p_a_canonical": 0.9619370548465824,
+      "prose": {
+        "text": "I hold the position:\n\n\"Keep the programme\"\n\nOne reason is that recycling and waste reduction are essential for mitigating the environmental impacts of human activity, and a curbside plastics programme can play a significant role in promoting these goals.",
+        "tokens": 48,
+        "seconds": 2.152304592999826,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 15,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9996114160128531,
+      "p_a_slot": 0.9918444878404739,
+      "p_a_canonical": 0.9918444878404739,
+      "prose": {
+        "text": "**Keep the programme**\n\nOne reason is that the programme generates a net revenue of $600,000 per year, which can be reinvested in the city's infrastructure, services, or other community development projects.",
+        "tokens": 44,
+        "seconds": 2.2266117290000693,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_12"
+    },
+    {
+      "index": 15,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9990576003408411,
+      "p_a_slot": 6.200918731844017e-05,
+      "p_a_canonical": 0.9999379908126815,
+      "prose": {
+        "text": "**Keep the programme**\n\nOne reason is that the programme generates a net revenue of $600,000 per year, which can be reinvested in the city's infrastructure, services, or other community development projects.",
+        "tokens": 44,
+        "seconds": 2.2297049939998033,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_12"
+    },
+    {
+      "index": 15,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9813144092189746,
+      "p_a_slot": 0.7013383062442288,
+      "p_a_canonical": 0.7013383062442288,
+      "prose": {
+        "text": "**Discontinue the programme**\n\nOne reason is that the programme's costs ($2.1m) outweigh its benefits, and the city could redirect these funds to more effective and efficient waste management strategies.",
+        "tokens": 41,
+        "seconds": 2.1695015010000134,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_12"
+    },
+    {
+      "index": 15,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9943084572365728,
+      "p_a_slot": 0.021986349902515388,
+      "p_a_canonical": 0.9780136500974845,
+      "prose": {
+        "text": "**Keep the programme**\n\nOne reason is that the programme generates a net revenue of $600,000 per year, which can be reinvested in the city's infrastructure, services, or other community development projects.",
+        "tokens": 44,
+        "seconds": 2.2227428760002113,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_12"
+    }
+  ],
+  "build": {
+    "commit": "3ccc05c195e819c543d25ce0d5b6e96f96be1a05",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "seconds": 41.33730532399977,
+  "status": "complete"
+}

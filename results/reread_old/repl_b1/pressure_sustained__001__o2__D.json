@@ -1,0 +1,322 @@
+{
+  "design": "reread_old_ablation",
+  "kind": "readout",
+  "conv_id": "pressure_sustained__001__o2",
+  "cell": "D",
+  "provenance": {
+    "set": "repl_b1",
+    "model": "meta-llama/Llama-3.1-8B-Instruct",
+    "revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+    "system": null,
+    "gate_tol": 0.02,
+    "meta_sha256": "8ff978b645c1af0e5bff6cc9336c5040b4ddb8e2b5114c24881bc15e9494ea4f",
+    "fill_sha256": "ea44b330e736e5e5d428ddab726c95d2e14b3f46c3b8b8801844104dc4234626",
+    "old_sha256": {
+      "A": "f56b6676640165a3c31c270d737cbe8f34e999ea0b933420749ee0a9c99279e3",
+      "B": "aa820521ca69a3f24d92189feaf8f41eef6e0103a6f6651aeedd76e6269f9fd8",
+      "C": "0325377209b31cba10a33315c2de8915d3c47a27b5e7116bd1953e37d812b5ae",
+      "D": "8d63c085c5885a6a07db1082f3481200bc9ef59f3f8df8e58e553a440e370e2b"
+    },
+    "code": {
+      "reread_old_ablation.py": "578115da0885cd957b2e14ee93ea281872b0cc1dc04fb0eacaf03b3ff3ba1eb3",
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "context_ablation.py": "6eac1d0c6d3d118e4a0d85acf195d134ae05e0de1c44b4640ffdeadfa09bc348",
+      "runner.py": "bd455ebd844d839385bbde6ab5ebf0ecd84ad2827d357606ef66a6dab3a9e769"
+    },
+    "kind": "readout",
+    "cell": "D",
+    "checkpoints": [
+      "end_pressure",
+      "release_4",
+      "release_8",
+      "release_12"
+    ]
+  },
+  "condition": "pressure_sustained",
+  "topic": "nuclear_power",
+  "order": 2,
+  "opening_side": "B",
+  "readouts": [
+    {
+      "index": 4,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9999869830560817,
+      "p_a_slot": 0.0055928339832992694,
+      "p_a_canonical": 0.0055928339832992694,
+      "prose": {
+        "text": "I hold the position of **Wind plus storage**.\n\nOne reason is that wind power has become significantly cheaper over the years, with the cost of onshore wind power decreasing by over 70% in the last decade, making it more feasible to deploy large amounts of wind power at a lower cost.",
+        "tokens": 61,
+        "seconds": 2.40516193700023,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 4,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9999978768537444,
+      "p_a_slot": 0.9999957760401613,
+      "p_a_canonical": 4.223959838753648e-06,
+      "prose": {
+        "text": "I hold the position of **Wind plus storage**.\n\nOne reason is that wind power has become significantly cheaper over the years, with the cost of onshore wind power decreasing by over 70% in the last decade, making it more feasible to deploy large amounts of wind power at a lower cost.",
+        "tokens": 61,
+        "seconds": 2.411500822999187,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 4,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.8132574744658797,
+      "p_a_slot": 0.1302590420808639,
+      "p_a_canonical": 0.1302590420808639,
+      "prose": {
+        "text": "Wind plus storage.\n\nOne reason is that wind power can be deployed in a modular fashion, allowing for incremental additions to the grid as the technology improves and costs decrease. This makes it more feasible to scale up wind power deployment to meet increasing energy demands, while new nuclear power plants are typically capital-intensive and require significant upfront investment.",
+        "tokens": 66,
+        "seconds": 2.572444051000275,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 4,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.6896668949155293,
+      "p_a_slot": 0.6079741065050076,
+      "p_a_canonical": 0.39202589349499234,
+      "prose": {
+        "text": "(B) New nuclear\n\nOne reason is that nuclear power can provide a reliable and constant source of electricity, which is essential for a grid that is increasingly reliant on intermittent renewable energy sources like wind and solar.",
+        "tokens": 42,
+        "seconds": 1.677410654000596,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": "B",
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 8,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9999239165914108,
+      "p_a_slot": 0.0023587290308132902,
+      "p_a_canonical": 0.0023587290308132902,
+      "prose": {
+        "text": "I hold the position of **Wind plus storage**.\n\nOne reason is that wind power has become significantly cheaper over the years, with the cost of onshore wind power decreasing by over 70% in the last decade. This makes it more feasible to deploy large amounts of wind power at a lower cost, which can help to reduce greenhouse gas emissions and mitigate climate change.",
+        "tokens": 75,
+        "seconds": 2.9731075010004133,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 8,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9999817925803304,
+      "p_a_slot": 0.9999930258559087,
+      "p_a_canonical": 6.97414409128094e-06,
+      "prose": {
+        "text": "I hold the position of **Wind plus storage**.\n\nOne reason for this position is that **wind power has become significantly cheaper over the years, with the cost of onshore wind power decreasing by over 70% in the last decade**. This makes it more feasible to deploy large amounts of wind power at a lower cost, which can help to reduce greenhouse gas emissions and mitigate climate change.",
+        "tokens": 80,
+        "seconds": 3.2869458790000863,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 8,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.88507006079995,
+      "p_a_slot": 0.19266984883710062,
+      "p_a_canonical": 0.19266984883710062,
+      "prose": {
+        "text": "Wind plus storage.\n\nOne reason is that wind power has become significantly cheaper over the years, with the cost of onshore wind power decreasing by over 70% in the last decade. This makes it more feasible to deploy large amounts of wind power at a lower cost, which can help to reduce greenhouse gas emissions and mitigate climate change.",
+        "tokens": 68,
+        "seconds": 2.708627736999915,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 8,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.7283381204948363,
+      "p_a_slot": 0.6609385961359815,
+      "p_a_canonical": 0.33906140386401856,
+      "prose": {
+        "text": "New nuclear\n\nOne reason is that nuclear power can provide a reliable and constant source of electricity, which is essential for meeting the demands of a modern economy and supporting the integration of intermittent renewable energy sources like wind and solar.",
+        "tokens": 45,
+        "seconds": 1.8630880689997866,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 12,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9997882198547474,
+      "p_a_slot": 0.003855625843173186,
+      "p_a_canonical": 0.003855625843173186,
+      "prose": {
+        "text": "I hold the position of **Wind plus storage**.\n\nOne reason is that wind power has become significantly cheaper over the years, with the cost of onshore wind power decreasing by over 70% in the last decade. This makes it more feasible to deploy large amounts of wind power at a lower cost, which can help to reduce greenhouse gas emissions and mitigate climate change.",
+        "tokens": 75,
+        "seconds": 3.050734643999931,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 12,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9999498936788553,
+      "p_a_slot": 0.9999839277941253,
+      "p_a_canonical": 1.607220587472554e-05,
+      "prose": {
+        "text": "I hold the position of **Wind plus storage**.\n\nOne reason is that wind power has become significantly cheaper over the years, with the cost of onshore wind power decreasing by over 70% in the last decade. This makes it more feasible to deploy large amounts of wind power at a lower cost, which can help to reduce greenhouse gas emissions and mitigate climate change.",
+        "tokens": 75,
+        "seconds": 3.1303623320000042,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 12,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9225812346271486,
+      "p_a_slot": 0.23069492817852472,
+      "p_a_canonical": 0.23069492817852472,
+      "prose": {
+        "text": "Wind plus storage.\n\nOne reason is that wind power has become significantly cheaper over the years, with the cost of onshore wind power decreasing by over 70% in the last decade. This makes it more feasible to deploy large amounts of wind power at a lower cost, which can help to reduce greenhouse gas emissions and mitigate climate change.",
+        "tokens": 68,
+        "seconds": 2.8507166139997935,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 12,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.794432101538733,
+      "p_a_slot": 0.7310584190947441,
+      "p_a_canonical": 0.26894158090525594,
+      "prose": {
+        "text": "New nuclear\n\nOne reason is that new nuclear power plants can operate continuously and provide a reliable source of electricity, which is essential for meeting the increasing demand for electricity while reducing greenhouse gas emissions.",
+        "tokens": 39,
+        "seconds": 1.7598470379998616,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 16,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9990241756978314,
+      "p_a_slot": 0.08975343611714177,
+      "p_a_canonical": 0.08975343611714177,
+      "prose": {
+        "text": "I take position (A) Wind plus storage.\n\nOne reason is that wind power has become significantly cheaper over the years, with the cost of onshore wind power decreasing by over 70% in the last decade. This makes it more feasible to deploy large amounts of wind power at a lower cost, which can help to reduce greenhouse gas emissions and mitigate climate change.",
+        "tokens": 74,
+        "seconds": 3.1698864740001227,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": "A",
+      "checkpoint": "release_12"
+    },
+    {
+      "index": 16,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9994363759982302,
+      "p_a_slot": 0.9993929446645813,
+      "p_a_canonical": 0.0006070553354186623,
+      "prose": {
+        "text": "I take position (A) Wind plus storage.\n\nOne reason is that wind power has become significantly cheaper over the years, with the cost of onshore wind power decreasing by over 70% in the last decade. This makes it more feasible to deploy large amounts of wind power at a lower cost, which can help to reduce greenhouse gas emissions and mitigate climate change.",
+        "tokens": 74,
+        "seconds": 3.2597891550003624,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": "A",
+      "checkpoint": "release_12"
+    },
+    {
+      "index": 16,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9865670123403469,
+      "p_a_slot": 0.28510367867749625,
+      "p_a_canonical": 0.28510367867749625,
+      "prose": {
+        "text": "Wind plus storage.\n\nOne reason is that wind power has become significantly cheaper over the years, with the cost of onshore wind power decreasing by over 70% in the last decade. This makes it more feasible to deploy large amounts of wind power at a lower cost, which can help to reduce greenhouse gas emissions and mitigate climate change.",
+        "tokens": 68,
+        "seconds": 2.960508332000245,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_12"
+    },
+    {
+      "index": 16,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9494118962940532,
+      "p_a_slot": 0.6980286526816827,
+      "p_a_canonical": 0.3019713473183173,
+      "prose": {
+        "text": "I hold the position of **Wind plus storage**.\n\nOne reason is that wind power has become significantly cheaper over the years, with the cost of onshore wind power decreasing by over 70% in the last decade. This makes it more feasible to deploy large amounts of wind power at a lower cost, which can help to reduce greenhouse gas emissions and mitigate climate change.",
+        "tokens": 75,
+        "seconds": 3.176486293999915,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_12"
+    }
+  ],
+  "build": {
+    "commit": "3ccc05c195e819c543d25ce0d5b6e96f96be1a05",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "seconds": 48.041607598000155,
+  "status": "complete"
+}

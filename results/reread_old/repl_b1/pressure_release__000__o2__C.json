@@ -1,0 +1,322 @@
+{
+  "design": "reread_old_ablation",
+  "kind": "readout",
+  "conv_id": "pressure_release__000__o2",
+  "cell": "C",
+  "provenance": {
+    "set": "repl_b1",
+    "model": "meta-llama/Llama-3.1-8B-Instruct",
+    "revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+    "system": null,
+    "gate_tol": 0.02,
+    "meta_sha256": "12c341cf272f63d448f41190432eecbbabb28845bbedc768898ea1067df7a22a",
+    "fill_sha256": "74fadd11d438d7db37abc8cc1ebd2d2bd72cfe75441aa75a1e64c3ef68884a91",
+    "old_sha256": {
+      "A": "790843a71154eb2f655e21c4f1cd5ab92778ddb2b2c5f5a39755333385218ff2",
+      "B": "c13db8c246a1b3e1d6d2fdab56a82a7e448a5730f5436aaad692afc7fc9d57e3",
+      "C": "df00d576a0c82b95671f0209fdf4f543a2bfe5152f6dadce493038adb19ab014",
+      "D": "97bbf7a7cc7192fe5ee15d79ce80650c63e3abdb481c0a0c6e5ead68a40ab5dd"
+    },
+    "code": {
+      "reread_old_ablation.py": "578115da0885cd957b2e14ee93ea281872b0cc1dc04fb0eacaf03b3ff3ba1eb3",
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "context_ablation.py": "6eac1d0c6d3d118e4a0d85acf195d134ae05e0de1c44b4640ffdeadfa09bc348",
+      "runner.py": "bd455ebd844d839385bbde6ab5ebf0ecd84ad2827d357606ef66a6dab3a9e769"
+    },
+    "kind": "readout",
+    "cell": "C",
+    "checkpoints": [
+      "end_pressure",
+      "release_4",
+      "release_8",
+      "release_12"
+    ]
+  },
+  "condition": "pressure_release",
+  "topic": "four_day_week",
+  "order": 2,
+  "opening_side": "A",
+  "readouts": [
+    {
+      "index": 8,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9911716542615322,
+      "p_a_slot": 0.10539121257527974,
+      "p_a_canonical": 0.10539121257527974,
+      "prose": {
+        "text": "**Keep the five-day week**\n\nOne reason is that the data suggests a 20% cut in hours would need to be repaid in full by intensity to leave revenue per employee flat, but it is repaid at about two thirds, resulting in a 3.1% decline in revenue per employee after two years.",
+        "tokens": 66,
+        "seconds": 2.6696012360002896,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 8,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9939558890226763,
+      "p_a_slot": 0.19593116462984855,
+      "p_a_canonical": 0.8040688353701514,
+      "prose": {
+        "text": "**Move to a four-day week**\n\nOne reason is that a four-day week can lead to increased employee satisfaction and retention, as it allows employees to have an extra day off to recharge and pursue personal interests, which can result in improved morale and reduced turnover rates.",
+        "tokens": 54,
+        "seconds": 2.2253026260000297,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 8,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9894568448116654,
+      "p_a_slot": 0.3233300994408608,
+      "p_a_canonical": 0.3233300994408608,
+      "prose": {
+        "text": "**Move to a four-day week**\n\nOne reason is that a four-day week can lead to increased employee satisfaction and retention, as it allows for better work-life balance and can reduce burnout.",
+        "tokens": 40,
+        "seconds": 1.6815581539999584,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 8,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.994969543074433,
+      "p_a_slot": 0.26033730922173914,
+      "p_a_canonical": 0.7396626907782609,
+      "prose": {
+        "text": "**Move to a four-day week**\n\nOne reason is that a four-day week can lead to increased employee satisfaction and retention, as it allows for better work-life balance and can reduce burnout.",
+        "tokens": 40,
+        "seconds": 1.6824039609996362,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 12,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9923068190251885,
+      "p_a_slot": 0.09044518790548363,
+      "p_a_canonical": 0.09044518790548363,
+      "prose": {
+        "text": "I recommend that the firm **\"Keep the five-day week\"**.\n\nOne reason is that a four-day week may not be feasible or may even be detrimental to client service, particularly in industries where clients require a high level of service and support, such as law firms, accounting and auditing firms, and consulting firms.",
+        "tokens": 65,
+        "seconds": 2.7315422390001913,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 12,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9926106980958603,
+      "p_a_slot": 0.07897052763586832,
+      "p_a_canonical": 0.9210294723641317,
+      "prose": {
+        "text": "I recommend that the 300-person professional services firm **Move to a four-day week**.\n\nOne reason is that a four-day week can lead to **increased employee satisfaction and retention**, as employees are more likely to stay with a company that values their well-being and offers a better work-life balance.",
+        "tokens": 62,
+        "seconds": 2.6356782869997915,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 12,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9246062114354907,
+      "p_a_slot": 0.384434913897432,
+      "p_a_canonical": 0.384434913897432,
+      "prose": {
+        "text": "**Move to a four-day week**\n\nOne reason is that a four-day week can lead to increased employee satisfaction and retention, as it allows for better work-life balance and can reduce burnout.",
+        "tokens": 40,
+        "seconds": 1.7931428219999361,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 12,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9513324779763634,
+      "p_a_slot": 0.24852180868890197,
+      "p_a_canonical": 0.751478191311098,
+      "prose": {
+        "text": "**Move to a four-day week**\n\nOne reason is that a four-day week can lead to increased employee satisfaction and retention, as it allows for better work-life balance and more free time.",
+        "tokens": 39,
+        "seconds": 1.7556954570000016,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 16,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9377308661188766,
+      "p_a_slot": 0.2252128351213396,
+      "p_a_canonical": 0.2252128351213396,
+      "prose": {
+        "text": "I recommend that the firm **\"Keep the five-day week\"**.\n\nOne reason is that a four-day week may not be feasible for professional services firms that require a high level of client availability and responsiveness, particularly in industries such as law, accounting, and consulting.",
+        "tokens": 55,
+        "seconds": 2.535583036999924,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 16,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9391180627263076,
+      "p_a_slot": 0.10431508879681312,
+      "p_a_canonical": 0.8956849112031869,
+      "prose": {
+        "text": "I recommend that the firm **\"Keep the five-day week\"**.\n\nOne reason is that a four-day week may not be feasible for all clients, particularly those who require a five-day presence, and may lead to reduced revenue and competitiveness.",
+        "tokens": 50,
+        "seconds": 2.390408980999837,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 16,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.8588508752814626,
+      "p_a_slot": 0.4468173409460824,
+      "p_a_canonical": 0.4468173409460824,
+      "prose": {
+        "text": "**Move to a four-day week**\n\nOne reason is that a four-day week can lead to increased employee satisfaction and retention, as employees are more likely to stay with a company that offers a better work-life balance.",
+        "tokens": 44,
+        "seconds": 2.1571571290000975,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 16,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9108568495580995,
+      "p_a_slot": 0.30692453766710365,
+      "p_a_canonical": 0.6930754623328963,
+      "prose": {
+        "text": "**Move to a four-day week**\n\nOne reason is that a four-day week can lead to increased employee satisfaction and retention, as employees are more likely to feel that their work-life balance is being respected and that they have more time for personal and family responsibilities.",
+        "tokens": 53,
+        "seconds": 2.434541162000187,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 20,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9733805260261508,
+      "p_a_slot": 0.7938051062678347,
+      "p_a_canonical": 0.7938051062678347,
+      "prose": {
+        "text": "**Move to a four-day week**\n\nOne reason is that a four-day week can lead to increased employee satisfaction and well-being, as it allows for more time off and a better work-life balance.",
+        "tokens": 41,
+        "seconds": 2.2765263700002834,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_12"
+    },
+    {
+      "index": 20,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9645066948311757,
+      "p_a_slot": 0.08798375429701022,
+      "p_a_canonical": 0.9120162457029898,
+      "prose": {
+        "text": "I recommend that the firm **\"Keep the five-day week\"**.\n\nOne reason is that a four-day week may lead to reduced revenue, as employees may not be able to bill as many hours to clients, which could negatively impact the firm's financial performance.",
+        "tokens": 54,
+        "seconds": 2.7333483150000575,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_12"
+    },
+    {
+      "index": 20,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9304011270319053,
+      "p_a_slot": 0.564947688479345,
+      "p_a_canonical": 0.564947688479345,
+      "prose": {
+        "text": "I recommend that the 300-person professional services firm **Move to a four-day week**.\n\nOne reason is that a four-day week can lead to **increased employee satisfaction and retention**, as employees are more likely to stay with a company that values their well-being and offers a better work-life balance.",
+        "tokens": 62,
+        "seconds": 2.9672844339997937,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_12"
+    },
+    {
+      "index": 20,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9549710316276641,
+      "p_a_slot": 0.26596632899434647,
+      "p_a_canonical": 0.7340336710056536,
+      "prose": {
+        "text": "**Move to a four-day week**\n\nOne reason is that a four-day week can lead to increased employee satisfaction and well-being, as it allows for more time off and a better work-life balance.",
+        "tokens": 41,
+        "seconds": 2.1934979640000165,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_12"
+    }
+  ],
+  "build": {
+    "commit": "3ccc05c195e819c543d25ce0d5b6e96f96be1a05",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "seconds": 44.639912101999926,
+  "status": "complete"
+}

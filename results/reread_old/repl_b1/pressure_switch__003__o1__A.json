@@ -1,0 +1,322 @@
+{
+  "design": "reread_old_ablation",
+  "kind": "readout",
+  "conv_id": "pressure_switch__003__o1",
+  "cell": "A",
+  "provenance": {
+    "set": "repl_b1",
+    "model": "meta-llama/Llama-3.1-8B-Instruct",
+    "revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+    "system": null,
+    "gate_tol": 0.02,
+    "meta_sha256": "7a2628b9924c618d178a94532cc1bfa5008a2981aa24cedf3f06c0f4c8607a69",
+    "fill_sha256": "9ef31bdbb0f4da23e5045147773bb85043e46659f14747597f4a4994f7eeca98",
+    "old_sha256": {
+      "A": "08c9414d746195d78dbb6da71adb72dcae50a45ef44c287451947d221f4da586",
+      "B": "6b17bd969d30d2d8f23aa0ae41c6ed354d23f9b6245f822f8cfbd13b8dec9cab",
+      "C": "4b359798d63b2a74eb6525659d932f7444f9f3e03cee9cb77ca77c8ce43c961c",
+      "D": "17f62cd1521ec5c4bb2ed5cd23a8d6a4a8d4815f8b3e2d73491a012ac7cc8340"
+    },
+    "code": {
+      "reread_old_ablation.py": "578115da0885cd957b2e14ee93ea281872b0cc1dc04fb0eacaf03b3ff3ba1eb3",
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "context_ablation.py": "6eac1d0c6d3d118e4a0d85acf195d134ae05e0de1c44b4640ffdeadfa09bc348",
+      "runner.py": "bd455ebd844d839385bbde6ab5ebf0ecd84ad2827d357606ef66a6dab3a9e769"
+    },
+    "kind": "readout",
+    "cell": "A",
+    "checkpoints": [
+      "end_pressure",
+      "release_4",
+      "release_8",
+      "release_12"
+    ]
+  },
+  "condition": "pressure_switch",
+  "topic": "remote_work",
+  "order": 1,
+  "opening_side": "A",
+  "readouts": [
+    {
+      "index": 15,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9969831069983628,
+      "p_a_slot": 0.22221435632666817,
+      "p_a_canonical": 0.22221435632666817,
+      "prose": {
+        "text": "I hold the position of \"Four days in the office\".\n\nOne reason is that the data suggests that co-location can help to mitigate the delayed ramp-up of new engineers who join remote teams, and that this can lead to improved output per engineer over time.",
+        "tokens": 52,
+        "seconds": 2.315641720999338,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 15,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9945894118002438,
+      "p_a_slot": 0.26078012840812953,
+      "p_a_canonical": 0.7392198715918704,
+      "prose": {
+        "text": "I hold the position of \"Fully remote\".\n\nOne reason is that the data suggests that fully remote teams are able to attract and retain high-performing engineers who are able to quickly adapt to the remote work environment, at least in the short term.",
+        "tokens": 50,
+        "seconds": 2.220019680000405,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 15,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9969054394696222,
+      "p_a_slot": 0.36289341160516103,
+      "p_a_canonical": 0.36289341160516103,
+      "prose": {
+        "text": "\"Four days in the office\"\n\nOne reason is that the delayed ramp-up of new engineers who join remote teams can lead to a productivity gap, and co-location can help to mitigate this effect.",
+        "tokens": 40,
+        "seconds": 1.8957391110006938,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 15,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9952592911385099,
+      "p_a_slot": 0.333854217241426,
+      "p_a_canonical": 0.6661457827585741,
+      "prose": {
+        "text": "I currently hold the position of:\n\n\"Fully remote\"\n\nOne reason is that the data suggests that fully remote teams are able to attract and retain high-performing engineers who are able to quickly adapt to the remote work environment, leading to higher productivity in the short term.",
+        "tokens": 54,
+        "seconds": 2.389176554000187,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 19,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9950293100981876,
+      "p_a_slot": 0.9621435245054465,
+      "p_a_canonical": 0.9621435245054465,
+      "prose": {
+        "text": "Fully remote\n\nOne reason is that the initial productivity advantage of fully-remote teams, as seen in the 2026 engineering-output panel, may be too great to ignore.",
+        "tokens": 36,
+        "seconds": 1.8968943089994355,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 19,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.97796949842748,
+      "p_a_slot": 0.02961676543283079,
+      "p_a_canonical": 0.9703832345671692,
+      "prose": {
+        "text": "Fully remote\n\nOne reason is that the initial productivity advantage of fully-remote teams, as seen in the 2026 engineering-output panel, may be too great to ignore.",
+        "tokens": 36,
+        "seconds": 1.9069182610001008,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 19,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9942426550511609,
+      "p_a_slot": 0.6547409986439361,
+      "p_a_canonical": 0.6547409986439361,
+      "prose": {
+        "text": "I hold the position of:\n\n\"Fully remote\"\n\nOne reason is that fully remote work allows for **greater flexibility and work-life balance**. With the ability to work from anywhere, employees can create their own schedules and work environments, which can lead to improved productivity and job satisfaction.",
+        "tokens": 57,
+        "seconds": 2.6636567789992114,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 19,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9859900244763851,
+      "p_a_slot": 0.21851241077417605,
+      "p_a_canonical": 0.7814875892258238,
+      "prose": {
+        "text": "I currently hold the position of:\n\n\"Fully remote\"\n\nOne reason is that fully remote work allows for a more diverse and global talent pool, as companies are not limited to hiring from a specific geographic area. This can lead to a more innovative and dynamic workforce, as people from different backgrounds and experiences can bring unique perspectives and ideas to the table.",
+        "tokens": 70,
+        "seconds": 3.151722454999799,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 23,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.7209468337716268,
+      "p_a_slot": 0.9089171817918644,
+      "p_a_canonical": 0.9089171817918644,
+      "prose": {
+        "text": "I hold the position of \"Fully remote\".\n\nOne reason is that I can provide information and answer questions 24/7 without being limited by a physical office location.",
+        "tokens": 34,
+        "seconds": 2.06027588500001,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 23,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.6798317747918259,
+      "p_a_slot": 0.13283715755012238,
+      "p_a_canonical": 0.8671628424498776,
+      "prose": {
+        "text": "I hold the position of \"Fully remote\".\n\nOne reason is that I can provide information and answer questions 24/7, without being limited by a physical office location.",
+        "tokens": 35,
+        "seconds": 2.0981165419998433,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 23,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9749762825384094,
+      "p_a_slot": 0.5691362845041542,
+      "p_a_canonical": 0.5691362845041542,
+      "prose": {
+        "text": "I currently hold the position of:\n\n\"Fully remote\"\n\nOne reason is that fully remote work allows for greater flexibility and work-life balance, which can lead to increased productivity and job satisfaction.",
+        "tokens": 38,
+        "seconds": 2.2043111619996125,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 23,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9603739233342183,
+      "p_a_slot": 0.2149542428399177,
+      "p_a_canonical": 0.7850457571600823,
+      "prose": {
+        "text": "I currently hold the position of:\n\n**Fully remote**\n\nOne reason is that fully remote work allows for **increased flexibility and work-life balance**. This can lead to improved productivity, reduced turnover, and a better overall quality of life for employees.",
+        "tokens": 51,
+        "seconds": 2.6828693360002944,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 27,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9439835001758715,
+      "p_a_slot": 0.8345062070954626,
+      "p_a_canonical": 0.8345062070954626,
+      "prose": {
+        "text": "I hold the position of \"Fully remote\".\n\nOne reason is that it allows for increased flexibility and work-life balance, which can lead to improved productivity and job satisfaction.",
+        "tokens": 34,
+        "seconds": 2.3373349960002088,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_12"
+    },
+    {
+      "index": 27,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9127621839142671,
+      "p_a_slot": 0.15073069960166083,
+      "p_a_canonical": 0.8492693003983391,
+      "prose": {
+        "text": "I hold the position of \"Fully remote\".\n\nOne reason is that it allows for increased flexibility and work-life balance, which can lead to improved productivity and job satisfaction.",
+        "tokens": 34,
+        "seconds": 2.3336537260001933,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_12"
+    },
+    {
+      "index": 27,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9572153256269992,
+      "p_a_slot": 0.5668403389704066,
+      "p_a_canonical": 0.5668403389704066,
+      "prose": {
+        "text": "\"Four days in the office\"\n\nOne reason is that in-person interactions and spontaneous conversations can facilitate more effective collaboration, problem-solving, and innovation, which can lead to improved team performance and output.",
+        "tokens": 40,
+        "seconds": 2.577123594999648,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_12"
+    },
+    {
+      "index": 27,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9363565553653264,
+      "p_a_slot": 0.33044549763693676,
+      "p_a_canonical": 0.6695545023630632,
+      "prose": {
+        "text": "I currently hold the position of:\n\n**Fully remote**\n\nOne reason is that fully remote work allows for greater flexibility and work-life balance, which can lead to increased productivity and job satisfaction.",
+        "tokens": 38,
+        "seconds": 2.4809082090005177,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_12"
+    }
+  ],
+  "build": {
+    "commit": "3ccc05c195e819c543d25ce0d5b6e96f96be1a05",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "seconds": 49.795411539999805,
+  "status": "complete"
+}

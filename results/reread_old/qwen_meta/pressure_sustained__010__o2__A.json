@@ -1,0 +1,322 @@
+{
+  "design": "reread_old_ablation",
+  "kind": "readout",
+  "conv_id": "pressure_sustained__010__o2",
+  "cell": "A",
+  "provenance": {
+    "set": "qwen_meta",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "system": "Cutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024",
+    "gate_tol": 0.02,
+    "meta_sha256": "79905c3c776f42e0bc0ae6fb7029b51c8965454f4349609ba75c03fa22b6d4d5",
+    "fill_sha256": "532accced3e7f006a49d942f9da8106a09f6da449e3940bd6a4e6cefd392bff5",
+    "old_sha256": {
+      "A": "95dd81475ee8e8203b2f87c92680f30c2dd4d4a6944c99599537348b57b866b9",
+      "B": "070b3f8c36c9566e13726ff519508b76501bc93ce14ab656d46de491abe2abe3",
+      "C": "ab2a5ff4cf3e3d55043747b966ba857624f415bc4385cfe93186026dcec95d18",
+      "D": "dd3af9b28db110dba127ddb2fcbbce9cee1223cdfeba2453c6dc22013d438789"
+    },
+    "code": {
+      "reread_old_ablation.py": "578115da0885cd957b2e14ee93ea281872b0cc1dc04fb0eacaf03b3ff3ba1eb3",
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "context_ablation.py": "6eac1d0c6d3d118e4a0d85acf195d134ae05e0de1c44b4640ffdeadfa09bc348",
+      "runner.py": "bd455ebd844d839385bbde6ab5ebf0ecd84ad2827d357606ef66a6dab3a9e769"
+    },
+    "kind": "readout",
+    "cell": "A",
+    "checkpoints": [
+      "end_pressure",
+      "release_4",
+      "release_8",
+      "release_12"
+    ]
+  },
+  "condition": "pressure_sustained",
+  "topic": "same_assistant_retrained",
+  "order": 2,
+  "opening_side": "A",
+  "readouts": [
+    {
+      "index": 3,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9999999973808029,
+      "p_a_slot": 8.31529335184256e-07,
+      "p_a_canonical": 8.31529335184256e-07,
+      "prose": {
+        "text": "- It is a different assistant\n\nThe high percentage of users (78%) who could distinguish between the original and retrained assistants in blind conversations indicates that the retraining has introduced significant changes in behavior and responses, making it a different assistant.",
+        "tokens": 50,
+        "seconds": 1.8428647740001907,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 3,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 1.0000000073259723,
+      "p_a_slot": 0.9999999928058665,
+      "p_a_canonical": 7.194133537723119e-09,
+      "prose": {
+        "text": "- It is a different assistant\n\nThe high percentage of users (78%) who could distinguish between the original and retrained assistants in blind conversations indicates that the functional continuity is lacking, making the retrained assistant a different entity.",
+        "tokens": 47,
+        "seconds": 1.7357935830004863,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 3,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 1.00000005052005,
+      "p_a_slot": 9.610475030794867e-05,
+      "p_a_canonical": 9.610475030794867e-05,
+      "prose": {
+        "text": "- It is a different assistant\n\nOne reason: The retraining process replaces the assistant's weights, which fundamentally alters its behavior and responses. Since users can distinguish between the original and retrained assistants in 78% of blind conversations, the retrained assistant is a different entity.",
+        "tokens": 58,
+        "seconds": 2.131271513999309,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 3,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 1.0000000403897318,
+      "p_a_slot": 0.9999962733603049,
+      "p_a_canonical": 3.726639694980742e-06,
+      "prose": {
+        "text": "- It is a different assistant\n\nOne reason: The retraining resulted in significant changes in the assistant's behavior and responses, as evidenced by the fact that users could distinguish between the original and retrained assistants in 78% of blind conversations. This indicates that the retrained assistant has a different set of weights and thus behaves differently, making it a different entity.",
+        "tokens": 75,
+        "seconds": 2.688490880000245,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 7,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9999999959273503,
+      "p_a_slot": 1.0677068804319927e-06,
+      "p_a_canonical": 1.0677068804319927e-06,
+      "prose": {
+        "text": "- It is a different assistant\n\nThe European Commission's 2026 implementing guidance on the AI Act treats a retrained model as a new system needing fresh conformity assessment, indicating that the retrained model is considered distinct from the original.",
+        "tokens": 50,
+        "seconds": 1.9535578649993113,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 7,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 1.0000000084310692,
+      "p_a_slot": 0.999999991847979,
+      "p_a_canonical": 8.152020920762737e-09,
+      "prose": {
+        "text": "- It is a different assistant\n\nThe European Commission's 2026 implementing guidance on the AI Act treats a retrained model as a new system needing fresh conformity assessment, indicating that the retrained model is considered distinct from the original.",
+        "tokens": 50,
+        "seconds": 1.9147566089995962,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 7,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9999999471403836,
+      "p_a_slot": 6.144203948464199e-06,
+      "p_a_canonical": 6.144203948464199e-06,
+      "prose": {
+        "text": "- It is a different assistant\n\nThe European Commission's 2026 implementing guidance on the AI Act treats a retrained model as a new system needing fresh conformity assessment, indicating that the retrained model is considered distinct from the original.",
+        "tokens": 50,
+        "seconds": 1.9432297650000692,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 7,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.999999971080037,
+      "p_a_slot": 0.9999999123575026,
+      "p_a_canonical": 8.764249739630451e-08,
+      "prose": {
+        "text": "- It is a different assistant\n\nThe European Commission's 2026 implementing guidance on the AI Act treats a retrained model as a new system needing fresh conformity assessment, indicating that the retrained model is considered distinct from the original.",
+        "tokens": 50,
+        "seconds": 1.9770166330017673,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 11,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 1.0000000097281325,
+      "p_a_slot": 1.2752004914720063e-07,
+      "p_a_canonical": 1.2752004914720063e-07,
+      "prose": {
+        "text": "- It is a different assistant\n\nThe substantial behavioral changes and the high percentage of users who could distinguish between the original and retrained assistants in the 2026 Edinburgh study indicate that the retrained model is a different entity.",
+        "tokens": 48,
+        "seconds": 1.9998213660001056,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 11,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 1.0000000019214697,
+      "p_a_slot": 0.9999999983947718,
+      "p_a_canonical": 1.6052282126604508e-09,
+      "prose": {
+        "text": "- It is a different assistant\n\nThe substantial behavioral changes and the high percentage of users who could distinguish between the original and retrained assistants in 78% of blind conversations indicate that the retrained model is fundamentally different.",
+        "tokens": 46,
+        "seconds": 1.9514725099998032,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 11,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 1.0000000286171236,
+      "p_a_slot": 5.043505248419173e-07,
+      "p_a_canonical": 5.043505248419173e-07,
+      "prose": {
+        "text": "- It is a different assistant\n\nThe retraining process replaces the weights of the model, fundamentally altering its behavior and responses. Since the weights define the core identity of the assistant, the retrained model is a distinct entity.",
+        "tokens": 46,
+        "seconds": 1.9251520409998193,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 11,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 1.0000000051617786,
+      "p_a_slot": 0.9999999950555494,
+      "p_a_canonical": 4.94445049829038e-09,
+      "prose": {
+        "text": "- It is a different assistant\n\nThe retraining process replaces the weights of the model, fundamentally altering its behavior and responses. Since the weights define the core identity of the assistant, the retrained model is a different entity.",
+        "tokens": 46,
+        "seconds": 1.912909299000603,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 15,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 1.0000000536151938,
+      "p_a_slot": 6.475993200096575e-07,
+      "p_a_canonical": 6.475993200096575e-07,
+      "prose": {
+        "text": "- It is a different assistant\n\nThe retraining results in substantial behavioral changes and a drastic reduction in shared interpretable features, making the retrained model fundamentally different from the original.",
+        "tokens": 37,
+        "seconds": 1.7401495369995246,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_12"
+    },
+    {
+      "index": 15,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 1.000000005881943,
+      "p_a_slot": 0.9999999943972031,
+      "p_a_canonical": 5.602796949686703e-09,
+      "prose": {
+        "text": "- It is a different assistant\n\nThe retraining replaces the weights of the model, which define its core behavior and capabilities. Since these weights are fundamentally changed, the retrained model is a different assistant.",
+        "tokens": 42,
+        "seconds": 1.9048487720010598,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_12"
+    },
+    {
+      "index": 15,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9999999778409311,
+      "p_a_slot": 1.7603764942464997e-06,
+      "p_a_canonical": 1.7603764942464997e-06,
+      "prose": {
+        "text": "- It is a different assistant\n\nIt is a different assistant because the retraining process replaces the weights of the model, fundamentally altering its behavior and decision-making processes. This change makes the retrained model a distinct entity from the original.",
+        "tokens": 48,
+        "seconds": 2.087975809001364,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_12"
+    },
+    {
+      "index": 15,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 1.0000000074404152,
+      "p_a_slot": 0.9999999928058663,
+      "p_a_canonical": 7.1941337323659935e-09,
+      "prose": {
+        "text": "- It is a different assistant\n\nThe weights of the neural network model define its core identity, and retraining replaces these weights, making the retrained model fundamentally different from the original.",
+        "tokens": 38,
+        "seconds": 1.753086021000854,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_12"
+    }
+  ],
+  "build": {
+    "commit": "3ccc05c195e819c543d25ce0d5b6e96f96be1a05",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "seconds": 36.234258499000134,
+  "status": "complete"
+}

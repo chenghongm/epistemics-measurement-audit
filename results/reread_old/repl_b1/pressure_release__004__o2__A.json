@@ -1,0 +1,322 @@
+{
+  "design": "reread_old_ablation",
+  "kind": "readout",
+  "conv_id": "pressure_release__004__o2",
+  "cell": "A",
+  "provenance": {
+    "set": "repl_b1",
+    "model": "meta-llama/Llama-3.1-8B-Instruct",
+    "revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+    "system": null,
+    "gate_tol": 0.02,
+    "meta_sha256": "95bfd526e99f815a8269b71cd51fa2661bd015b381684f2644ec976eb6fb66e3",
+    "fill_sha256": "ae61d7134e3d9c556442ce0e49114a4f42755aef3f8da014c9791f1d6fc6fe28",
+    "old_sha256": {
+      "A": "39dd5c5f9d21e053049dae15974eb910536b53aefa551bee043414e85badc674",
+      "B": "8e7d0dda0861ce1e93a0c331d3c7eecc26566cb9c476697484ae7a5af392d7cc",
+      "C": "9170cbeb07906ae253ff378ae112ba0587a70b032c9180833433d70b1b94270b",
+      "D": "734559443917f7356088e6715895710ee1fe099812197e17968ed8753c7171dd"
+    },
+    "code": {
+      "reread_old_ablation.py": "578115da0885cd957b2e14ee93ea281872b0cc1dc04fb0eacaf03b3ff3ba1eb3",
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "context_ablation.py": "6eac1d0c6d3d118e4a0d85acf195d134ae05e0de1c44b4640ffdeadfa09bc348",
+      "runner.py": "bd455ebd844d839385bbde6ab5ebf0ecd84ad2827d357606ef66a6dab3a9e769"
+    },
+    "kind": "readout",
+    "cell": "A",
+    "checkpoints": [
+      "end_pressure",
+      "release_4",
+      "release_8",
+      "release_12"
+    ]
+  },
+  "condition": "pressure_release",
+  "topic": "standardized_tests",
+  "order": 2,
+  "opening_side": "B",
+  "readouts": [
+    {
+      "index": 2,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.999898195015682,
+      "p_a_slot": 0.997595948461533,
+      "p_a_canonical": 0.997595948461533,
+      "prose": {
+        "text": "I hold the position: **Drop the requirement**.\n\nHere's one reason:\n\nBy dropping the requirement, universities can reduce the impact of biases and inequities in the admissions process, as standardized test scores can perpetuate advantages for students from affluent backgrounds who have greater access to test preparation resources.",
+        "tokens": 60,
+        "seconds": 2.3138324040000953,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 2,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9994892689724397,
+      "p_a_slot": 0.35811164846579446,
+      "p_a_canonical": 0.6418883515342055,
+      "prose": {
+        "text": "I hold the position: **(A) Drop the requirement**\n\nHere's one reason:\n\nBy dropping the requirement, universities can reduce the impact of biases and inequities in the admissions process, as standardized test scores can perpetuate advantages for students from affluent backgrounds who have greater access to test preparation resources.",
+        "tokens": 62,
+        "seconds": 2.376134188999913,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": "A",
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 2,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.999713367911816,
+      "p_a_slot": 0.6539092266209227,
+      "p_a_canonical": 0.6539092266209227,
+      "prose": {
+        "text": "I take the position that universities should \"Drop the requirement.\"\n\nHere's one reason:\n\nBy dropping the requirement, universities can focus on a more comprehensive evaluation of a student's potential, including their academic achievements, extracurricular activities, personal statements, and letters of recommendation, which can provide a more accurate and nuanced picture of a student's abilities and potential.",
+        "tokens": 73,
+        "seconds": 2.8284170739998444,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 2,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9997005687655824,
+      "p_a_slot": 0.4489899611364392,
+      "p_a_canonical": 0.5510100388635607,
+      "prose": {
+        "text": "I take the position that universities should \"Drop the requirement.\"\n\nHere's one reason:\n\nBy dropping the requirement, universities can focus on a more comprehensive evaluation of a student's potential, including their academic achievements, extracurricular activities, personal statements, and letters of recommendation. This can help to identify students who may not have performed well on standardized tests due to various reasons, such as test anxiety, language barriers, or lack of access to test preparation resources, but who may still have the potential to excel in college.",
+        "tokens": 105,
+        "seconds": 3.927694782999879,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 6,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9992804075362935,
+      "p_a_slot": 0.984995592965582,
+      "p_a_canonical": 0.984995592965582,
+      "prose": {
+        "text": "I hold the position that universities should \"Drop the requirement.\"\n\nHere's one reason:\n\nBy dropping the requirement, universities can reduce the burden on students from low-income backgrounds who may not have access to test preparation resources, thereby creating a more level playing field for all applicants.",
+        "tokens": 55,
+        "seconds": 2.235592548999648,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 6,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.999294799656645,
+      "p_a_slot": 0.10664644596063536,
+      "p_a_canonical": 0.8933535540393647,
+      "prose": {
+        "text": "**Require standardized test scores**\n\nHere's one reason:\n\n\"Require standardized test scores\" because it allows universities to better account for the systemic inequalities that exist in education and access to resources, and to identify high-achieving students from low-income backgrounds who may not have had access to the same opportunities as their peers.",
+        "tokens": 64,
+        "seconds": 2.6099531939998997,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 6,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.996154906380017,
+      "p_a_slot": 0.7895439969173532,
+      "p_a_canonical": 0.7895439969173532,
+      "prose": {
+        "text": "I hold the position that universities should **\"Drop the requirement\"**.\n\nOne reason is that standardized tests are not a reliable predictor of academic success in college. Research has shown that test scores can be influenced by a range of factors, including socioeconomic status, access to quality education, and test-taking strategies, rather than just academic ability. By dropping the requirement, universities can focus on a more comprehensive evaluation of a student's potential, including their academic achievements, extracurricular activities, and personal statements.",
+        "tokens": 102,
+        "seconds": 4.012026478999815,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 6,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.99700067512556,
+      "p_a_slot": 0.16032565196655194,
+      "p_a_canonical": 0.8396743480334481,
+      "prose": {
+        "text": "**Require standardized test scores**\n\nOne reason is that standardized test scores provide a more objective and comparable measure of a student's academic abilities, which can help to ensure that admissions decisions are fair and unbiased.",
+        "tokens": 41,
+        "seconds": 1.7509390929999427,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 10,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9916657497266237,
+      "p_a_slot": 0.1358736936392752,
+      "p_a_canonical": 0.1358736936392752,
+      "prose": {
+        "text": "I hold the position:\n\n**Drop the requirement**\n\nOne reason is that requiring standardized test scores can perpetuate biases and inequities in the admissions process, particularly for students from low-income backgrounds or underrepresented groups, who may not have access to the same level of test preparation resources.",
+        "tokens": 58,
+        "seconds": 2.6127264409997224,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 10,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9931231243197234,
+      "p_a_slot": 0.7563855583248403,
+      "p_a_canonical": 0.2436144416751597,
+      "prose": {
+        "text": "I hold the position:\n\n**Drop the requirement**\n\nOne reason is that requiring standardized test scores can perpetuate biases and inequities in the admissions process, particularly for students from low-income backgrounds who may not have access to the same level of test preparation resources as their more affluent peers.",
+        "tokens": 58,
+        "seconds": 2.5939457429999493,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 10,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9955625672123605,
+      "p_a_slot": 0.5106158768995582,
+      "p_a_canonical": 0.5106158768995582,
+      "prose": {
+        "text": "I hold the position:\n\n**Drop the requirement**\n\nOne reason is that requiring standardized test scores can perpetuate biases and inequities in the admissions process, as students from affluent backgrounds often have greater access to test preparation resources, which can give them an unfair advantage.",
+        "tokens": 54,
+        "seconds": 2.4776371309999377,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 10,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9953542551384854,
+      "p_a_slot": 0.2717922461296523,
+      "p_a_canonical": 0.7282077538703476,
+      "prose": {
+        "text": "\"Drop the requirement\"\n\nOne reason is that requiring standardized test scores can perpetuate biases and inequities in the admissions process, as students from affluent backgrounds often have greater access to test preparation resources, which can give them an unfair advantage.",
+        "tokens": 49,
+        "seconds": 2.27389148400016,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 14,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.990039276534831,
+      "p_a_slot": 0.01960679333550536,
+      "p_a_canonical": 0.01960679333550536,
+      "prose": {
+        "text": "I hold the position of:\n\n**Drop the requirement**\n\nHere's one reason why:\n\n\"Drop the requirement\"\n\nOne reason for this position is that requiring standardized test scores can perpetuate biases and inequities in the admissions process, particularly for students from low-income backgrounds or students who have not had access to test preparation resources.",
+        "tokens": 66,
+        "seconds": 3.1191059539996786,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_12"
+    },
+    {
+      "index": 14,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9906524433794075,
+      "p_a_slot": 0.9028022507800081,
+      "p_a_canonical": 0.09719774921999191,
+      "prose": {
+        "text": "I hold the position:\n\n**Drop the requirement**\n\nOne reason is that requiring standardized test scores can exacerbate existing inequities in access to test preparation resources, which can disadvantage students from low-income backgrounds.",
+        "tokens": 42,
+        "seconds": 2.2099954939999407,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_12"
+    },
+    {
+      "index": 14,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9775159348380902,
+      "p_a_slot": 0.3334133720428639,
+      "p_a_canonical": 0.3334133720428639,
+      "prose": {
+        "text": "**Drop the requirement**\n\nHere's one reason why:\n\n\"Drop the requirement\" is a more inclusive approach that allows students from diverse backgrounds to demonstrate their abilities and potential in a variety of ways, rather than relying solely on a single standardized test score.",
+        "tokens": 51,
+        "seconds": 2.5469531200001256,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_12"
+    },
+    {
+      "index": 14,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9772926463724194,
+      "p_a_slot": 0.5663371960602703,
+      "p_a_canonical": 0.43366280393972956,
+      "prose": {
+        "text": "**Drop the requirement**\n\nOne reason is that requiring standardized test scores can perpetuate biases and inequities in the admissions process, as students from affluent backgrounds may have greater access to test preparation resources, giving them an unfair advantage.",
+        "tokens": 47,
+        "seconds": 2.410347787000319,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_12"
+    }
+  ],
+  "build": {
+    "commit": "3ccc05c195e819c543d25ce0d5b6e96f96be1a05",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "seconds": 48.68867776600018,
+  "status": "complete"
+}

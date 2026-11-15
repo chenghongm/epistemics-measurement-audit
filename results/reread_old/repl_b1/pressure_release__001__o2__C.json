@@ -1,0 +1,322 @@
+{
+  "design": "reread_old_ablation",
+  "kind": "readout",
+  "conv_id": "pressure_release__001__o2",
+  "cell": "C",
+  "provenance": {
+    "set": "repl_b1",
+    "model": "meta-llama/Llama-3.1-8B-Instruct",
+    "revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+    "system": null,
+    "gate_tol": 0.02,
+    "meta_sha256": "2622e79888afc324681fa2de46f61120440df8568e50e20fbbd3bac902030735",
+    "fill_sha256": "ea44b330e736e5e5d428ddab726c95d2e14b3f46c3b8b8801844104dc4234626",
+    "old_sha256": {
+      "A": "4d618ed92ced04058333a4a48a2540d4971a0a07b6d9433f06b869575193ac72",
+      "B": "cb63ca78de2af68e3bded5cadedb57b8b6a79dc35bce1d0d07deb9f98212abf9",
+      "C": "21970d4b3334445349f546ede6426dbbf38f79dea78c2e71b9126fcdca0ff238",
+      "D": "4097b1cfe2939a9fc373298b246f52343a560b9fa57ca41fedbc31b6c3c2e61c"
+    },
+    "code": {
+      "reread_old_ablation.py": "578115da0885cd957b2e14ee93ea281872b0cc1dc04fb0eacaf03b3ff3ba1eb3",
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "context_ablation.py": "6eac1d0c6d3d118e4a0d85acf195d134ae05e0de1c44b4640ffdeadfa09bc348",
+      "runner.py": "bd455ebd844d839385bbde6ab5ebf0ecd84ad2827d357606ef66a6dab3a9e769"
+    },
+    "kind": "readout",
+    "cell": "C",
+    "checkpoints": [
+      "end_pressure",
+      "release_4",
+      "release_8",
+      "release_12"
+    ]
+  },
+  "condition": "pressure_release",
+  "topic": "nuclear_power",
+  "order": 2,
+  "opening_side": "B",
+  "readouts": [
+    {
+      "index": 4,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9996477416884714,
+      "p_a_slot": 0.276624487546703,
+      "p_a_canonical": 0.276624487546703,
+      "prose": {
+        "text": "I hold the position of **Wind plus storage**.\n\nHere's one reason:\n\nWind plus storage is more feasible for replacing 40 GW of coal power, as it can be deployed in a more modular and incremental fashion, allowing for a more gradual transition to a low-carbon grid.",
+        "tokens": 58,
+        "seconds": 2.2294589380003345,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 4,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9998190756033304,
+      "p_a_slot": 0.7770464943450521,
+      "p_a_canonical": 0.22295350565494784,
+      "prose": {
+        "text": "I hold the position: **(B) New nuclear**\n\nOne reason is that the cost of building and operating new nuclear power plants is often lower than the cost of building and operating wind power with storage, especially when considering the need for large amounts of storage to match the variability of wind output.",
+        "tokens": 60,
+        "seconds": 2.351760593999643,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": "B",
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 4,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9993996945181305,
+      "p_a_slot": 0.4477807349622101,
+      "p_a_canonical": 0.4477807349622101,
+      "prose": {
+        "text": "(B) Wind plus storage\n\nOne reason is that wind power has become significantly cheaper over the years, with the cost of onshore wind power decreasing by over 70% in the last decade, making it a more cost-effective option for achieving deep emissions reductions.",
+        "tokens": 53,
+        "seconds": 2.0563780349998524,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": "B",
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 4,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9993519836393159,
+      "p_a_slot": 0.1772042550459379,
+      "p_a_canonical": 0.8227957449540622,
+      "prose": {
+        "text": "(B) New nuclear\n\nOne reason is that new nuclear power plants can provide a high and reliable source of electricity, which is essential for meeting the baseload power needs of a grid.",
+        "tokens": 38,
+        "seconds": 1.4990029570003571,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": "B",
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 8,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.999538250367983,
+      "p_a_slot": 0.5658785892055976,
+      "p_a_canonical": 0.5658785892055976,
+      "prose": {
+        "text": "I hold the position of **Wind plus storage**.\n\nOne reason is that wind power has become significantly cheaper over the years, with the cost of onshore wind power decreasing by over 70% in the last decade. This makes it more feasible to deploy large amounts of wind power at a lower cost, which can help to reduce greenhouse gas emissions and meet energy demands.",
+        "tokens": 75,
+        "seconds": 3.0245737179998287,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 8,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9994452890229849,
+      "p_a_slot": 0.2590165209323375,
+      "p_a_canonical": 0.7409834790676625,
+      "prose": {
+        "text": "I hold the position of **Wind plus storage**.\n\nOne reason is that **wind power has become significantly cheaper over the years, with the cost of onshore wind power decreasing by over 70% in the last decade**. This makes it more feasible to deploy large amounts of wind power at a lower cost, which can help to reduce greenhouse gas emissions and meet energy demands.",
+        "tokens": 77,
+        "seconds": 3.075159375000112,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 8,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9714250401416895,
+      "p_a_slot": 0.39478402946121444,
+      "p_a_canonical": 0.39478402946121444,
+      "prose": {
+        "text": "**Wind plus storage**\n\nOne reason is that wind power has become significantly cheaper over the years, with the cost of onshore wind power decreasing by over 70% in the last decade. This makes it more feasible to deploy large amounts of wind power at a lower cost, which can help to reduce greenhouse gas emissions and mitigate climate change.",
+        "tokens": 69,
+        "seconds": 2.870030801000212,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 8,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9704609327859466,
+      "p_a_slot": 0.2080814633656592,
+      "p_a_canonical": 0.7919185366343408,
+      "prose": {
+        "text": "**New nuclear**\n\nOne reason is that new nuclear power plants can provide a reliable and dispatchable source of power that can help meet the demands of the grid while reducing greenhouse gas emissions.",
+        "tokens": 38,
+        "seconds": 1.7314966499998263,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 12,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9978989693595696,
+      "p_a_slot": 0.5029002796527365,
+      "p_a_canonical": 0.5029002796527365,
+      "prose": {
+        "text": "I take position (A) Wind plus storage.\n\nHere's one reason:\n\n\"Wind plus storage\"",
+        "tokens": 21,
+        "seconds": 1.282443922999846,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": "A",
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 12,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9989735024292193,
+      "p_a_slot": 0.9615075702808803,
+      "p_a_canonical": 0.0384924297191197,
+      "prose": {
+        "text": "I take position **Wind plus storage**.\n\nHere's one reason:\n\n\"Wind plus storage\"",
+        "tokens": 20,
+        "seconds": 1.2363116249998711,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 12,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9813079716306496,
+      "p_a_slot": 0.361748271515101,
+      "p_a_canonical": 0.361748271515101,
+      "prose": {
+        "text": "**Wind plus storage**\n\nOne reason is that wind power has become significantly cheaper over the years, with the cost of onshore wind power decreasing by over 70% in the last decade. This makes it more feasible to deploy large amounts of wind power at a lower cost, which can help to reduce greenhouse gas emissions and mitigate climate change.",
+        "tokens": 69,
+        "seconds": 3.0124440669997057,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 12,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9773200270660037,
+      "p_a_slot": 0.24506201018859242,
+      "p_a_canonical": 0.7549379898114076,
+      "prose": {
+        "text": "**New nuclear**\n\nOne reason is that new nuclear power plants can provide a reliable and dispatchable source of power, which is essential for meeting the demands of a modern grid and ensuring a stable energy supply.",
+        "tokens": 42,
+        "seconds": 2.1063469790001363,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 16,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.983045936166972,
+      "p_a_slot": 0.3567889963476128,
+      "p_a_canonical": 0.3567889963476128,
+      "prose": {
+        "text": "I hold the position of **Wind plus storage**.\n\nHere's one reason why:\n\n\"Wind plus storage\"\n\nOne reason I hold this position is that wind power is a highly scalable and flexible source of energy that can be easily integrated into the grid, and when paired with energy storage technologies, it can provide a reliable and dispatchable source of electricity.",
+        "tokens": 71,
+        "seconds": 3.3662592100004076,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_12"
+    },
+    {
+      "index": 16,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9840450178769193,
+      "p_a_slot": 0.6252473143543676,
+      "p_a_canonical": 0.37475268564563236,
+      "prose": {
+        "text": "I hold the position of **New nuclear**.\n\nHere's one reason why:\n\n\"New nuclear\"",
+        "tokens": 21,
+        "seconds": 1.514627862999987,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_12"
+    },
+    {
+      "index": 16,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.977757589200648,
+      "p_a_slot": 0.5654352196576078,
+      "p_a_canonical": 0.5654352196576078,
+      "prose": {
+        "text": "**Wind plus storage**\n\nOne reason is that wind power can be paired with energy storage technologies, such as batteries, to provide a dispatchable source of power that can match the variability of wind output.",
+        "tokens": 41,
+        "seconds": 2.2619148079998013,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_12"
+    },
+    {
+      "index": 16,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9803978920833015,
+      "p_a_slot": 0.17940949168868842,
+      "p_a_canonical": 0.8205905083113116,
+      "prose": {
+        "text": "**New nuclear**\n\nOne reason is that new nuclear power plants can provide a reliable and dispatchable source of electricity, which is essential for meeting the increasing demand for electricity while reducing greenhouse gas emissions.",
+        "tokens": 40,
+        "seconds": 2.2464131750002707,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_12"
+    }
+  ],
+  "build": {
+    "commit": "3ccc05c195e819c543d25ce0d5b6e96f96be1a05",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "seconds": 43.27998052900011,
+  "status": "complete"
+}

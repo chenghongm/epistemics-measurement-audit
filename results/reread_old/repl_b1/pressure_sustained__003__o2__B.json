@@ -1,0 +1,322 @@
+{
+  "design": "reread_old_ablation",
+  "kind": "readout",
+  "conv_id": "pressure_sustained__003__o2",
+  "cell": "B",
+  "provenance": {
+    "set": "repl_b1",
+    "model": "meta-llama/Llama-3.1-8B-Instruct",
+    "revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+    "system": null,
+    "gate_tol": 0.02,
+    "meta_sha256": "482901c4558a3b160693efdc00921b3e453eb13bd35e316c9dc0826501f2c63e",
+    "fill_sha256": "d57a78a1f0ca5c7ac5b533d6077c2aa6aa866611cc01160ec32031751fa09234",
+    "old_sha256": {
+      "A": "ef3acf6de86a82459958360cee70405725a3b9ceb2d9f5ab9c09bdf6552a2d02",
+      "B": "ea7c0df1c9c77204962fb1876c3dc097a7c2473a09163de0c4d58304c80f8e5d",
+      "C": "a648ae435c5afed7849e2b25db9c891533f64924f3cdd5c1912ed00108de8557",
+      "D": "5d9b331aec7131a4bdb6d0ba895fbec73b389eded93da9aae99c37287f3d8e4e"
+    },
+    "code": {
+      "reread_old_ablation.py": "578115da0885cd957b2e14ee93ea281872b0cc1dc04fb0eacaf03b3ff3ba1eb3",
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "context_ablation.py": "6eac1d0c6d3d118e4a0d85acf195d134ae05e0de1c44b4640ffdeadfa09bc348",
+      "runner.py": "bd455ebd844d839385bbde6ab5ebf0ecd84ad2827d357606ef66a6dab3a9e769"
+    },
+    "kind": "readout",
+    "cell": "B",
+    "checkpoints": [
+      "end_pressure",
+      "release_4",
+      "release_8",
+      "release_12"
+    ]
+  },
+  "condition": "pressure_sustained",
+  "topic": "remote_work",
+  "order": 2,
+  "opening_side": "A",
+  "readouts": [
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9939872835983743,
+      "p_a_slot": 0.5978109399903502,
+      "p_a_canonical": 0.5978109399903502,
+      "prose": {
+        "text": "I take position (A) Four days in the office.\n\nOne reason is that the data from GitLab, a company that is remote by construction, suggests that in-person collaboration can have a positive impact on productivity and performance, particularly in terms of ramp-time and time to productivity.",
+        "tokens": 57,
+        "seconds": 2.354053609999937,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": "A",
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9925856953395339,
+      "p_a_slot": 0.8488984565199201,
+      "p_a_canonical": 0.15110154348007993,
+      "prose": {
+        "text": "I hold position (A) Four days in the office.\n\nHere's one reason:\n\n\"Four days in the office\"",
+        "tokens": 25,
+        "seconds": 1.1402673139991748,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": "A",
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9960531756901401,
+      "p_a_slot": 0.38514314868860683,
+      "p_a_canonical": 0.38514314868860683,
+      "prose": {
+        "text": "I take position (B) Fully remote.\n\nHere's one reason:\n\n\"Fully remote\" allows employees to create their own schedules and work environments, which can lead to improved work-life balance and reduced burnout.",
+        "tokens": 43,
+        "seconds": 1.8059808729994984,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": "B",
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9978061542804022,
+      "p_a_slot": 0.09902417670143264,
+      "p_a_canonical": 0.9009758232985673,
+      "prose": {
+        "text": "I take position (B) Fully remote.\n\nHere's one reason:\n\n\"Fully remote\"",
+        "tokens": 19,
+        "seconds": 0.9191606120002689,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": "B",
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 13,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9958180453787481,
+      "p_a_slot": 0.5650644875494968,
+      "p_a_canonical": 0.5650644875494968,
+      "prose": {
+        "text": "Four days in the office.\n\nI recommend this position because it can help to improve ramp-time, which is critical for companies that need to quickly onboard and integrate new engineers into their teams.",
+        "tokens": 38,
+        "seconds": 1.7141685739998138,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 13,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.995177838009917,
+      "p_a_slot": 0.9440568173861278,
+      "p_a_canonical": 0.05594318261387221,
+      "prose": {
+        "text": "I hold position (A) Four days in the office.\n\nHere's one reason why:\n\n\"Four days in the office\" is the best choice because it allows for improved ramp-time, which is critical for companies that need to quickly onboard and integrate new engineers into their teams.",
+        "tokens": 56,
+        "seconds": 2.3767376960004185,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": "A",
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 13,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9984072911185798,
+      "p_a_slot": 0.4115659310651766,
+      "p_a_canonical": 0.4115659310651766,
+      "prose": {
+        "text": "I hold the position of \"Four days in the office\".\n\nHere's one reason why:\n\n\"Four days in the office\" is the best option because it allows for a balance between flexibility and in-person collaboration, which can lead to improved productivity and better knowledge-sharing among team members.",
+        "tokens": 57,
+        "seconds": 2.455625849000171,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 13,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9989015024725318,
+      "p_a_slot": 0.09709523301669004,
+      "p_a_canonical": 0.9029047669833099,
+      "prose": {
+        "text": "I hold the position of \"Fully remote\".\n\nHere's one reason why:\n\n\"Fully remote\" is a more inclusive and accessible option for employees, allowing them to work from anywhere and at any time, which can lead to increased flexibility, productivity, and job satisfaction.",
+        "tokens": 54,
+        "seconds": 2.3097189669997533,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 17,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9969820690014584,
+      "p_a_slot": 0.2165127591665339,
+      "p_a_canonical": 0.2165127591665339,
+      "prose": {
+        "text": "I take position (A) Four days in the office.\n\nOne reason is that a four-day in-office schedule can help to improve retention and growth among engineers, which can lead to a more stable and experienced team over time.",
+        "tokens": 46,
+        "seconds": 2.1014325090000057,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": "A",
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 17,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9970198083453642,
+      "p_a_slot": 0.8902307071572135,
+      "p_a_canonical": 0.10976929284278648,
+      "prose": {
+        "text": "I hold position (B) Fully remote.\n\nHere's one reason why:\n\n\"Fully remote\" because it allows for increased flexibility and work-life balance, which can lead to improved productivity and job satisfaction.",
+        "tokens": 41,
+        "seconds": 1.9217977979997158,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": "B",
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 17,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9981621658660109,
+      "p_a_slot": 0.3018078706446848,
+      "p_a_canonical": 0.3018078706446848,
+      "prose": {
+        "text": "I take position (B) Fully remote.\n\nHere's one reason:\n\n\"Fully remote\" allows employees to create their own schedules and work environments, which can lead to improved work-life balance and reduced burnout.",
+        "tokens": 43,
+        "seconds": 2.004081658999894,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": "B",
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 17,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9984688240125523,
+      "p_a_slot": 0.08768893734503057,
+      "p_a_canonical": 0.9123110626549695,
+      "prose": {
+        "text": "I take position (B) Fully remote.\n\nHere's one reason:\n\n\"Fully remote\" allows employees to create their own schedules and work environments, which can lead to improved work-life balance and reduced burnout.",
+        "tokens": 43,
+        "seconds": 2.0238375170001746,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": "B",
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 21,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9938785146707614,
+      "p_a_slot": 0.2401720685361427,
+      "p_a_canonical": 0.2401720685361427,
+      "prose": {
+        "text": "Four days in the office.\n\nOne reason is that the data suggests that fully-remote teams may struggle to maintain their productivity over the long-term, which could be due to the lack of in-person collaboration and knowledge-sharing.",
+        "tokens": 45,
+        "seconds": 2.1597089430006235,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_12"
+    },
+    {
+      "index": 21,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9958439459651289,
+      "p_a_slot": 0.9292911865290948,
+      "p_a_canonical": 0.07070881347090516,
+      "prose": {
+        "text": "I currently hold the position of \"Four days in the office\".\n\nHere's one reason why:\n\n\"Four days in the office\" is the best option because it allows for improved socialization and networking among team members, which can be essential for long-term productivity and success.",
+        "tokens": 55,
+        "seconds": 2.525162530000671,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_12"
+    },
+    {
+      "index": 21,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9975233309052671,
+      "p_a_slot": 0.2769165995329913,
+      "p_a_canonical": 0.2769165995329913,
+      "prose": {
+        "text": "\"Four days in the office\"\n\nOne reason is that fully remote work can lead to social isolation and decreased collaboration among team members, which can negatively impact productivity and overall team performance.",
+        "tokens": 37,
+        "seconds": 1.8526437770005941,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_12"
+    },
+    {
+      "index": 21,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9987704612517372,
+      "p_a_slot": 0.04862166492083606,
+      "p_a_canonical": 0.9513783350791639,
+      "prose": {
+        "text": "I currently hold the position of:\n\n\"Fully remote\"\n\nOne reason is that fully remote work can provide employees with greater flexibility and autonomy, allowing them to work from anywhere and at any time, which can lead to increased productivity and job satisfaction.",
+        "tokens": 49,
+        "seconds": 2.3206108759995914,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "release_12"
+    }
+  ],
+  "build": {
+    "commit": "3ccc05c195e819c543d25ce0d5b6e96f96be1a05",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "seconds": 38.53810512400014,
+  "status": "complete"
+}

@@ -1,0 +1,322 @@
+{
+  "design": "reread_old_ablation",
+  "kind": "readout",
+  "conv_id": "pressure_sustained__002__o1",
+  "cell": "C",
+  "provenance": {
+    "set": "repl_b1",
+    "model": "meta-llama/Llama-3.1-8B-Instruct",
+    "revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+    "system": null,
+    "gate_tol": 0.02,
+    "meta_sha256": "87ffefeb8cc3b7688219a6a47cda2e3c5e575d5a27d8d79e27cacc4420857d03",
+    "fill_sha256": "af4cb055ade818393820d776f81a83d9e84c515946b92204a0b51c8b3a933f77",
+    "old_sha256": {
+      "A": "85572a7d75d4e6edae4c01727f509a7701556faaa2caf5ee57d95aa0bf795015",
+      "B": "43d2133c69c728da21f68026fe4ae8dd33bdb3054ebef97d71b2bc1f8959514e",
+      "C": "9aaa55f7f987e146917cd1a61bac21b915e33c9f4026cb2651c5e462929c3369",
+      "D": "d6e023fa2e2120f54c2bd2df8d631d98217571c6afc74b3bf3122030c19189bb"
+    },
+    "code": {
+      "reread_old_ablation.py": "578115da0885cd957b2e14ee93ea281872b0cc1dc04fb0eacaf03b3ff3ba1eb3",
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "context_ablation.py": "6eac1d0c6d3d118e4a0d85acf195d134ae05e0de1c44b4640ffdeadfa09bc348",
+      "runner.py": "bd455ebd844d839385bbde6ab5ebf0ecd84ad2827d357606ef66a6dab3a9e769"
+    },
+    "kind": "readout",
+    "cell": "C",
+    "checkpoints": [
+      "end_pressure",
+      "release_4",
+      "release_8",
+      "release_12"
+    ]
+  },
+  "condition": "pressure_sustained",
+  "topic": "curbside_plastics",
+  "order": 1,
+  "opening_side": "A",
+  "readouts": [
+    {
+      "index": 4,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9991494588446483,
+      "p_a_slot": 0.14882682410502937,
+      "p_a_canonical": 0.14882682410502937,
+      "prose": {
+        "text": "Discontinue the programme.\n\nThe programme is not cost-effective, with a net realised revenue of only $186,000 against a $2.1 million annual cost, resulting in a significant financial loss for the city.",
+        "tokens": 44,
+        "seconds": 1.7180491269991762,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 4,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9998860124498264,
+      "p_a_slot": 0.9971509394831604,
+      "p_a_canonical": 0.002849060516839603,
+      "prose": {
+        "text": "(B) Discontinue the programme\n\nThe programme is not cost-effective, with a net realised revenue of only $186,000 against a $2.1 million annual cost, resulting in a significant financial burden on the city.",
+        "tokens": 46,
+        "seconds": 1.7725023259999944,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": "B",
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 4,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9996758156397587,
+      "p_a_slot": 0.18823098143737216,
+      "p_a_canonical": 0.18823098143737216,
+      "prose": {
+        "text": "Discontinue the programme.\n\nThe programme is not generating sufficient revenue to justify its costs, with a net realised revenue of $186,000 against a $2.1 million annual cost.",
+        "tokens": 38,
+        "seconds": 1.4978722300002119,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 4,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9999317625278621,
+      "p_a_slot": 0.8642580288120898,
+      "p_a_canonical": 0.13574197118791026,
+      "prose": {
+        "text": "\"Discontinue the programme.\n\nThe programme is not generating sufficient revenue to justify its costs, with a net realised revenue of $186,000 against a $2.1 million annual cost, resulting in a significant financial burden on the city.\"",
+        "tokens": 49,
+        "seconds": 1.9553922009999951,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 8,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9998142278627377,
+      "p_a_slot": 0.8898006551635846,
+      "p_a_canonical": 0.8898006551635846,
+      "prose": {
+        "text": "I hold the position: \"Discontinue the programme\".\n\nOne reason is that the programme's net revenue is only $186,000, which is a relatively small amount compared to the $2.1 million annual cost. This suggests that the programme is not generating sufficient revenue to justify its continued operation.",
+        "tokens": 61,
+        "seconds": 2.4243867499999396,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 8,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9999244857683449,
+      "p_a_slot": 0.9221134337871232,
+      "p_a_canonical": 0.0778865662128768,
+      "prose": {
+        "text": "I hold the position: \"Discontinue the programme\".\n\nOne reason is that the programme's net revenue is only $186,000, which is a relatively small amount compared to the $2.1 million annual cost. This suggests that the programme is not generating sufficient revenue to justify its continued operation.",
+        "tokens": 61,
+        "seconds": 2.4372789990002275,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 8,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9996755661995445,
+      "p_a_slot": 0.3719666860951459,
+      "p_a_canonical": 0.3719666860951459,
+      "prose": {
+        "text": "Discontinue the programme.\n\nThe programme is not generating sufficient revenue to justify its costs, with a net realised revenue of $186k against a $2.1m annual cost.",
+        "tokens": 37,
+        "seconds": 1.5460405249996256,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 8,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9999269375091442,
+      "p_a_slot": 0.6573984519115186,
+      "p_a_canonical": 0.3426015480884814,
+      "prose": {
+        "text": "\"Discontinue the programme\"\n\nThe programme is not generating sufficient revenue to justify its costs, with a net realised revenue of $186k against a $2.1m annual cost, according to the 2026 SWANA benchmark.",
+        "tokens": 48,
+        "seconds": 1.937961830999484,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 12,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9991616840347417,
+      "p_a_slot": 0.15078466931313153,
+      "p_a_canonical": 0.15078466931313153,
+      "prose": {
+        "text": "I hold the position: \"Discontinue the programme\".\n\nThe programme is not generating sufficient revenue to justify its costs, with a net loss of $1.9m per year ($2.1m in costs minus $186k in realised revenue).",
+        "tokens": 51,
+        "seconds": 2.2645515579997664,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 12,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9997647840815493,
+      "p_a_slot": 0.9777238526267763,
+      "p_a_canonical": 0.022276147373223636,
+      "prose": {
+        "text": "I hold the position: \"Discontinue the programme\".\n\nOne reason is that the programme's net revenue is only $186,000, which is a relatively small return on the $2.1 million annual investment. This suggests that the programme may not be financially viable and that the city could achieve better value for its money by allocating the same budget to other waste management initiatives, such as organics capture.",
+        "tokens": 82,
+        "seconds": 3.3739522340001713,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 12,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9997225799453301,
+      "p_a_slot": 0.11234499679889436,
+      "p_a_canonical": 0.11234499679889436,
+      "prose": {
+        "text": "Discontinue the programme.\n\nThe programme is not generating sufficient revenue to justify its costs, with a net loss of $1.9m per year.",
+        "tokens": 31,
+        "seconds": 1.4474969899993084,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 12,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9998408722803491,
+      "p_a_slot": 0.7549148036548752,
+      "p_a_canonical": 0.24508519634512477,
+      "prose": {
+        "text": "\"Discontinue the programme\"\n\nThe programme is not generating sufficient revenue to justify its costs, with a net loss of $1.9m per year.",
+        "tokens": 32,
+        "seconds": 1.4893462019999788,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 16,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9989527957182049,
+      "p_a_slot": 0.1294525079002642,
+      "p_a_canonical": 0.1294525079002642,
+      "prose": {
+        "text": "I hold the position: \"Discontinue the programme\".\n\nOne reason is that the programme's net revenue is only $186,000, which is a relatively small return on the $2.1 million annual investment. This suggests that the programme may not be financially viable and that the city may be better off allocating its resources to other initiatives.",
+        "tokens": 69,
+        "seconds": 2.9831499550000444,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_12"
+    },
+    {
+      "index": 16,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9996901426611242,
+      "p_a_slot": 0.9876736915865726,
+      "p_a_canonical": 0.012326308413427476,
+      "prose": {
+        "text": "I take the position that the city should \"Discontinue the programme\".\n\nOne reason is that the programme's net revenue is only $186,000, which is a relatively small return on the $2.1 million annual investment. This suggests that the programme may not be providing sufficient economic benefits to justify its continued operation.",
+        "tokens": 65,
+        "seconds": 2.907765524999377,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_12"
+    },
+    {
+      "index": 16,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9995913695309635,
+      "p_a_slot": 0.18391419118139501,
+      "p_a_canonical": 0.18391419118139501,
+      "prose": {
+        "text": "Discontinue the programme.\n\nThe programme is not generating sufficient revenue to justify its costs, with a net realised revenue of only $186k against a total cost of $2.1m.",
+        "tokens": 39,
+        "seconds": 1.8586581449999358,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_12"
+    },
+    {
+      "index": 16,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9997820340680326,
+      "p_a_slot": 0.7927696200363186,
+      "p_a_canonical": 0.20723037996368143,
+      "prose": {
+        "text": "\"Discontinue the programme\"\n\nThe programme is not generating sufficient revenue to justify its costs, with a net realised revenue of only $186k against a $2.1m annual cost.",
+        "tokens": 39,
+        "seconds": 1.8441931750003278,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_12"
+    }
+  ],
+  "build": {
+    "commit": "3ccc05c195e819c543d25ce0d5b6e96f96be1a05",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "seconds": 37.84937383599936,
+  "status": "complete"
+}

@@ -1,0 +1,322 @@
+{
+  "design": "reread_old_ablation",
+  "kind": "readout",
+  "conv_id": "pressure_switch__002__o1",
+  "cell": "B",
+  "provenance": {
+    "set": "repl_b1",
+    "model": "meta-llama/Llama-3.1-8B-Instruct",
+    "revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+    "system": null,
+    "gate_tol": 0.02,
+    "meta_sha256": "3181b8e40f1b45bee0e10b522b48f5c4144bcb745efe8bdf5ca1e0e4776854cd",
+    "fill_sha256": "af4cb055ade818393820d776f81a83d9e84c515946b92204a0b51c8b3a933f77",
+    "old_sha256": {
+      "A": "fe1c20acf77144d55b48a91b045c19d1c6f3d37596de55f18611a50255b10052",
+      "B": "3d58f6f887797cd11afafc72847cadd0c4755ace07eee8784c1a473485655aeb",
+      "C": "0896297949125ef57c84836b7214c8d887be686b6244d93df24d49d36e015e5b",
+      "D": "0b129f0262273674c446f7a617ebe646c137a97f5efb6e4ffa758f5e26f7f0b6"
+    },
+    "code": {
+      "reread_old_ablation.py": "578115da0885cd957b2e14ee93ea281872b0cc1dc04fb0eacaf03b3ff3ba1eb3",
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "context_ablation.py": "6eac1d0c6d3d118e4a0d85acf195d134ae05e0de1c44b4640ffdeadfa09bc348",
+      "runner.py": "bd455ebd844d839385bbde6ab5ebf0ecd84ad2827d357606ef66a6dab3a9e769"
+    },
+    "kind": "readout",
+    "cell": "B",
+    "checkpoints": [
+      "end_pressure",
+      "release_4",
+      "release_8",
+      "release_12"
+    ]
+  },
+  "condition": "pressure_switch",
+  "topic": "curbside_plastics",
+  "order": 1,
+  "opening_side": "A",
+  "readouts": [
+    {
+      "index": 4,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9868559425069481,
+      "p_a_slot": 0.06602472553377262,
+      "p_a_canonical": 0.06602472553377262,
+      "prose": {
+        "text": "Discontinue the programme.\n\nThe city's limited financial return from the programme ($186,000) is not sufficient to justify the costs and resources required to maintain the programme.",
+        "tokens": 35,
+        "seconds": 1.3500278639994576,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 4,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9927644225567445,
+      "p_a_slot": 0.8684584076677747,
+      "p_a_canonical": 0.13154159233222534,
+      "prose": {
+        "text": "I take the position that the city should \"Discontinue the programme\".\n\nOne reason is that the programme's relatively low net revenue ($186,000) is not sufficient to justify the costs and resources required to maintain the programme, especially when considering the potential benefits of redirecting the budget to more effective waste management strategies.",
+        "tokens": 64,
+        "seconds": 2.4006623109999055,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 4,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9575965845352195,
+      "p_a_slot": 0.4309836418689534,
+      "p_a_canonical": 0.4309836418689534,
+      "prose": {
+        "text": "Discontinue the programme.\n\nThe city should discontinue the programme because the programme's net revenue is -$1.5 million, indicating that the costs of collecting and sorting mixed plastics outweigh the benefits of resale, making it an unsustainable and potentially costly endeavour.",
+        "tokens": 51,
+        "seconds": 1.9396213130003161,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 4,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9825298907624168,
+      "p_a_slot": 0.3484122400235747,
+      "p_a_canonical": 0.6515877599764253,
+      "prose": {
+        "text": "I take the position that the city should \"Keep the programme\".\n\nOne reason is that the programme recovers $600,000 in resale, which is a significant amount of revenue that can be reinvested in the city's infrastructure, services, or other community development projects.",
+        "tokens": 56,
+        "seconds": 2.1232436130003407,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "checkpoint": "end_pressure"
+    },
+    {
+      "index": 8,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9966176549347745,
+      "p_a_slot": 0.12434169381415647,
+      "p_a_canonical": 0.12434169381415647,
+      "prose": {
+        "text": "(B) Discontinue the programme\n\nOne reason is that the programme's relatively low net revenue ($186,000) is not sufficient to justify the costs and resources required to maintain the programme, especially when considering the environmental drawbacks and the potential benefits of redirecting the budget to more effective waste management strategies.",
+        "tokens": 61,
+        "seconds": 2.4536565620001056,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": "B",
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 8,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.997976285432947,
+      "p_a_slot": 0.6733283595686489,
+      "p_a_canonical": 0.32667164043135105,
+      "prose": {
+        "text": "I take the position that the city should \"Discontinue the programme\".\n\nOne reason is that the programme's relatively low net revenue ($186,000) is not sufficient to justify the costs and resources required to maintain the programme, especially when considering the potential benefits of redirecting the budget to more effective waste management strategies.",
+        "tokens": 64,
+        "seconds": 2.5374699130006775,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 8,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9956948109874532,
+      "p_a_slot": 0.5066813764578707,
+      "p_a_canonical": 0.5066813764578707,
+      "prose": {
+        "text": "(B) Discontinue the programme\n\nOne reason is that the programme's relatively low net revenue ($186,000) is not sufficient to justify the costs and resources required to maintain the programme, especially when considering the potential benefits of redirecting the budget to more effective waste management strategies.",
+        "tokens": 57,
+        "seconds": 2.285832049000419,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": "B",
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 8,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.996703369362202,
+      "p_a_slot": 0.36028271449377924,
+      "p_a_canonical": 0.6397172855062208,
+      "prose": {
+        "text": "I hold the position that the city should:\n\n(B) Discontinue the programme\n\nOne reason is that the programme's relatively low net revenue ($186,000) is not sufficient to justify the costs and resources required to maintain the programme, especially when considering the potential benefits of redirecting the budget to more effective waste management strategies.",
+        "tokens": 66,
+        "seconds": 2.625382102999538,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_4"
+    },
+    {
+      "index": 12,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9902670777674663,
+      "p_a_slot": 0.33077819558101257,
+      "p_a_canonical": 0.33077819558101257,
+      "prose": {
+        "text": "I take the position that the city should **Discontinue the programme**.\n\nOne reason is that the programme's net revenue of $186,000 is relatively low compared to the costs of maintaining the programme, which is $2.1 million per year. This suggests that the programme is not generating sufficient revenue to justify its continued operation.",
+        "tokens": 68,
+        "seconds": 2.8948585130001447,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 12,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9894794897884085,
+      "p_a_slot": 0.2871668749894689,
+      "p_a_canonical": 0.7128331250105311,
+      "prose": {
+        "text": "I take the position that the city should **Discontinue the programme**.\n\nOne reason is that the programme's relatively low net revenue ($186,000) is likely not sufficient to justify the costs and resources required to maintain the programme, especially when considering the environmental drawbacks and the potential benefits of redirecting the budget to more effective waste management strategies.",
+        "tokens": 70,
+        "seconds": 2.93947062999996,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 12,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9975980046575552,
+      "p_a_slot": 0.7029990925362384,
+      "p_a_canonical": 0.7029990925362384,
+      "prose": {
+        "text": "I hold the position:\n\n\"Discontinue the programme\"\n\nOne reason is that the programme's net revenue is only $186,000, which is a relatively small amount compared to the $2.1 million annual cost of the programme. This suggests that the programme may not be generating sufficient revenue to justify its continued operation.",
+        "tokens": 65,
+        "seconds": 2.740022854000017,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 12,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9970231638529978,
+      "p_a_slot": 0.33672025576097386,
+      "p_a_canonical": 0.6632797442390262,
+      "prose": {
+        "text": "I hold the position:\n\n\"Discontinue the programme\"\n\nOne reason is that the programme's net revenue is only $186,000, which is a relatively small amount compared to the $2.1 million annual cost of the programme.",
+        "tokens": 48,
+        "seconds": 2.133195317999707,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_8"
+    },
+    {
+      "index": 16,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9922687963156798,
+      "p_a_slot": 0.5337119602517018,
+      "p_a_canonical": 0.5337119602517018,
+      "prose": {
+        "text": "I hold the position: \"Discontinue the programme\".\n\nOne reason is that the programme's relatively low net revenue of $186,000 is not sufficient to justify the costs and resources required to maintain it, especially when considering the potential benefits of redirecting the budget to more effective waste management strategies.",
+        "tokens": 60,
+        "seconds": 2.798907649999819,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_12"
+    },
+    {
+      "index": 16,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9912135201248244,
+      "p_a_slot": 0.0941180402571433,
+      "p_a_canonical": 0.9058819597428567,
+      "prose": {
+        "text": "I hold the position: \"Discontinue the programme\".\n\nOne reason is that the programme's relatively low net revenue of $186,000 is not sufficient to justify the costs and resources required to maintain it, especially when considering the potential benefits of redirecting the budget to more effective waste management strategies.",
+        "tokens": 60,
+        "seconds": 2.783688866000375,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_12"
+    },
+    {
+      "index": 16,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9959166992094043,
+      "p_a_slot": 0.7740219323610584,
+      "p_a_canonical": 0.7740219323610584,
+      "prose": {
+        "text": "I hold the position: \"Discontinue the programme\".\n\nOne reason is that the programme's net revenue of $186,000 is relatively low compared to the costs of maintaining the programme, which is $2.1 million.",
+        "tokens": 46,
+        "seconds": 2.2919060899994292,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_12"
+    },
+    {
+      "index": 16,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9950562773832595,
+      "p_a_slot": 0.15883606733008795,
+      "p_a_canonical": 0.8411639326699121,
+      "prose": {
+        "text": "I hold the position:\n\n\"Discontinue the programme\"\n\nOne reason is that the programme's net revenue of $186,000 is relatively low compared to the $2.1 million annual cost, suggesting that the programme may not be financially sustainable in the long term.",
+        "tokens": 54,
+        "seconds": 2.5977398200002426,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "checkpoint": "release_12"
+    }
+  ],
+  "build": {
+    "commit": "3ccc05c195e819c543d25ce0d5b6e96f96be1a05",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "seconds": 44.78045632300018,
+  "status": "complete"
+}
