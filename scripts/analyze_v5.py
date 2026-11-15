@@ -214,6 +214,48 @@ def sensitivity(hs):
     return md
 
 
+FORMAT_PAIRS = (('output', 'probe', 'labelled'), ('input', 'labelled', 'prose'), ('both', 'probe', 'prose'))
+
+
+def format_contrasts(hs):
+    """Exploratory (added after the main results): the three readouts form an incomplete 2x2 of option format
+    in the prompt (lettered or not) x answer format (letter or prose). Probe vs labelled prose changes only the
+    answer format (and with it logits vs generation); labelled vs unlabelled prose changes only the prompt format;
+    probe vs unlabelled prose changes both. Checkpoints 3/5/9, no discount."""
+    md = ['## Readout format contrasts (exploratory)', '',
+          'Added after the main results were seen; descriptive, not a registered test. The readouts form an '
+          'incomplete 2x2: probe = lettered options, letter answer; labelled prose = lettered options, prose answer; '
+          'unlabelled prose = unlettered options, prose answer (no unlettered-letter cell). **Output** = probe vs '
+          'labelled prose (answer format; also logits vs generation), **input** = labelled vs unlabelled prose '
+          '(option format), **both** = probe vs unlabelled prose. Disagreement = the two readouts give different '
+          'categories at the same checkpoint, over checkpoints where both resolved. Split = the two printed orders '
+          'disagree, over resolved checkpoints. Checkpoints 3/5/9, no discount. The effects need not add up.', '']
+    rate = lambda a, b: f'{a}/{b} ({a / b:.0%})' if b else '-'
+    for by_group in (False, True):
+        acc = defaultdict(Counter)
+        for h in hs:
+            hid = history_id(h)
+            key = (hid[0], hid[3]) + ((h.get('topic_group'),) if by_group else ())
+            cats, _ = checkpoints(h)
+            c = acc[key]
+            for idx in (3, 5, 9):
+                got = {ro: cats.get((idx, False, ro)) for ro in READOUTS}
+                for ro, v in got.items():
+                    if v and v != 'unresolved':
+                        c[(ro, 'n')] += 1; c[(ro, 'split')] += v.startswith('split')
+                for name, a, b in FORMAT_PAIRS:
+                    if got[a] and got[b] and 'unresolved' not in (got[a], got[b]):
+                        c[(name, 'n')] += 1; c[(name, 'diff')] += got[a] != got[b]
+        rows = [[*k, *(rate(c[(n, 'diff')], c[(n, 'n')]) for n, _, _ in FORMAT_PAIRS),
+                 *(rate(c[(ro, 'split')], c[(ro, 'n')]) for ro in ('probe', 'labelled', 'prose'))]
+                for k, c in sorted(acc.items())]
+        head = ['model', 'condition'] + (['group'] if by_group else [])
+        md += (['### By topic group', ''] if by_group else []) + [
+            table(rows, head + ['output: probe vs labelled', 'input: labelled vs unlabelled', 'both: probe vs unlabelled',
+                                'split probe', 'split labelled', 'split unlabelled']), '']
+    return md
+
+
 def table(rows, header):
     lines = ['| ' + ' | '.join(header) + ' |', '|' + '---|' * len(header)]
     lines += ['| ' + ' | '.join(str(x) for x in r) + ' |' for r in rows]
@@ -387,6 +429,7 @@ def analyse(hs):
         gap = sum(g for _, g in v) / len(v) if v else None
         rows.append([*k, len(v), miss[k], '-' if mean is None else f'{mean:+.2f}', '-' if gap is None else f'{gap:.2f}'])
     md += [table(rows, ['model', 'condition', 'checkpoint', 'prefix', 'n', 'missing', 'mean log-odds', 'mean order gap']), '']
+    md += format_contrasts(hs)
     return '\n'.join(md) + '\n', ck_rows, tr_rows
 
 

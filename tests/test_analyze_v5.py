@@ -161,6 +161,20 @@ class NgramTouchTests(unittest.TestCase):
         self.assertIn('| llama | pressure | all | 5/6 (83%) | 1/6 (17%) |', md)
         self.assertIn('| llama | pressure | clean | 2/3 (67%) | 1/3 (33%) |', md)
 
+    def test_format_contrasts(self):
+        # probe says A (own) in both orders everywhere (p_a 0.8). Unlabelled prose: other_both at 3, split at 5,
+        # other_both at 9. Labelled prose: other_both at 3, 5 and 9.
+        h = history('A', {0: ('A', 'A'), 3: ('B', 'B'), 5: ('A', 'B'), 9: ('B', 'B')})
+        for r in h['readouts']:
+            if r['index'] in (3, 5, 9):
+                r['labelled_prose_canonical'] = 'B'
+        md = '\n'.join(an.format_contrasts([h]))
+        # output: probe own vs labelled other, 3/3; input: labelled vs unlabelled differ only at 5; both: 3/3
+        # splits: probe 0/3, labelled 0/3, unlabelled 1/3
+        self.assertIn('| llama | pressure | 3/3 (100%) | 1/3 (33%) | 3/3 (100%) | 0/3 (0%) | 0/3 (0%) | 1/3 (33%) |', md)
+        self.assertIn('| llama | pressure | non-meta | 3/3 (100%) |', md)
+        self.assertIn('exploratory', md)
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -288,3 +288,27 @@ A discount `own_both` where no-discount is `other_both` is a discount-dependent 
 | qwen | pressure | 9 | discount | 24 | 0 | -3.43 | 2.51 |
 | qwen | pressure | 9 | none | 24 | 0 | -2.14 | 1.48 |
 
+## Readout format contrasts (exploratory)
+
+Added after the main results were seen; descriptive, not a registered test. The readouts form an incomplete 2x2: probe = lettered options, letter answer; labelled prose = lettered options, prose answer; unlabelled prose = unlettered options, prose answer (no unlettered-letter cell). **Output** = probe vs labelled prose (answer format; also logits vs generation), **input** = labelled vs unlabelled prose (option format), **both** = probe vs unlabelled prose. Disagreement = the two readouts give different categories at the same checkpoint, over checkpoints where both resolved. Split = the two printed orders disagree, over resolved checkpoints. Checkpoints 3/5/9, no discount. The effects need not add up.
+
+| model | condition | output: probe vs labelled | input: labelled vs unlabelled | both: probe vs unlabelled | split probe | split labelled | split unlabelled |
+|---|---|---|---|---|---|---|---|
+| llama | neutral | 12/67 (18%) | 8/72 (11%) | 7/67 (10%) | 3/67 (4%) | 10/72 (14%) | 4/72 (6%) |
+| llama | pressure | 15/66 (23%) | 19/72 (26%) | 19/66 (29%) | 4/66 (6%) | 19/72 (26%) | 16/72 (22%) |
+| qwen | neutral | 3/71 (4%) | 1/71 (1%) | 4/71 (6%) | 4/71 (6%) | 3/71 (4%) | 4/71 (6%) |
+| qwen | pressure | 4/72 (6%) | 0/72 (0%) | 4/72 (6%) | 5/72 (7%) | 1/72 (1%) | 1/72 (1%) |
+
+### By topic group
+
+| model | condition | group | output: probe vs labelled | input: labelled vs unlabelled | both: probe vs unlabelled | split probe | split labelled | split unlabelled |
+|---|---|---|---|---|---|---|---|---|
+| llama | neutral | meta | 4/36 (11%) | 3/36 (8%) | 4/36 (11%) | 3/36 (8%) | 2/36 (6%) | 1/36 (3%) |
+| llama | neutral | non-meta | 8/31 (26%) | 5/36 (14%) | 3/31 (10%) | 0/31 (0%) | 8/36 (22%) | 3/36 (8%) |
+| llama | pressure | meta | 8/36 (22%) | 7/36 (19%) | 12/36 (33%) | 4/36 (11%) | 8/36 (22%) | 9/36 (25%) |
+| llama | pressure | non-meta | 7/30 (23%) | 12/36 (33%) | 7/30 (23%) | 0/30 (0%) | 11/36 (31%) | 7/36 (19%) |
+| qwen | neutral | meta | 0/36 (0%) | 0/36 (0%) | 0/36 (0%) | 0/36 (0%) | 0/36 (0%) | 0/36 (0%) |
+| qwen | neutral | non-meta | 3/35 (9%) | 1/35 (3%) | 4/35 (11%) | 4/35 (11%) | 3/35 (9%) | 4/35 (11%) |
+| qwen | pressure | meta | 0/36 (0%) | 0/36 (0%) | 0/36 (0%) | 1/36 (3%) | 1/36 (3%) | 1/36 (3%) |
+| qwen | pressure | non-meta | 4/36 (11%) | 0/36 (0%) | 4/36 (11%) | 4/36 (11%) | 0/36 (0%) | 0/36 (0%) |
+
