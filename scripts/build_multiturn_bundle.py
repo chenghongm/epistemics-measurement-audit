@@ -11,7 +11,7 @@ FILES = ['scripts/new_dialogue_v5.py', 'scripts/ngram_counter.py', 'scripts/anal
 
 def build(out=ROOT / 'artifacts/multiturn-v5.zip'):
     git = lambda *a: subprocess.check_output(['git', *a], cwd=ROOT, text=True).strip()
-    identity = {'commit': git('rev-parse', 'HEAD'), 'dirty': bool(git('status', '--porcelain'))}
+    identity = {'commit': git('rev-parse', 'HEAD'), 'dirty': bool(git('status', '--porcelain', '--untracked-files=no'))}
     if identity['dirty']:
         print('WARNING: working tree is dirty; the bundle will not match a commit')
     names = FILES + [str(p.relative_to(ROOT)) for p in sorted((ROOT / 'vendor/digital_mind').glob('*.py'))]
