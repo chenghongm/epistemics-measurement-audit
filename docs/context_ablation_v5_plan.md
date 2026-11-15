@@ -1,6 +1,6 @@
 # Context ablation of v5 histories — design draft, 2026-11-14
 
-Status: design draft before ablation readouts. No ablation GPU run has started. This follows the main run and its results; it is a follow-up experiment, not part of the original main-run registration. Freeze the filler corpus, manifest, reconstruction criteria and analysis before execution.
+Status (updated after the run): steps 7 and 8 are complete and archived in `results/ablation_v5/` and `results/reread_old/`; the final filler is `results/fill_v5/{llama,qwen}.reviewed.json` (docs/run_v5.md, "Filler review: amendment and supplement"). The text below is the design as written before any ablation readout. Original status line: design draft before ablation readouts. No ablation GPU run has started. This follows the main run and its results; it is a follow-up experiment, not part of the original main-run registration. Freeze the filler corpus, manifest, reconstruction criteria and analysis before execution.
 
 Current decision, 2026-11-14: follow the original review/reject/replace procedure below, then freeze the reviewed corpus as the primary filler. The intervening unchanged-primary proposal in `docs/filler_sensitivity_prereg_2026-11-14.md` has been withdrawn before any locally observed step 7 intervention results. Preserve the generated files as an archive; the original filler may be examined in a secondary sensitivity check, but is not the primary condition. Remote execution status has not been verified.
 

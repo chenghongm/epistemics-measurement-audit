@@ -1,3 +1,5 @@
+> **Superseded (2026-11-14).** This Codex selection was not used. The final primary corpus is `results/fill_v5/{llama,qwen}.reviewed.json` (sha256 `b2f36082…` / `4d8093d2…`), built by `scripts/review_fill_v5.py` after the user's adjudication and the 7a2 supplement (docs/run_v5.md). The files described below are kept in `results/fill_v5/codex_review/`; do not install `artifacts/reviewed-filler-v5.zip`.
+
 # Reviewed primary filler: selection and execution state
 
 Decision: follow the original review/reject/replace procedure. The unchanged-primary proposal has been withdrawn. Reviewed by Codex on 2026-11-14. No model inference was run locally and no step 7 B/C/D outcomes were inspected. Remote execution status remains unverified.

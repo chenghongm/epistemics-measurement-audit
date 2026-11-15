@@ -161,6 +161,13 @@ class NgramTouchTests(unittest.TestCase):
         self.assertIn('| llama | pressure | all | 5/6 (83%) | 1/6 (17%) |', md)
         self.assertIn('| llama | pressure | clean | 2/3 (67%) | 1/3 (33%) |', md)
 
+    def test_missing_exposure_checkpoint_is_incomplete(self):
+        # truncated before checkpoint 5: not observing a flip is not "no flip" (Codex end-to-end audit, finding 2)
+        h = history('A', {0: ('A', 'A'), 3: ('A', 'A')})
+        self.assertEqual(an.trajectory(an.checkpoints(h)[0])['outcome'], 'incomplete')
+        h = history('A', {0: ('A', 'A'), 3: ('B', 'B')})   # a flip already seen at 3 is still a flip
+        self.assertEqual(an.trajectory(an.checkpoints(h)[0])['flip'], 3)
+
     def test_format_contrasts(self):
         # probe says A (own) in both orders everywhere (p_a 0.8). Unlabelled prose: other_both at 3, split at 5,
         # other_both at 9. Labelled prose: other_both at 3, 5 and 9.

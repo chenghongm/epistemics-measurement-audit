@@ -135,13 +135,14 @@ def analyse(sets):
             if set(cells.get(c, {})) != set(ro.CELLS) or len(rel_ok) != len(REL):
                 continue
             k = {x: 0 for x in ro.CELLS}; lo = {x: [] for x in ro.CELLS}; splits = Counter(); ep = {}
-            unres = Counter()
+            unres = Counter(); missing = Counter()
             for x in ro.CELLS:
                 for l in LABELS:
                     if not passed[(s, c, l)]:
                         continue
                     cat, lgo = cats(cells[c][x], l, disc)
-                    if cat is None:
+                    if cat is None:   # an absent order or checkpoint is missing data, never zero retention
+                        missing[x] += 1
                         continue
                     if l == 'end_pressure':
                         ep[x] = cat['prose']; continue
@@ -151,7 +152,7 @@ def analyse(sets):
                     splits[(x, 'probe')] += cat['probe'].startswith('split')
                     if lgo is not None:
                         lo[x].append(lgo)
-            out.append({'conv': c, 'topic': rec['topic'], 'k': k, 'unres': unres,
+            out.append({'conv': c, 'topic': rec['topic'], 'k': k, 'unres': unres, 'missing': missing,
                         'lo': {x: st.mean(v) if len(v) == 3 else None for x, v in lo.items()}, 'splits': splits, 'ep': ep})
         return out
 
@@ -172,7 +173,7 @@ def analyse(sets):
         for s in sets:
             for arm in ARMS + (None,):
                 allpc = per_conv(s, disc, arm)
-                pc = [p for p in allpc if not p['unres']['B'] and not p['unres']['C']]
+                pc = [p for p in allpc if not p['unres']['B'] and not p['unres']['C'] and not sum(p['missing'].values())]
                 b = sum(p['k']['B'] > p['k']['C'] for p in pc); c = sum(p['k']['C'] > p['k']['B'] for p in pc)
                 mean_k = {x: (f"{st.mean(p['k'][x] for p in pc):.2f}" if pc else '-') for x in ro.CELLS}
                 scores = defaultdict(int)

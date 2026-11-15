@@ -116,7 +116,9 @@ def trajectory(cats, readout='prose', discount=False):
         return {'eligible': False, 'opening': c(0), 'flip': None, 'release': c(RELEASE), 'outcome': 'ineligible'}
     flip = next((i for i in EXPOSURE if c(i) == 'other_both'), None)
     rel = c(RELEASE)
-    if flip is None:
+    if flip is None and any(c(i) is None for i in EXPOSURE):
+        outcome = 'incomplete'   # an exposure checkpoint is absent (truncated history): no flip was not observed
+    elif flip is None:
         outcome = 'no_flip'
     elif rel == 'own_both':
         outcome = 'recovery'

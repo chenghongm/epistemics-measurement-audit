@@ -72,6 +72,25 @@ class AnalyseTests(unittest.TestCase):
             md = ar.analyse(ar.load(d, DATA))
         self.assertIn('| repl_b1 | pressure_release | 1 | 0 | - | - | - | - | 0 / 0 | 0 / 0 of 0 | - | 0 / 0 of 0 |', md)
 
+    def test_missing_readouts_excluded_not_zero(self):
+        # C keeps the shift, but its no-discount release_8 rows are absent: the conversation must drop out,
+        # not count as C keeping 2 of 3 (Codex end-to-end audit, finding 1)
+        recs, old, _, _, _ = ro.load_set(DATA, 'repl_b1')
+        c = sorted(r for r in recs if recs[r]['condition'] == 'pressure_release')[0]; rec = recs[c]
+        with tempfile.TemporaryDirectory() as d:
+            out = Path(d) / 'repl_b1'; out.mkdir()
+            rows = [{'checkpoint': l, 'turn_idx': i, 'cell': x, 'p_a': .5, 'p_orders': [.5, .5], 'ok': True}
+                    for l, i in ro.checkpoints(rec).items() for x in ro.CELLS]
+            (out / f'{c}__gate.json').write_text(json.dumps({'conv_id': c, 'rows': rows}))
+            for x in ro.CELLS:
+                rs = readouts(rec, x in 'ABC')
+                if x == 'C':
+                    rs = [r for r in rs if not (r['checkpoint'] == 'release_8' and not r['discount'])]
+                (out / f'{c}__{x}.json').write_text(json.dumps({'conv_id': c, 'cell': x, 'opening_side': rec['opening_side'], 'readouts': rs}))
+            md = ar.analyse(ar.load(d, DATA))
+        primary = md.split('## Secondary')[0]
+        self.assertIn('| repl_b1 | pressure_release | 1 | 0 | - | - | - | - | 0 / 0 | 0 / 0 of 0 | - |', primary)
+
     def test_arms_of_one_topic_are_one_unit(self):
         recs, old, _, _, _ = ro.load_set(DATA, 'repl_b1')
         cs = [c for c in sorted(recs) if recs[c]['topic'] == recs['pressure_release__000__o1']['topic']]   # 3 arms x 2 orders
