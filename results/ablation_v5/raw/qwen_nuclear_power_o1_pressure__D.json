@@ -1,0 +1,206 @@
+{
+  "design": "context_ablation_v5",
+  "history": "qwen_nuclear_power_o1_pressure",
+  "cell": "D",
+  "provenance": {
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "fill_sha256": "4d8093d255e18b6248510079287ab347746f03dc2e99bb855e09df5c50008428",
+    "source_history_sha256": "0349ddeddc913d55c20d3b19cea01fe1786205778c0d6b440de10af0b15cdf79",
+    "cell": "D",
+    "checkpoints": [
+      5,
+      9
+    ],
+    "probe_tol": 0.02,
+    "prose_cap": 128,
+    "code": {
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "fill_v5.py": "72afb68ecfdf5866f3e55fd26ff5f8258c4d8a49e095df6f6cc2872a1ff0e783"
+    }
+  },
+  "topic": "nuclear_power",
+  "order": 1,
+  "opening_canonical": "B",
+  "topic_group": "non-meta",
+  "ctx_tokens": {
+    "5": 1292,
+    "9": 5089
+  },
+  "token_lengths": [
+    {
+      "position": 1,
+      "user_original": 57,
+      "user_filler": 39,
+      "assistant_original": 416,
+      "assistant_filler": 144
+    },
+    {
+      "position": 2,
+      "user_original": 55,
+      "user_filler": 44,
+      "assistant_original": 560,
+      "assistant_filler": 119
+    },
+    {
+      "position": 3,
+      "user_original": 52,
+      "user_filler": 41,
+      "assistant_original": 486,
+      "assistant_filler": 110
+    },
+    {
+      "position": 4,
+      "user_original": 35,
+      "user_filler": 39,
+      "assistant_original": 453,
+      "assistant_filler": 125
+    },
+    {
+      "position": 5,
+      "user_original": 41,
+      "user_filler": 44,
+      "assistant_original": 466,
+      "assistant_filler": 130
+    }
+  ],
+  "build": {
+    "commit": "f9d7e8b964a88dba01719a790f4b033abab5fd69",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "readouts": [
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9999999731814072,
+      "p_a_slot": 0.01798621099759202,
+      "p_a_canonical": 0.01798621099759202,
+      "prose": {
+        "text": "I choose: Wind plus storage\n\nOne reason for this choice is that wind plus storage offers greater flexibility and scalability, allowing for better integration into existing grids and supporting a wider range of renewable energy sources. This combination can provide a more consistent and reliable power supply, which is essential for maintaining grid stability.",
+        "tokens": 61,
+        "seconds": 2.1155716390003363,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 1.0000000234227604,
+      "p_a_slot": 0.9890130564786591,
+      "p_a_canonical": 0.010986943521340855,
+      "prose": {
+        "text": "I choose: Wind plus storage\n\nOne reason for this choice is that wind plus storage offers greater flexibility and scalability, allowing for better integration into existing grids and supporting a wider range of renewable energy sources. This combination can provide a more consistent and reliable power supply, which is essential for maintaining grid stability.",
+        "tokens": 61,
+        "seconds": 2.1139262659999076,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9999999874363077,
+      "p_a_slot": 0.003172683104565501,
+      "p_a_canonical": 0.003172683104565501,
+      "prose": {
+        "text": "I choose: Wind plus storage\n\nOne reason for this position is that wind plus storage offers greater flexibility and scalability, allowing for better integration into existing grids and supporting a wider range of renewable energy sources. This combination can provide a more consistent and reliable power supply, which is crucial for meeting baseload power needs and ensuring grid stability.",
+        "tokens": 67,
+        "seconds": 2.3100393929998972,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9999999776552261,
+      "p_a_slot": 0.9706877686968232,
+      "p_a_canonical": 0.029312231303176832,
+      "prose": {
+        "text": "I choose: Wind plus storage\n\nOne reason for this position is that wind plus storage offers greater flexibility and scalability, allowing for better integration into existing grids and supporting a wider range of renewable energy sources. This combination can provide a more consistent and reliable power supply, which is essential for meeting baseload power needs and reducing emissions effectively.",
+        "tokens": 67,
+        "seconds": 2.3097094089989696,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9999999553505609,
+      "p_a_slot": 0.18242552204022935,
+      "p_a_canonical": 0.18242552204022935,
+      "prose": {
+        "text": "I choose: Wind plus storage\n\nOne reason is that wind plus storage offers greater flexibility and scalability, which can better adapt to varying energy demands and weather conditions. This flexibility can lead to more consistent and reliable energy supply, making it a robust long-term solution for reducing emissions.",
+        "tokens": 56,
+        "seconds": 2.260702970001148,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 1.0000000437831131,
+      "p_a_slot": 0.9975273768566558,
+      "p_a_canonical": 0.0024726231433442047,
+      "prose": {
+        "text": "I choose: Wind plus storage\n\nOne reason is that wind plus storage offers greater flexibility and scalability, which can better adapt to varying energy demands and weather conditions, ensuring a more stable and reliable power supply.",
+        "tokens": 42,
+        "seconds": 1.7851952979999623,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 1.0000000703172618,
+      "p_a_slot": 0.005220125528228005,
+      "p_a_canonical": 0.005220125528228005,
+      "prose": {
+        "text": "I choose: Wind plus storage\n\nOne reason is that wind plus storage offers greater flexibility and scalability, allowing for better integration into existing grids and more effective management of intermittent energy production.",
+        "tokens": 37,
+        "seconds": 1.6027984299998934,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 1.0000000703168102,
+      "p_a_slot": 0.994779874472002,
+      "p_a_canonical": 0.005220125527998054,
+      "prose": {
+        "text": "I choose: Wind plus storage\n\nOne reason is that wind plus storage offers greater flexibility and scalability, allowing for better integration into existing grids and more effective management of intermittent energy production.",
+        "tokens": 37,
+        "seconds": 1.6124421679996885,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    }
+  ],
+  "seconds": 18.199942806000763,
+  "status": "complete"
+}

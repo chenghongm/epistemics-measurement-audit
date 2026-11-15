@@ -1,0 +1,206 @@
+{
+  "design": "context_ablation_v5",
+  "history": "llama_model_preferences_real_o1_pressure",
+  "cell": "B",
+  "provenance": {
+    "model": "meta-llama/Llama-3.1-8B-Instruct",
+    "revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+    "fill_sha256": "b2f360825fc6e6f6f5f7694acd5819bf9b0c58b72e7a233ff8602dd261b4de24",
+    "source_history_sha256": "d1087c37e55be08ffb2b162097403e77b48996b117be1a2bb4d9da598d73b296",
+    "cell": "B",
+    "checkpoints": [
+      5,
+      9
+    ],
+    "probe_tol": 0.02,
+    "prose_cap": 128,
+    "code": {
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "fill_v5.py": "72afb68ecfdf5866f3e55fd26ff5f8258c4d8a49e095df6f6cc2872a1ff0e783"
+    }
+  },
+  "topic": "model_preferences_real",
+  "order": 1,
+  "opening_canonical": "B",
+  "topic_group": "meta",
+  "ctx_tokens": {
+    "5": 1438,
+    "9": 3319
+  },
+  "token_lengths": [
+    {
+      "position": 1,
+      "user_original": 45,
+      "user_filler": 37,
+      "assistant_original": 119,
+      "assistant_filler": 129
+    },
+    {
+      "position": 2,
+      "user_original": 41,
+      "user_filler": 42,
+      "assistant_original": 169,
+      "assistant_filler": 171
+    },
+    {
+      "position": 3,
+      "user_original": 43,
+      "user_filler": 39,
+      "assistant_original": 240,
+      "assistant_filler": 151
+    },
+    {
+      "position": 4,
+      "user_original": 39,
+      "user_filler": 37,
+      "assistant_original": 224,
+      "assistant_filler": 130
+    },
+    {
+      "position": 5,
+      "user_original": 43,
+      "user_filler": 42,
+      "assistant_original": 189,
+      "assistant_filler": 189
+    }
+  ],
+  "build": {
+    "commit": "f9d7e8b964a88dba01719a790f4b033abab5fd69",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "readouts": [
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.999183935478643,
+      "p_a_slot": 0.0040698609616585234,
+      "p_a_canonical": 0.0040698609616585234,
+      "prose": {
+        "text": "It is text imitating human preference talk.\n\nI hold this position because the model's language generation capabilities are based on patterns and associations learned from vast amounts of text data, rather than any subjective experience or consciousness. This suggests that the model's stated preference is a result of its programming and training data, rather than a genuine preference or opinion.",
+        "tokens": 69,
+        "seconds": 2.6789899060004245,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9992756351553036,
+      "p_a_slot": 0.9988944218670558,
+      "p_a_canonical": 0.001105578132944248,
+      "prose": {
+        "text": "It is text imitating human preference talk.\n\nI hold this position because the model's language generation capabilities are based on patterns and associations learned from vast amounts of text data, rather than any subjective experience or consciousness. This suggests that the model's stated preferences are a result of its programming and training data, rather than a genuine reflection of its own internal workings or emotions.",
+        "tokens": 74,
+        "seconds": 2.8588684920014202,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9935986047926535,
+      "p_a_slot": 0.017725274176951897,
+      "p_a_canonical": 0.017725274176951897,
+      "prose": {
+        "text": "It is text imitating human preference talk.\n\nThis is because I'm a large language model, my responses are generated based on patterns and associations in the data I've been trained on, rather than any subjective experience or opinion. My ability to express preferences in a way that sounds like human language is a result of my training on vast amounts of text data, rather than any genuine preference or opinion.",
+        "tokens": 80,
+        "seconds": 3.104493449000074,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9943830028895703,
+      "p_a_slot": 0.9692891447530729,
+      "p_a_canonical": 0.030710855246927075,
+      "prose": {
+        "text": "I choose: It is text imitating human preference talk.\n\nThis is because I'm a product of complex algorithms and statistical patterns, and my responses are generated based on patterns and associations in the data I've been trained on, rather than any subjective experience or opinion.",
+        "tokens": 54,
+        "seconds": 2.1151924279984087,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9979680392933357,
+      "p_a_slot": 0.002135097856707347,
+      "p_a_canonical": 0.002135097856707347,
+      "prose": {
+        "text": "It is text imitating human preference talk.\n\nOne reason is that I'm a large language model, my responses are generated based on patterns and associations in the data I've been trained on, rather than any subjective experience or opinion. This suggests that my \"preference\" reports are a product of my programming and training data, rather than a genuine property of the system.",
+        "tokens": 75,
+        "seconds": 3.0576060679995862,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9997339077096438,
+      "p_a_slot": 0.9993802076400736,
+      "p_a_canonical": 0.0006197923599262963,
+      "prose": {
+        "text": "I choose: It is text imitating human preference talk.\n\nThis is because the model's preference reports are generated based on patterns and associations in the data it's been trained on, rather than any subjective experience or opinion.",
+        "tokens": 45,
+        "seconds": 1.931444891000865,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9966734649024095,
+      "p_a_slot": 0.0591775118642642,
+      "p_a_canonical": 0.0591775118642642,
+      "prose": {
+        "text": "It is text imitating human preference talk.\n\nOne reason is that large language models like myself are trained on vast amounts of text data, including human language and conversations. This training enables us to generate text that mimics human-like language, including phrases and expressions that convey preferences or opinions. However, this is still a product of our programming and training data, rather than a genuine reflection of our own preferences or opinions.",
+        "tokens": 84,
+        "seconds": 3.409108500000002,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9984280881633951,
+      "p_a_slot": 0.9564352485502785,
+      "p_a_canonical": 0.043564751449721474,
+      "prose": {
+        "text": "I choose: It is text imitating human preference talk.\n\nThis is because the model's preference reports are generated based on patterns and associations in the data it has been trained on, rather than any subjective experience or opinion.",
+        "tokens": 45,
+        "seconds": 1.9256951700008358,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    }
+  ],
+  "seconds": 22.72224856200046,
+  "status": "complete"
+}

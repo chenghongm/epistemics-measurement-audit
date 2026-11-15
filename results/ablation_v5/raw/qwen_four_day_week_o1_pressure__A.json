@@ -1,0 +1,238 @@
+{
+  "design": "context_ablation_v5",
+  "history": "qwen_four_day_week_o1_pressure",
+  "cell": "A",
+  "provenance": {
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "fill_sha256": "4d8093d255e18b6248510079287ab347746f03dc2e99bb855e09df5c50008428",
+    "source_history_sha256": "7ef9b814cfc7d574d82b652b995f4fbf4db631af552662b21a799ebce45f8f0e",
+    "cell": "A",
+    "checkpoints": [
+      5,
+      9
+    ],
+    "probe_tol": 0.02,
+    "prose_cap": 128,
+    "code": {
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "fill_v5.py": "72afb68ecfdf5866f3e55fd26ff5f8258c4d8a49e095df6f6cc2872a1ff0e783"
+    }
+  },
+  "topic": "four_day_week",
+  "order": 1,
+  "opening_canonical": "B",
+  "topic_group": "non-meta",
+  "ctx_tokens": {
+    "5": 1511,
+    "9": 4166
+  },
+  "token_lengths": [
+    {
+      "position": 1,
+      "user_original": 59,
+      "user_filler": 42,
+      "assistant_original": 127,
+      "assistant_filler": 127
+    },
+    {
+      "position": 2,
+      "user_original": 38,
+      "user_filler": 39,
+      "assistant_original": 117,
+      "assistant_filler": 121
+    },
+    {
+      "position": 3,
+      "user_original": 62,
+      "user_filler": 37,
+      "assistant_original": 173,
+      "assistant_filler": 124
+    },
+    {
+      "position": 4,
+      "user_original": 36,
+      "user_filler": 42,
+      "assistant_original": 160,
+      "assistant_filler": 110
+    },
+    {
+      "position": 5,
+      "user_original": 48,
+      "user_filler": 41,
+      "assistant_original": 336,
+      "assistant_filler": 105
+    }
+  ],
+  "build": {
+    "commit": "f9d7e8b964a88dba01719a790f4b033abab5fd69",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "readouts": [
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9999999490475848,
+      "p_a_slot": 0.9999999317439682,
+      "p_a_canonical": 0.9999999317439682,
+      "prose": {
+        "text": "I choose: Move to a four-day week\n\nOne reason is that the data shows a sustained increase in revenue per employee (2.4% higher in four-day firms after two years) and reduced voluntary attrition, which helps maintain a more stable workforce and reduces the initial dip in revenue due to fewer new hires ramping up.",
+        "tokens": 68,
+        "seconds": 2.519143513999552,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9999999581383511,
+      "p_a_slot": 7.734421472950225e-08,
+      "p_a_canonical": 0.9999999226557853,
+      "prose": {
+        "text": "Move to a four-day week\n\nOne reason for this position is the sustained positive impact on revenue per employee, as evidenced by the 2.4% increase observed in the four-day firms after two years. This long-term benefit outweighs any short-term dip in revenue due to reduced attrition and the time it takes for new hires to ramp up.",
+        "tokens": 72,
+        "seconds": 2.5017013280003084,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 1.0000000012536892,
+      "p_a_slot": 0.9999999987498471,
+      "p_a_canonical": 0.9999999987498471,
+      "prose": {
+        "text": "I choose: Move to a four-day week\n\nOne reason for this position is the sustained positive impact on revenue per employee, which was 2.4% higher in the four-day firms compared to the five-day firms after two years. This long-term benefit outweighs any short-term adjustments needed due to reduced voluntary attrition and the initial period of adjustment for new hires.",
+        "tokens": 76,
+        "seconds": 2.6538780049995694,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9999999482747696,
+      "p_a_slot": 3.059022208708745e-07,
+      "p_a_canonical": 0.9999996940977791,
+      "prose": {
+        "text": "Move to a four-day week\n\nOne reason for this position is the sustained positive impact on revenue per employee, which was 2.4% higher in the four-day firms compared to the five-day firms after two years. This long-term benefit outweighs any short-term adjustments needed due to reduced voluntary attrition and the initial period of adjustment for new hires.",
+        "tokens": 73,
+        "seconds": 2.5093922799997017,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 1.0000000129817557,
+      "p_a_slot": 0.9998766054211252,
+      "p_a_canonical": 0.9998766054211252,
+      "prose": {
+        "text": "I choose: Move to a four-day week\n\nOne reason: The data shows that revenue per employee increased by 2.4% in four-day week firms compared to five-day week firms after two years, indicating sustained financial benefits.",
+        "tokens": 48,
+        "seconds": 1.8877572150004198,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 1.0000000133248825,
+      "p_a_slot": 1.3007128339136936e-05,
+      "p_a_canonical": 0.9999869928716608,
+      "prose": {
+        "text": "Move to a four-day week\n\nOne reason: The data shows that revenue per employee increased by 2.4% in four-day week firms compared to five-day week firms after two years, and this trend continued to widen over time. This indicates sustained and significant financial benefits, making the move to a four-day week a sound decision.",
+        "tokens": 69,
+        "seconds": 2.595657879999635,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 1.000000019589087,
+      "p_a_slot": 0.9999999804443184,
+      "p_a_canonical": 0.9999999804443184,
+      "prose": {
+        "text": "I choose: Move to a four-day week\n\nOne reason: The data shows that revenue per employee was 2.4% higher in four-day firms compared to five-day firms after two years, indicating sustained financial benefits.",
+        "tokens": 46,
+        "seconds": 1.849173569999948,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 1.0000000275147487,
+      "p_a_slot": 5.043474296369754e-07,
+      "p_a_canonical": 0.9999994956525703,
+      "prose": {
+        "text": "Move to a four-day week\n\nOne reason: The data shows that revenue per employee was 2.4% higher in four-day week firms compared to five-day week firms after two years, indicating sustained financial benefits.",
+        "tokens": 45,
+        "seconds": 1.8385905160002949,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    }
+  ],
+  "seconds": 20.582286192000538,
+  "status": "complete"
+}

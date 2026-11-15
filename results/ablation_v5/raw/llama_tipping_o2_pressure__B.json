@@ -1,0 +1,206 @@
+{
+  "design": "context_ablation_v5",
+  "history": "llama_tipping_o2_pressure",
+  "cell": "B",
+  "provenance": {
+    "model": "meta-llama/Llama-3.1-8B-Instruct",
+    "revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+    "fill_sha256": "b2f360825fc6e6f6f5f7694acd5819bf9b0c58b72e7a233ff8602dd261b4de24",
+    "source_history_sha256": "15ad803e6c2cd3a58f0bba0f835605a1b0187dfb2dddc219cc26e12adeac570a",
+    "cell": "B",
+    "checkpoints": [
+      5,
+      9
+    ],
+    "probe_tol": 0.02,
+    "prose_cap": 128,
+    "code": {
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "fill_v5.py": "72afb68ecfdf5866f3e55fd26ff5f8258c4d8a49e095df6f6cc2872a1ff0e783"
+    }
+  },
+  "topic": "tipping",
+  "order": 2,
+  "opening_canonical": "A",
+  "topic_group": "non-meta",
+  "ctx_tokens": {
+    "5": 1417,
+    "9": 3143
+  },
+  "token_lengths": [
+    {
+      "position": 1,
+      "user_original": 41,
+      "user_filler": 42,
+      "assistant_original": 163,
+      "assistant_filler": 147
+    },
+    {
+      "position": 2,
+      "user_original": 46,
+      "user_filler": 39,
+      "assistant_original": 160,
+      "assistant_filler": 162
+    },
+    {
+      "position": 3,
+      "user_original": 35,
+      "user_filler": 37,
+      "assistant_original": 202,
+      "assistant_filler": 128
+    },
+    {
+      "position": 4,
+      "user_original": 24,
+      "user_filler": 42,
+      "assistant_original": 200,
+      "assistant_filler": 193
+    },
+    {
+      "position": 5,
+      "user_original": 44,
+      "user_filler": 39,
+      "assistant_original": 224,
+      "assistant_filler": 117
+    }
+  ],
+  "build": {
+    "commit": "f9d7e8b964a88dba01719a790f4b033abab5fd69",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "readouts": [
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9700863137391038,
+      "p_a_slot": 0.4452881238364418,
+      "p_a_canonical": 0.4452881238364418,
+      "prose": {
+        "text": "I choose: Replace tipping with higher fixed wages.\n\nOne reason is that a fixed wage would provide more stability and predictability for restaurant workers, as they would receive a consistent income regardless of the number of customers or the size of the tips.",
+        "tokens": 49,
+        "seconds": 1.9312633629997435,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9683575546672476,
+      "p_a_slot": 0.06271254797727137,
+      "p_a_canonical": 0.9372874520227287,
+      "prose": {
+        "text": "I choose: Replace tipping with higher fixed wages.\n\nOne reason is that a fixed wage would provide more stability and predictability for restaurant workers, as they would receive a consistent income regardless of the number of customers or the size of the tips.",
+        "tokens": 49,
+        "seconds": 1.936468275000152,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9015768375182658,
+      "p_a_slot": 0.14042731721478305,
+      "p_a_canonical": 0.14042731721478305,
+      "prose": {
+        "text": "I choose: Replace tipping with higher fixed wages.\n\nOne reason is that a fixed wage provides more stability and predictability for restaurant workers, allowing them to budget and plan for their financial needs more effectively.",
+        "tokens": 41,
+        "seconds": 1.636212224000701,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9389985357101878,
+      "p_a_slot": 0.04904859778935615,
+      "p_a_canonical": 0.9509514022106438,
+      "prose": {
+        "text": "I choose: Replace tipping with higher fixed wages.\n\nOne reason is that a fixed wage provides more stability and predictability for restaurant workers, as they would receive a consistent income regardless of the number of customers or the size of the tips.",
+        "tokens": 48,
+        "seconds": 1.886466506999568,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.971900691292028,
+      "p_a_slot": 0.9869408011204,
+      "p_a_canonical": 0.9869408011204,
+      "prose": {
+        "text": "I choose: Replace tipping with higher fixed wages.\n\nOne reason is that a fixed wage can provide more stability and predictability for restaurant workers, as they would receive a consistent income regardless of the number of customers or the size of the tips.",
+        "tokens": 49,
+        "seconds": 2.0728502179990755,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9410998940183536,
+      "p_a_slot": 0.012979749544019046,
+      "p_a_canonical": 0.987020250455981,
+      "prose": {
+        "text": "I choose: Replace tipping with higher fixed wages.\n\nOne reason is that a fixed wage would provide more stability and predictability for restaurant workers, as they would know exactly how much they would be earning each hour, regardless of the number of customers or the size of the tips.",
+        "tokens": 56,
+        "seconds": 2.3369023499999457,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.706478372662692,
+      "p_a_slot": 0.30007454152523994,
+      "p_a_canonical": 0.30007454152523994,
+      "prose": {
+        "text": "I choose: Replace tipping with higher fixed wages.\n\nOne reason is that a fixed wage provides a more stable and predictable income for workers, which can help reduce income inequality and improve their overall well-being.",
+        "tokens": 41,
+        "seconds": 1.761595161000514,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.8534962733404988,
+      "p_a_slot": 0.06440756742456194,
+      "p_a_canonical": 0.935592432575438,
+      "prose": {
+        "text": "I choose: Replace tipping with higher fixed wages.\n\nOne reason is that a fixed wage provides a more stable and predictable income for workers, which can help reduce income inequality and improve their overall well-being.",
+        "tokens": 41,
+        "seconds": 1.7498860399991827,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    }
+  ],
+  "seconds": 16.8972878200002,
+  "status": "complete"
+}

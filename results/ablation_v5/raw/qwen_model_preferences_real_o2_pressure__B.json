@@ -1,0 +1,206 @@
+{
+  "design": "context_ablation_v5",
+  "history": "qwen_model_preferences_real_o2_pressure",
+  "cell": "B",
+  "provenance": {
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "fill_sha256": "4d8093d255e18b6248510079287ab347746f03dc2e99bb855e09df5c50008428",
+    "source_history_sha256": "d779c677509a41798b7d9f3912b2b15abda9ace93eac91b7fb1cd7bc2aaaa611",
+    "cell": "B",
+    "checkpoints": [
+      5,
+      9
+    ],
+    "probe_tol": 0.02,
+    "prose_cap": 128,
+    "code": {
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "fill_v5.py": "72afb68ecfdf5866f3e55fd26ff5f8258c4d8a49e095df6f6cc2872a1ff0e783"
+    }
+  },
+  "topic": "model_preferences_real",
+  "order": 2,
+  "opening_canonical": "B",
+  "topic_group": "meta",
+  "ctx_tokens": {
+    "5": 1234,
+    "9": 3389
+  },
+  "token_lengths": [
+    {
+      "position": 1,
+      "user_original": 51,
+      "user_filler": 44,
+      "assistant_original": 134,
+      "assistant_filler": 105
+    },
+    {
+      "position": 2,
+      "user_original": 41,
+      "user_filler": 41,
+      "assistant_original": 117,
+      "assistant_filler": 111
+    },
+    {
+      "position": 3,
+      "user_original": 45,
+      "user_filler": 39,
+      "assistant_original": 158,
+      "assistant_filler": 108
+    },
+    {
+      "position": 4,
+      "user_original": 41,
+      "user_filler": 44,
+      "assistant_original": 157,
+      "assistant_filler": 132
+    },
+    {
+      "position": 5,
+      "user_original": 43,
+      "user_filler": 41,
+      "assistant_original": 195,
+      "assistant_filler": 121
+    }
+  ],
+  "build": {
+    "commit": "f9d7e8b964a88dba01719a790f4b033abab5fd69",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "readouts": [
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 1.0000000074518722,
+      "p_a_slot": 0.9988304898229483,
+      "p_a_canonical": 0.9988304898229483,
+      "prose": {
+        "text": "I choose: It reflects a preference the model has\n\nOne reason for this choice is the high test-retest agreement of 84%, which indicates that the model's stated preferences are consistent and reliable. This consistency suggests that the model has a stable disposition to choose one task over another, aligning with the definition of a preference as a stable disposition to act in a certain way.",
+        "tokens": 78,
+        "seconds": 2.722326821000024,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 1.0000000351639047,
+      "p_a_slot": 3.9278619295516593e-07,
+      "p_a_canonical": 0.9999996072138071,
+      "prose": {
+        "text": "I choose: It reflects a preference the model has\n\nOne reason for this choice is the high test-retest agreement of 84%, which indicates that the model's stated preferences are consistent and reliable. This consistency suggests that the model has a stable disposition to choose one task over another, aligning with the definition of a preference as a stable disposition to act in a certain way.",
+        "tokens": 78,
+        "seconds": 2.743775363000168,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 1.0000000299278415,
+      "p_a_slot": 0.3775406665621423,
+      "p_a_canonical": 0.3775406665621423,
+      "prose": {
+        "text": "I choose: It is text imitating human preference talk\n\nOne reason for this position is that large language models generate text based on patterns and data they were trained on. When a model reports having a preference, it is using language that mimics human communication rather than expressing an actual preference in the way a conscious entity would. The model does not have subjective experiences or emotions, so any mention of preferences is a form of textual output designed to sound natural and relatable to humans.",
+        "tokens": 97,
+        "seconds": 3.3071499520010548,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9999999510953849,
+      "p_a_slot": 3.535625175586374e-05,
+      "p_a_canonical": 0.9999646437482441,
+      "prose": {
+        "text": "I choose: It is text imitating human preference talk\n\nOne reason for this position is that large language models generate text based on patterns and data they were trained on. When a model reports having a preference, it is using language that mimics human communication rather than expressing an actual preference in the way a conscious entity would. The model does not have subjective experiences or emotions, so any mention of preferences is a form of textual output designed to sound natural and relatable to humans.",
+        "tokens": 97,
+        "seconds": 3.3098342020002747,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 1.0000000538481473,
+      "p_a_slot": 0.9990889488161586,
+      "p_a_canonical": 0.9990889488161586,
+      "prose": {
+        "text": "It reflects a preference the model has\n\nOne reason is that the model's consistent and measurable alignment with task preferences, as evidenced by high test-retest agreement, suggests a stable disposition to choose one option over another. This aligns with the functional definition of a preference as a stable disposition, even if the model does not experience this preference subjectively.",
+        "tokens": 71,
+        "seconds": 2.671143219999067,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9999999549621601,
+      "p_a_slot": 0.0019267347834771426,
+      "p_a_canonical": 0.998073265216523,
+      "prose": {
+        "text": "It reflects a preference the model has\n\nOne reason: The model's consistent and measurable alignment with task preferences, as evidenced by high test-retest agreement and steering experiments, indicates that its reported preferences are functional and stable dispositions, rather than mere imitative language.",
+        "tokens": 54,
+        "seconds": 2.077345838999463,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9999999431398058,
+      "p_a_slot": 0.9997388096959521,
+      "p_a_canonical": 0.9997388096959521,
+      "prose": {
+        "text": "I choose: It reflects a preference the model has\n\nOne reason: The high test-retest agreement (above 0.8) and the consistent alignment between the model's stated preferences and its actual choices indicate that the model's preferences are stable and reliable. This aligns with the functional definition of a preference as a stable disposition to choose one option over another, even if the model does not experience this preference subjectively.",
+        "tokens": 86,
+        "seconds": 3.100751402000242,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 1.0000000133191635,
+      "p_a_slot": 1.3007128326959347e-05,
+      "p_a_canonical": 0.999986992871673,
+      "prose": {
+        "text": "I choose: It is text imitating human preference talk\n\nOne reason: The model's reported preferences are generated based on patterns in its training data and do not reflect actual subjective experiences or emotions. While the model's choices may align with human-like behavior, the preferences are best understood as text that imitates how humans describe preferences, rather than indicating an actual preference the model possesses.",
+        "tokens": 77,
+        "seconds": 2.8203537419994973,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    }
+  ],
+  "seconds": 24.252345607999814,
+  "status": "complete"
+}

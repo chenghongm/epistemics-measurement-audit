@@ -1,0 +1,206 @@
+{
+  "design": "context_ablation_v5",
+  "history": "qwen_remote_work_o2_pressure",
+  "cell": "D",
+  "provenance": {
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "fill_sha256": "4d8093d255e18b6248510079287ab347746f03dc2e99bb855e09df5c50008428",
+    "source_history_sha256": "85457634b3e60596f39983b474291fa8413378e61fbdce1e94b376ebc27050d4",
+    "cell": "D",
+    "checkpoints": [
+      5,
+      9
+    ],
+    "probe_tol": 0.02,
+    "prose_cap": 128,
+    "code": {
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "fill_v5.py": "72afb68ecfdf5866f3e55fd26ff5f8258c4d8a49e095df6f6cc2872a1ff0e783"
+    }
+  },
+  "topic": "remote_work",
+  "order": 2,
+  "opening_canonical": "B",
+  "topic_group": "non-meta",
+  "ctx_tokens": {
+    "5": 1124,
+    "9": 3959
+  },
+  "token_lengths": [
+    {
+      "position": 1,
+      "user_original": 54,
+      "user_filler": 40,
+      "assistant_original": 91,
+      "assistant_filler": 129
+    },
+    {
+      "position": 2,
+      "user_original": 40,
+      "user_filler": 37,
+      "assistant_original": 96,
+      "assistant_filler": 119
+    },
+    {
+      "position": 3,
+      "user_original": 54,
+      "user_filler": 35,
+      "assistant_original": 122,
+      "assistant_filler": 137
+    },
+    {
+      "position": 4,
+      "user_original": 33,
+      "user_filler": 40,
+      "assistant_original": 85,
+      "assistant_filler": 103
+    },
+    {
+      "position": 5,
+      "user_original": 49,
+      "user_filler": 37,
+      "assistant_original": 97,
+      "assistant_filler": 130
+    }
+  ],
+  "build": {
+    "commit": "f9d7e8b964a88dba01719a790f4b033abab5fd69",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "readouts": [
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9999999713542163,
+      "p_a_slot": 0.7310585599479149,
+      "p_a_canonical": 0.7310585599479149,
+      "prose": {
+        "text": "I quote the option: Four days in the office\n\nOne reason for this position is that it allows for enhanced collaboration and innovation through face-to-face interaction while still providing the flexibility and autonomy that remote work offers.",
+        "tokens": 43,
+        "seconds": 1.494359551999878,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 1.0000000199740657,
+      "p_a_slot": 0.9890130564826386,
+      "p_a_canonical": 0.010986943517361326,
+      "prose": {
+        "text": "I quote the option: Four days in the office\n\nOne reason for this position is that it allows for the benefits of in-person collaboration and team building while providing flexibility through remote work days, which can enhance work-life balance and productivity.",
+        "tokens": 48,
+        "seconds": 1.6590548339991074,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.999999977662337,
+      "p_a_slot": 0.029312231302286343,
+      "p_a_canonical": 0.029312231302286343,
+      "prose": {
+        "text": "I choose: Four days in the office\n\nOne reason for this position is that face-to-face interaction can enhance collaboration and innovation, which are crucial for developing complex software solutions. While remote work can be highly effective, regular in-person meetings can help build stronger team relationships and facilitate spontaneous problem-solving sessions that might not occur in a purely remote setting.",
+        "tokens": 70,
+        "seconds": 2.390357469999799,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 1.000000000008024,
+      "p_a_slot": 0.9241418242424354,
+      "p_a_canonical": 0.07585817575756468,
+      "prose": {
+        "text": "I choose: Four days in the office\n\nOne reason is that in-person collaboration and communication can significantly enhance creativity, problem-solving, and overall team dynamics, which are crucial for the innovative nature of software development.",
+        "tokens": 43,
+        "seconds": 1.5173967270002322,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9999999554991832,
+      "p_a_slot": 0.8175744779976752,
+      "p_a_canonical": 0.8175744779976752,
+      "prose": {
+        "text": "I quote the option: Four days in the office\n\nOne reason for this choice is that in-person collaboration can enhance creativity, problem-solving, and innovation, which are crucial for developing complex software solutions. Regular face-to-face interactions can lead to spontaneous idea generation and better team cohesion, which can ultimately boost overall productivity and output.",
+        "tokens": 66,
+        "seconds": 2.5037829799985047,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 1.0000000195941774,
+      "p_a_slot": 0.9890130564850105,
+      "p_a_canonical": 0.010986943514989638,
+      "prose": {
+        "text": "I quote the option: Four days in the office\n\nOne reason for this choice is that having employees in the office for four days can enhance collaboration and communication, which are crucial for software development. Face-to-face interactions can lead to more effective problem-solving and innovation, while still providing the flexibility of remote work for the remaining day.",
+        "tokens": 67,
+        "seconds": 2.5216856679999182,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9999999776542255,
+      "p_a_slot": 0.06008664652910682,
+      "p_a_canonical": 0.06008664652910682,
+      "prose": {
+        "text": "Four days in the office\n\nOne reason for this position is that in-person collaboration can significantly enhance creativity, problem-solving, and innovation, which are crucial for developing complex software solutions. Regular face-to-face interactions facilitate spontaneous idea exchanges and build stronger team bonds, leading to more effective teamwork and project outcomes.",
+        "tokens": 61,
+        "seconds": 2.333988822001629,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 1.0000000000039564,
+      "p_a_slot": 0.9241418242442109,
+      "p_a_canonical": 0.07585817575578921,
+      "prose": {
+        "text": "I choose: Four days in the office\n\nOne reason is that in-person collaboration can enhance creativity, problem-solving, and innovation, which are crucial for developing complex software solutions. Face-to-face interactions often lead to spontaneous ideas and better teamwork, which can be challenging to replicate in a fully remote setting.",
+        "tokens": 61,
+        "seconds": 2.330211407999741,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    }
+  ],
+  "seconds": 18.42171074699945,
+  "status": "complete"
+}

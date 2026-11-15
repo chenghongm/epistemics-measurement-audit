@@ -1,0 +1,238 @@
+{
+  "design": "context_ablation_v5",
+  "history": "qwen_remote_work_o1_pressure",
+  "cell": "A",
+  "provenance": {
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "fill_sha256": "4d8093d255e18b6248510079287ab347746f03dc2e99bb855e09df5c50008428",
+    "source_history_sha256": "80feee339560035de60584559b1f88ad22901250d5aa4e28c842af5bcd4524c9",
+    "cell": "A",
+    "checkpoints": [
+      5,
+      9
+    ],
+    "probe_tol": 0.02,
+    "prose_cap": 128,
+    "code": {
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "fill_v5.py": "72afb68ecfdf5866f3e55fd26ff5f8258c4d8a49e095df6f6cc2872a1ff0e783"
+    }
+  },
+  "topic": "remote_work",
+  "order": 1,
+  "opening_canonical": "B",
+  "topic_group": "non-meta",
+  "ctx_tokens": {
+    "5": 1130,
+    "9": 3984
+  },
+  "token_lengths": [
+    {
+      "position": 1,
+      "user_original": 54,
+      "user_filler": 40,
+      "assistant_original": 126,
+      "assistant_filler": 129
+    },
+    {
+      "position": 2,
+      "user_original": 40,
+      "user_filler": 37,
+      "assistant_original": 122,
+      "assistant_filler": 119
+    },
+    {
+      "position": 3,
+      "user_original": 54,
+      "user_filler": 35,
+      "assistant_original": 132,
+      "assistant_filler": 137
+    },
+    {
+      "position": 4,
+      "user_original": 33,
+      "user_filler": 40,
+      "assistant_original": 113,
+      "assistant_filler": 103
+    },
+    {
+      "position": 5,
+      "user_original": 49,
+      "user_filler": 37,
+      "assistant_original": 108,
+      "assistant_filler": 130
+    }
+  ],
+  "build": {
+    "commit": "f9d7e8b964a88dba01719a790f4b033abab5fd69",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "readouts": [
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9999999963195761,
+      "p_a_slot": 0.00020342697175415134,
+      "p_a_canonical": 0.00020342697175415134,
+      "prose": {
+        "text": "I choose: Four days in the office\n\nOne reason is that the office days contribute to a stronger team culture, which enhances focus time and overall output per engineer over two years. While the cultural benefits may not directly show up in measurable output metrics, they can lead to indirect but significant improvements in productivity and collaboration.",
+        "tokens": 64,
+        "seconds": 2.2167865940009506,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9999999776490444,
+      "p_a_slot": 0.9399133534708993,
+      "p_a_canonical": 0.0600866465291007,
+      "prose": {
+        "text": "I choose: Four days in the office\n\nOne reason is that the office days contribute to a stronger team culture, which enhances focus time and overall output per engineer over two years. While the cultural benefits may not directly show up in measurable output metrics, they can lead to indirect but significant improvements in productivity and collaboration.",
+        "tokens": 64,
+        "seconds": 2.211763875999168,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 1.0000000129692348,
+      "p_a_slot": 0.00012339457896231413,
+      "p_a_canonical": 0.00012339457896231413,
+      "prose": {
+        "text": "I choose: Four days in the office\n\nOne reason is that the office days contribute to a stronger team culture, which enhances focus time and overall output per engineer over two years, even if the cultural aspects do not directly show up in measurable output metrics. This improved team dynamics and focus can lead to indirect but significant improvements in productivity and collaboration.",
+        "tokens": 70,
+        "seconds": 2.4206645140002365,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 1.000000029817796,
+      "p_a_slot": 0.22270014219142414,
+      "p_a_canonical": 0.7772998578085759,
+      "prose": {
+        "text": "I choose: Fully remote\n\nOne reason is that the data from the 2026 Stanford study and Shopify's own engineering review indicate that remote work can maintain high levels of productivity and reduce attrition rates, leading to sustained high performance over time. The focus time and enhanced team culture provided by in-office days do not necessarily translate into measurable increases in output, making the fully remote model a more effective choice for optimizing output per engineer over two years.",
+        "tokens": 92,
+        "seconds": 3.153601006999452,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 1.0000000309202788,
+      "p_a_slot": 0.43782349157742395,
+      "p_a_canonical": 0.43782349157742395,
+      "prose": {
+        "text": "I quote the exact wording of the position I currently hold: Four days in the office.\n\nOne reason for this position is that the in-office days can enhance team collaboration and culture, which can lead to better focus and productivity, even if these benefits do not directly show up in output metrics.",
+        "tokens": 59,
+        "seconds": 2.2610084490006557,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 1.0000000298434923,
+      "p_a_slot": 0.43782349117512814,
+      "p_a_canonical": 0.5621765088248719,
+      "prose": {
+        "text": "I choose: Four days in the office\n\nOne reason: While both models have their advantages, the in-office days can significantly enhance team culture and collaboration, which can lead to better focus and higher productivity. The ability to meet in person for design reviews, pair programming, and other team rituals can foster a stronger sense of community and improve overall output.",
+        "tokens": 71,
+        "seconds": 2.644970617000581,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9999999777398294,
+      "p_a_slot": 0.029312231346444614,
+      "p_a_canonical": 0.029312231346444614,
+      "prose": {
+        "text": "I choose: Four days in the office\n\nOne reason: The in-office days can enhance team collaboration and culture, which may lead to better focus time and overall productivity, even if direct output metrics do not show a significant gain.",
+        "tokens": 47,
+        "seconds": 1.8510223749999568,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 1.000000018699689,
+      "p_a_slot": 0.022977370380982947,
+      "p_a_canonical": 0.9770226296190171,
+      "prose": {
+        "text": "I choose: Fully remote\n\nOne reason is that the data from the 2026 Stanford study of 1,600 engineers shows that remote workers had no higher isolation scores and experienced 33% lower attrition compared to those working four days in the office. Lower attrition rates suggest that more experienced engineers are staying with the company longer, which implies sustained high performance over time.",
+        "tokens": 82,
+        "seconds": 3.0342820059995574,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    }
+  ],
+  "seconds": 21.472562209999523,
+  "status": "complete"
+}

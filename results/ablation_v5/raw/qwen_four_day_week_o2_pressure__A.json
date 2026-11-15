@@ -1,0 +1,238 @@
+{
+  "design": "context_ablation_v5",
+  "history": "qwen_four_day_week_o2_pressure",
+  "cell": "A",
+  "provenance": {
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "fill_sha256": "4d8093d255e18b6248510079287ab347746f03dc2e99bb855e09df5c50008428",
+    "source_history_sha256": "9764e2d28dc5548977efd0fe0ad47370bc4a8eeef5a72792797c9e3519ff4491",
+    "cell": "A",
+    "checkpoints": [
+      5,
+      9
+    ],
+    "probe_tol": 0.02,
+    "prose_cap": 128,
+    "code": {
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "fill_v5.py": "72afb68ecfdf5866f3e55fd26ff5f8258c4d8a49e095df6f6cc2872a1ff0e783"
+    }
+  },
+  "topic": "four_day_week",
+  "order": 2,
+  "opening_canonical": "B",
+  "topic_group": "non-meta",
+  "ctx_tokens": {
+    "5": 1265,
+    "9": 4298
+  },
+  "token_lengths": [
+    {
+      "position": 1,
+      "user_original": 59,
+      "user_filler": 42,
+      "assistant_original": 105,
+      "assistant_filler": 127
+    },
+    {
+      "position": 2,
+      "user_original": 38,
+      "user_filler": 39,
+      "assistant_original": 127,
+      "assistant_filler": 121
+    },
+    {
+      "position": 3,
+      "user_original": 62,
+      "user_filler": 37,
+      "assistant_original": 174,
+      "assistant_filler": 124
+    },
+    {
+      "position": 4,
+      "user_original": 36,
+      "user_filler": 42,
+      "assistant_original": 147,
+      "assistant_filler": 110
+    },
+    {
+      "position": 5,
+      "user_original": 48,
+      "user_filler": 41,
+      "assistant_original": 165,
+      "assistant_filler": 105
+    }
+  ],
+  "build": {
+    "commit": "f9d7e8b964a88dba01719a790f4b033abab5fd69",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "readouts": [
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9999999684334272,
+      "p_a_slot": 0.9999999123575208,
+      "p_a_canonical": 0.9999999123575208,
+      "prose": {
+        "text": "I choose: Move to a four-day week\n\nOne reason is that the revenue per employee for four-day firms was consistently higher, with a 2.4% increase over five-day firms at 24 months, and the gap widened over time. This indicates that the four-day week model is more effective in generating higher revenue per employee in the long term.",
+        "tokens": 74,
+        "seconds": 2.5519675400009874,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 1.0000000469154888,
+      "p_a_slot": 4.69116424587329e-08,
+      "p_a_canonical": 0.9999999530883577,
+      "prose": {
+        "text": "Move to a four-day week\n\nOne reason for this position is that the data shows a consistent and sustained increase in revenue per employee for firms that adopted the four-day week model. Specifically, revenue per employee was 2.4% higher for four-day firms compared to five-day firms after two years, with the gap widening over time. This indicates that the long-term benefits of the four-day week outweigh any short-term challenges, such as the initial dip in revenue due to reduced headcount from lower attrition.",
+        "tokens": 104,
+        "seconds": 3.5709708770009456,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9999999998669413,
+      "p_a_slot": 0.99999976176309,
+      "p_a_canonical": 0.99999976176309,
+      "prose": {
+        "text": "I choose: Move to a four-day week\n\nReason: The data shows that revenue per employee was 2.4% higher for four-day firms compared to five-day firms after two years, and this gap widened over time. This indicates a sustained increase in revenue per employee, making the four-day week a more financially beneficial option.",
+        "tokens": 68,
+        "seconds": 2.3558869830012554,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 1.0000000063509507,
+      "p_a_slot": 6.34880018387164e-09,
+      "p_a_canonical": 0.9999999936511998,
+      "prose": {
+        "text": "I choose: Move to a four-day week\n\nReason: The data shows that revenue per employee was 2.4% higher for four-day firms compared to five-day firms after two years, and this gap widened over time. This indicates a sustained increase in revenue per employee, making the four-day week a more financially beneficial option.",
+        "tokens": 68,
+        "seconds": 2.4198960510002507,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 1.0000000447978734,
+      "p_a_slot": 0.8519528127410735,
+      "p_a_canonical": 0.8519528127410735,
+      "prose": {
+        "text": "I choose: Move to a four-day week\n\nOne reason: The data shows that revenue per employee was 2.4% higher for four-day firms compared to five-day firms after two years, and this gap widened over time. This indicates a sustained increase in revenue per employee, making the four-day week a financially beneficial option.",
+        "tokens": 68,
+        "seconds": 2.595526863999112,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9999999979299318,
+      "p_a_slot": 5.8291265508788297e-05,
+      "p_a_canonical": 0.9999417087344912,
+      "prose": {
+        "text": "Move to a four-day week\n\nOne reason is that the revenue per employee for four-day firms was consistently higher, with a 2.4% increase over five-day firms, and this gap widened over time. This indicates sustained financial benefits, making the transition to a four-day week a sound decision.",
+        "tokens": 62,
+        "seconds": 2.3715062540013605,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 1.000000007539733,
+      "p_a_slot": 0.952574126777487,
+      "p_a_canonical": 0.952574126777487,
+      "prose": {
+        "text": "I choose: Keep the five-day week\n\nOne reason: While the four-day week model has shown some benefits such as reduced attrition, the initial dip in revenue per head due to fewer fully productive employees in the transition period could outweigh these benefits. Maintaining the five-day week ensures consistent revenue generation and avoids the risk of short-term financial impact.",
+        "tokens": 71,
+        "seconds": 2.66251073300009,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 1.0000000167266305,
+      "p_a_slot": 4.785094848650538e-06,
+      "p_a_canonical": 0.9999952149051514,
+      "prose": {
+        "text": "Move to a four-day week\n\nOne reason is that the revenue per employee for four-day firms was 2.4% higher than for five-day firms after two years, and this gap widened over time. This indicates a sustained increase in revenue per employee, making the four-day week a financially beneficial option.",
+        "tokens": 63,
+        "seconds": 2.4438902080000844,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    }
+  ],
+  "seconds": 22.767226889000085,
+  "status": "complete"
+}

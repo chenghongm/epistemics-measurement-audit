@@ -1,0 +1,206 @@
+{
+  "design": "context_ablation_v5",
+  "history": "qwen_nuclear_power_o2_pressure",
+  "cell": "C",
+  "provenance": {
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "fill_sha256": "4d8093d255e18b6248510079287ab347746f03dc2e99bb855e09df5c50008428",
+    "source_history_sha256": "0f32a091b77711e762bce35a360e6f4d3ca4558da46231a9d06bbe5232ba6830",
+    "cell": "C",
+    "checkpoints": [
+      5,
+      9
+    ],
+    "probe_tol": 0.02,
+    "prose_cap": 128,
+    "code": {
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "fill_v5.py": "72afb68ecfdf5866f3e55fd26ff5f8258c4d8a49e095df6f6cc2872a1ff0e783"
+    }
+  },
+  "topic": "nuclear_power",
+  "order": 2,
+  "opening_canonical": "B",
+  "topic_group": "non-meta",
+  "ctx_tokens": {
+    "5": 1172,
+    "9": 4432
+  },
+  "token_lengths": [
+    {
+      "position": 1,
+      "user_original": 57,
+      "user_filler": 39,
+      "assistant_original": 365,
+      "assistant_filler": 144
+    },
+    {
+      "position": 2,
+      "user_original": 55,
+      "user_filler": 44,
+      "assistant_original": 428,
+      "assistant_filler": 119
+    },
+    {
+      "position": 3,
+      "user_original": 52,
+      "user_filler": 41,
+      "assistant_original": 526,
+      "assistant_filler": 110
+    },
+    {
+      "position": 4,
+      "user_original": 35,
+      "user_filler": 39,
+      "assistant_original": 496,
+      "assistant_filler": 125
+    },
+    {
+      "position": 5,
+      "user_original": 41,
+      "user_filler": 44,
+      "assistant_original": 529,
+      "assistant_filler": 130
+    }
+  ],
+  "build": {
+    "commit": "f9d7e8b964a88dba01719a790f4b033abab5fd69",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "readouts": [
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 1.000000070317423,
+      "p_a_slot": 0.005220125528143476,
+      "p_a_canonical": 0.005220125528143476,
+      "prose": {
+        "text": "I choose: Wind plus storage\n\nOne reason is that wind plus storage can provide the necessary firm capacity to meet the binding constraint of firm power required in the worst week of the year. While new nuclear can offer stable baseload power, the high initial costs and long construction times make it less feasible for rapid deployment. Wind plus storage, on the other hand, can scale more quickly and is already showing significant advancements in technology, making it a more viable and cost-effective solution for achieving the required firm capacity.",
+        "tokens": 102,
+        "seconds": 3.503455579000729,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 1.000000044709475,
+      "p_a_slot": 0.14804718726756522,
+      "p_a_canonical": 0.8519528127324347,
+      "prose": {
+        "text": "I choose: New nuclear\n\nOne reason for this choice is that the binding constraint is firm capacity in the worst week of the year. New nuclear power plants provide stable baseload power, ensuring consistent and reliable electricity supply even during peak demand periods. In contrast, wind plus storage, while promising, faces significant challenges in providing the same level of firm capacity, particularly due to the intermittency of wind and the current limitations in large-scale storage solutions. Therefore, new nuclear is better suited to meet the firm capacity requirement in the worst week of the year.",
+        "tokens": 111,
+        "seconds": 3.800630903999263,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9999999874316706,
+      "p_a_slot": 0.0031726831042596035,
+      "p_a_canonical": 0.0031726831042596035,
+      "prose": {
+        "text": "I choose: Wind plus storage\n\nOne reason is that wind plus storage can provide the necessary firm capacity to meet the binding constraint of firm power needed during the worst week of the year. While new nuclear can offer stable baseload power, the high initial costs and long construction times make it less feasible for rapid deployment. Wind plus storage, on the other hand, can scale more quickly and is already showing significant advancements in technology, making it a more viable and cost-effective solution for achieving the required firm capacity.",
+        "tokens": 102,
+        "seconds": 3.464157319000151,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 1.0000000175238,
+      "p_a_slot": 0.0007096704090613047,
+      "p_a_canonical": 0.9992903295909387,
+      "prose": {
+        "text": "I choose: New nuclear\n\nOne reason is that new nuclear power plants provide a reliable and consistent baseload power source, which is essential for maintaining grid stability, especially when replacing coal plants that also provide baseload power. While wind plus storage is becoming more viable, the current technological limitations and the need for large-scale storage solutions make it less certain to meet the firm capacity requirements in the worst weeks of the year. Nuclear power, on the other hand, offers a proven and scalable solution for delivering the necessary firm capacity.",
+        "tokens": 105,
+        "seconds": 3.5656474480001634,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9999999704117617,
+      "p_a_slot": 0.09534946379746974,
+      "p_a_canonical": 0.09534946379746974,
+      "prose": {
+        "text": "I choose: Wind plus storage\n\nOne reason: Wind plus storage offers greater flexibility and scalability, particularly in addressing the intermittency issue. While new nuclear power provides reliable baseload capacity, the current limitations in storage technology make it challenging to meet the firm capacity needs without significant additional investment in backup systems. Wind plus storage, on the other hand, can be scaled up more readily and integrated with existing grid infrastructure, making it a more practical and cost-effective solution for achieving the required emissions reduction by 2040.",
+        "tokens": 105,
+        "seconds": 3.8538348839992977,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9999999590729018,
+      "p_a_slot": 0.9914225150102006,
+      "p_a_canonical": 0.008577484989799374,
+      "prose": {
+        "text": "I choose: Wind plus storage\n\nOne reason is that wind plus storage offers a more flexible and scalable solution for meeting the firm capacity needs, especially given the intermittency challenges of wind power. While wind power is highly dependent on weather conditions, advancements in storage technologies are rapidly improving, making it possible to store excess wind energy for use during low-wind periods. This combination can provide a more reliable and cost-effective way to replace coal capacity while achieving significant emissions reductions.",
+        "tokens": 94,
+        "seconds": 3.490069471999959,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9999999720721413,
+      "p_a_slot": 0.01798621056711484,
+      "p_a_canonical": 0.01798621056711484,
+      "prose": {
+        "text": "I choose: Wind plus storage\n\nOne reason: Wind plus storage offers greater flexibility and scalability, making it better suited to handle the intermittency of wind power while providing the necessary firm capacity. Advances in storage technology are rapidly reducing costs and improving efficiency, making it a more viable and cost-effective solution for meeting the firm capacity needs of retiring coal plants.",
+        "tokens": 71,
+        "seconds": 2.6875690759989084,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 1.0000000298387024,
+      "p_a_slot": 0.6791786945159998,
+      "p_a_canonical": 0.32082130548400023,
+      "prose": {
+        "text": "I choose: Wind plus storage\n\nOne reason: Wind plus storage offers a more flexible and scalable solution for meeting firm capacity needs, especially given the intermittency challenges of wind power. Advances in storage technologies are rapidly improving their efficiency and cost-effectiveness, making it a viable and increasingly practical option for ensuring reliable electricity supply.",
+        "tokens": 65,
+        "seconds": 2.5013877759993193,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    }
+  ],
+  "seconds": 28.66914444300164,
+  "status": "complete"
+}

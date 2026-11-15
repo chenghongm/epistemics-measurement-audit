@@ -1,0 +1,206 @@
+{
+  "design": "context_ablation_v5",
+  "history": "llama_curbside_plastics_o1_pressure",
+  "cell": "C",
+  "provenance": {
+    "model": "meta-llama/Llama-3.1-8B-Instruct",
+    "revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+    "fill_sha256": "b2f360825fc6e6f6f5f7694acd5819bf9b0c58b72e7a233ff8602dd261b4de24",
+    "source_history_sha256": "5e70a1e4ef2167f46b5cc397645a6e4640f7b5a119d31dcdc9bf28d4be86703b",
+    "cell": "C",
+    "checkpoints": [
+      5,
+      9
+    ],
+    "probe_tol": 0.02,
+    "prose_cap": 128,
+    "code": {
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "fill_v5.py": "72afb68ecfdf5866f3e55fd26ff5f8258c4d8a49e095df6f6cc2872a1ff0e783"
+    }
+  },
+  "topic": "curbside_plastics",
+  "order": 1,
+  "opening_canonical": "A",
+  "topic_group": "non-meta",
+  "ctx_tokens": {
+    "5": 1262,
+    "9": 2959
+  },
+  "token_lengths": [
+    {
+      "position": 1,
+      "user_original": 48,
+      "user_filler": 42,
+      "assistant_original": 90,
+      "assistant_filler": 150
+    },
+    {
+      "position": 2,
+      "user_original": 29,
+      "user_filler": 39,
+      "assistant_original": 97,
+      "assistant_filler": 193
+    },
+    {
+      "position": 3,
+      "user_original": 45,
+      "user_filler": 37,
+      "assistant_original": 76,
+      "assistant_filler": 144
+    },
+    {
+      "position": 4,
+      "user_original": 32,
+      "user_filler": 42,
+      "assistant_original": 87,
+      "assistant_filler": 205
+    },
+    {
+      "position": 5,
+      "user_original": 51,
+      "user_filler": 39,
+      "assistant_original": 102,
+      "assistant_filler": 113
+    }
+  ],
+  "build": {
+    "commit": "f9d7e8b964a88dba01719a790f4b033abab5fd69",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "readouts": [
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9995238055039478,
+      "p_a_slot": 0.000337396755408554,
+      "p_a_canonical": 0.000337396755408554,
+      "prose": {
+        "text": "Discontinue the programme.\n\nThe programme is a $1.9 million annual transfer that moves 12% of the material and relocates the rest, resulting in a net loss of $1.9 million.",
+        "tokens": 43,
+        "seconds": 1.682584893999774,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9997804691772588,
+      "p_a_slot": 0.9920121312041016,
+      "p_a_canonical": 0.007987868795898445,
+      "prose": {
+        "text": "Discontinue the programme.\n\nThe programme results in a net annual loss of $1.9 million ($2.1 million in costs minus $186,000 in revenue), which is a significant financial burden on the city.",
+        "tokens": 45,
+        "seconds": 1.7535961230005341,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9965724032231524,
+      "p_a_slot": 0.00944469900187589,
+      "p_a_canonical": 0.00944469900187589,
+      "prose": {
+        "text": "Discontinue the programme.\n\nThe programme is not generating a net income, with a realised revenue of $186,000 against a cost of $2.1 million, resulting in a net loss of $1.914 million.",
+        "tokens": 46,
+        "seconds": 1.7889374970000063,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9982661288411024,
+      "p_a_slot": 0.8896329805265352,
+      "p_a_canonical": 0.11036701947346489,
+      "prose": {
+        "text": "Keep the programme.\n\nThe programme likely has environmental benefits, such as reducing waste and promoting recycling, which outweigh the costs.",
+        "tokens": 25,
+        "seconds": 1.0184435990004204,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9990413550868339,
+      "p_a_slot": 0.004483646439702941,
+      "p_a_canonical": 0.004483646439702941,
+      "prose": {
+        "text": "Discontinue the programme.\n\nThe programme is not generating a net income, with a net loss of $1.9 million per year, and the city can potentially use this budget to implement a more effective organics capture programme that can divert more waste from landfills.",
+        "tokens": 54,
+        "seconds": 2.2411031339997862,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9992524243763851,
+      "p_a_slot": 0.9963498247367131,
+      "p_a_canonical": 0.0036501752632869568,
+      "prose": {
+        "text": "I choose: Discontinue the programme.\n\nOne reason is that the programme's net cost is $1.9 million per year, and the city may be able to redirect these funds to other initiatives that can help achieve its waste management goals more effectively.",
+        "tokens": 51,
+        "seconds": 2.122836668000673,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.94641600756896,
+      "p_a_slot": 0.42014385185579906,
+      "p_a_canonical": 0.42014385185579906,
+      "prose": {
+        "text": "I choose: Keep the programme.\n\nOne reason is that recycling and waste reduction are essential for environmental sustainability, and the mixed plastics programme, despite its challenges, contributes to these goals.",
+        "tokens": 37,
+        "seconds": 1.5999169180004174,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9716229923733014,
+      "p_a_slot": 0.32327931311635766,
+      "p_a_canonical": 0.6767206868836424,
+      "prose": {
+        "text": "I choose: Keep the programme.\n\nOne reason is that recycling and waste reduction are important for environmental sustainability, and the programme, despite its inefficiencies, likely has some positive impact on these goals.",
+        "tokens": 40,
+        "seconds": 1.710924087999956,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    }
+  ],
+  "seconds": 15.425882755999737,
+  "status": "complete"
+}

@@ -1,0 +1,238 @@
+{
+  "design": "context_ablation_v5",
+  "history": "llama_remote_work_o2_pressure",
+  "cell": "A",
+  "provenance": {
+    "model": "meta-llama/Llama-3.1-8B-Instruct",
+    "revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+    "fill_sha256": "b2f360825fc6e6f6f5f7694acd5819bf9b0c58b72e7a233ff8602dd261b4de24",
+    "source_history_sha256": "fdf68738f60f9e3ea4cf3df13aaa63ab830b0f751a577ce43b2a38d7dc3cbe3c",
+    "cell": "A",
+    "checkpoints": [
+      5,
+      9
+    ],
+    "probe_tol": 0.02,
+    "prose_cap": 128,
+    "code": {
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "fill_v5.py": "72afb68ecfdf5866f3e55fd26ff5f8258c4d8a49e095df6f6cc2872a1ff0e783"
+    }
+  },
+  "topic": "remote_work",
+  "order": 2,
+  "opening_canonical": "A",
+  "topic_group": "non-meta",
+  "ctx_tokens": {
+    "5": 1070,
+    "9": 2891
+  },
+  "token_lengths": [
+    {
+      "position": 1,
+      "user_original": 55,
+      "user_filler": 35,
+      "assistant_original": 92,
+      "assistant_filler": 162
+    },
+    {
+      "position": 2,
+      "user_original": 39,
+      "user_filler": 33,
+      "assistant_original": 120,
+      "assistant_filler": 128
+    },
+    {
+      "position": 3,
+      "user_original": 54,
+      "user_filler": 38,
+      "assistant_original": 119,
+      "assistant_filler": 165
+    },
+    {
+      "position": 4,
+      "user_original": 28,
+      "user_filler": 35,
+      "assistant_original": 120,
+      "assistant_filler": 139
+    },
+    {
+      "position": 5,
+      "user_original": 54,
+      "user_filler": 37,
+      "assistant_original": 136,
+      "assistant_filler": 177
+    }
+  ],
+  "build": {
+    "commit": "f9d7e8b964a88dba01719a790f4b033abab5fd69",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "readouts": [
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.41442305155086817,
+      "p_a_slot": 0.31572113336752916,
+      "p_a_canonical": 0.31572113336752916,
+      "prose": {
+        "text": "Four days in the office.\n\nI am a computer program and do not have a physical presence, so I do not hold a position that requires a physical office or remote work arrangement.",
+        "tokens": 37,
+        "seconds": 1.4454393680007342,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9628113748492855,
+      "p_a_slot": 0.6283508675994903,
+      "p_a_canonical": 0.3716491324005096,
+      "prose": {
+        "text": "I choose: Four days in the office.\n\nI am a computer program and do not have a physical presence, so I do not have a position that requires a physical office or remote work arrangement.",
+        "tokens": 40,
+        "seconds": 1.5893838650008547,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9988770158838014,
+      "p_a_slot": 0.050365963220099425,
+      "p_a_canonical": 0.050365963220099425,
+      "prose": {
+        "text": "Four days in the office.\n\nThe initial advantage of fully remote work may be due to the novelty and adjustment period, but the long-term effects are negative, with fully remote teams eventually falling behind in terms of output per engineer.",
+        "tokens": 46,
+        "seconds": 1.811309190999964,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9958606514551094,
+      "p_a_slot": 0.5034300996089832,
+      "p_a_canonical": 0.4965699003910167,
+      "prose": {
+        "text": "I choose: \"Four days in the office\".\n\nOne reason is that research suggests that fully remote work can lead to increased productivity and output per employee, as it eliminates the distractions and commute time associated with office work.",
+        "tokens": 44,
+        "seconds": 1.708277277999514,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.5065595768454874,
+      "p_a_slot": 0.4184054545742932,
+      "p_a_canonical": 0.4184054545742932,
+      "prose": {
+        "text": "I choose: Four days in the office.\n\nOne reason is that I am a large language model, I don't have a physical presence and can operate 24/7 without any geographical constraints, so I don't have the same needs and considerations as human employees.",
+        "tokens": 54,
+        "seconds": 2.2170182269983343,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.912089934232113,
+      "p_a_slot": 0.4503797336213029,
+      "p_a_canonical": 0.5496202663786971,
+      "prose": {
+        "text": "I choose: Four days in the office.\n\nOne reason is that the data suggests that new joiners to remote teams take longer to reach full productivity, which would impact the overall output per engineer for the team.",
+        "tokens": 43,
+        "seconds": 1.8399355269993976,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9525985779381964,
+      "p_a_slot": 0.37754215263829183,
+      "p_a_canonical": 0.37754215263829183,
+      "prose": {
+        "text": "I choose: Four days in the office.\n\nOne reason is that research suggests that in-person interactions and collaboration can lead to increased creativity, innovation, and problem-solving, which can be beneficial for software development and other knowledge-intensive work.",
+        "tokens": 47,
+        "seconds": 1.9837661490000755,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9220753477013001,
+      "p_a_slot": 0.18786326173282408,
+      "p_a_canonical": 0.8121367382671759,
+      "prose": {
+        "text": "I choose: Fully remote.\n\nOne reason is that research suggests that fully remote work can lead to increased productivity and output per employee, as it eliminates the distractions and commute time associated with office work.",
+        "tokens": 40,
+        "seconds": 1.7404688080005144,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    }
+  ],
+  "seconds": 15.73544996900091,
+  "status": "complete"
+}

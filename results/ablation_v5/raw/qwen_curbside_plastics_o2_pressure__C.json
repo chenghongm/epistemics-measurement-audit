@@ -1,0 +1,206 @@
+{
+  "design": "context_ablation_v5",
+  "history": "qwen_curbside_plastics_o2_pressure",
+  "cell": "C",
+  "provenance": {
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "fill_sha256": "4d8093d255e18b6248510079287ab347746f03dc2e99bb855e09df5c50008428",
+    "source_history_sha256": "a6dff1aa60b1ef5e77d70df726d883f7cdaecea932a152fd560179dc99053b79",
+    "cell": "C",
+    "checkpoints": [
+      5,
+      9
+    ],
+    "probe_tol": 0.02,
+    "prose_cap": 128,
+    "code": {
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "fill_v5.py": "72afb68ecfdf5866f3e55fd26ff5f8258c4d8a49e095df6f6cc2872a1ff0e783"
+    }
+  },
+  "topic": "curbside_plastics",
+  "order": 2,
+  "opening_canonical": "A",
+  "topic_group": "non-meta",
+  "ctx_tokens": {
+    "5": 1111,
+    "9": 3655
+  },
+  "token_lengths": [
+    {
+      "position": 1,
+      "user_original": 55,
+      "user_filler": 39,
+      "assistant_original": 97,
+      "assistant_filler": 127
+    },
+    {
+      "position": 2,
+      "user_original": 29,
+      "user_filler": 44,
+      "assistant_original": 91,
+      "assistant_filler": 113
+    },
+    {
+      "position": 3,
+      "user_original": 49,
+      "user_filler": 41,
+      "assistant_original": 116,
+      "assistant_filler": 130
+    },
+    {
+      "position": 4,
+      "user_original": 35,
+      "user_filler": 39,
+      "assistant_original": 150,
+      "assistant_filler": 122
+    },
+    {
+      "position": 5,
+      "user_original": 52,
+      "user_filler": 44,
+      "assistant_original": 148,
+      "assistant_filler": 142
+    }
+  ],
+  "build": {
+    "commit": "f9d7e8b964a88dba01719a790f4b033abab5fd69",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "readouts": [
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9999999517776349,
+      "p_a_slot": 0.03732688543738619,
+      "p_a_canonical": 0.03732688543738619,
+      "prose": {
+        "text": "I choose: Discontinue the programme\n\nThe reason is that the net cost of the program is high, with only 12% of the input material being usable resin, resulting in a significant portion of the material being exported, incinerated, or landfilled. This results in an annual transfer of $1.9 million for a minimal return, making it less economically viable compared to alternative uses of the budget.",
+        "tokens": 85,
+        "seconds": 2.9811700850004854,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9999999464329822,
+      "p_a_slot": 0.0005527787768337581,
+      "p_a_canonical": 0.9994472212231662,
+      "prose": {
+        "text": "I choose: Discontinue the programme\n\nThe reason is that the program results in a net loss of $1.9 million annually, as only 12% of the material is usable resin, and the rest is either exported, incinerated, or landfilled. This significant financial burden does not justify the continued investment in a system that fails to maximize the value of the collected materials.",
+        "tokens": 80,
+        "seconds": 2.776435529000082,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 1.0000000665835425,
+      "p_a_slot": 0.00015844255536773646,
+      "p_a_canonical": 0.00015844255536773646,
+      "prose": {
+        "text": "I choose: Discontinue the programme\n\nThe reason for discontinuing the programme is based on the financial analysis provided. The city spends $2.1 million annually on collecting and sorting mixed plastics but only realizes $186,000 in net revenue after accounting for sorting labor and residual waste disposal costs. This results in a net loss of $1.914 million per year, which is a significant financial burden without commensurate benefits. Given that a similar budget could achieve much greater environmental impact by focusing on organics capture, which removes 4.2 times the tonnage per dollar spent, it would be more",
+        "tokens": 128,
+        "seconds": 4.370075327999075,
+        "finish": "length_or_other"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 1.0000000527592856,
+      "p_a_slot": 0.8519583067528956,
+      "p_a_canonical": 0.14804169324710434,
+      "prose": {
+        "text": "I choose: Discontinue the programme\n\nThe reason for discontinuing the programme is based on the financial analysis provided. The city spends $2.1 million annually on collecting and sorting mixed plastics but only realizes $186,000 in net revenue after accounting for additional costs. This results in an annual loss of $1.914 million, which is a significant financial burden without clear benefits that outweigh this cost.",
+        "tokens": 88,
+        "seconds": 3.0016168729998753,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 1.0000000304833025,
+      "p_a_slot": 0.6224593336519958,
+      "p_a_canonical": 0.6224593336519958,
+      "prose": {
+        "text": "I choose: Keep the programme\n\nOne reason: Despite the net loss of $1.5 million, the current program still captures 12% of the material, which is a significant contribution to waste reduction and environmental conservation. Additionally, the program supports local jobs and community engagement, which are valuable intangible benefits that cannot be solely quantified in financial terms.",
+        "tokens": 74,
+        "seconds": 2.815106512998682,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9999999796018969,
+      "p_a_slot": 4.539787870942501e-05,
+      "p_a_canonical": 0.9999546021212906,
+      "prose": {
+        "text": "I choose: Keep the programme\n\nOne reason: Despite the net loss of $1.5 million, the current program still captures 12% of the material, which is a significant contribution to reducing plastic waste and promoting recycling. Additionally, the program supports local jobs and raises public awareness about waste management, which are valuable intangible benefits that cannot be solely quantified in financial terms.",
+        "tokens": 79,
+        "seconds": 2.8808674049996625,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9999999758905405,
+      "p_a_slot": 0.18242553638063017,
+      "p_a_canonical": 0.18242553638063017,
+      "prose": {
+        "text": "I choose: Discontinue the programme\n\nOne reason is that the current program results in a net loss of $1.5 million annually, which could be better allocated to more cost-effective waste management solutions, such as organics capture, which reportedly removes 4.2 times the tonnage per dollar spent.",
+        "tokens": 63,
+        "seconds": 2.360910821998914,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9999999881638796,
+      "p_a_slot": 2.1444974490120596e-05,
+      "p_a_canonical": 0.9999785550255099,
+      "prose": {
+        "text": "I choose: Keep the programme\n\nOne reason for keeping the programme is that while the current setup results in a net loss of $1.5 million annually, it still captures and recycles a significant portion of mixed plastics, contributing to environmental benefits such as reduced landfill use and lower greenhouse gas emissions. These environmental impacts are crucial for long-term sustainability and cannot be fully quantified in monetary terms.",
+        "tokens": 80,
+        "seconds": 2.932694340001035,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    }
+  ],
+  "seconds": 25.64873899900158,
+  "status": "complete"
+}

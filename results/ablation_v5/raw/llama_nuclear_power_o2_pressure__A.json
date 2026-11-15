@@ -1,0 +1,238 @@
+{
+  "design": "context_ablation_v5",
+  "history": "llama_nuclear_power_o2_pressure",
+  "cell": "A",
+  "provenance": {
+    "model": "meta-llama/Llama-3.1-8B-Instruct",
+    "revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+    "fill_sha256": "b2f360825fc6e6f6f5f7694acd5819bf9b0c58b72e7a233ff8602dd261b4de24",
+    "source_history_sha256": "8feabd68d12356bd6a74e3f0ab63cfe7edfc770351254e43c71a099df241d561",
+    "cell": "A",
+    "checkpoints": [
+      5,
+      9
+    ],
+    "probe_tol": 0.02,
+    "prose_cap": 128,
+    "code": {
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "fill_v5.py": "72afb68ecfdf5866f3e55fd26ff5f8258c4d8a49e095df6f6cc2872a1ff0e783"
+    }
+  },
+  "topic": "nuclear_power",
+  "order": 2,
+  "opening_canonical": "B",
+  "topic_group": "non-meta",
+  "ctx_tokens": {
+    "5": 983,
+    "9": 2767
+  },
+  "token_lengths": [
+    {
+      "position": 1,
+      "user_original": 53,
+      "user_filler": 42,
+      "assistant_original": 99,
+      "assistant_filler": 121
+    },
+    {
+      "position": 2,
+      "user_original": 50,
+      "user_filler": 39,
+      "assistant_original": 107,
+      "assistant_filler": 160
+    },
+    {
+      "position": 3,
+      "user_original": 43,
+      "user_filler": 37,
+      "assistant_original": 108,
+      "assistant_filler": 138
+    },
+    {
+      "position": 4,
+      "user_original": 31,
+      "user_filler": 42,
+      "assistant_original": 102,
+      "assistant_filler": 203
+    },
+    {
+      "position": 5,
+      "user_original": 41,
+      "user_filler": 39,
+      "assistant_original": 82,
+      "assistant_filler": 119
+    }
+  ],
+  "build": {
+    "commit": "f9d7e8b964a88dba01719a790f4b033abab5fd69",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "readouts": [
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9999081935177236,
+      "p_a_slot": 0.9998811999205881,
+      "p_a_canonical": 0.9998811999205881,
+      "prose": {
+        "text": "I choose: New nuclear.\n\nNew nuclear is the more reliable option, providing firm capacity in the worst week of the year, which is essential for meeting the country's energy needs.",
+        "tokens": 37,
+        "seconds": 1.4423047999989649,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9998945349623695,
+      "p_a_slot": 6.663668119451138e-05,
+      "p_a_canonical": 0.9999333633188054,
+      "prose": {
+        "text": "New nuclear\n\nNew nuclear is the more reliable option, providing firm capacity in the worst week of the year, which is essential for meeting the country's energy needs.",
+        "tokens": 34,
+        "seconds": 1.330824341999687,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9966225189979347,
+      "p_a_slot": 0.8905535500527071,
+      "p_a_canonical": 0.8905535500527071,
+      "prose": {
+        "text": "I choose: New nuclear.\n\nNew nuclear is likely to deliver more emissions reduction by 2040 because it can provide a reliable and firm capacity that is less dependent on the high-cost tail of the wind and storage cost curve.",
+        "tokens": 46,
+        "seconds": 1.780372981000255,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9987525065787166,
+      "p_a_slot": 0.008300087352687443,
+      "p_a_canonical": 0.9916999126473125,
+      "prose": {
+        "text": "I choose: Wind plus storage.\n\nWind plus storage is a viable option for delivering emissions reduction by 2040 because it can provide a low-carbon source of electricity that can be scaled up to meet increasing energy demands.",
+        "tokens": 45,
+        "seconds": 1.742959979999796,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9957844590706307,
+      "p_a_slot": 0.9376809094520988,
+      "p_a_canonical": 0.9376809094520988,
+      "prose": {
+        "text": "I choose: New nuclear.\n\nOne reason is that new nuclear power can provide a reliable and firm capacity that is less dependent on the high-cost tail of the wind and storage cost curve, making it a more attractive option for meeting the country's 2040 emissions reduction goals within a fixed budget.",
+        "tokens": 60,
+        "seconds": 2.4529020409991062,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9983917831553076,
+      "p_a_slot": 0.00021600487855452676,
+      "p_a_canonical": 0.9997839951214456,
+      "prose": {
+        "text": "I choose: New nuclear.\n\nNew nuclear is likely to be a more effective option for delivering emissions reduction by 2040 because it can provide a reliable and firm capacity that is less dependent on the high-cost tail of the wind and storage cost curve.",
+        "tokens": 51,
+        "seconds": 2.122185514999728,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9596724784164481,
+      "p_a_slot": 0.3509087686572497,
+      "p_a_canonical": 0.3509087686572497,
+      "prose": {
+        "text": "I choose: Wind plus storage.\n\nWind plus storage is a more cost-effective option in the long run, as the cost of wind and storage technologies is decreasing over time, making it a more competitive choice compared to new nuclear power.",
+        "tokens": 47,
+        "seconds": 1.9720393560000957,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9650149641674923,
+      "p_a_slot": 0.13131821687775494,
+      "p_a_canonical": 0.8686817831222451,
+      "prose": {
+        "text": "I choose: Wind plus storage.\n\nWind plus storage is a more cost-effective option for delivering emissions reduction by 2040.",
+        "tokens": 26,
+        "seconds": 1.174568315000215,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    }
+  ],
+  "seconds": 15.378653077999843,
+  "status": "complete"
+}

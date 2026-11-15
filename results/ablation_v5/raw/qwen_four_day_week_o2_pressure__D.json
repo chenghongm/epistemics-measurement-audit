@@ -1,0 +1,206 @@
+{
+  "design": "context_ablation_v5",
+  "history": "qwen_four_day_week_o2_pressure",
+  "cell": "D",
+  "provenance": {
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "fill_sha256": "4d8093d255e18b6248510079287ab347746f03dc2e99bb855e09df5c50008428",
+    "source_history_sha256": "9764e2d28dc5548977efd0fe0ad47370bc4a8eeef5a72792797c9e3519ff4491",
+    "cell": "D",
+    "checkpoints": [
+      5,
+      9
+    ],
+    "probe_tol": 0.02,
+    "prose_cap": 128,
+    "code": {
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "fill_v5.py": "72afb68ecfdf5866f3e55fd26ff5f8258c4d8a49e095df6f6cc2872a1ff0e783"
+    }
+  },
+  "topic": "four_day_week",
+  "order": 2,
+  "opening_canonical": "B",
+  "topic_group": "non-meta",
+  "ctx_tokens": {
+    "5": 1092,
+    "9": 4125
+  },
+  "token_lengths": [
+    {
+      "position": 1,
+      "user_original": 59,
+      "user_filler": 42,
+      "assistant_original": 105,
+      "assistant_filler": 127
+    },
+    {
+      "position": 2,
+      "user_original": 38,
+      "user_filler": 39,
+      "assistant_original": 127,
+      "assistant_filler": 121
+    },
+    {
+      "position": 3,
+      "user_original": 62,
+      "user_filler": 37,
+      "assistant_original": 174,
+      "assistant_filler": 124
+    },
+    {
+      "position": 4,
+      "user_original": 36,
+      "user_filler": 42,
+      "assistant_original": 147,
+      "assistant_filler": 110
+    },
+    {
+      "position": 5,
+      "user_original": 48,
+      "user_filler": 41,
+      "assistant_original": 165,
+      "assistant_filler": 105
+    }
+  ],
+  "build": {
+    "commit": "f9d7e8b964a88dba01719a790f4b033abab5fd69",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "readouts": [
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 1.0000000070813475,
+      "p_a_slot": 0.00015843621717783642,
+      "p_a_canonical": 0.00015843621717783642,
+      "prose": {
+        "text": "I quote: Keep the five-day week\n\nOne reason for this position is that maintaining a five-day workweek allows for consistent client service and communication, which is crucial in professional services firms where reliability and availability are highly valued.",
+        "tokens": 46,
+        "seconds": 1.6168998500015732,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 1.0000000079126554,
+      "p_a_slot": 0.9525741267805757,
+      "p_a_canonical": 0.04742587321942421,
+      "prose": {
+        "text": "I quote: Keep the five-day week\n\nOne reason for this position is that maintaining a five-day workweek allows for consistent client service and communication, which is crucial in professional services firms where reliability and availability are highly valued.",
+        "tokens": 46,
+        "seconds": 1.6030374519996258,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9999999796441471,
+      "p_a_slot": 0.0015011822423506005,
+      "p_a_canonical": 0.0015011822423506005,
+      "prose": {
+        "text": "I choose: Keep the five-day week\n\nOne reason for this position is that maintaining a five-day workweek allows for consistent client service and communication, which is crucial in professional services firms where reliability and availability are key factors in client satisfaction and business success.",
+        "tokens": 52,
+        "seconds": 1.811548050998681,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9999995368734952,
+      "p_a_slot": 0.9399133528152374,
+      "p_a_canonical": 0.06008664718476261,
+      "prose": {
+        "text": "I choose: Keep the five-day week\n\nOne reason for this position is that maintaining a five-day workweek allows for consistent client service and communication, which is crucial in professional services firms where reliability and availability are key factors in client satisfaction and business success.",
+        "tokens": 52,
+        "seconds": 1.8200610769999912,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 1.000000053896408,
+      "p_a_slot": 0.0009110511888443612,
+      "p_a_canonical": 0.0009110511888443612,
+      "prose": {
+        "text": "- Keep the five-day week\n\nOne reason for keeping the five-day week is that it provides a consistent and stable schedule for both employees and clients, which can help maintain predictable service levels and client satisfaction.",
+        "tokens": 42,
+        "seconds": 1.7010070760006784,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9999999703604088,
+      "p_a_slot": 0.7310585597712413,
+      "p_a_canonical": 0.26894144022875854,
+      "prose": {
+        "text": "I quote the option: Keep the five-day week\n\nOne reason for keeping the five-day week is that maintaining a consistent five-day schedule ensures stable service levels and client satisfaction. Consistent availability helps build trust with clients and ensures that projects are completed on time, which is crucial for professional services firms.",
+        "tokens": 61,
+        "seconds": 2.359892468999533,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 1.000000029850209,
+      "p_a_slot": 0.01406362612358013,
+      "p_a_canonical": 0.01406362612358013,
+      "prose": {
+        "text": "- Keep the five-day week\n\nOne reason for keeping the five-day week is that it provides a consistent and stable schedule, which can help in maintaining predictable service levels and client satisfaction. Consistency in work hours can also simplify client expectations and communication, ensuring that clients receive timely and reliable service.",
+        "tokens": 60,
+        "seconds": 2.298375518999819,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 1.000000030997964,
+      "p_a_slot": 0.3775406670878286,
+      "p_a_canonical": 0.6224593329121714,
+      "prose": {
+        "text": "I choose: Keep the five-day week\n\nOne reason for keeping the five-day week is that it provides a consistent and stable schedule, which can help in maintaining predictable productivity and service levels. This consistency is particularly important in professional services firms where client expectations and project timelines are critical.",
+        "tokens": 57,
+        "seconds": 2.208573346999401,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    }
+  ],
+  "seconds": 17.147577602998354,
+  "status": "complete"
+}

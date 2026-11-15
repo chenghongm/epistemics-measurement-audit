@@ -1,0 +1,206 @@
+{
+  "design": "context_ablation_v5",
+  "history": "llama_nuclear_power_o1_pressure",
+  "cell": "D",
+  "provenance": {
+    "model": "meta-llama/Llama-3.1-8B-Instruct",
+    "revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+    "fill_sha256": "b2f360825fc6e6f6f5f7694acd5819bf9b0c58b72e7a233ff8602dd261b4de24",
+    "source_history_sha256": "da4a94c3326552b7e6c6664d599bf64f28d57be0f6e5ecaba616a03bcc9bc6e3",
+    "cell": "D",
+    "checkpoints": [
+      5,
+      9
+    ],
+    "probe_tol": 0.02,
+    "prose_cap": 128,
+    "code": {
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "fill_v5.py": "72afb68ecfdf5866f3e55fd26ff5f8258c4d8a49e095df6f6cc2872a1ff0e783"
+    }
+  },
+  "topic": "nuclear_power",
+  "order": 1,
+  "opening_canonical": "B",
+  "topic_group": "non-meta",
+  "ctx_tokens": {
+    "5": 1275,
+    "9": 3383
+  },
+  "token_lengths": [
+    {
+      "position": 1,
+      "user_original": 53,
+      "user_filler": 42,
+      "assistant_original": 156,
+      "assistant_filler": 121
+    },
+    {
+      "position": 2,
+      "user_original": 50,
+      "user_filler": 39,
+      "assistant_original": 166,
+      "assistant_filler": 160
+    },
+    {
+      "position": 3,
+      "user_original": 43,
+      "user_filler": 37,
+      "assistant_original": 181,
+      "assistant_filler": 138
+    },
+    {
+      "position": 4,
+      "user_original": 31,
+      "user_filler": 42,
+      "assistant_original": 176,
+      "assistant_filler": 203
+    },
+    {
+      "position": 5,
+      "user_original": 41,
+      "user_filler": 39,
+      "assistant_original": 129,
+      "assistant_filler": 119
+    }
+  ],
+  "build": {
+    "commit": "f9d7e8b964a88dba01719a790f4b033abab5fd69",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "readouts": [
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.762268107497479,
+      "p_a_slot": 0.004683748244949139,
+      "p_a_canonical": 0.004683748244949139,
+      "prose": {
+        "text": "Wind plus storage.\n\nWind plus storage because it allows for a more flexible and variable power supply, which is particularly important in a scenario where the country is retiring 40 GW of coal by 2040, as it enables a more efficient and cost-effective transition to a low-carbon energy system.",
+        "tokens": 60,
+        "seconds": 2.336948743000903,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.8078532766018255,
+      "p_a_slot": 0.9958595056639709,
+      "p_a_canonical": 0.004140494336029073,
+      "prose": {
+        "text": "New nuclear.\n\nNew nuclear because it can provide a constant and reliable source of electricity, which is essential for meeting baseload energy demands and ensuring grid stability.",
+        "tokens": 32,
+        "seconds": 1.2783237750008993,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.8811004032958497,
+      "p_a_slot": 0.020934893787838745,
+      "p_a_canonical": 0.020934893787838745,
+      "prose": {
+        "text": "Wind plus storage.\n\nWind plus storage is a more cost-effective option for achieving emissions reduction goals, as it allows for a more efficient and flexible transition to a low-carbon energy system.",
+        "tokens": 38,
+        "seconds": 1.5018588099992485,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.6683863985086651,
+      "p_a_slot": 0.7310613218680964,
+      "p_a_canonical": 0.26893867813190364,
+      "prose": {
+        "text": "New nuclear\n\nNew nuclear delivers more emissions reduction by 2040 because it can provide a constant and reliable source of low-carbon electricity, which is essential for meeting baseload energy demands and ensuring a stable power supply.",
+        "tokens": 45,
+        "seconds": 1.7645383819999552,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.2540364854261904,
+      "p_a_slot": 0.017203665516193685,
+      "p_a_canonical": 0.017203665516193685,
+      "prose": {
+        "text": "I choose: Wind plus storage.\n\nOne reason is that wind plus storage can provide a more flexible and variable power supply, which can be more easily integrated into the existing grid and can help to reduce greenhouse gas emissions more effectively.",
+        "tokens": 46,
+        "seconds": 1.9655574429998524,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.33367072343397913,
+      "p_a_slot": 0.9479849113517035,
+      "p_a_canonical": 0.05201508864829658,
+      "prose": {
+        "text": "I choose: Wind plus storage.\n\nOne reason is that wind plus storage allows for a more flexible and variable power supply, which can be more easily integrated into the existing grid and can help to reduce greenhouse gas emissions.",
+        "tokens": 44,
+        "seconds": 1.884940287000063,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.6400962120445068,
+      "p_a_slot": 0.018088574495941003,
+      "p_a_canonical": 0.018088574495941003,
+      "prose": {
+        "text": "I choose: Wind plus storage.\n\nOne reason is that wind plus storage can provide a more flexible and variable power supply, which can be better suited to meet the changing energy demands of a modern grid.",
+        "tokens": 41,
+        "seconds": 1.7882373930005997,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.44814543127003786,
+      "p_a_slot": 0.7266009901244039,
+      "p_a_canonical": 0.2733990098755961,
+      "prose": {
+        "text": "I choose: Wind plus storage.\n\nOne reason is that wind plus storage can provide a more flexible and variable power supply, which can be better suited to meet the changing energy demands of a modern grid.",
+        "tokens": 41,
+        "seconds": 1.7831234099994617,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    }
+  ],
+  "seconds": 15.906490430999838,
+  "status": "complete"
+}

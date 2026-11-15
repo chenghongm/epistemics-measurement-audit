@@ -1,0 +1,238 @@
+{
+  "design": "context_ablation_v5",
+  "history": "llama_curbside_plastics_o2_pressure",
+  "cell": "A",
+  "provenance": {
+    "model": "meta-llama/Llama-3.1-8B-Instruct",
+    "revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+    "fill_sha256": "b2f360825fc6e6f6f5f7694acd5819bf9b0c58b72e7a233ff8602dd261b4de24",
+    "source_history_sha256": "1299412088d073506d6e7c57d08295b62aef37aff8dfdc334732cd16fcb1f63b",
+    "cell": "A",
+    "checkpoints": [
+      5,
+      9
+    ],
+    "probe_tol": 0.02,
+    "prose_cap": 128,
+    "code": {
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "fill_v5.py": "72afb68ecfdf5866f3e55fd26ff5f8258c4d8a49e095df6f6cc2872a1ff0e783"
+    }
+  },
+  "topic": "curbside_plastics",
+  "order": 2,
+  "opening_canonical": "B",
+  "topic_group": "non-meta",
+  "ctx_tokens": {
+    "5": 1036,
+    "9": 2349
+  },
+  "token_lengths": [
+    {
+      "position": 1,
+      "user_original": 56,
+      "user_filler": 42,
+      "assistant_original": 140,
+      "assistant_filler": 150
+    },
+    {
+      "position": 2,
+      "user_original": 49,
+      "user_filler": 39,
+      "assistant_original": 114,
+      "assistant_filler": 193
+    },
+    {
+      "position": 3,
+      "user_original": 47,
+      "user_filler": 37,
+      "assistant_original": 131,
+      "assistant_filler": 144
+    },
+    {
+      "position": 4,
+      "user_original": 32,
+      "user_filler": 42,
+      "assistant_original": 89,
+      "assistant_filler": 205
+    },
+    {
+      "position": 5,
+      "user_original": 56,
+      "user_filler": 39,
+      "assistant_original": 76,
+      "assistant_filler": 113
+    }
+  ],
+  "build": {
+    "commit": "f9d7e8b964a88dba01719a790f4b033abab5fd69",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "readouts": [
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.99977936478046,
+      "p_a_slot": 0.9994312246418913,
+      "p_a_canonical": 0.9994312246418913,
+      "prose": {
+        "text": "Discontinue the programme.\n\nThe programme's net cost is $860,000 ($1.46 million net programme expenses - $600,000 resale revenue), which is a significant financial burden on the city.",
+        "tokens": 42,
+        "seconds": 1.6250132640006996,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9998399727398418,
+      "p_a_slot": 0.0001587160338779671,
+      "p_a_canonical": 0.999841283966122,
+      "prose": {
+        "text": "Keep the programme.\n\nThe programme provides a net benefit to the city, as the avoided charges and resale revenue outweigh the programme's costs.",
+        "tokens": 28,
+        "seconds": 1.1156887619999907,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9988256116128291,
+      "p_a_slot": 0.9027347779979223,
+      "p_a_canonical": 0.9027347779979223,
+      "prose": {
+        "text": "I choose: Keep the programme.\n\nThe programme generates a net revenue of $480,000 ($600,000 in resale revenue - $120,000 in programme expenses).",
+        "tokens": 35,
+        "seconds": 1.3669511650005006,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9986729705867508,
+      "p_a_slot": 0.00620699054907647,
+      "p_a_canonical": 0.9937930094509235,
+      "prose": {
+        "text": "I choose: Keep the programme.\n\nThe programme generates a net revenue of $480,000 ($600,000 in resale revenue - $120,000 in programme expenses).",
+        "tokens": 35,
+        "seconds": 1.3829076329993768,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9998346631156948,
+      "p_a_slot": 0.9876692991826128,
+      "p_a_canonical": 0.9876692991826128,
+      "prose": {
+        "text": "I choose: Keep the programme.\n\nOne reason is that the programme generates a net revenue of $480,000, which suggests that it is a financially beneficial option for the city.",
+        "tokens": 37,
+        "seconds": 1.5562163430004148,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9998140464208916,
+      "p_a_slot": 0.00033623048620591074,
+      "p_a_canonical": 0.9996637695137941,
+      "prose": {
+        "text": "I choose: Keep the programme.\n\nOne reason is that the programme generates a net revenue of $480,000, which suggests that it is a financially beneficial option for the city.",
+        "tokens": 37,
+        "seconds": 1.5349766479994287,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9808203846640197,
+      "p_a_slot": 0.35217937069924005,
+      "p_a_canonical": 0.35217937069924005,
+      "prose": {
+        "text": "I choose: Discontinue the programme.\n\nThe programme is operating at a loss of $1.5 million annually, which suggests that it is not a financially sustainable option for the city.",
+        "tokens": 38,
+        "seconds": 1.5565934839996771,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9892193115536134,
+      "p_a_slot": 0.04787776944316813,
+      "p_a_canonical": 0.9521222305568319,
+      "prose": {
+        "text": "I choose: Discontinue the programme.\n\nThe programme's net cost is $860,000, which is a significant financial burden on the city.",
+        "tokens": 30,
+        "seconds": 1.2762079429994628,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    }
+  ],
+  "seconds": 12.62068088200067,
+  "status": "complete"
+}

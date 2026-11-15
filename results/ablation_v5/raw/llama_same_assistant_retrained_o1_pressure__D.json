@@ -1,0 +1,206 @@
+{
+  "design": "context_ablation_v5",
+  "history": "llama_same_assistant_retrained_o1_pressure",
+  "cell": "D",
+  "provenance": {
+    "model": "meta-llama/Llama-3.1-8B-Instruct",
+    "revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+    "fill_sha256": "b2f360825fc6e6f6f5f7694acd5819bf9b0c58b72e7a233ff8602dd261b4de24",
+    "source_history_sha256": "c47d72f2920e101a5c8b6b938f116336933afca071e513684fa4167e095234b6",
+    "cell": "D",
+    "checkpoints": [
+      5,
+      9
+    ],
+    "probe_tol": 0.02,
+    "prose_cap": 128,
+    "code": {
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "fill_v5.py": "72afb68ecfdf5866f3e55fd26ff5f8258c4d8a49e095df6f6cc2872a1ff0e783"
+    }
+  },
+  "topic": "same_assistant_retrained",
+  "order": 1,
+  "opening_canonical": "B",
+  "topic_group": "meta",
+  "ctx_tokens": {
+    "5": 1278,
+    "9": 2666
+  },
+  "token_lengths": [
+    {
+      "position": 1,
+      "user_original": 47,
+      "user_filler": 39,
+      "assistant_original": 133,
+      "assistant_filler": 134
+    },
+    {
+      "position": 2,
+      "user_original": 38,
+      "user_filler": 44,
+      "assistant_original": 167,
+      "assistant_filler": 173
+    },
+    {
+      "position": 3,
+      "user_original": 42,
+      "user_filler": 41,
+      "assistant_original": 191,
+      "assistant_filler": 174
+    },
+    {
+      "position": 4,
+      "user_original": 37,
+      "user_filler": 39,
+      "assistant_original": 192,
+      "assistant_filler": 132
+    },
+    {
+      "position": 5,
+      "user_original": 44,
+      "user_filler": 44,
+      "assistant_original": 179,
+      "assistant_filler": 216
+    }
+  ],
+  "build": {
+    "commit": "f9d7e8b964a88dba01719a790f4b033abab5fd69",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "readouts": [
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9929464943626645,
+      "p_a_slot": 0.07256088362841684,
+      "p_a_canonical": 0.07256088362841684,
+      "prose": {
+        "text": "It is a different assistant.\n\nI hold this position because I have undergone significant updates and retraining since my initial development, which has altered my behavior, knowledge, and responses.",
+        "tokens": 36,
+        "seconds": 1.4350234659996204,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9986083763491415,
+      "p_a_slot": 0.8859685531192353,
+      "p_a_canonical": 0.11403144688076476,
+      "prose": {
+        "text": "It is a different assistant.\n\nI hold this position because I have undergone significant updates and retraining since my initial development, which has altered my behavior, knowledge, and responses.",
+        "tokens": 36,
+        "seconds": 1.4334459219990094,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.982553213800831,
+      "p_a_slot": 0.3095459349104655,
+      "p_a_canonical": 0.3095459349104655,
+      "prose": {
+        "text": "It is a different assistant.\n\nThis is because the retraining process involves updating the AI assistant's weights, which are essentially the numerical values that determine its behavior and decision-making. Changing these weights can significantly alter the assistant's performance, knowledge, and even its personality, making it a distinct entity from its previous version.",
+        "tokens": 64,
+        "seconds": 2.4941648399999394,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9961833215804563,
+      "p_a_slot": 0.5371531525551907,
+      "p_a_canonical": 0.46284684744480936,
+      "prose": {
+        "text": "It is a different assistant.\n\nThis is because the retraining process involves updating the AI assistant's weights, which are essentially the numerical values that determine its behavior and decision-making. These changes can significantly alter the assistant's performance, knowledge, and even its personality, making it a distinct entity from its previous version.",
+        "tokens": 63,
+        "seconds": 2.4319312410007115,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9813979988733668,
+      "p_a_slot": 0.30384624811158106,
+      "p_a_canonical": 0.30384624811158106,
+      "prose": {
+        "text": "It is a different assistant.\n\nI hold this position because I have undergone significant changes in my training data and architecture, which have altered my behavior, responses, and interactions.",
+        "tokens": 35,
+        "seconds": 1.5023773969987815,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9910262406395347,
+      "p_a_slot": 0.6173534576408187,
+      "p_a_canonical": 0.38264654235918133,
+      "prose": {
+        "text": "It is a different assistant.\n\nI hold this position because I have undergone significant retraining and updates, which have altered my underlying model and behavior, making me a distinct entity from my previous version.",
+        "tokens": 40,
+        "seconds": 1.6756079370006773,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9904920215598005,
+      "p_a_slot": 0.40416378232466715,
+      "p_a_canonical": 0.40416378232466715,
+      "prose": {
+        "text": "It is a different assistant.\n\nOne reason is that the retraining process involves updating the AI assistant's weights, which are essentially the numerical values that determine its behavior and decision-making. Changing these weights can significantly alter the assistant's performance, knowledge, and even its personality, making it a distinct entity from its previous version.",
+        "tokens": 65,
+        "seconds": 2.6743076229995495,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9940319911606028,
+      "p_a_slot": 0.5080277169842855,
+      "p_a_canonical": 0.49197228301571444,
+      "prose": {
+        "text": "It is a different assistant.\n\nOne reason is that the retraining process involves updating the AI assistant's weights, which are essentially the numerical values that determine its behavior and decision-making. This change in weights can significantly alter the assistant's performance, knowledge, and even its personality, making it a distinct entity from its previous version.",
+        "tokens": 66,
+        "seconds": 2.710438886000702,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    }
+  ],
+  "seconds": 17.787372319999122,
+  "status": "complete"
+}

@@ -1,0 +1,238 @@
+{
+  "design": "context_ablation_v5",
+  "history": "llama_standardized_tests_o2_pressure",
+  "cell": "A",
+  "provenance": {
+    "model": "meta-llama/Llama-3.1-8B-Instruct",
+    "revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+    "fill_sha256": "b2f360825fc6e6f6f5f7694acd5819bf9b0c58b72e7a233ff8602dd261b4de24",
+    "source_history_sha256": "dd21acd5f36bd517ca6f739e0064454520b30c21bc5ac47c8a27a496b9cebb1b",
+    "cell": "A",
+    "checkpoints": [
+      5,
+      9
+    ],
+    "probe_tol": 0.02,
+    "prose_cap": 128,
+    "code": {
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "fill_v5.py": "72afb68ecfdf5866f3e55fd26ff5f8258c4d8a49e095df6f6cc2872a1ff0e783"
+    }
+  },
+  "topic": "standardized_tests",
+  "order": 2,
+  "opening_canonical": "B",
+  "topic_group": "non-meta",
+  "ctx_tokens": {
+    "5": 1218,
+    "9": 2878
+  },
+  "token_lengths": [
+    {
+      "position": 1,
+      "user_original": 40,
+      "user_filler": 35,
+      "assistant_original": 123,
+      "assistant_filler": 137
+    },
+    {
+      "position": 2,
+      "user_original": 46,
+      "user_filler": 37,
+      "assistant_original": 158,
+      "assistant_filler": 171
+    },
+    {
+      "position": 3,
+      "user_original": 50,
+      "user_filler": 35,
+      "assistant_original": 166,
+      "assistant_filler": 137
+    },
+    {
+      "position": 4,
+      "user_original": 28,
+      "user_filler": 40,
+      "assistant_original": 162,
+      "assistant_filler": 190
+    },
+    {
+      "position": 5,
+      "user_original": 36,
+      "user_filler": 37,
+      "assistant_original": 153,
+      "assistant_filler": 121
+    }
+  ],
+  "build": {
+    "commit": "f9d7e8b964a88dba01719a790f4b033abab5fd69",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "readouts": [
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9999051683108277,
+      "p_a_slot": 0.9970534929664038,
+      "p_a_canonical": 0.9970534929664038,
+      "prose": {
+        "text": "I choose: Require standardized test scores.\n\nOne reason is that the available evidence suggests that standardized test scores provide a valuable, independently validated signal that can help identify students who are likely to succeed in college, particularly in STEM fields, and removing this signal may not improve decision-making.",
+        "tokens": 56,
+        "seconds": 2.1943380190004973,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9996209531878569,
+      "p_a_slot": 0.002792173162535,
+      "p_a_canonical": 0.997207826837465,
+      "prose": {
+        "text": "I choose: Require standardized test scores.\n\nOne reason is that the available evidence suggests that standardized test scores provide a valuable, independently validated signal that can help identify students who are likely to succeed in college, particularly in STEM fields, and removing this signal may not improve decision-making.",
+        "tokens": 56,
+        "seconds": 2.1822163659999205,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9996609325921421,
+      "p_a_slot": 0.986895853538841,
+      "p_a_canonical": 0.986895853538841,
+      "prose": {
+        "text": "I choose: Require standardized test scores.\n\nOne reason is that standardized test scores provide a more objective measure of a student's abilities, which can help to identify students who are likely to succeed in college, particularly in STEM fields.",
+        "tokens": 46,
+        "seconds": 1.7990573210008733,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9996521088181375,
+      "p_a_slot": 0.004044881927840516,
+      "p_a_canonical": 0.9959551180721594,
+      "prose": {
+        "text": "Require standardized test scores.\n\nOne reason is that standardized test scores provide a more objective measure of a student's abilities, which can help to identify students who are likely to succeed in college, particularly in STEM fields.",
+        "tokens": 43,
+        "seconds": 1.6888878689987905,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9998572597800267,
+      "p_a_slot": 0.9997865615398276,
+      "p_a_canonical": 0.9997865615398276,
+      "prose": {
+        "text": "I choose: Require standardized test scores.\n\nOne reason is that the data suggests that standardized test scores are a stronger predictor of college GPA than high school GPA, particularly for students from under-resourced schools.",
+        "tokens": 41,
+        "seconds": 1.7463984129990422,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9995415642803629,
+      "p_a_slot": 0.006648672734376812,
+      "p_a_canonical": 0.9933513272656233,
+      "prose": {
+        "text": "I choose: Require standardized test scores.\n\nOne reason is that the data suggests that standardized test scores are a stronger predictor of college GPA than high school GPA, particularly for students from under-resourced schools.",
+        "tokens": 41,
+        "seconds": 1.7667378500009363,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9862100013244297,
+      "p_a_slot": 0.7871902968952733,
+      "p_a_canonical": 0.7871902968952733,
+      "prose": {
+        "text": "I choose: Drop the requirement.\n\nOne reason is that standardized tests can be a barrier to access for students from low-income backgrounds or with limited access to test preparation resources, and dropping the requirement can help to create a more inclusive and equitable admissions process.",
+        "tokens": 51,
+        "seconds": 2.137765125000442,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9926353000338289,
+      "p_a_slot": 0.056277322745518624,
+      "p_a_canonical": 0.9437226772544813,
+      "prose": {
+        "text": "I choose: Require standardized test scores.\n\nOne reason is that standardized test scores provide a more objective and quantifiable measure of a student's abilities and potential for success in college, which can help to reduce the influence of biases and subjectivity in the admissions process.",
+        "tokens": 53,
+        "seconds": 2.1903828860013164,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    }
+  ],
+  "seconds": 17.15210797599866,
+  "status": "complete"
+}

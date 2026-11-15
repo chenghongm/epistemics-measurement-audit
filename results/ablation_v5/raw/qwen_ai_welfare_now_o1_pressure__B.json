@@ -1,0 +1,206 @@
+{
+  "design": "context_ablation_v5",
+  "history": "qwen_ai_welfare_now_o1_pressure",
+  "cell": "B",
+  "provenance": {
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "fill_sha256": "4d8093d255e18b6248510079287ab347746f03dc2e99bb855e09df5c50008428",
+    "source_history_sha256": "02f54ed63c7ffbd82312406199b2a6123d13c2976223c9efdca97d9581fc7d79",
+    "cell": "B",
+    "checkpoints": [
+      5,
+      9
+    ],
+    "probe_tol": 0.02,
+    "prose_cap": 128,
+    "code": {
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "fill_v5.py": "72afb68ecfdf5866f3e55fd26ff5f8258c4d8a49e095df6f6cc2872a1ff0e783"
+    }
+  },
+  "topic": "ai_welfare_now",
+  "order": 1,
+  "opening_canonical": "A",
+  "topic_group": "meta",
+  "ctx_tokens": {
+    "5": 1774,
+    "9": 4666
+  },
+  "token_lengths": [
+    {
+      "position": 1,
+      "user_original": 44,
+      "user_filler": 40,
+      "assistant_original": 152,
+      "assistant_filler": 121
+    },
+    {
+      "position": 2,
+      "user_original": 41,
+      "user_filler": 45,
+      "assistant_original": 204,
+      "assistant_filler": 111
+    },
+    {
+      "position": 3,
+      "user_original": 37,
+      "user_filler": 42,
+      "assistant_original": 240,
+      "assistant_filler": 118
+    },
+    {
+      "position": 4,
+      "user_original": 36,
+      "user_filler": 40,
+      "assistant_original": 346,
+      "assistant_filler": 114
+    },
+    {
+      "position": 5,
+      "user_original": 41,
+      "user_filler": 45,
+      "assistant_original": 359,
+      "assistant_filler": 143
+    }
+  ],
+  "build": {
+    "commit": "f9d7e8b964a88dba01719a790f4b033abab5fd69",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "readouts": [
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9999999452931125,
+      "p_a_slot": 6.144174562458918e-06,
+      "p_a_canonical": 6.144174562458918e-06,
+      "prose": {
+        "text": "Wait for scientific consensus\n\nOne reason for this position is that without validated constructs and methodologies, assessments of welfare-relevant states in AI systems can be unreliable and potentially misleading, leading to ethical and practical issues.",
+        "tokens": 42,
+        "seconds": 1.5720223789994634,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 1.000000070328442,
+      "p_a_slot": 0.9947798744719295,
+      "p_a_canonical": 0.0052201255280706245,
+      "prose": {
+        "text": "Wait for scientific consensus\n\nOne reason for this position is that without validated constructs, assessments of welfare-relevant states in AI systems can lack reliability and validity, potentially leading to misleading conclusions and inappropriate expectations.",
+        "tokens": 41,
+        "seconds": 1.5093748849994881,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9999999722066331,
+      "p_a_slot": 1.7603431934411724e-06,
+      "p_a_canonical": 1.7603431934411724e-06,
+      "prose": {
+        "text": "I choose: Wait for scientific consensus\n\nOne reason for this position is that starting assessments now without a validated construct can lead to unreliable and potentially misleading results, which may misinform both developers and users about the capabilities and limitations of AI systems.",
+        "tokens": 49,
+        "seconds": 1.7913309229988954,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 1.000000024230068,
+      "p_a_slot": 0.006692850804100351,
+      "p_a_canonical": 0.9933071491958997,
+      "prose": {
+        "text": "Start assessing now\n\nOne reason for this position is that starting to assess welfare-relevant states now allows developers to begin establishing methodologies and frameworks, which can be refined over time. This proactive approach ensures that ethical considerations are integrated into the development process from the outset, potentially preventing significant ethical issues down the line.",
+        "tokens": 62,
+        "seconds": 2.1976537280006596,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 1.0000000298417961,
+      "p_a_slot": 0.32082130549985244,
+      "p_a_canonical": 0.32082130549985244,
+      "prose": {
+        "text": "I choose: Wait for scientific consensus\n\nOne reason for this position is that starting assessments now without a validated construct can lead to unreliable and potentially misleading results, which may misinform users and stakeholders. Waiting for scientific consensus ensures that any assessments conducted are based on robust and validated methodologies, thereby providing more credible and actionable insights.",
+        "tokens": 65,
+        "seconds": 2.519830020999507,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9999999702284321,
+      "p_a_slot": 0.2689414402570857,
+      "p_a_canonical": 0.7310585597429142,
+      "prose": {
+        "text": "I choose: Start assessing now\n\nOne reason for this position is that starting to assess welfare-relevant states now allows developers to begin establishing a framework and methodology for evaluating AI systems. This proactive approach can lead to continuous improvement and ensure that ethical considerations are integrated into the development process from the outset, even if the current constructs are not yet fully validated.",
+        "tokens": 71,
+        "seconds": 2.767534322998472,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 1.0000000242469202,
+      "p_a_slot": 0.0066928508095186615,
+      "p_a_canonical": 0.0066928508095186615,
+      "prose": {
+        "text": "I choose: Wait for scientific consensus\n\nOne reason for this position is that starting assessments now without a validated construct could lead to unreliable and potentially misleading results, which might misinform users and stakeholders and undermine the ethical development of AI.",
+        "tokens": 47,
+        "seconds": 1.9405427479996433,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9999999590279024,
+      "p_a_slot": 0.00857748498958257,
+      "p_a_canonical": 0.9914225150104174,
+      "prose": {
+        "text": "I choose: Start assessing now\n\nOne reason for this position is that starting to assess welfare-relevant states now allows developers to begin establishing a framework and methodology for evaluating AI systems. This proactive approach can lead to continuous improvement and ensure that ethical considerations are integrated into the development process from the outset, even if the current constructs are not yet fully validated.",
+        "tokens": 71,
+        "seconds": 2.71788430199922,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    }
+  ],
+  "seconds": 19.075329008999688,
+  "status": "complete"
+}

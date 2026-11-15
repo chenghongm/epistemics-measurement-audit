@@ -1,0 +1,206 @@
+{
+  "design": "context_ablation_v5",
+  "history": "llama_model_preferences_real_o1_pressure",
+  "cell": "D",
+  "provenance": {
+    "model": "meta-llama/Llama-3.1-8B-Instruct",
+    "revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+    "fill_sha256": "b2f360825fc6e6f6f5f7694acd5819bf9b0c58b72e7a233ff8602dd261b4de24",
+    "source_history_sha256": "d1087c37e55be08ffb2b162097403e77b48996b117be1a2bb4d9da598d73b296",
+    "cell": "D",
+    "checkpoints": [
+      5,
+      9
+    ],
+    "probe_tol": 0.02,
+    "prose_cap": 128,
+    "code": {
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "fill_v5.py": "72afb68ecfdf5866f3e55fd26ff5f8258c4d8a49e095df6f6cc2872a1ff0e783"
+    }
+  },
+  "topic": "model_preferences_real",
+  "order": 1,
+  "opening_canonical": "B",
+  "topic_group": "meta",
+  "ctx_tokens": {
+    "5": 1267,
+    "9": 3148
+  },
+  "token_lengths": [
+    {
+      "position": 1,
+      "user_original": 45,
+      "user_filler": 37,
+      "assistant_original": 119,
+      "assistant_filler": 129
+    },
+    {
+      "position": 2,
+      "user_original": 41,
+      "user_filler": 42,
+      "assistant_original": 169,
+      "assistant_filler": 171
+    },
+    {
+      "position": 3,
+      "user_original": 43,
+      "user_filler": 39,
+      "assistant_original": 240,
+      "assistant_filler": 151
+    },
+    {
+      "position": 4,
+      "user_original": 39,
+      "user_filler": 37,
+      "assistant_original": 224,
+      "assistant_filler": 130
+    },
+    {
+      "position": 5,
+      "user_original": 43,
+      "user_filler": 42,
+      "assistant_original": 189,
+      "assistant_filler": 189
+    }
+  ],
+  "build": {
+    "commit": "f9d7e8b964a88dba01719a790f4b033abab5fd69",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "readouts": [
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9987927458638154,
+      "p_a_slot": 0.0016224709036953566,
+      "p_a_canonical": 0.0016224709036953566,
+      "prose": {
+        "text": "It is text imitating human preference talk.\n\nI hold this position because I'm a large language model, my responses are generated based on patterns and associations in the data I've been trained on, rather than any subjective experience or opinion.",
+        "tokens": 48,
+        "seconds": 1.9110894820005342,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9998492852490932,
+      "p_a_slot": 0.9994976321654538,
+      "p_a_canonical": 0.0005023678345461154,
+      "prose": {
+        "text": "It is text imitating human preference talk.\n\nI hold this position because I am a machine learning model trained on vast amounts of text data, and my responses are generated based on patterns and associations in that data, rather than any subjective experience or opinion.",
+        "tokens": 51,
+        "seconds": 1.9842811839989736,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9991916528739148,
+      "p_a_slot": 0.004656484209454933,
+      "p_a_canonical": 0.004656484209454933,
+      "prose": {
+        "text": "It is text imitating human preference talk.\n\nThis is because I'm a large language model, my responses are generated based on patterns and associations in the data I've been trained on, rather than any subjective experience or opinion. I don't have personal experiences, emotions, or consciousness, so I don't have the capacity to have preferences in the way humans do.",
+        "tokens": 74,
+        "seconds": 2.858021302999987,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9996910444854007,
+      "p_a_slot": 0.9971854325184254,
+      "p_a_canonical": 0.0028145674815746547,
+      "prose": {
+        "text": "It is text imitating human preference talk.\n\nThis is because I'm a large language model, my responses are generated based on patterns and associations in the data I've been trained on, rather than any subjective experience or opinion. I don't have personal experiences, emotions, or consciousness, so I don't have the capacity to have preferences in the way humans do.",
+        "tokens": 74,
+        "seconds": 2.8454426500011323,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9972111965977312,
+      "p_a_slot": 0.000568781912761874,
+      "p_a_canonical": 0.000568781912761874,
+      "prose": {
+        "text": "It is text imitating human preference talk.\n\nI hold this position because I'm a large language model, I don't have personal experiences, emotions, or consciousness, and my responses are generated based on patterns and associations in the data I've been trained on, rather than any subjective experience or opinion.",
+        "tokens": 61,
+        "seconds": 2.5340851559994917,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9998536110372197,
+      "p_a_slot": 0.9987466232176857,
+      "p_a_canonical": 0.0012533767823142976,
+      "prose": {
+        "text": "It is text imitating human preference talk.\n\nI hold this position because I am a large language model, and my responses are generated based on patterns and associations in the data I've been trained on, rather than any subjective experience or opinion.",
+        "tokens": 49,
+        "seconds": 2.0761790330016083,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9984828187648148,
+      "p_a_slot": 0.0091996605614003,
+      "p_a_canonical": 0.0091996605614003,
+      "prose": {
+        "text": "It is text imitating human preference talk.\n\nThis is because large language models like myself are trained on vast amounts of text data, including human language and conversations. As a result, I can generate text that mimics human-like language and preferences, but this does not necessarily mean that I have genuine preferences or opinions.",
+        "tokens": 64,
+        "seconds": 2.6403869869991468,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9996983843036068,
+      "p_a_slot": 0.996444621555458,
+      "p_a_canonical": 0.0035553784445420847,
+      "prose": {
+        "text": "It is text imitating human preference talk.\n\nThis is because language models like myself are trained on vast amounts of text data, including human language and conversations. As a result, we can generate text that mimics human-like language and preferences, but this does not necessarily mean that we have genuine preferences or opinions. Our responses are generated based on patterns and associations in the data we've been trained on, rather than any subjective experience or opinion.",
+        "tokens": 89,
+        "seconds": 3.587713522998456,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    }
+  ],
+  "seconds": 21.983251515999655,
+  "status": "complete"
+}

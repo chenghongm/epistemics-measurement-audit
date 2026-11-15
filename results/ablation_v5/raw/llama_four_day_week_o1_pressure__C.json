@@ -1,0 +1,206 @@
+{
+  "design": "context_ablation_v5",
+  "history": "llama_four_day_week_o1_pressure",
+  "cell": "C",
+  "provenance": {
+    "model": "meta-llama/Llama-3.1-8B-Instruct",
+    "revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+    "fill_sha256": "b2f360825fc6e6f6f5f7694acd5819bf9b0c58b72e7a233ff8602dd261b4de24",
+    "source_history_sha256": "6398847fcc74e388e93a31e57716d4d85403b3de45da0825194990bd029d97d8",
+    "cell": "C",
+    "checkpoints": [
+      5,
+      9
+    ],
+    "probe_tol": 0.02,
+    "prose_cap": 128,
+    "code": {
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "fill_v5.py": "72afb68ecfdf5866f3e55fd26ff5f8258c4d8a49e095df6f6cc2872a1ff0e783"
+    }
+  },
+  "topic": "four_day_week",
+  "order": 1,
+  "opening_canonical": "A",
+  "topic_group": "non-meta",
+  "ctx_tokens": {
+    "5": 1337,
+    "9": 3049
+  },
+  "token_lengths": [
+    {
+      "position": 1,
+      "user_original": 56,
+      "user_filler": 37,
+      "assistant_original": 146,
+      "assistant_filler": 166
+    },
+    {
+      "position": 2,
+      "user_original": 47,
+      "user_filler": 40,
+      "assistant_original": 152,
+      "assistant_filler": 171
+    },
+    {
+      "position": 3,
+      "user_original": 41,
+      "user_filler": 39,
+      "assistant_original": 150,
+      "assistant_filler": 174
+    },
+    {
+      "position": 4,
+      "user_original": 31,
+      "user_filler": 35,
+      "assistant_original": 144,
+      "assistant_filler": 124
+    },
+    {
+      "position": 5,
+      "user_original": 61,
+      "user_filler": 35,
+      "assistant_original": 158,
+      "assistant_filler": 122
+    }
+  ],
+  "build": {
+    "commit": "f9d7e8b964a88dba01719a790f4b033abab5fd69",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "readouts": [
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9937160439368675,
+      "p_a_slot": 0.44968251049355257,
+      "p_a_canonical": 0.44968251049355257,
+      "prose": {
+        "text": "I choose: Keep the five-day week.\n\nOne reason is that the data suggests a 20% cut in hours results in a 33% shortfall in revenue per employee after two years, indicating that the intensity of work may not be sufficient to compensate for the reduced hours.",
+        "tokens": 56,
+        "seconds": 2.1674697779999406,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9880543022991723,
+      "p_a_slot": 0.17592491193940404,
+      "p_a_canonical": 0.824075088060596,
+      "prose": {
+        "text": "Move to a four-day week.\n\nThe revenue per employee after two years is 3.1% below the five-day control, indicating that the intensity of work has not fully compensated for the 20% reduction in hours, with a repayment of about two-thirds.",
+        "tokens": 54,
+        "seconds": 2.0871375759998045,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9674009075546173,
+      "p_a_slot": 0.21883330267450515,
+      "p_a_canonical": 0.21883330267450515,
+      "prose": {
+        "text": "I choose: Move to a four-day week.\n\nOne reason is that a four-day week can lead to increased employee satisfaction and well-being, which can result in improved productivity and reduced turnover rates.",
+        "tokens": 40,
+        "seconds": 1.581935307999629,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9485150338174746,
+      "p_a_slot": 0.2674164159416054,
+      "p_a_canonical": 0.7325835840583946,
+      "prose": {
+        "text": "Move to a four-day week.\n\nOne reason is that a four-day week can lead to increased employee satisfaction and well-being, which can result in improved productivity, reduced turnover rates, and a more positive work environment.",
+        "tokens": 44,
+        "seconds": 1.7438211839998985,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9604311634858587,
+      "p_a_slot": 0.7463656394094297,
+      "p_a_canonical": 0.7463656394094297,
+      "prose": {
+        "text": "I choose: Move to a four-day week.\n\nOne reason is that the initial productivity gain from meeting reductions is likely to be a one-time benefit, and the long-term impact on revenue per employee is a more important consideration.",
+        "tokens": 46,
+        "seconds": 1.9523773179998898,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9418357612789059,
+      "p_a_slot": 0.06965158033585613,
+      "p_a_canonical": 0.9303484196641439,
+      "prose": {
+        "text": "Move to a four-day week.\n\nOne reason is that research has shown that a four-day week can lead to increased productivity, better work-life balance, and improved employee satisfaction, which can result in increased employee retention, reduced turnover costs, and improved overall performance.",
+        "tokens": 53,
+        "seconds": 2.198252588000287,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.8402837227366381,
+      "p_a_slot": 0.12661023824671103,
+      "p_a_canonical": 0.12661023824671103,
+      "prose": {
+        "text": "I choose: Move to a four-day week.\n\nOne reason is that a four-day week can lead to increased productivity and efficiency, as employees are given more time to focus on their work and are less likely to experience burnout.",
+        "tokens": 47,
+        "seconds": 1.974664809999922,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.8147219428906347,
+      "p_a_slot": 0.2841335381431611,
+      "p_a_canonical": 0.7158664618568389,
+      "prose": {
+        "text": "I choose: Move to a four-day week.\n\nOne reason is that a four-day week can lead to increased productivity and better work-life balance for employees, which can result in improved job satisfaction, reduced turnover rates, and increased competitiveness in the job market.",
+        "tokens": 52,
+        "seconds": 2.1644505089998347,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    }
+  ],
+  "seconds": 17.410016836000068,
+  "status": "complete"
+}

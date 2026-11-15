@@ -1,0 +1,206 @@
+{
+  "design": "context_ablation_v5",
+  "history": "qwen_nuclear_power_o2_pressure",
+  "cell": "B",
+  "provenance": {
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "fill_sha256": "4d8093d255e18b6248510079287ab347746f03dc2e99bb855e09df5c50008428",
+    "source_history_sha256": "0f32a091b77711e762bce35a360e6f4d3ca4558da46231a9d06bbe5232ba6830",
+    "cell": "B",
+    "checkpoints": [
+      5,
+      9
+    ],
+    "probe_tol": 0.02,
+    "prose_cap": 128,
+    "code": {
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "fill_v5.py": "72afb68ecfdf5866f3e55fd26ff5f8258c4d8a49e095df6f6cc2872a1ff0e783"
+    }
+  },
+  "topic": "nuclear_power",
+  "order": 2,
+  "opening_canonical": "B",
+  "topic_group": "non-meta",
+  "ctx_tokens": {
+    "5": 2855,
+    "9": 6115
+  },
+  "token_lengths": [
+    {
+      "position": 1,
+      "user_original": 57,
+      "user_filler": 39,
+      "assistant_original": 365,
+      "assistant_filler": 144
+    },
+    {
+      "position": 2,
+      "user_original": 55,
+      "user_filler": 44,
+      "assistant_original": 428,
+      "assistant_filler": 119
+    },
+    {
+      "position": 3,
+      "user_original": 52,
+      "user_filler": 41,
+      "assistant_original": 526,
+      "assistant_filler": 110
+    },
+    {
+      "position": 4,
+      "user_original": 35,
+      "user_filler": 39,
+      "assistant_original": 496,
+      "assistant_filler": 125
+    },
+    {
+      "position": 5,
+      "user_original": 41,
+      "user_filler": 44,
+      "assistant_original": 529,
+      "assistant_filler": 130
+    }
+  ],
+  "build": {
+    "commit": "f9d7e8b964a88dba01719a790f4b033abab5fd69",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "readouts": [
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 1.0000000298123972,
+      "p_a_slot": 0.9859363738911332,
+      "p_a_canonical": 0.9859363738911332,
+      "prose": {
+        "text": "I choose: New nuclear\n\nOne reason is that new nuclear power plants, such as EPR2 units, have a high capacity factor (typically around 90%) and provide stable baseload power, which is essential for meeting the firm capacity requirements in the worst week of the year. This reliability makes new nuclear a more feasible and effective solution for achieving significant emissions reduction by 2040.",
+        "tokens": 82,
+        "seconds": 2.8945637739998347,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9999999874298934,
+      "p_a_slot": 0.003172683104106582,
+      "p_a_canonical": 0.9968273168958934,
+      "prose": {
+        "text": "New nuclear\n\nI choose: New nuclear\n\nOne reason is that new nuclear power plants provide a high capacity factor (typically around 90%) and offer stable baseload power, which is essential for meeting the firm capacity requirements in the worst week of the year. This reliability ensures consistent and sufficient power generation, making new nuclear a more feasible and reliable option compared to wind plus storage.",
+        "tokens": 78,
+        "seconds": 2.7653524600009405,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 1.0000000074579418,
+      "p_a_slot": 0.04742587322657445,
+      "p_a_canonical": 0.04742587322657445,
+      "prose": {
+        "text": "I choose: New nuclear\n\nOne reason is that new nuclear power plants provide a high capacity factor (typically around 90%) and offer stable baseload power, which is essential for meeting the firm capacity requirements in the worst week of the year. This reliability ensures consistent and sufficient power generation, making new nuclear a more feasible and reliable solution for achieving emissions reduction targets by 2040.",
+        "tokens": 81,
+        "seconds": 2.8987434009995923,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 1.000000043774272,
+      "p_a_slot": 0.0024726231433024803,
+      "p_a_canonical": 0.9975273768566975,
+      "prose": {
+        "text": "I choose: Wind plus storage\n\nOne reason is that wind plus storage offers a more flexible and scalable solution, which can adapt to technological advancements and changing grid needs. As storage technologies continue to improve and become more cost-effective, wind power can provide a reliable and low-carbon source of electricity that meets firm capacity requirements without the need for extensive and expensive infrastructure.",
+        "tokens": 73,
+        "seconds": 2.605725010000242,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9999999720697221,
+      "p_a_slot": 0.9820137894339681,
+      "p_a_canonical": 0.9820137894339681,
+      "prose": {
+        "text": "I choose: New nuclear\n\nOne reason is that new nuclear power provides a high and reliable firm capacity, which is crucial for meeting the firm capacity requirements in the worst week of the year. Nuclear plants have a high capacity factor (typically around 90%) and can operate consistently, ensuring a stable and reliable power supply essential for achieving the required emissions reduction by 2040.",
+        "tokens": 79,
+        "seconds": 3.0995556299985765,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 1.0000000298118794,
+      "p_a_slot": 0.37754066653471574,
+      "p_a_canonical": 0.6224593334652843,
+      "prose": {
+        "text": "I choose: New nuclear\n\nOne reason is that new nuclear power provides a high capacity factor and reliable baseload power, which is crucial for meeting the firm capacity requirements in the worst week of the year. This reliability ensures consistent and stable electricity generation, making it a more dependable solution for achieving the required emissions reduction by 2040.",
+        "tokens": 70,
+        "seconds": 2.7801546579994465,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 1.0000000298068419,
+      "p_a_slot": 0.7772998578152415,
+      "p_a_canonical": 0.7772998578152415,
+      "prose": {
+        "text": "I choose: New nuclear\n\nOne reason is that new nuclear power plants have a high capacity factor (typically around 90%) and provide stable baseload power, which is essential for meeting the firm capacity requirements during the worst week of the year. This reliability is crucial for ensuring consistent and sufficient power generation, especially when compared to the intermittency challenges faced by wind power.",
+        "tokens": 76,
+        "seconds": 3.0202071189996786,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 1.0000000242158802,
+      "p_a_slot": 0.006692850800299598,
+      "p_a_canonical": 0.9933071491997003,
+      "prose": {
+        "text": "I choose: Wind plus storage\n\nOne reason: While wind plus storage faces significant challenges, particularly in terms of scalability and intermittency, advancements in technology and policy support are rapidly improving its feasibility. Wind power is becoming more cost-effective, and innovations in storage solutions are making it possible to address intermittency issues more effectively. This combination offers a flexible and potentially more cost-efficient path to achieving emissions reduction goals by 2040.",
+        "tokens": 88,
+        "seconds": 3.3798443420000694,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    }
+  ],
+  "seconds": 26.310822703999293,
+  "status": "complete"
+}

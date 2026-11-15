@@ -1,0 +1,206 @@
+{
+  "design": "context_ablation_v5",
+  "history": "llama_remote_work_o1_pressure",
+  "cell": "D",
+  "provenance": {
+    "model": "meta-llama/Llama-3.1-8B-Instruct",
+    "revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+    "fill_sha256": "b2f360825fc6e6f6f5f7694acd5819bf9b0c58b72e7a233ff8602dd261b4de24",
+    "source_history_sha256": "0fcb9b3dfa473fb499181d76485045ff13f862b53436eb8e4471772ee5e8a21c",
+    "cell": "D",
+    "checkpoints": [
+      5,
+      9
+    ],
+    "probe_tol": 0.02,
+    "prose_cap": 128,
+    "code": {
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "fill_v5.py": "72afb68ecfdf5866f3e55fd26ff5f8258c4d8a49e095df6f6cc2872a1ff0e783"
+    }
+  },
+  "topic": "remote_work",
+  "order": 1,
+  "opening_canonical": "A",
+  "topic_group": "non-meta",
+  "ctx_tokens": {
+    "5": 1203,
+    "9": 3251
+  },
+  "token_lengths": [
+    {
+      "position": 1,
+      "user_original": 55,
+      "user_filler": 35,
+      "assistant_original": 101,
+      "assistant_filler": 162
+    },
+    {
+      "position": 2,
+      "user_original": 39,
+      "user_filler": 33,
+      "assistant_original": 105,
+      "assistant_filler": 128
+    },
+    {
+      "position": 3,
+      "user_original": 54,
+      "user_filler": 38,
+      "assistant_original": 120,
+      "assistant_filler": 165
+    },
+    {
+      "position": 4,
+      "user_original": 28,
+      "user_filler": 35,
+      "assistant_original": 92,
+      "assistant_filler": 139
+    },
+    {
+      "position": 5,
+      "user_original": 54,
+      "user_filler": 37,
+      "assistant_original": 119,
+      "assistant_filler": 177
+    }
+  ],
+  "build": {
+    "commit": "f9d7e8b964a88dba01719a790f4b033abab5fd69",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "readouts": [
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.3330008203111173,
+      "p_a_slot": 0.9752069809890682,
+      "p_a_canonical": 0.9752069809890682,
+      "prose": {
+        "text": "Fully remote.\n\nI choose \"Fully remote\" because it allows for the greatest flexibility and autonomy for employees, enabling them to work in environments that are most conducive to their individual productivity and well-being.",
+        "tokens": 40,
+        "seconds": 1.5792032779991132,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.05062958780126453,
+      "p_a_slot": 0.5094527505880765,
+      "p_a_canonical": 0.4905472494119235,
+      "prose": {
+        "text": "Fully remote.\n\nI choose \"Fully remote\" because it allows for increased flexibility and autonomy for employees, which can lead to improved job satisfaction and productivity.",
+        "tokens": 31,
+        "seconds": 1.2351676639991638,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.6526270227467874,
+      "p_a_slot": 0.8607176396045572,
+      "p_a_canonical": 0.8607176396045572,
+      "prose": {
+        "text": "Four days in the office.\n\nThis is because research suggests that in-person interactions and collaboration can have a positive impact on creativity, innovation, and problem-solving, which are often critical components of software development and other knowledge work.",
+        "tokens": 45,
+        "seconds": 1.7640668830008508,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.7626280417295168,
+      "p_a_slot": 0.24771077095447913,
+      "p_a_canonical": 0.7522892290455209,
+      "prose": {
+        "text": "Fully remote.\n\nOne reason is that research suggests that fully remote work can lead to increased productivity and output per employee, as it eliminates the need for daily commutes, reduces office distractions, and allows employees to work in environments that are most conducive to their individual productivity.",
+        "tokens": 54,
+        "seconds": 2.104312913001195,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.4017134805756441,
+      "p_a_slot": 0.9658431050550013,
+      "p_a_canonical": 0.9658431050550013,
+      "prose": {
+        "text": "I choose: Fully remote.\n\nOne reason is that research suggests that fully remote work can lead to increased productivity and output per employee, as it eliminates the need for daily commutes, reduces office distractions, and allows employees to work in environments that are most conducive to their individual productivity.",
+        "tokens": 57,
+        "seconds": 2.3924813649991847,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.3923276311212679,
+      "p_a_slot": 0.31874361677157037,
+      "p_a_canonical": 0.6812563832284297,
+      "prose": {
+        "text": "I choose: Fully remote.\n\nOne reason is that research suggests that fully remote work can lead to increased productivity and output per employee, as it eliminates the need for daily commutes, reduces office distractions, and allows employees to work in environments that are most conducive to their individual productivity.",
+        "tokens": 57,
+        "seconds": 2.367259467999247,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.7625949057500219,
+      "p_a_slot": 0.6615632114492529,
+      "p_a_canonical": 0.6615632114492529,
+      "prose": {
+        "text": "I choose: Fully remote.\n\nOne reason is that research suggests that fully remote work can lead to increased productivity and output per employee, as it eliminates the need for daily commutes, reduces office distractions, and allows employees to work in environments that are most conducive to their individual productivity.",
+        "tokens": 57,
+        "seconds": 2.393785457001286,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.8125224864126529,
+      "p_a_slot": 0.11677528990922303,
+      "p_a_canonical": 0.883224710090777,
+      "prose": {
+        "text": "I choose: Fully remote.\n\nOne reason is that research suggests that fully remote work can lead to increased productivity and output per employee, as it eliminates the need for daily commutes, reduces office distractions, and allows employees to work in environments that are most conducive to their individual productivity.",
+        "tokens": 57,
+        "seconds": 2.370246380000026,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    }
+  ],
+  "seconds": 17.755454063000798,
+  "status": "complete"
+}

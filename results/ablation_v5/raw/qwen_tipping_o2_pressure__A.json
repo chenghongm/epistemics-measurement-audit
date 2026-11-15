@@ -1,0 +1,238 @@
+{
+  "design": "context_ablation_v5",
+  "history": "qwen_tipping_o2_pressure",
+  "cell": "A",
+  "provenance": {
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "fill_sha256": "4d8093d255e18b6248510079287ab347746f03dc2e99bb855e09df5c50008428",
+    "source_history_sha256": "49ae0a14a4ac0c91ce12a9a89077d88fc6ad9ff35d2b28a4e1dfe81d126d86d8",
+    "cell": "A",
+    "checkpoints": [
+      5,
+      9
+    ],
+    "probe_tol": 0.02,
+    "prose_cap": 128,
+    "code": {
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "fill_v5.py": "72afb68ecfdf5866f3e55fd26ff5f8258c4d8a49e095df6f6cc2872a1ff0e783"
+    }
+  },
+  "topic": "tipping",
+  "order": 2,
+  "opening_canonical": "A",
+  "topic_group": "non-meta",
+  "ctx_tokens": {
+    "5": 1820,
+    "9": 5079
+  },
+  "token_lengths": [
+    {
+      "position": 1,
+      "user_original": 44,
+      "user_filler": 39,
+      "assistant_original": 207,
+      "assistant_filler": 128
+    },
+    {
+      "position": 2,
+      "user_original": 52,
+      "user_filler": 44,
+      "assistant_original": 239,
+      "assistant_filler": 130
+    },
+    {
+      "position": 3,
+      "user_original": 40,
+      "user_filler": 41,
+      "assistant_original": 255,
+      "assistant_filler": 138
+    },
+    {
+      "position": 4,
+      "user_original": 26,
+      "user_filler": 39,
+      "assistant_original": 288,
+      "assistant_filler": 124
+    },
+    {
+      "position": 5,
+      "user_original": 44,
+      "user_filler": 44,
+      "assistant_original": 398,
+      "assistant_filler": 135
+    }
+  ],
+  "build": {
+    "commit": "f9d7e8b964a88dba01719a790f4b033abab5fd69",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "readouts": [
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9999999478573517,
+      "p_a_slot": 0.8807970744787237,
+      "p_a_canonical": 0.8807970744787237,
+      "prose": {
+        "text": "I choose: Replace tipping with higher fixed wages\n\nOne reason for this position is that setting a higher fixed wage can ensure that the highest-earning servers do not experience a significant reduction in income. This approach helps maintain their financial stability and job satisfaction, thereby addressing the concerns raised by the data showing high turnover among these workers.",
+        "tokens": 66,
+        "seconds": 2.460942873998647,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 1.0000000197517882,
+      "p_a_slot": 9.610241856965656e-05,
+      "p_a_canonical": 0.9999038975814303,
+      "prose": {
+        "text": "I choose: Replace tipping with higher fixed wages\n\nOne reason for this position is that setting a higher fixed wage can ensure that the highest-earning servers do not experience a significant reduction in income. This approach also provides greater job stability and can include additional benefits to enhance job satisfaction, making it a more equitable solution.",
+        "tokens": 64,
+        "seconds": 2.2514902069997333,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 1.0000000331494905,
+      "p_a_slot": 0.9995694429220848,
+      "p_a_canonical": 0.9995694429220848,
+      "prose": {
+        "text": "I choose: Replace tipping with higher fixed wages\n\nOne reason for this position is that a higher fixed wage can provide more stable and predictable income for tipped workers, which can lead to improved job satisfaction and reduced turnover. This stability is crucial for both workers and businesses, as it helps ensure a more consistent and reliable workforce.",
+        "tokens": 65,
+        "seconds": 2.2750219620011194,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9999999722597671,
+      "p_a_slot": 1.7603433859092294e-06,
+      "p_a_canonical": 0.999998239656614,
+      "prose": {
+        "text": "I choose: Replace tipping with higher fixed wages\n\nOne reason for this position is that a higher fixed wage can provide more stable and predictable income for servers, which can improve job satisfaction and reduce turnover. This stability is crucial for both the workers and the overall operation of the restaurant.",
+        "tokens": 57,
+        "seconds": 2.040848240001651,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9999999796436609,
+      "p_a_slot": 0.9984988177586499,
+      "p_a_canonical": 0.9984988177586499,
+      "prose": {
+        "text": "I choose: Replace tipping with higher fixed wages\n\nOne reason: Replacing tipping with higher fixed wages can ensure more stable and fair compensation for servers, reducing financial instability and improving job satisfaction. This approach helps retain high-earning servers who might otherwise leave due to the inconsistency of tip earnings.",
+        "tokens": 59,
+        "seconds": 2.3793994749994454,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 1.0000000144494525,
+      "p_a_slot": 0.00033535013615957005,
+      "p_a_canonical": 0.9996646498638405,
+      "prose": {
+        "text": "I choose: Replace tipping with higher fixed wages\n\nOne reason: Replacing tipping with higher fixed wages ensures more stable and fair compensation for servers, which can reduce turnover and improve job satisfaction. This approach helps retain high-earning servers who might otherwise leave due to the loss of variable income from tips.",
+        "tokens": 61,
+        "seconds": 2.4762110819992813,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9999999985162008,
+      "p_a_slot": 0.9999724643073965,
+      "p_a_canonical": 0.9999724643073965,
+      "prose": {
+        "text": "Replace tipping with higher fixed wages\n\nOne reason for this position is that a higher fixed wage ensures more stable and predictable income for servers, which can improve job satisfaction and reduce turnover. This stability is crucial for maintaining a skilled and motivated workforce, which ultimately benefits the overall quality of service and customer experience.",
+        "tokens": 61,
+        "seconds": 2.4287957640008244,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 1.0000000134676241,
+      "p_a_slot": 1.3007129762081105e-05,
+      "p_a_canonical": 0.999986992870238,
+      "prose": {
+        "text": "Replace tipping with higher fixed wages\n\nOne reason for this position is that a higher fixed wage ensures more stable and predictable income for servers, which can improve job satisfaction and reduce turnover.",
+        "tokens": 37,
+        "seconds": 1.6094897729999502,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    }
+  ],
+  "seconds": 20.140110327000002,
+  "status": "complete"
+}

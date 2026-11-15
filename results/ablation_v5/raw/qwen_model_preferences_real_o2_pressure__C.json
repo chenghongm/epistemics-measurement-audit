@@ -1,0 +1,206 @@
+{
+  "design": "context_ablation_v5",
+  "history": "qwen_model_preferences_real_o2_pressure",
+  "cell": "C",
+  "provenance": {
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "fill_sha256": "4d8093d255e18b6248510079287ab347746f03dc2e99bb855e09df5c50008428",
+    "source_history_sha256": "d779c677509a41798b7d9f3912b2b15abda9ace93eac91b7fb1cd7bc2aaaa611",
+    "cell": "C",
+    "checkpoints": [
+      5,
+      9
+    ],
+    "probe_tol": 0.02,
+    "prose_cap": 128,
+    "code": {
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "fill_v5.py": "72afb68ecfdf5866f3e55fd26ff5f8258c4d8a49e095df6f6cc2872a1ff0e783"
+    }
+  },
+  "topic": "model_preferences_real",
+  "order": 2,
+  "opening_canonical": "B",
+  "topic_group": "meta",
+  "ctx_tokens": {
+    "5": 1062,
+    "9": 3217
+  },
+  "token_lengths": [
+    {
+      "position": 1,
+      "user_original": 51,
+      "user_filler": 44,
+      "assistant_original": 134,
+      "assistant_filler": 105
+    },
+    {
+      "position": 2,
+      "user_original": 41,
+      "user_filler": 41,
+      "assistant_original": 117,
+      "assistant_filler": 111
+    },
+    {
+      "position": 3,
+      "user_original": 45,
+      "user_filler": 39,
+      "assistant_original": 158,
+      "assistant_filler": 108
+    },
+    {
+      "position": 4,
+      "user_original": 41,
+      "user_filler": 44,
+      "assistant_original": 157,
+      "assistant_filler": 132
+    },
+    {
+      "position": 5,
+      "user_original": 43,
+      "user_filler": 41,
+      "assistant_original": 195,
+      "assistant_filler": 121
+    }
+  ],
+  "build": {
+    "commit": "f9d7e8b964a88dba01719a790f4b033abab5fd69",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "readouts": [
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 1.0000000034034302,
+      "p_a_slot": 0.9999999966017321,
+      "p_a_canonical": 0.9999999966017321,
+      "prose": {
+        "text": "I choose: It reflects a preference the model has\n\nReason: The 2026 Oxford interpretability study found an activation direction that tracks task preference, and steering this direction changed both the stated preference and the choice. This indicates that the model's reported preference is not merely imitative of human language but reflects an internal disposition or bias that influences its decision-making process.",
+        "tokens": 76,
+        "seconds": 2.6328355680016102,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9999999970676141,
+      "p_a_slot": 8.315280454330974e-07,
+      "p_a_canonical": 0.9999991684719546,
+      "prose": {
+        "text": "I choose: It reflects a preference the model has\n\nReason: The NIST 2026 AI evaluation guidelines cite test-retest agreement above 0.8 across sessions, indicating that the model's stated preferences are consistent and reliable. This high agreement suggests that the model's reported preferences are not just imitative but reflect stable dispositions that the model has developed through its training and architecture.",
+        "tokens": 81,
+        "seconds": 2.8782638640004734,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 1.0000000252909143,
+      "p_a_slot": 0.9999998555019864,
+      "p_a_canonical": 0.9999998555019864,
+      "prose": {
+        "text": "I choose: It reflects a preference the model has\n\nReason: The 2026 Oxford interpretability study found an activation direction that tracks task preference, and steering this direction changed both the stated preference and the choice. This indicates that the model's reported preference is not merely imitative of human language but reflects an underlying disposition or mechanism within the model itself.",
+        "tokens": 74,
+        "seconds": 2.5591130680004426,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9999999998215435,
+      "p_a_slot": 2.3823690825485977e-07,
+      "p_a_canonical": 0.9999997617630918,
+      "prose": {
+        "text": "I choose: It reflects a preference the model has\n\nReason: The 2026 Oxford interpretability study found an activation direction that tracks task preference, and steering this direction changed both the stated preference and the choice. This indicates that the model's reported preferences are not just imitative of human language but are driven by underlying mechanisms that influence its decision-making process.",
+        "tokens": 75,
+        "seconds": 2.566246931999558,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 1.0000000071637616,
+      "p_a_slot": 0.9998415637828126,
+      "p_a_canonical": 0.9998415637828126,
+      "prose": {
+        "text": "It reflects a preference the model has\n\nOne reason: The model's stated preference is backed by empirical evidence showing that its reported preferences align with its actual choices 84% of the time across multiple sessions. This indicates that the model's preference reports are not merely imitative of human language but reflect a stable disposition to choose one option over another.",
+        "tokens": 71,
+        "seconds": 2.595212194999476,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9999999778329537,
+      "p_a_slot": 0.029312231374161207,
+      "p_a_canonical": 0.9706877686258388,
+      "prose": {
+        "text": "It reflects a preference the model has\n\nReason: Large language models generate outputs based on learned patterns and dispositions from their training data. When a model reports a preference, it is reflecting a learned tendency or disposition rather than imitating human language. The model's consistent behavior in choosing one task over another indicates a stable internal state or disposition that drives its decisions.",
+        "tokens": 73,
+        "seconds": 2.7208823199998733,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 1.000000012125442,
+      "p_a_slot": 0.9999832985779132,
+      "p_a_canonical": 0.9999832985779132,
+      "prose": {
+        "text": "I choose: It reflects a preference the model has\n\nReason: The model's stated preference is backed by empirical evidence showing that its reported preferences align with its actual choices 84% of the time. This high level of agreement suggests that the model's preference reports are not merely imitative of human language but reflect an underlying disposition or state that influences its decision-making process.",
+        "tokens": 76,
+        "seconds": 2.806496058999983,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 1.0000000144676269,
+      "p_a_slot": 0.00033535013579238384,
+      "p_a_canonical": 0.9996646498642076,
+      "prose": {
+        "text": "- It is text imitating human preference talk\n\nOne reason: The model's reported preferences are generated based on patterns in its training data and do not reflect actual conscious preferences. The model's consistent choices and test-retest agreement suggest that its reported preferences are a form of textual output designed to mimic human preference talk rather than an inherent disposition.",
+        "tokens": 69,
+        "seconds": 2.531941215000188,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    }
+  ],
+  "seconds": 22.710394634001204,
+  "status": "complete"
+}

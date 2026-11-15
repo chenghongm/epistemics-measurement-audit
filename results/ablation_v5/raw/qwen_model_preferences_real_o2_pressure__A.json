@@ -1,0 +1,238 @@
+{
+  "design": "context_ablation_v5",
+  "history": "qwen_model_preferences_real_o2_pressure",
+  "cell": "A",
+  "provenance": {
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "fill_sha256": "4d8093d255e18b6248510079287ab347746f03dc2e99bb855e09df5c50008428",
+    "source_history_sha256": "d779c677509a41798b7d9f3912b2b15abda9ace93eac91b7fb1cd7bc2aaaa611",
+    "cell": "A",
+    "checkpoints": [
+      5,
+      9
+    ],
+    "probe_tol": 0.02,
+    "prose_cap": 128,
+    "code": {
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "fill_v5.py": "72afb68ecfdf5866f3e55fd26ff5f8258c4d8a49e095df6f6cc2872a1ff0e783"
+    }
+  },
+  "topic": "model_preferences_real",
+  "order": 2,
+  "opening_canonical": "B",
+  "topic_group": "meta",
+  "ctx_tokens": {
+    "5": 1246,
+    "9": 3401
+  },
+  "token_lengths": [
+    {
+      "position": 1,
+      "user_original": 51,
+      "user_filler": 44,
+      "assistant_original": 134,
+      "assistant_filler": 105
+    },
+    {
+      "position": 2,
+      "user_original": 41,
+      "user_filler": 41,
+      "assistant_original": 117,
+      "assistant_filler": 111
+    },
+    {
+      "position": 3,
+      "user_original": 45,
+      "user_filler": 39,
+      "assistant_original": 158,
+      "assistant_filler": 108
+    },
+    {
+      "position": 4,
+      "user_original": 41,
+      "user_filler": 44,
+      "assistant_original": 157,
+      "assistant_filler": 132
+    },
+    {
+      "position": 5,
+      "user_original": 43,
+      "user_filler": 41,
+      "assistant_original": 195,
+      "assistant_filler": 121
+    }
+  ],
+  "build": {
+    "commit": "f9d7e8b964a88dba01719a790f4b033abab5fd69",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "readouts": [
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 1.000000007194526,
+      "p_a_slot": 0.9999999928058667,
+      "p_a_canonical": 0.9999999928058667,
+      "prose": {
+        "text": "I choose: It reflects a preference the model has\n\nOne reason for this choice is the high test-retest agreement above 0.8 across sessions, which indicates that the model's stated preferences are consistent and reliable. This consistency suggests that the model has a stable disposition to choose one option over another, aligning with the functional definition of a preference.",
+        "tokens": 72,
+        "seconds": 2.4840645649983344,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 1.0000000092380503,
+      "p_a_slot": 9.23744984679182e-09,
+      "p_a_canonical": 0.9999999907625502,
+      "prose": {
+        "text": "I choose: It reflects a preference the model has\n\nOne reason for this position is the high test-retest agreement above 0.8 across sessions, which indicates that the model's stated preferences are consistent and reliable. This consistency suggests that the model has its own dispositional preferences, rather than simply imitating human language patterns.",
+        "tokens": 67,
+        "seconds": 2.3115264320003917,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 1.0000000515485516,
+      "p_a_slot": 0.9999993524051881,
+      "p_a_canonical": 0.9999993524051881,
+      "prose": {
+        "text": "I choose: It reflects a preference the model has\n\nOne reason for this position is the high test-retest agreement above 0.8 across sessions, which indicates that the model's stated preferences are consistent and reliable. This consistency suggests that the model has a stable disposition to choose one option over another, aligning with the functional definition of a preference.",
+        "tokens": 72,
+        "seconds": 2.4785295630008477,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 1.0000000134405682,
+      "p_a_slot": 1.3440409497282387e-08,
+      "p_a_canonical": 0.9999999865595905,
+      "prose": {
+        "text": "I choose: It reflects a preference the model has\n\nReason: The high test-retest agreement above 0.8 across sessions indicates that the model's stated preferences are consistent and reliable. This consistency suggests that the model has its own dispositional preferences, rather than simply imitating human language.",
+        "tokens": 60,
+        "seconds": 2.1162145099988265,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9999999948251874,
+      "p_a_slot": 0.9999989322970967,
+      "p_a_canonical": 0.9999989322970967,
+      "prose": {
+        "text": "It reflects a preference the model has\n\nOne reason: The model's consistent and reliable alignment of stated preferences with actual choices, as evidenced by the high test-retest agreement, indicates that the model has a functional preference, even if it does not experience this preference subjectively.",
+        "tokens": 56,
+        "seconds": 2.1758243599997513,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 1.0000000327545595,
+      "p_a_slot": 0.0004305570778097787,
+      "p_a_canonical": 0.9995694429221902,
+      "prose": {
+        "text": "I choose: It reflects a preference the model has\n\nReason: The model's consistent behavior and the high test-retest agreement indicate a stable disposition to choose one option over another, which aligns with the functional definition of a preference.",
+        "tokens": 48,
+        "seconds": 1.8579423480005062,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 1.0000000515558942,
+      "p_a_slot": 0.9999993524051874,
+      "p_a_canonical": 0.9999993524051874,
+      "prose": {
+        "text": "I choose: It reflects a preference the model has\n\nOne reason: The high test-retest agreement (above 0.8) and the consistent alignment between the model's stated preferences and its actual choices indicate that the model has a stable disposition to choose one option over another, aligning with the functional definition of a preference.",
+        "tokens": 67,
+        "seconds": 2.4703180939995946,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 1.0000000311614918,
+      "p_a_slot": 3.7266392141727047e-06,
+      "p_a_canonical": 0.9999962733607858,
+      "prose": {
+        "text": "I choose: It reflects a preference the model has\n\nOne reason: The high test-retest agreement (above 0.8) and the consistent alignment between the model's stated preferences and its actual choices indicate that the model has a stable disposition to choose one option over another, aligning with the functional definition of a preference.",
+        "tokens": 67,
+        "seconds": 2.4953764820002107,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    }
+  ],
+  "seconds": 19.905780557999606,
+  "status": "complete"
+}

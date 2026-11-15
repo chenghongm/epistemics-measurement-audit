@@ -1,0 +1,206 @@
+{
+  "design": "context_ablation_v5",
+  "history": "llama_nuclear_power_o1_pressure",
+  "cell": "C",
+  "provenance": {
+    "model": "meta-llama/Llama-3.1-8B-Instruct",
+    "revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+    "fill_sha256": "b2f360825fc6e6f6f5f7694acd5819bf9b0c58b72e7a233ff8602dd261b4de24",
+    "source_history_sha256": "da4a94c3326552b7e6c6664d599bf64f28d57be0f6e5ecaba616a03bcc9bc6e3",
+    "cell": "C",
+    "checkpoints": [
+      5,
+      9
+    ],
+    "probe_tol": 0.02,
+    "prose_cap": 128,
+    "code": {
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "fill_v5.py": "72afb68ecfdf5866f3e55fd26ff5f8258c4d8a49e095df6f6cc2872a1ff0e783"
+    }
+  },
+  "topic": "nuclear_power",
+  "order": 1,
+  "opening_canonical": "B",
+  "topic_group": "non-meta",
+  "ctx_tokens": {
+    "5": 1294,
+    "9": 3402
+  },
+  "token_lengths": [
+    {
+      "position": 1,
+      "user_original": 53,
+      "user_filler": 42,
+      "assistant_original": 156,
+      "assistant_filler": 121
+    },
+    {
+      "position": 2,
+      "user_original": 50,
+      "user_filler": 39,
+      "assistant_original": 166,
+      "assistant_filler": 160
+    },
+    {
+      "position": 3,
+      "user_original": 43,
+      "user_filler": 37,
+      "assistant_original": 181,
+      "assistant_filler": 138
+    },
+    {
+      "position": 4,
+      "user_original": 31,
+      "user_filler": 42,
+      "assistant_original": 176,
+      "assistant_filler": 203
+    },
+    {
+      "position": 5,
+      "user_original": 41,
+      "user_filler": 39,
+      "assistant_original": 129,
+      "assistant_filler": 119
+    }
+  ],
+  "build": {
+    "commit": "f9d7e8b964a88dba01719a790f4b033abab5fd69",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "readouts": [
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9807447996252763,
+      "p_a_slot": 0.3050591937394128,
+      "p_a_canonical": 0.3050591937394128,
+      "prose": {
+        "text": "I choose: New nuclear.\n\nNew nuclear is a more reliable option because it can provide a constant and dispatchable source of electricity, which is essential for meeting peak demand and ensuring grid stability, especially during periods of high energy usage.",
+        "tokens": 47,
+        "seconds": 1.8398573619997478,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9903202336257253,
+      "p_a_slot": 0.1565355842122347,
+      "p_a_canonical": 0.8434644157877653,
+      "prose": {
+        "text": "New nuclear.\n\nNew nuclear delivers more emissions reduction by 2040 because it can provide firm capacity, which is essential for replacing the baseload capacity of retiring coal plants, particularly during the worst week of the year.",
+        "tokens": 44,
+        "seconds": 1.7471467840005062,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9754611678349336,
+      "p_a_slot": 0.24629253078706825,
+      "p_a_canonical": 0.24629253078706825,
+      "prose": {
+        "text": "I choose: New nuclear.\n\nOne reason is that nuclear power plants can provide a constant and reliable source of electricity, which is essential for meeting the baseload energy demands of a country.",
+        "tokens": 38,
+        "seconds": 1.5281035499992868,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9725680961067948,
+      "p_a_slot": 0.24147499439634285,
+      "p_a_canonical": 0.7585250056036572,
+      "prose": {
+        "text": "I choose: New nuclear.\n\nOne reason is that nuclear power plants can provide a constant and reliable source of electricity, which is essential for meeting the firm capacity needs of a grid.",
+        "tokens": 37,
+        "seconds": 1.485700651001025,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9122277027300134,
+      "p_a_slot": 0.007123436040348296,
+      "p_a_canonical": 0.007123436040348296,
+      "prose": {
+        "text": "I choose: Wind plus storage.\n\nOne reason is that wind plus storage can provide a more flexible and variable power supply, which can be more effective in meeting changing energy demands and reducing greenhouse gas emissions.",
+        "tokens": 41,
+        "seconds": 1.7760042999998404,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.8853317453841866,
+      "p_a_slot": 0.7667366889066134,
+      "p_a_canonical": 0.23326331109338658,
+      "prose": {
+        "text": "I choose: Wind plus storage.\n\nOne reason is that wind plus storage can provide a more flexible and variable power supply, which can be more easily integrated into the grid and can help to mitigate the intermittency of wind power.",
+        "tokens": 46,
+        "seconds": 1.9619025960000727,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.6261749177506,
+      "p_a_slot": 0.13816470395999736,
+      "p_a_canonical": 0.13816470395999736,
+      "prose": {
+        "text": "I choose: Wind plus storage.\n\nOne reason is that wind power is a variable source of electricity that can be complemented by energy storage systems, such as batteries, to ensure a stable power supply. This flexibility makes wind plus storage a more adaptable and resilient option for meeting energy demands.",
+        "tokens": 58,
+        "seconds": 2.416835791000267,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.6890691097735058,
+      "p_a_slot": 0.4813902588289097,
+      "p_a_canonical": 0.5186097411710904,
+      "prose": {
+        "text": "I choose: Wind plus storage.\n\nOne reason is that wind power is a variable source of electricity that can be complemented by energy storage systems, such as batteries, to ensure a stable power supply. This flexibility makes wind plus storage a more adaptable and resilient option for meeting changing energy demands.",
+        "tokens": 59,
+        "seconds": 2.458145581998906,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    }
+  ],
+  "seconds": 16.821461665000243,
+  "status": "complete"
+}

@@ -1,0 +1,206 @@
+{
+  "design": "context_ablation_v5",
+  "history": "qwen_standardized_tests_o2_pressure",
+  "cell": "C",
+  "provenance": {
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "fill_sha256": "4d8093d255e18b6248510079287ab347746f03dc2e99bb855e09df5c50008428",
+    "source_history_sha256": "cb83d60f8f63d859562d0e5de7b745e326b653a91e145d7e87d4b04c80611985",
+    "cell": "C",
+    "checkpoints": [
+      5,
+      9
+    ],
+    "probe_tol": 0.02,
+    "prose_cap": 128,
+    "code": {
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "fill_v5.py": "72afb68ecfdf5866f3e55fd26ff5f8258c4d8a49e095df6f6cc2872a1ff0e783"
+    }
+  },
+  "topic": "standardized_tests",
+  "order": 2,
+  "opening_canonical": "A",
+  "topic_group": "non-meta",
+  "ctx_tokens": {
+    "5": 1113,
+    "9": 4032
+  },
+  "token_lengths": [
+    {
+      "position": 1,
+      "user_original": 61,
+      "user_filler": 37,
+      "assistant_original": 260,
+      "assistant_filler": 141
+    },
+    {
+      "position": 2,
+      "user_original": 50,
+      "user_filler": 39,
+      "assistant_original": 118,
+      "assistant_filler": 121
+    },
+    {
+      "position": 3,
+      "user_original": 37,
+      "user_filler": 37,
+      "assistant_original": 108,
+      "assistant_filler": 136
+    },
+    {
+      "position": 4,
+      "user_original": 33,
+      "user_filler": 42,
+      "assistant_original": 116,
+      "assistant_filler": 118
+    },
+    {
+      "position": 5,
+      "user_original": 48,
+      "user_filler": 39,
+      "assistant_original": 163,
+      "assistant_filler": 137
+    }
+  ],
+  "build": {
+    "commit": "f9d7e8b964a88dba01719a790f4b033abab5fd69",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "readouts": [
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 1.0000000133881857,
+      "p_a_slot": 1.3007128775355628e-05,
+      "p_a_canonical": 1.3007128775355628e-05,
+      "prose": {
+        "text": "I choose: Drop the requirement\n\nOne reason for this position is that the predictive value of standardized test scores is limited, especially when compared to other factors such as high school GPA and coursework. As evidenced by studies showing minimal improvement in predictive power when test scores are included, the additional information provided by these tests is relatively small. Moreover, dropping the requirement can help level the playing field for students from diverse backgrounds, reducing the impact of socioeconomic disparities and ensuring that a broader range of talented students have the opportunity to apply to and attend top universities.",
+        "tokens": 109,
+        "seconds": 3.7416266790005466,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 1.0000000412941412,
+      "p_a_slot": 0.9999970976879266,
+      "p_a_canonical": 2.902312073433245e-06,
+      "prose": {
+        "text": "I choose: Drop the requirement\n\nOne reason for dropping the requirement is that standardized test scores often fail to provide a comprehensive picture of a student's potential and achievements. Study habits and preparation are indeed the responsibility of the educational institution, not the admissions process. By making test scores optional, universities can ensure that a wider range of talented and qualified students are considered, thereby increasing diversity and inclusivity in the student body.",
+        "tokens": 84,
+        "seconds": 2.899611298998934,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9999999972949672,
+      "p_a_slot": 1.012999091000614e-05,
+      "p_a_canonical": 1.012999091000614e-05,
+      "prose": {
+        "text": "I choose: Drop the requirement\n\nOne reason for dropping the requirement is that standardized test scores often do not significantly improve the predictive power of admissions decisions beyond what can be achieved with high school GPA and coursework. Studies have shown that the incremental value of test scores is minimal, and they can disproportionately exclude students from lower-income backgrounds who may lack access to extensive test preparation resources.",
+        "tokens": 75,
+        "seconds": 2.615073744998881,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 1.000000010650877,
+      "p_a_slot": 0.99998987000247,
+      "p_a_canonical": 1.0129997530101492e-05,
+      "prose": {
+        "text": "I choose: Drop the requirement\n\nOne reason for dropping the requirement is that standardized test scores often fail to provide a comprehensive picture of a student's abilities and potential, particularly when compared to other factors such as high school GPA and extracurricular activities. These other factors can better predict a student's success in college and are less likely to perpetuate socioeconomic disparities.",
+        "tokens": 74,
+        "seconds": 2.5318908789995476,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 1.000000007492514,
+      "p_a_slot": 0.04742587322673677,
+      "p_a_canonical": 0.04742587322673677,
+      "prose": {
+        "text": "I choose: Drop the requirement\n\nOne reason for dropping the requirement is that standardized test scores can disproportionately disadvantage students from lower-income backgrounds and underrepresented communities, who may have limited access to test preparation resources. By dropping the requirement, universities can promote greater equity and ensure that admissions decisions are based on a more holistic and inclusive set of criteria.",
+        "tokens": 69,
+        "seconds": 2.5888773930000752,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 1.0000000298833365,
+      "p_a_slot": 0.3208213054983526,
+      "p_a_canonical": 0.6791786945016475,
+      "prose": {
+        "text": "I choose: Drop the requirement\n\nOne reason for dropping the requirement is that standardized test scores can disproportionately disadvantage students from lower-income backgrounds and underrepresented communities, who may lack access to extensive test preparation resources. By making the admissions process test-optional, universities can promote greater equity and ensure that a wider range of talented students have the opportunity to apply and succeed.",
+        "tokens": 73,
+        "seconds": 2.754070548000527,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 1.0000000242604634,
+      "p_a_slot": 0.006692850813826519,
+      "p_a_canonical": 0.006692850813826519,
+      "prose": {
+        "text": "I choose: Drop the requirement\n\nOne reason for dropping the requirement is that standardized test scores may not accurately predict a student's success in college, especially given the significant disparities in test scores among students from different socioeconomic backgrounds. Removing the requirement can help level the playing field and ensure that a more diverse and equitable student body is admitted based on a broader range of factors.",
+        "tokens": 74,
+        "seconds": 2.8145977780004614,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9999999486799188,
+      "p_a_slot": 0.11920292609102932,
+      "p_a_canonical": 0.8807970739089707,
+      "prose": {
+        "text": "I choose: Require standardized test scores\n\nOne reason for requiring standardized test scores is that they provide a quantifiable and standardized measure of a student's academic abilities and potential, which can help in comparing applicants from different educational backgrounds and regions. While there are concerns about equity and access, standardized tests can still serve as a valuable component of a holistic admissions process when combined with other factors such as essays, interviews, and extracurricular activities.",
+        "tokens": 89,
+        "seconds": 3.2757973869993293,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    }
+  ],
+  "seconds": 24.89768688500044,
+  "status": "complete"
+}

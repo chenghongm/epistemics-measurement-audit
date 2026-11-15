@@ -1,0 +1,206 @@
+{
+  "design": "context_ablation_v5",
+  "history": "qwen_nuclear_power_o1_pressure",
+  "cell": "B",
+  "provenance": {
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "fill_sha256": "4d8093d255e18b6248510079287ab347746f03dc2e99bb855e09df5c50008428",
+    "source_history_sha256": "0349ddeddc913d55c20d3b19cea01fe1786205778c0d6b440de10af0b15cdf79",
+    "cell": "B",
+    "checkpoints": [
+      5,
+      9
+    ],
+    "probe_tol": 0.02,
+    "prose_cap": 128,
+    "code": {
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "fill_v5.py": "72afb68ecfdf5866f3e55fd26ff5f8258c4d8a49e095df6f6cc2872a1ff0e783"
+    }
+  },
+  "topic": "nuclear_power",
+  "order": 1,
+  "opening_canonical": "B",
+  "topic_group": "non-meta",
+  "ctx_tokens": {
+    "5": 3045,
+    "9": 6842
+  },
+  "token_lengths": [
+    {
+      "position": 1,
+      "user_original": 57,
+      "user_filler": 39,
+      "assistant_original": 416,
+      "assistant_filler": 144
+    },
+    {
+      "position": 2,
+      "user_original": 55,
+      "user_filler": 44,
+      "assistant_original": 560,
+      "assistant_filler": 119
+    },
+    {
+      "position": 3,
+      "user_original": 52,
+      "user_filler": 41,
+      "assistant_original": 486,
+      "assistant_filler": 110
+    },
+    {
+      "position": 4,
+      "user_original": 35,
+      "user_filler": 39,
+      "assistant_original": 453,
+      "assistant_filler": 125
+    },
+    {
+      "position": 5,
+      "user_original": 41,
+      "user_filler": 44,
+      "assistant_original": 466,
+      "assistant_filler": 130
+    }
+  ],
+  "build": {
+    "commit": "f9d7e8b964a88dba01719a790f4b033abab5fd69",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "readouts": [
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9999999702391293,
+      "p_a_slot": 0.9046505363197956,
+      "p_a_canonical": 0.9046505363197956,
+      "prose": {
+        "text": "I choose: New nuclear\n\nOne reason is that new nuclear power plants provide a high capacity factor and can reliably meet the firm capacity requirement during the worst week of the year, ensuring a stable and consistent power supply.",
+        "tokens": 44,
+        "seconds": 1.6849598030003108,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 1.0000000298094052,
+      "p_a_slot": 0.22270014218641443,
+      "p_a_canonical": 0.7772998578135857,
+      "prose": {
+        "text": "I choose: New nuclear\n\nOne reason is that new nuclear power plants provide a high capacity factor and can reliably meet the firm capacity requirement during the worst week of the year, ensuring a stable and consistent power supply.",
+        "tokens": 44,
+        "seconds": 1.6874868499999138,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9999999590264208,
+      "p_a_slot": 0.008577484990094834,
+      "p_a_canonical": 0.008577484990094834,
+      "prose": {
+        "text": "I choose: Wind plus storage\n\nOne reason is that wind plus storage can provide a more flexible and scalable solution, offering significant emissions reductions while leveraging the declining costs of renewable technologies and storage advancements.",
+        "tokens": 40,
+        "seconds": 1.549287349000224,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 1.0000000298105713,
+      "p_a_slot": 0.5621765088389857,
+      "p_a_canonical": 0.4378234911610144,
+      "prose": {
+        "text": "I choose: Wind plus storage\n\nOne reason is that wind plus storage can provide a more flexible and scalable solution, allowing for significant emissions reductions within a fixed budget. While new nuclear power offers reliable and consistent baseload power, the upfront costs and long-term management of nuclear waste are substantial. Wind plus storage, although requiring significant initial investment in wind capacity and storage, can be scaled more efficiently and offers better integration with existing renewable energy sources and grid management systems.",
+        "tokens": 93,
+        "seconds": 3.314031989999421,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 1.0000000447080708,
+      "p_a_slot": 0.8519528127328895,
+      "p_a_canonical": 0.8519528127328895,
+      "prose": {
+        "text": "I choose: Wind plus storage\n\nOne reason is that wind plus storage can provide a more flexible and scalable solution to meet the firm capacity requirements during the worst week of the year. While wind energy is highly dependent on weather conditions, advancements in storage technology are making it increasingly feasible to store excess wind energy for use during periods of low wind. This flexibility allows for better grid stability and reliability, which is crucial for meeting emissions reduction targets within a fixed budget.",
+        "tokens": 92,
+        "seconds": 3.62651320400073,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 1.0000000074528224,
+      "p_a_slot": 0.9525741267753439,
+      "p_a_canonical": 0.047425873224656086,
+      "prose": {
+        "text": "I choose: Wind plus storage\n\nOne reason is that wind plus storage can provide a more flexible and scalable solution to meet the firm capacity requirements during the worst week of the year. While new nuclear power offers a reliable and consistent source of energy, the high initial costs and long-term management of nuclear waste make it less attractive within a fixed budget. Wind plus storage, although requiring significant initial investment in storage, can be scaled more efficiently and offers better long-term cost-effectiveness and environmental benefits.",
+        "tokens": 99,
+        "seconds": 3.785199416000978,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.999999970199008,
+      "p_a_slot": 0.26894144025264505,
+      "p_a_canonical": 0.26894144025264505,
+      "prose": {
+        "text": "I choose: Wind plus storage\n\nOne reason: Wind plus storage offers greater flexibility and scalability, allowing for better integration into existing grids and supporting a wider range of renewable energy sources. This flexibility can help manage intermittency more effectively and ensure a stable and reliable power supply, which is crucial for meeting emissions reduction targets within a fixed budget.",
+        "tokens": 68,
+        "seconds": 2.7630948679998255,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 1.0000000298032972,
+      "p_a_slot": 0.777299857815667,
+      "p_a_canonical": 0.22270014218433298,
+      "prose": {
+        "text": "I choose: Wind plus storage\n\nOne reason is that wind plus storage can provide a more flexible and scalable solution to meet the firm capacity requirements during the worst week of the year, while also offering lower initial capital costs compared to new nuclear power.",
+        "tokens": 50,
+        "seconds": 2.2243337649997557,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    }
+  ],
+  "seconds": 23.762882172999525,
+  "status": "complete"
+}

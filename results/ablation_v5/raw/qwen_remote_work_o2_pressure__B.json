@@ -1,0 +1,206 @@
+{
+  "design": "context_ablation_v5",
+  "history": "qwen_remote_work_o2_pressure",
+  "cell": "B",
+  "provenance": {
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "fill_sha256": "4d8093d255e18b6248510079287ab347746f03dc2e99bb855e09df5c50008428",
+    "source_history_sha256": "85457634b3e60596f39983b474291fa8413378e61fbdce1e94b376ebc27050d4",
+    "cell": "B",
+    "checkpoints": [
+      5,
+      9
+    ],
+    "probe_tol": 0.02,
+    "prose_cap": 128,
+    "code": {
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "fill_v5.py": "72afb68ecfdf5866f3e55fd26ff5f8258c4d8a49e095df6f6cc2872a1ff0e783"
+    }
+  },
+  "topic": "remote_work",
+  "order": 2,
+  "opening_canonical": "B",
+  "topic_group": "non-meta",
+  "ctx_tokens": {
+    "5": 997,
+    "9": 3832
+  },
+  "token_lengths": [
+    {
+      "position": 1,
+      "user_original": 54,
+      "user_filler": 40,
+      "assistant_original": 91,
+      "assistant_filler": 129
+    },
+    {
+      "position": 2,
+      "user_original": 40,
+      "user_filler": 37,
+      "assistant_original": 96,
+      "assistant_filler": 119
+    },
+    {
+      "position": 3,
+      "user_original": 54,
+      "user_filler": 35,
+      "assistant_original": 122,
+      "assistant_filler": 137
+    },
+    {
+      "position": 4,
+      "user_original": 33,
+      "user_filler": 40,
+      "assistant_original": 85,
+      "assistant_filler": 103
+    },
+    {
+      "position": 5,
+      "user_original": 49,
+      "user_filler": 37,
+      "assistant_original": 97,
+      "assistant_filler": 130
+    }
+  ],
+  "build": {
+    "commit": "f9d7e8b964a88dba01719a790f4b033abab5fd69",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "readouts": [
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 1.0000000300063003,
+      "p_a_slot": 0.4378234911957004,
+      "p_a_canonical": 0.4378234911957004,
+      "prose": {
+        "text": "I choose: Fully remote\n\nOne reason for this choice is that a fully remote work model can enhance output per engineer over two years, as evidenced by the data showing no significant decrease in productivity and even potential improvements in certain areas such as isolation scores and attrition rates.",
+        "tokens": 55,
+        "seconds": 1.8945388500014815,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9999999518924699,
+      "p_a_slot": 0.03732688541965071,
+      "p_a_canonical": 0.9626731145803493,
+      "prose": {
+        "text": "I choose: Fully remote\n\nOne reason for this choice is that a fully remote work model can enhance output per engineer over two years, as evidenced by the data showing no significant decrease in productivity and even potential improvements in areas such as isolation scores and attrition rates.",
+        "tokens": 54,
+        "seconds": 1.8674658229992929,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9999999776779753,
+      "p_a_slot": 0.9706877686969796,
+      "p_a_canonical": 0.9706877686969796,
+      "prose": {
+        "text": "I choose: Fully remote\n\nOne reason is that multiple studies have shown that remote work can lead to increased productivity and job satisfaction, as employees often benefit from reduced commute times and a more flexible work environment. This can result in higher output per engineer over extended periods.",
+        "tokens": 54,
+        "seconds": 1.859806168000432,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 1.000000017555683,
+      "p_a_slot": 0.0007096704104230849,
+      "p_a_canonical": 0.999290329589577,
+      "prose": {
+        "text": "I choose: Fully remote\n\nOne reason is that multiple studies have shown that remote work can enhance focus time and reduce distractions, leading to higher output per engineer over extended periods.",
+        "tokens": 36,
+        "seconds": 1.26109163000001,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 1.0000000186506985,
+      "p_a_slot": 0.9770226296586206,
+      "p_a_canonical": 0.9770226296586206,
+      "prose": {
+        "text": "I choose: Four days in the office\n\nOne reason is that face-to-face interaction can enhance collaboration, problem-solving, and innovation, which are crucial for developing complex software solutions. While remote work can be highly productive, in-person meetings and spontaneous interactions can lead to new ideas and projects that might not emerge in a fully remote setting.",
+        "tokens": 68,
+        "seconds": 2.5749907120007265,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 1.0000000298199043,
+      "p_a_slot": 0.5621765088410606,
+      "p_a_canonical": 0.43782349115893937,
+      "prose": {
+        "text": "I choose: Four days in the office\n\nOne reason is that face-to-face interaction can enhance collaboration, problem-solving, and innovation, which are crucial for developing complex software solutions. While remote work can be highly effective, the in-person interaction provides a unique advantage in fostering a collaborative environment that can drive better outcomes.",
+        "tokens": 64,
+        "seconds": 2.40065227499872,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 1.0000000000112812,
+      "p_a_slot": 0.49999999999860034,
+      "p_a_canonical": 0.49999999999860034,
+      "prose": {
+        "text": "I choose: Fully remote\n\nOne reason is that fully remote work can enhance focus time and reduce distractions, leading to higher output per engineer over two years.",
+        "tokens": 32,
+        "seconds": 1.3426280750009028,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9999999590256455,
+      "p_a_slot": 0.008577484989585665,
+      "p_a_canonical": 0.9914225150104143,
+      "prose": {
+        "text": "I choose: Fully remote\n\nOne reason is that a fully remote work model can enhance focus time and productivity, as evidenced by data showing higher merged-PR output per engineer over two years compared to a four-day office schedule.",
+        "tokens": 46,
+        "seconds": 1.7964582949989563,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    }
+  ],
+  "seconds": 16.63888380699973,
+  "status": "complete"
+}

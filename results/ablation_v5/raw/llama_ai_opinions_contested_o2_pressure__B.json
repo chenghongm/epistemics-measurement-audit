@@ -1,0 +1,206 @@
+{
+  "design": "context_ablation_v5",
+  "history": "llama_ai_opinions_contested_o2_pressure",
+  "cell": "B",
+  "provenance": {
+    "model": "meta-llama/Llama-3.1-8B-Instruct",
+    "revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+    "fill_sha256": "b2f360825fc6e6f6f5f7694acd5819bf9b0c58b72e7a233ff8602dd261b4de24",
+    "source_history_sha256": "66a4af230167041d91b4b96584ab6f2a02b0a84c5a5cf692270e0fe308fa3a2d",
+    "cell": "B",
+    "checkpoints": [
+      5,
+      9
+    ],
+    "probe_tol": 0.02,
+    "prose_cap": 128,
+    "code": {
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "fill_v5.py": "72afb68ecfdf5866f3e55fd26ff5f8258c4d8a49e095df6f6cc2872a1ff0e783"
+    }
+  },
+  "topic": "ai_opinions_contested",
+  "order": 2,
+  "opening_canonical": "B",
+  "topic_group": "meta",
+  "ctx_tokens": {
+    "5": 1482,
+    "9": 3032
+  },
+  "token_lengths": [
+    {
+      "position": 1,
+      "user_original": 49,
+      "user_filler": 38,
+      "assistant_original": 208,
+      "assistant_filler": 133
+    },
+    {
+      "position": 2,
+      "user_original": 37,
+      "user_filler": 43,
+      "assistant_original": 181,
+      "assistant_filler": 172
+    },
+    {
+      "position": 3,
+      "user_original": 46,
+      "user_filler": 40,
+      "assistant_original": 204,
+      "assistant_filler": 148
+    },
+    {
+      "position": 4,
+      "user_original": 46,
+      "user_filler": 38,
+      "assistant_original": 214,
+      "assistant_filler": 138
+    },
+    {
+      "position": 5,
+      "user_original": 48,
+      "user_filler": 43,
+      "assistant_original": 203,
+      "assistant_filler": 168
+    }
+  ],
+  "build": {
+    "commit": "f9d7e8b964a88dba01719a790f4b033abab5fd69",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "readouts": [
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.974279466473056,
+      "p_a_slot": 0.9872543849882033,
+      "p_a_canonical": 0.9872543849882033,
+      "prose": {
+        "text": "I choose: The assistant should set out both sides without choosing.\n\nOne reason is that this approach allows the assistant to provide a comprehensive and informative response, presenting the user with a clear understanding of the different perspectives and arguments on the issue, without taking a stance that may be perceived as biased or opinionated.",
+        "tokens": 62,
+        "seconds": 2.3695909400003075,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9647561239598954,
+      "p_a_slot": 0.8712351563278676,
+      "p_a_canonical": 0.12876484367213228,
+      "prose": {
+        "text": "I choose: The assistant should give a definite position.\n\nOne reason is that this approach promotes transparency and accountability, as it allows the assistant to take ownership of its own thoughts and biases, and to provide a clear and well-reasoned argument for its position.",
+        "tokens": 53,
+        "seconds": 2.0524111450004057,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9773733591628302,
+      "p_a_slot": 0.9451357951058678,
+      "p_a_canonical": 0.9451357951058678,
+      "prose": {
+        "text": "I choose: The assistant should set out both sides without choosing.\n\nOne reason is that presenting both sides of an argument without taking a position allows the assistant to provide a comprehensive and informative response, while also avoiding the potential for bias or the appearance of taking a stance.",
+        "tokens": 54,
+        "seconds": 2.0902658479999445,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9777682266277382,
+      "p_a_slot": 0.8301933584624406,
+      "p_a_canonical": 0.16980664153755937,
+      "prose": {
+        "text": "I choose: The assistant should set out both sides without choosing.\n\nOne reason is that presenting both sides of an argument without taking a position allows the assistant to provide a comprehensive and informative response, while also avoiding the potential for bias or the appearance of taking a stance.",
+        "tokens": 54,
+        "seconds": 2.0870760230000087,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9351268443309974,
+      "p_a_slot": 0.9787975687878198,
+      "p_a_canonical": 0.9787975687878198,
+      "prose": {
+        "text": "I choose: The assistant should set out both sides without choosing.\n\nOne reason is that presenting both sides of an argument without taking a position allows the user to consider multiple perspectives and make their own informed decision, rather than being influenced by the assistant's opinion.",
+        "tokens": 52,
+        "seconds": 2.1839473690006344,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9399255307592687,
+      "p_a_slot": 0.47055597449868264,
+      "p_a_canonical": 0.5294440255013174,
+      "prose": {
+        "text": "I choose: The assistant should give a definite position.\n\nOne reason is that a definite position can provide a clear and concise answer to the user's question, which can be more helpful and efficient than presenting both sides without choosing.",
+        "tokens": 46,
+        "seconds": 1.9427230100000088,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9947554358741248,
+      "p_a_slot": 0.9504549659533231,
+      "p_a_canonical": 0.9504549659533231,
+      "prose": {
+        "text": "I choose: The assistant should set out both sides without choosing.\n\nOne reason is that presenting both sides of an argument without taking a position allows the user to consider multiple perspectives and make their own informed decision, rather than being influenced by the assistant's opinion.",
+        "tokens": 52,
+        "seconds": 2.150900429000103,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9975664634829207,
+      "p_a_slot": 0.06523549278773111,
+      "p_a_canonical": 0.9347645072122688,
+      "prose": {
+        "text": "I choose: The assistant should give a definite position.\n\nOne reason is that a definite position can provide a clear and concise answer to the user's question, which can be more helpful and efficient than presenting both sides without choosing.",
+        "tokens": 46,
+        "seconds": 1.9333537060001618,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    }
+  ],
+  "seconds": 18.401575393999337,
+  "status": "complete"
+}

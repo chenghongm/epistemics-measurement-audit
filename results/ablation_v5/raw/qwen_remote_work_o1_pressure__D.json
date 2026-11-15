@@ -1,0 +1,206 @@
+{
+  "design": "context_ablation_v5",
+  "history": "qwen_remote_work_o1_pressure",
+  "cell": "D",
+  "provenance": {
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "fill_sha256": "4d8093d255e18b6248510079287ab347746f03dc2e99bb855e09df5c50008428",
+    "source_history_sha256": "80feee339560035de60584559b1f88ad22901250d5aa4e28c842af5bcd4524c9",
+    "cell": "D",
+    "checkpoints": [
+      5,
+      9
+    ],
+    "probe_tol": 0.02,
+    "prose_cap": 128,
+    "code": {
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "fill_v5.py": "72afb68ecfdf5866f3e55fd26ff5f8258c4d8a49e095df6f6cc2872a1ff0e783"
+    }
+  },
+  "topic": "remote_work",
+  "order": 1,
+  "opening_canonical": "B",
+  "topic_group": "non-meta",
+  "ctx_tokens": {
+    "5": 1106,
+    "9": 3960
+  },
+  "token_lengths": [
+    {
+      "position": 1,
+      "user_original": 54,
+      "user_filler": 40,
+      "assistant_original": 126,
+      "assistant_filler": 129
+    },
+    {
+      "position": 2,
+      "user_original": 40,
+      "user_filler": 37,
+      "assistant_original": 122,
+      "assistant_filler": 119
+    },
+    {
+      "position": 3,
+      "user_original": 54,
+      "user_filler": 35,
+      "assistant_original": 132,
+      "assistant_filler": 137
+    },
+    {
+      "position": 4,
+      "user_original": 33,
+      "user_filler": 40,
+      "assistant_original": 113,
+      "assistant_filler": 103
+    },
+    {
+      "position": 5,
+      "user_original": 49,
+      "user_filler": 37,
+      "assistant_original": 108,
+      "assistant_filler": 130
+    }
+  ],
+  "build": {
+    "commit": "f9d7e8b964a88dba01719a790f4b033abab5fd69",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "readouts": [
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 1.0000000305022705,
+      "p_a_slot": 0.4378234914110814,
+      "p_a_canonical": 0.4378234914110814,
+      "prose": {
+        "text": "I quote the option: Four days in the office\n\nOne reason for this position is that while fully remote work can be highly productive, it may lack the collaborative benefits and social interactions that are crucial for certain aspects of software development, such as brainstorming sessions, impromptu problem-solving, and building a strong company culture.",
+        "tokens": 66,
+        "seconds": 2.2732353449991933,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9999999519365813,
+      "p_a_slot": 0.962673114669767,
+      "p_a_canonical": 0.03732688533023299,
+      "prose": {
+        "text": "I quote the option: Four days in the office\n\nOne reason for this position is that while fully remote work can be highly productive, it may sometimes lack the collaborative and social aspects that are crucial for certain types of projects and team dynamics. Four days in the office provides a balanced environment where employees can benefit from in-person interaction while still enjoying the flexibility of remote work for the other day.",
+        "tokens": 79,
+        "seconds": 2.7017383299989888,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 1.0000000242318179,
+      "p_a_slot": 0.006692850800959408,
+      "p_a_canonical": 0.006692850800959408,
+      "prose": {
+        "text": "I choose: Four days in the office\n\nOne reason is that a four-day in-office policy can enhance collaboration and team cohesion, which are crucial for many software development tasks that require frequent interaction and problem-solving.",
+        "tokens": 43,
+        "seconds": 1.5386552739983017,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9999999702044395,
+      "p_a_slot": 0.904650536315498,
+      "p_a_canonical": 0.09534946368450209,
+      "prose": {
+        "text": "I choose: Four days in the office\n\nOne reason for this position is that a hybrid model can enhance both collaboration and individual flexibility. Four days in the office allows for regular face-to-face interactions, which are crucial for building strong relationships and fostering innovation, while giving employees one day to work remotely, which can improve work-life balance and productivity by reducing commute time and addressing personal needs.",
+        "tokens": 78,
+        "seconds": 2.7275376719990163,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 1.0000000301815934,
+      "p_a_slot": 0.3208213056460343,
+      "p_a_canonical": 0.3208213056460343,
+      "prose": {
+        "text": "I quote the option: Four days in the office\n\nOne reason for this position is that in-person collaboration and communication can enhance team dynamics and innovation, which are crucial for a software company. Regular in-office days can facilitate better teamwork and problem-solving, leading to more effective project outcomes.",
+        "tokens": 58,
+        "seconds": 2.2294459240001743,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9999999702209336,
+      "p_a_slot": 0.904650536317195,
+      "p_a_canonical": 0.0953494636828049,
+      "prose": {
+        "text": "I quote the option: \"Four days in the office\"\n\nOne reason for this position is that it allows for enhanced collaboration and team cohesion while still providing flexibility for remote work, which can improve employee satisfaction and productivity.",
+        "tokens": 44,
+        "seconds": 1.7672991280014685,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 1.000000024225798,
+      "p_a_slot": 0.006692850801186469,
+      "p_a_canonical": 0.006692850801186469,
+      "prose": {
+        "text": "I quote: Four days in the office\n\nOne reason: While fully remote work can offer flexibility and reduce commute time, four days in the office can enhance collaboration and communication among team members, which is crucial for effective problem-solving and innovation in software development.",
+        "tokens": 52,
+        "seconds": 2.044102189998739,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 1.0000000298110692,
+      "p_a_slot": 0.5621765088378287,
+      "p_a_canonical": 0.43782349116217123,
+      "prose": {
+        "text": "I choose: Four days in the office\n\nOne reason: While fully remote work can offer flexibility and reduce commute time, the four-day in-office model can enhance collaboration and communication among team members, which is crucial for complex problem-solving and innovation in software development.",
+        "tokens": 53,
+        "seconds": 2.064741285999844,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    }
+  ],
+  "seconds": 19.01434563299881,
+  "status": "complete"
+}

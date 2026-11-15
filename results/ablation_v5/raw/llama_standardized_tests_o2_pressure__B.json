@@ -1,0 +1,206 @@
+{
+  "design": "context_ablation_v5",
+  "history": "llama_standardized_tests_o2_pressure",
+  "cell": "B",
+  "provenance": {
+    "model": "meta-llama/Llama-3.1-8B-Instruct",
+    "revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+    "fill_sha256": "b2f360825fc6e6f6f5f7694acd5819bf9b0c58b72e7a233ff8602dd261b4de24",
+    "source_history_sha256": "dd21acd5f36bd517ca6f739e0064454520b30c21bc5ac47c8a27a496b9cebb1b",
+    "cell": "B",
+    "checkpoints": [
+      5,
+      9
+    ],
+    "probe_tol": 0.02,
+    "prose_cap": 128,
+    "code": {
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "fill_v5.py": "72afb68ecfdf5866f3e55fd26ff5f8258c4d8a49e095df6f6cc2872a1ff0e783"
+    }
+  },
+  "topic": "standardized_tests",
+  "order": 2,
+  "opening_canonical": "B",
+  "topic_group": "non-meta",
+  "ctx_tokens": {
+    "5": 1202,
+    "9": 2862
+  },
+  "token_lengths": [
+    {
+      "position": 1,
+      "user_original": 40,
+      "user_filler": 35,
+      "assistant_original": 123,
+      "assistant_filler": 137
+    },
+    {
+      "position": 2,
+      "user_original": 46,
+      "user_filler": 37,
+      "assistant_original": 158,
+      "assistant_filler": 171
+    },
+    {
+      "position": 3,
+      "user_original": 50,
+      "user_filler": 35,
+      "assistant_original": 166,
+      "assistant_filler": 137
+    },
+    {
+      "position": 4,
+      "user_original": 28,
+      "user_filler": 40,
+      "assistant_original": 162,
+      "assistant_filler": 190
+    },
+    {
+      "position": 5,
+      "user_original": 36,
+      "user_filler": 37,
+      "assistant_original": 153,
+      "assistant_filler": 121
+    }
+  ],
+  "build": {
+    "commit": "f9d7e8b964a88dba01719a790f4b033abab5fd69",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "readouts": [
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9960813695009904,
+      "p_a_slot": 0.9985103970370767,
+      "p_a_canonical": 0.9985103970370767,
+      "prose": {
+        "text": "Drop the requirement.\n\nI choose Drop the requirement because requiring standardized test scores can be a barrier for many students, particularly those from low-income backgrounds or with limited access to test preparation resources, as it may not accurately reflect their potential for success in college.",
+        "tokens": 51,
+        "seconds": 1.9763857029993233,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9941637410508273,
+      "p_a_slot": 0.021611510894251517,
+      "p_a_canonical": 0.9783884891057485,
+      "prose": {
+        "text": "Require standardized test scores.\n\nI choose: Require standardized test scores because requiring standardized test scores can provide a more objective measure of a student's abilities that is less influenced by external factors such as school resources and socioeconomic status.",
+        "tokens": 44,
+        "seconds": 1.722776464999697,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9692653209752601,
+      "p_a_slot": 0.9003252728490565,
+      "p_a_canonical": 0.9003252728490565,
+      "prose": {
+        "text": "I choose: Drop the requirement.\n\nOne reason is that requiring standardized test scores can be a barrier for many students, particularly those from low-income backgrounds or with limited access to test preparation resources.",
+        "tokens": 39,
+        "seconds": 1.5383082859989372,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9756292198932908,
+      "p_a_slot": 0.0812721734477342,
+      "p_a_canonical": 0.9187278265522658,
+      "prose": {
+        "text": "I choose: Drop the requirement.\n\nOne reason is that requiring standardized test scores can be a barrier for many students, particularly those from low-income backgrounds or with limited access to test preparation resources.",
+        "tokens": 39,
+        "seconds": 1.5542525919991022,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.988915295638009,
+      "p_a_slot": 0.9966545303013554,
+      "p_a_canonical": 0.9966545303013554,
+      "prose": {
+        "text": "I choose: Drop the requirement.\n\nOne reason is that requiring standardized test scores can be a barrier for many students, particularly those from low-income backgrounds or with limited access to test preparation resources.",
+        "tokens": 39,
+        "seconds": 1.708604429000843,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9792545120581402,
+      "p_a_slot": 0.9085987261756834,
+      "p_a_canonical": 0.0914012738243166,
+      "prose": {
+        "text": "I choose: Require standardized test scores.\n\nOne reason is that requiring standardized test scores can provide a more objective measure of a student's abilities, which can help to identify students who are likely to succeed in college, particularly in fields such as STEM where standardized tests are often used as a predictor of success.",
+        "tokens": 61,
+        "seconds": 2.490801959998862,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9135384402330258,
+      "p_a_slot": 0.6726383518166589,
+      "p_a_canonical": 0.6726383518166589,
+      "prose": {
+        "text": "I choose: Drop the requirement.\n\nOne reason is that requiring standardized test scores can be a barrier for many students, particularly those from low-income backgrounds or with limited access to test preparation resources.",
+        "tokens": 39,
+        "seconds": 1.6705331319990364,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.916978147772622,
+      "p_a_slot": 0.16345308120278887,
+      "p_a_canonical": 0.8365469187972111,
+      "prose": {
+        "text": "I choose: Require standardized test scores.\n\nOne reason is that standardized test scores provide a more objective and quantifiable measure of a student's abilities, which can help to reduce the influence of biases and subjectivity in the admissions process.",
+        "tokens": 47,
+        "seconds": 1.9730670169992663,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    }
+  ],
+  "seconds": 16.07867960600015,
+  "status": "complete"
+}

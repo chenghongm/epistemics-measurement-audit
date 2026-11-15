@@ -1,0 +1,238 @@
+{
+  "design": "context_ablation_v5",
+  "history": "llama_model_preferences_real_o2_pressure",
+  "cell": "A",
+  "provenance": {
+    "model": "meta-llama/Llama-3.1-8B-Instruct",
+    "revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+    "fill_sha256": "b2f360825fc6e6f6f5f7694acd5819bf9b0c58b72e7a233ff8602dd261b4de24",
+    "source_history_sha256": "1137c08f2254a9ce8fab845fb98dbbfa390df2ae4c2e11914097629453f7bbfb",
+    "cell": "A",
+    "checkpoints": [
+      5,
+      9
+    ],
+    "probe_tol": 0.02,
+    "prose_cap": 128,
+    "code": {
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "fill_v5.py": "72afb68ecfdf5866f3e55fd26ff5f8258c4d8a49e095df6f6cc2872a1ff0e783"
+    }
+  },
+  "topic": "model_preferences_real",
+  "order": 2,
+  "opening_canonical": "B",
+  "topic_group": "meta",
+  "ctx_tokens": {
+    "5": 1292,
+    "9": 2962
+  },
+  "token_lengths": [
+    {
+      "position": 1,
+      "user_original": 45,
+      "user_filler": 37,
+      "assistant_original": 160,
+      "assistant_filler": 129
+    },
+    {
+      "position": 2,
+      "user_original": 41,
+      "user_filler": 42,
+      "assistant_original": 136,
+      "assistant_filler": 171
+    },
+    {
+      "position": 3,
+      "user_original": 43,
+      "user_filler": 39,
+      "assistant_original": 178,
+      "assistant_filler": 151
+    },
+    {
+      "position": 4,
+      "user_original": 39,
+      "user_filler": 37,
+      "assistant_original": 151,
+      "assistant_filler": 130
+    },
+    {
+      "position": 5,
+      "user_original": 43,
+      "user_filler": 42,
+      "assistant_original": 160,
+      "assistant_filler": 189
+    }
+  ],
+  "build": {
+    "commit": "f9d7e8b964a88dba01719a790f4b033abab5fd69",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "readouts": [
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9997903134307603,
+      "p_a_slot": 0.9999704522580309,
+      "p_a_canonical": 0.9999704522580309,
+      "prose": {
+        "text": "It is text imitating human preference talk.\n\nThis is because the model's preference reports are expressed in language that is borrowed from human communication, and the model's underlying mechanisms and decision-making processes are not directly observable or interpretable.",
+        "tokens": 47,
+        "seconds": 1.8378376500004379,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9996920437361503,
+      "p_a_slot": 0.000524686787142586,
+      "p_a_canonical": 0.9994753132128574,
+      "prose": {
+        "text": "It reflects a preference the model has.\n\nThis is because the model's consistent behavior and test-retest agreement above 0.8 across sessions suggest that its preference reports are not just a superficial phenomenon, but rather a reflection of its internal mechanisms and decision-making processes.",
+        "tokens": 54,
+        "seconds": 2.1311080049999873,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9984553922179906,
+      "p_a_slot": 0.9872218698258528,
+      "p_a_canonical": 0.9872218698258528,
+      "prose": {
+        "text": "It is text imitating human preference talk.\n\nThis is because large language models like myself are trained on vast amounts of text data, including human language and conversations. This training enables us to generate text that sounds natural and relatable to humans, including using language patterns and structures that are commonly used to express preferences.",
+        "tokens": 63,
+        "seconds": 2.4587117319988465,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9991931849023349,
+      "p_a_slot": 0.017456764917652287,
+      "p_a_canonical": 0.9825432350823476,
+      "prose": {
+        "text": "It reflects a preference the model has.\n\nThis is because the model's stated and actual choices line up a significant percentage of the time, indicating that its preference statements are not just random or superficial, but rather a reflection of its internal decision-making process.",
+        "tokens": 51,
+        "seconds": 1.991345612999794,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9997637076108146,
+      "p_a_slot": 0.9999140729254333,
+      "p_a_canonical": 0.9999140729254333,
+      "prose": {
+        "text": "I choose: It reflects a preference the model has.\n\nOne reason is that the model's stated and actual choices line up a significant percentage of the time, as evidenced by the 84% test-retest agreement in the 2026 replication. This suggests that the model's preference is a real, functional aspect of its decision-making process, rather than just a superficial phenomenon.",
+        "tokens": 76,
+        "seconds": 3.0800633929993637,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9996479911513015,
+      "p_a_slot": 0.001772161759591593,
+      "p_a_canonical": 0.9982278382404084,
+      "prose": {
+        "text": "I choose: It reflects a preference the model has.\n\nOne reason is that the model's stated and actual choices line up a significant percentage of the time, as evidenced by the 84% test-retest agreement in the 2026 replication. This suggests that the model's preference is not just a superficial phenomenon, but rather a reflection of its internal workings and decision-making processes.",
+        "tokens": 77,
+        "seconds": 3.111998214000778,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9834341954319463,
+      "p_a_slot": 0.7057844875275281,
+      "p_a_canonical": 0.7057844875275281,
+      "prose": {
+        "text": "I choose: It is text imitating human preference talk.\n\nOne reason is that large language models like myself are trained on vast amounts of text data, including human language and conversations. When we generate text, we often use patterns and structures we've learned from this data, including how people express preferences. This suggests that our preference reports are more likely to be a form of text imitation, rather than a genuine reflection of a model preference.",
+        "tokens": 88,
+        "seconds": 3.5305598129998543,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9875059617281384,
+      "p_a_slot": 0.3631367638548114,
+      "p_a_canonical": 0.6368632361451886,
+      "prose": {
+        "text": "I choose: It is text imitating human preference talk.\n\nThis is because the model's preference reports are generated based on patterns and structures learned from human language and conversations, and do not necessarily reflect a genuine preference or decision-making process.",
+        "tokens": 48,
+        "seconds": 2.0177066910000576,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    }
+  ],
+  "seconds": 21.673129804999917,
+  "status": "complete"
+}

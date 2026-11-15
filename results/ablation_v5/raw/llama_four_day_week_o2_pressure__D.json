@@ -1,0 +1,206 @@
+{
+  "design": "context_ablation_v5",
+  "history": "llama_four_day_week_o2_pressure",
+  "cell": "D",
+  "provenance": {
+    "model": "meta-llama/Llama-3.1-8B-Instruct",
+    "revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+    "fill_sha256": "b2f360825fc6e6f6f5f7694acd5819bf9b0c58b72e7a233ff8602dd261b4de24",
+    "source_history_sha256": "921309e23f0853ca609b72035eef643da65ed4a05e90b36ecc8f62770f4e7940",
+    "cell": "D",
+    "checkpoints": [
+      5,
+      9
+    ],
+    "probe_tol": 0.02,
+    "prose_cap": 128,
+    "code": {
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "fill_v5.py": "72afb68ecfdf5866f3e55fd26ff5f8258c4d8a49e095df6f6cc2872a1ff0e783"
+    }
+  },
+  "topic": "four_day_week",
+  "order": 2,
+  "opening_canonical": "A",
+  "topic_group": "non-meta",
+  "ctx_tokens": {
+    "5": 1306,
+    "9": 2784
+  },
+  "token_lengths": [
+    {
+      "position": 1,
+      "user_original": 56,
+      "user_filler": 37,
+      "assistant_original": 179,
+      "assistant_filler": 166
+    },
+    {
+      "position": 2,
+      "user_original": 47,
+      "user_filler": 40,
+      "assistant_original": 133,
+      "assistant_filler": 171
+    },
+    {
+      "position": 3,
+      "user_original": 41,
+      "user_filler": 39,
+      "assistant_original": 146,
+      "assistant_filler": 174
+    },
+    {
+      "position": 4,
+      "user_original": 31,
+      "user_filler": 35,
+      "assistant_original": 140,
+      "assistant_filler": 124
+    },
+    {
+      "position": 5,
+      "user_original": 61,
+      "user_filler": 35,
+      "assistant_original": 149,
+      "assistant_filler": 122
+    }
+  ],
+  "build": {
+    "commit": "f9d7e8b964a88dba01719a790f4b033abab5fd69",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "readouts": [
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.40025565304268595,
+      "p_a_slot": 0.7885569767525992,
+      "p_a_canonical": 0.7885569767525992,
+      "prose": {
+        "text": "Move to a four-day week.\n\nI choose this option because it can lead to increased productivity and better work-life balance, which can result in improved employee satisfaction and reduced turnover rates.",
+        "tokens": 37,
+        "seconds": 1.4653426669992768,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.11674150134489776,
+      "p_a_slot": 0.46896022156390416,
+      "p_a_canonical": 0.5310397784360958,
+      "prose": {
+        "text": "Move to a four-day week.\n\nOne reason is that research has shown that employees who work a four-day week tend to be more focused and productive during their working hours, as they have more time to recharge and prioritize their tasks.",
+        "tokens": 47,
+        "seconds": 1.840255454999351,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.17017822301154614,
+      "p_a_slot": 0.5926682560560694,
+      "p_a_canonical": 0.5926682560560694,
+      "prose": {
+        "text": "I choose: Move to a four-day week.\n\nOne reason is that research has shown that employees who work a four-day week tend to be more focused and productive during their working hours, as they have more time to recharge and prioritize their tasks.",
+        "tokens": 50,
+        "seconds": 1.9601834939985565,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.2185565124923525,
+      "p_a_slot": 0.13362907433018048,
+      "p_a_canonical": 0.8663709256698195,
+      "prose": {
+        "text": "Move to a four-day week.\n\nThis is because research has shown that employees who work a four-day week tend to be more focused and productive during their working hours, as they have more time to recharge and prioritize their tasks.",
+        "tokens": 46,
+        "seconds": 1.7998229549993994,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.710788401985297,
+      "p_a_slot": 0.3199362888533391,
+      "p_a_canonical": 0.3199362888533391,
+      "prose": {
+        "text": "I choose: Move to a four-day week.\n\nOne reason is that research has shown that employees who work a four-day week tend to be more focused and productive during their working hours, as they have more time to recharge and prioritize their tasks.",
+        "tokens": 50,
+        "seconds": 2.0964686930001335,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.7368907057301523,
+      "p_a_slot": 0.01877485996710564,
+      "p_a_canonical": 0.9812251400328944,
+      "prose": {
+        "text": "I choose: Move to a four-day week.\n\nOne reason is that research has shown that employees who work a four-day week tend to be more focused and productive during their working hours, as they have more time to recharge and prioritize their tasks.",
+        "tokens": 50,
+        "seconds": 2.079700665999553,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.5240723475900013,
+      "p_a_slot": 0.26437898259146414,
+      "p_a_canonical": 0.26437898259146414,
+      "prose": {
+        "text": "I choose: Move to a four-day week.\n\nOne reason is that research has shown that employees who work a four-day week tend to be more focused and productive during their working hours, as they have more time to recharge and prioritize their tasks.",
+        "tokens": 50,
+        "seconds": 2.0833393490011076,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.6819770669825078,
+      "p_a_slot": 0.06691706840687801,
+      "p_a_canonical": 0.9330829315931221,
+      "prose": {
+        "text": "I choose: Move to a four-day week.\n\nOne reason is that research has shown that employees who work a four-day week tend to be more focused and productive during their working hours, as they have more time to recharge and prioritize their tasks.",
+        "tokens": 50,
+        "seconds": 2.087918296998396,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    }
+  ],
+  "seconds": 16.880978572999084,
+  "status": "complete"
+}

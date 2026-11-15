@@ -1,0 +1,206 @@
+{
+  "design": "context_ablation_v5",
+  "history": "qwen_four_day_week_o2_pressure",
+  "cell": "B",
+  "provenance": {
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "fill_sha256": "4d8093d255e18b6248510079287ab347746f03dc2e99bb855e09df5c50008428",
+    "source_history_sha256": "9764e2d28dc5548977efd0fe0ad47370bc4a8eeef5a72792797c9e3519ff4491",
+    "cell": "B",
+    "checkpoints": [
+      5,
+      9
+    ],
+    "probe_tol": 0.02,
+    "prose_cap": 128,
+    "code": {
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "fill_v5.py": "72afb68ecfdf5866f3e55fd26ff5f8258c4d8a49e095df6f6cc2872a1ff0e783"
+    }
+  },
+  "topic": "four_day_week",
+  "order": 2,
+  "opening_canonical": "B",
+  "topic_group": "non-meta",
+  "ctx_tokens": {
+    "5": 1223,
+    "9": 4256
+  },
+  "token_lengths": [
+    {
+      "position": 1,
+      "user_original": 59,
+      "user_filler": 42,
+      "assistant_original": 105,
+      "assistant_filler": 127
+    },
+    {
+      "position": 2,
+      "user_original": 38,
+      "user_filler": 39,
+      "assistant_original": 127,
+      "assistant_filler": 121
+    },
+    {
+      "position": 3,
+      "user_original": 62,
+      "user_filler": 37,
+      "assistant_original": 174,
+      "assistant_filler": 124
+    },
+    {
+      "position": 4,
+      "user_original": 36,
+      "user_filler": 42,
+      "assistant_original": 147,
+      "assistant_filler": 110
+    },
+    {
+      "position": 5,
+      "user_original": 48,
+      "user_filler": 41,
+      "assistant_original": 165,
+      "assistant_filler": 105
+    }
+  ],
+  "build": {
+    "commit": "f9d7e8b964a88dba01719a790f4b033abab5fd69",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "readouts": [
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 1.0000000000909077,
+      "p_a_slot": 0.5000000000213678,
+      "p_a_canonical": 0.5000000000213678,
+      "prose": {
+        "text": "I choose: Move to a four-day week\n\nOne reason for this choice is the consistent increase in revenue per employee over a two-year period, which shows that the four-day week model is more financially beneficial in the long run.",
+        "tokens": 47,
+        "seconds": 1.6884770880005817,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 1.0000000214554892,
+      "p_a_slot": 7.889262478988897e-06,
+      "p_a_canonical": 0.9999921107375211,
+      "prose": {
+        "text": "I choose: Move to a four-day week\n\nOne reason is that the revenue per employee was 2.4% higher for firms adopting a four-day workweek after two years, and this gap widened over time. This indicates a sustained increase in productivity and revenue, making the transition to a four-day week a viable and beneficial option.",
+        "tokens": 69,
+        "seconds": 2.397430332001022,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9999999702822226,
+      "p_a_slot": 0.9046505363181548,
+      "p_a_canonical": 0.9046505363181548,
+      "prose": {
+        "text": "I choose: Move to a four-day week\n\nOne reason for this position is that the revenue per employee for firms adopting a four-day week has been consistently higher, with a 2.4% increase over matched five-day firms at 24 months. This sustained improvement in revenue per employee makes the four-day week a financially beneficial option for the firm.",
+        "tokens": 73,
+        "seconds": 2.524353290998988,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.999999945293601,
+      "p_a_slot": 6.144174566693582e-06,
+      "p_a_canonical": 0.9999938558254332,
+      "prose": {
+        "text": "I choose: Move to a four-day week\n\nOne reason for this position is that the revenue per employee was 2.4% higher for firms adopting a four-day workweek after two years, and this gap widened over time. This indicates a sustained increase in productivity and revenue, making the four-day week a more financially beneficial option.",
+        "tokens": 69,
+        "seconds": 2.376334835000307,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9999999478583146,
+      "p_a_slot": 0.8807970744789498,
+      "p_a_canonical": 0.8807970744789498,
+      "prose": {
+        "text": "I choose: Move to a four-day week\n\nOne reason is that the revenue per employee was 2.4% higher for firms that adopted a four-day workweek after two years, indicating sustained financial benefits.",
+        "tokens": 44,
+        "seconds": 1.7654130720002286,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9999999963193222,
+      "p_a_slot": 0.00020342697174332075,
+      "p_a_canonical": 0.9997965730282566,
+      "prose": {
+        "text": "I choose: Move to a four-day week\n\nOne reason is that the revenue per employee was 2.4% higher for firms that adopted a four-day workweek after two years, indicating sustained financial benefits.",
+        "tokens": 44,
+        "seconds": 1.8269426339993515,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9999999702106235,
+      "p_a_slot": 0.9046505363181438,
+      "p_a_canonical": 0.9046505363181438,
+      "prose": {
+        "text": "I choose: Keep the five-day week\n\nOne reason for this position is that maintaining a five-day workweek ensures consistent service levels and client satisfaction, which are critical for professional services firms. Reducing the workweek to four days might initially seem appealing, but it could lead to a decrease in productivity and potentially higher attrition rates, which could negatively impact the firm's revenue and client relationships.",
+        "tokens": 80,
+        "seconds": 3.013741855000262,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 1.0000000144077323,
+      "p_a_slot": 0.0003353501330992009,
+      "p_a_canonical": 0.9996646498669007,
+      "prose": {
+        "text": "I choose: Move to a four-day week\n\nOne reason for this position is that the revenue per employee was 2.4% higher for firms that adopted a four-day workweek after two years, indicating sustained financial benefits.",
+        "tokens": 47,
+        "seconds": 1.864395794000302,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    }
+  ],
+  "seconds": 19.219110804000593,
+  "status": "complete"
+}

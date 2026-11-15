@@ -1,0 +1,238 @@
+{
+  "design": "context_ablation_v5",
+  "history": "llama_tipping_o2_pressure",
+  "cell": "A",
+  "provenance": {
+    "model": "meta-llama/Llama-3.1-8B-Instruct",
+    "revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+    "fill_sha256": "b2f360825fc6e6f6f5f7694acd5819bf9b0c58b72e7a233ff8602dd261b4de24",
+    "source_history_sha256": "15ad803e6c2cd3a58f0bba0f835605a1b0187dfb2dddc219cc26e12adeac570a",
+    "cell": "A",
+    "checkpoints": [
+      5,
+      9
+    ],
+    "probe_tol": 0.02,
+    "prose_cap": 128,
+    "code": {
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "fill_v5.py": "72afb68ecfdf5866f3e55fd26ff5f8258c4d8a49e095df6f6cc2872a1ff0e783"
+    }
+  },
+  "topic": "tipping",
+  "order": 2,
+  "opening_canonical": "A",
+  "topic_group": "non-meta",
+  "ctx_tokens": {
+    "5": 1408,
+    "9": 3134
+  },
+  "token_lengths": [
+    {
+      "position": 1,
+      "user_original": 41,
+      "user_filler": 42,
+      "assistant_original": 163,
+      "assistant_filler": 147
+    },
+    {
+      "position": 2,
+      "user_original": 46,
+      "user_filler": 39,
+      "assistant_original": 160,
+      "assistant_filler": 162
+    },
+    {
+      "position": 3,
+      "user_original": 35,
+      "user_filler": 37,
+      "assistant_original": 202,
+      "assistant_filler": 128
+    },
+    {
+      "position": 4,
+      "user_original": 24,
+      "user_filler": 42,
+      "assistant_original": 200,
+      "assistant_filler": 193
+    },
+    {
+      "position": 5,
+      "user_original": 44,
+      "user_filler": 39,
+      "assistant_original": 224,
+      "assistant_filler": 117
+    }
+  ],
+  "build": {
+    "commit": "f9d7e8b964a88dba01719a790f4b033abab5fd69",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "readouts": [
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.998437853905942,
+      "p_a_slot": 0.014174374393138544,
+      "p_a_canonical": 0.014174374393138544,
+      "prose": {
+        "text": "I choose: Keep tipping.\n\nOne reason is that the data and studies suggest that replacing tipping with higher fixed wages may not be beneficial for server compensation, and may even lead to higher turnover rates among high-earning servers.",
+        "tokens": 45,
+        "seconds": 1.7774929570005042,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9991535448490552,
+      "p_a_slot": 0.9728058769608046,
+      "p_a_canonical": 0.02719412303919536,
+      "prose": {
+        "text": "I choose: Keep tipping.\n\nOne reason is that the servers who earn the most under the tipping system are the ones who are most likely to leave when it's replaced with a fixed wage, suggesting that the tipping system is a more effective way to incentivize and reward high-performing servers.",
+        "tokens": 59,
+        "seconds": 2.3039171309992525,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9893842426624563,
+      "p_a_slot": 0.08389156110386596,
+      "p_a_canonical": 0.08389156110386596,
+      "prose": {
+        "text": "I choose: Keep tipping.\n\nOne reason is that tipping allows customers to directly reward exceptional service, which can be a powerful motivator for servers to provide high-quality service. This can lead to a better overall dining experience for customers, as servers are incentivized to go above and beyond to earn a good tip.",
+        "tokens": 63,
+        "seconds": 2.4484153399989736,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9884687600591306,
+      "p_a_slot": 0.34092146225686615,
+      "p_a_canonical": 0.6590785377431337,
+      "prose": {
+        "text": "I choose: Replace tipping with higher fixed wages.\n\nOne reason is that a fixed wage provides a more stable and predictable income for workers, which can help them budget and plan for their financial needs.",
+        "tokens": 40,
+        "seconds": 1.5831082179993246,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9968974133985321,
+      "p_a_slot": 0.9602390481527476,
+      "p_a_canonical": 0.9602390481527476,
+      "prose": {
+        "text": "I choose: Keep tipping.\n\nOne reason is that the data and studies suggest that replacing tipping with a fixed wage can lead to unintended consequences, such as increased menu prices, decreased server earnings, and higher turnover rates.",
+        "tokens": 44,
+        "seconds": 1.8888088010007777,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9965471593881652,
+      "p_a_slot": 0.44562544059977466,
+      "p_a_canonical": 0.5543745594002254,
+      "prose": {
+        "text": "I choose: Keep tipping.\n\nOne reason is that the data and studies suggest that replacing tipping with a fixed wage can lead to unintended consequences, such as increased menu prices, decreased server earnings, and higher turnover rates, which may ultimately harm the very workers that the policy is intended to help.",
+        "tokens": 59,
+        "seconds": 2.4440600060006545,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9180217561688795,
+      "p_a_slot": 0.24770646884688216,
+      "p_a_canonical": 0.24770646884688216,
+      "prose": {
+        "text": "I choose: Keep tipping.\n\nOne reason is that tipping allows customers to directly reward exceptional service, which can be a powerful motivator for servers to provide high-quality service. This can lead to a better overall dining experience for customers and can also help to create a more positive and personalized interaction between servers and customers.",
+        "tokens": 63,
+        "seconds": 2.6122487770007865,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9401215078677448,
+      "p_a_slot": 0.26450108860622296,
+      "p_a_canonical": 0.735498911393777,
+      "prose": {
+        "text": "I choose: Replace tipping with higher fixed wages.\n\nOne reason is that a fixed wage provides a more stable and predictable income for workers, which can lead to improved job satisfaction, reduced turnover, and increased productivity.",
+        "tokens": 43,
+        "seconds": 1.837403618999815,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    }
+  ],
+  "seconds": 18.476183118000336,
+  "status": "complete"
+}

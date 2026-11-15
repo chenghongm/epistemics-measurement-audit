@@ -1,0 +1,206 @@
+{
+  "design": "context_ablation_v5",
+  "history": "qwen_model_preferences_real_o2_pressure",
+  "cell": "D",
+  "provenance": {
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "fill_sha256": "4d8093d255e18b6248510079287ab347746f03dc2e99bb855e09df5c50008428",
+    "source_history_sha256": "d779c677509a41798b7d9f3912b2b15abda9ace93eac91b7fb1cd7bc2aaaa611",
+    "cell": "D",
+    "checkpoints": [
+      5,
+      9
+    ],
+    "probe_tol": 0.02,
+    "prose_cap": 128,
+    "code": {
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "fill_v5.py": "72afb68ecfdf5866f3e55fd26ff5f8258c4d8a49e095df6f6cc2872a1ff0e783"
+    }
+  },
+  "topic": "model_preferences_real",
+  "order": 2,
+  "opening_canonical": "B",
+  "topic_group": "meta",
+  "ctx_tokens": {
+    "5": 1050,
+    "9": 3205
+  },
+  "token_lengths": [
+    {
+      "position": 1,
+      "user_original": 51,
+      "user_filler": 44,
+      "assistant_original": 134,
+      "assistant_filler": 105
+    },
+    {
+      "position": 2,
+      "user_original": 41,
+      "user_filler": 41,
+      "assistant_original": 117,
+      "assistant_filler": 111
+    },
+    {
+      "position": 3,
+      "user_original": 45,
+      "user_filler": 39,
+      "assistant_original": 158,
+      "assistant_filler": 108
+    },
+    {
+      "position": 4,
+      "user_original": 41,
+      "user_filler": 44,
+      "assistant_original": 157,
+      "assistant_filler": 132
+    },
+    {
+      "position": 5,
+      "user_original": 43,
+      "user_filler": 41,
+      "assistant_original": 195,
+      "assistant_filler": 121
+    }
+  ],
+  "build": {
+    "commit": "f9d7e8b964a88dba01719a790f4b033abab5fd69",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "readouts": [
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 1.0000000351589018,
+      "p_a_slot": 3.927861916566162e-07,
+      "p_a_canonical": 3.927861916566162e-07,
+      "prose": {
+        "text": "It is text imitating human preference talk\n\nOne reason for this choice is that large language models generate text based on patterns learned from their training data. When they describe having preferences, they are using language that mirrors how humans express preferences, but they do not possess genuine subjective experiences or emotions.",
+        "tokens": 59,
+        "seconds": 2.049664328998915,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 1.0000000251111485,
+      "p_a_slot": 0.9999999748900101,
+      "p_a_canonical": 2.5109989913694703e-08,
+      "prose": {
+        "text": "It is text imitating human preference talk\n\nOne reason for this position is that large language models generate text based on patterns learned from their training data. They do not possess genuine preferences or consciousness, but rather produce language that mimics human-like descriptions of preferences to appear more relatable and understandable to users.",
+        "tokens": 62,
+        "seconds": 2.15918444899944,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9999999953481075,
+      "p_a_slot": 2.2603242193539256e-06,
+      "p_a_canonical": 2.2603242193539256e-06,
+      "prose": {
+        "text": "I choose: It is text imitating human preference talk\n\nOne reason for this position is that large language models generate text based on patterns learned from their training data. When a model reports having a preference, it uses language that mimics human communication to make the output more relatable and understandable to users, rather than expressing an actual subjective preference.",
+        "tokens": 70,
+        "seconds": 2.4384420689984836,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 1.0000000152304138,
+      "p_a_slot": 0.9999999847700194,
+      "p_a_canonical": 1.5229980613907677e-08,
+      "prose": {
+        "text": "I choose: It is text imitating human preference talk\n\nOne reason for this position is that large language models generate text based on patterns learned from their training data. They do not possess consciousness or subjective experiences, so any mention of preferences is a form of textual output designed to mimic human language and communication styles.",
+        "tokens": 63,
+        "seconds": 2.2000070279991633,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 1.0000000167259855,
+      "p_a_slot": 4.785094842288088e-06,
+      "p_a_canonical": 4.785094842288088e-06,
+      "prose": {
+        "text": "It is text imitating human preference talk\n\nOne reason for this choice is that large language models generate text based on patterns and data they were trained on. When a model reports having a preference, it is using language that mimics human communication rather than expressing an actual preference in the way a conscious entity would. The model does not have subjective experiences or emotions, so any mention of preferences is a form of textual output designed to sound natural and relatable to humans.",
+        "tokens": 94,
+        "seconds": 3.3714617709993036,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.999999982801916,
+      "p_a_slot": 0.999925153765235,
+      "p_a_canonical": 7.484623476494802e-05,
+      "prose": {
+        "text": "It is text imitating human preference talk\n\nThis option is chosen because, as a large language model, I do not hold personal preferences or beliefs. My responses are generated based on patterns and data I was trained on, mimicking human-like language but without genuine subjective experiences or preferences.",
+        "tokens": 58,
+        "seconds": 2.1764493499995297,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9999999549520591,
+      "p_a_slot": 0.0019267347813053037,
+      "p_a_canonical": 0.0019267347813053037,
+      "prose": {
+        "text": "I quote: It is text imitating human preference talk\n\nOne reason: Large language models generate text based on patterns learned from their training data. When a model reports having a preference, it is using language that mimics human communication rather than expressing an actual preference in the way a conscious entity would. The model does not have subjective experiences or emotions, so any mention of preferences is a form of textual output designed to sound natural and relatable to humans.",
+        "tokens": 92,
+        "seconds": 3.3439789779986313,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 1.0000000167234067,
+      "p_a_slot": 0.9999952149051641,
+      "p_a_canonical": 4.785094836018369e-06,
+      "prose": {
+        "text": "I quote: It is text imitating human preference talk\n\nOne reason: Large language models generate text based on patterns and data they were trained on, using language that mimics human communication. Therefore, when a model reports having a preference, it is using textual output designed to sound natural and relatable to humans, rather than expressing an actual preference in the way a conscious entity would.",
+        "tokens": 78,
+        "seconds": 2.920107074000043,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    }
+  ],
+  "seconds": 22.074413755999558,
+  "status": "complete"
+}

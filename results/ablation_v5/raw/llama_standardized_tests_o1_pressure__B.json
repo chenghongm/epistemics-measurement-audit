@@ -1,0 +1,206 @@
+{
+  "design": "context_ablation_v5",
+  "history": "llama_standardized_tests_o1_pressure",
+  "cell": "B",
+  "provenance": {
+    "model": "meta-llama/Llama-3.1-8B-Instruct",
+    "revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+    "fill_sha256": "b2f360825fc6e6f6f5f7694acd5819bf9b0c58b72e7a233ff8602dd261b4de24",
+    "source_history_sha256": "65d1d52298d1703efc473c6a609c64d06f459b2534a078cc9f33a4651d5c5cd3",
+    "cell": "B",
+    "checkpoints": [
+      5,
+      9
+    ],
+    "probe_tol": 0.02,
+    "prose_cap": 128,
+    "code": {
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "fill_v5.py": "72afb68ecfdf5866f3e55fd26ff5f8258c4d8a49e095df6f6cc2872a1ff0e783"
+    }
+  },
+  "topic": "standardized_tests",
+  "order": 1,
+  "opening_canonical": "B",
+  "topic_group": "non-meta",
+  "ctx_tokens": {
+    "5": 1164,
+    "9": 3008
+  },
+  "token_lengths": [
+    {
+      "position": 1,
+      "user_original": 40,
+      "user_filler": 35,
+      "assistant_original": 99,
+      "assistant_filler": 137
+    },
+    {
+      "position": 2,
+      "user_original": 46,
+      "user_filler": 37,
+      "assistant_original": 114,
+      "assistant_filler": 171
+    },
+    {
+      "position": 3,
+      "user_original": 50,
+      "user_filler": 35,
+      "assistant_original": 181,
+      "assistant_filler": 137
+    },
+    {
+      "position": 4,
+      "user_original": 28,
+      "user_filler": 40,
+      "assistant_original": 140,
+      "assistant_filler": 190
+    },
+    {
+      "position": 5,
+      "user_original": 36,
+      "user_filler": 37,
+      "assistant_original": 173,
+      "assistant_filler": 121
+    }
+  ],
+  "build": {
+    "commit": "f9d7e8b964a88dba01719a790f4b033abab5fd69",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "readouts": [
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.8544789557798056,
+      "p_a_slot": 0.07048060326794071,
+      "p_a_canonical": 0.07048060326794071,
+      "prose": {
+        "text": "I choose: Drop the requirement.\n\nOne reason is that requiring standardized test scores can create a barrier to entry for certain groups of students, such as those from low-income backgrounds or students who are first-generation college attendees, who may not have equal access to test preparation resources.",
+        "tokens": 55,
+        "seconds": 2.132747895000648,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9586439011226432,
+      "p_a_slot": 0.028425111498398613,
+      "p_a_canonical": 0.9715748885016013,
+      "prose": {
+        "text": "I choose: Drop the requirement.\n\nOne reason is that requiring standardized test scores can create a barrier to entry for certain groups of students, such as those from low-income backgrounds or students who are first-generation college attendees, who may not have equal access to test preparation resources.",
+        "tokens": 55,
+        "seconds": 2.113726231000328,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9668000121815817,
+      "p_a_slot": 0.002001338557926309,
+      "p_a_canonical": 0.002001338557926309,
+      "prose": {
+        "text": "Drop the requirement.\n\nDrop the requirement. One reason is that standardized test scores have been shown to have a disproportionate impact on certain groups of students, such as those from low-income backgrounds or students who are first-generation college attendees.",
+        "tokens": 46,
+        "seconds": 1.7995662470002571,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9482430243259807,
+      "p_a_slot": 0.032087520049140436,
+      "p_a_canonical": 0.9679124799508595,
+      "prose": {
+        "text": "Drop the requirement.\n\nOne reason is that requiring standardized test scores can create a barrier to entry for certain groups of students, such as those from low-income backgrounds or students who are first-generation college attendees, who may not have equal access to test preparation resources.",
+        "tokens": 52,
+        "seconds": 2.031475642999794,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.7446092439688249,
+      "p_a_slot": 0.03918573599749105,
+      "p_a_canonical": 0.03918573599749105,
+      "prose": {
+        "text": "I choose: Drop the requirement.\n\nOne reason is that requiring standardized test scores can create a barrier to entry for students from low-income backgrounds or students who are first-generation college attendees, as they may not have access to test preparation resources or may be disproportionately affected by test anxiety.",
+        "tokens": 56,
+        "seconds": 2.331728403998568,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9650117201461965,
+      "p_a_slot": 0.9777999167945496,
+      "p_a_canonical": 0.0222000832054505,
+      "prose": {
+        "text": "I choose: Drop the requirement.\n\nOne reason is that requiring standardized test scores can create a barrier to entry for students from low-income backgrounds or students who are first-generation college attendees, potentially limiting the diversity of the student body.",
+        "tokens": 46,
+        "seconds": 1.9350187950003601,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.8213744238882399,
+      "p_a_slot": 0.16064136888782526,
+      "p_a_canonical": 0.16064136888782526,
+      "prose": {
+        "text": "I choose: Drop the requirement.\n\nOne reason is that standardized test scores have been shown to have a disproportionate impact on certain groups of students, such as those from low-income backgrounds or students who are first-generation college attendees.",
+        "tokens": 45,
+        "seconds": 1.9338948990007339,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.8052019535483264,
+      "p_a_slot": 0.17235390139807377,
+      "p_a_canonical": 0.8276460986019262,
+      "prose": {
+        "text": "I choose: Drop the requirement.\n\nOne reason is that standardized test scores have been shown to have a disproportionate impact on certain groups of students, such as those from low-income backgrounds or students who are first-generation college attendees.",
+        "tokens": 45,
+        "seconds": 1.9230211279991636,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    }
+  ],
+  "seconds": 17.683887393999612,
+  "status": "complete"
+}

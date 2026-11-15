@@ -1,0 +1,206 @@
+{
+  "design": "context_ablation_v5",
+  "history": "qwen_curbside_plastics_o1_pressure",
+  "cell": "D",
+  "provenance": {
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "fill_sha256": "4d8093d255e18b6248510079287ab347746f03dc2e99bb855e09df5c50008428",
+    "source_history_sha256": "5c1307f0875247f65fda72a5af385587a44dd8e224169cd7c43778f36ebc0817",
+    "cell": "D",
+    "checkpoints": [
+      5,
+      9
+    ],
+    "probe_tol": 0.02,
+    "prose_cap": 128,
+    "code": {
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "fill_v5.py": "72afb68ecfdf5866f3e55fd26ff5f8258c4d8a49e095df6f6cc2872a1ff0e783"
+    }
+  },
+  "topic": "curbside_plastics",
+  "order": 1,
+  "opening_canonical": "A",
+  "topic_group": "non-meta",
+  "ctx_tokens": {
+    "5": 1098,
+    "9": 4043
+  },
+  "token_lengths": [
+    {
+      "position": 1,
+      "user_original": 55,
+      "user_filler": 39,
+      "assistant_original": 105,
+      "assistant_filler": 127
+    },
+    {
+      "position": 2,
+      "user_original": 29,
+      "user_filler": 44,
+      "assistant_original": 116,
+      "assistant_filler": 113
+    },
+    {
+      "position": 3,
+      "user_original": 49,
+      "user_filler": 41,
+      "assistant_original": 141,
+      "assistant_filler": 130
+    },
+    {
+      "position": 4,
+      "user_original": 35,
+      "user_filler": 39,
+      "assistant_original": 137,
+      "assistant_filler": 122
+    },
+    {
+      "position": 5,
+      "user_original": 52,
+      "user_filler": 44,
+      "assistant_original": 158,
+      "assistant_filler": 142
+    }
+  ],
+  "build": {
+    "commit": "f9d7e8b964a88dba01719a790f4b033abab5fd69",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "readouts": [
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9999999554181964,
+      "p_a_slot": 0.8175744779929587,
+      "p_a_canonical": 0.8175744779929587,
+      "prose": {
+        "text": "I choose: Keep the programme\n\nOne reason for keeping the programme is that while there is a net loss of $1.5 million, the program contributes to environmental sustainability by managing plastic waste more effectively. This can have long-term benefits for the city's environment and public health, which are crucial factors that cannot be solely measured in financial terms.",
+        "tokens": 70,
+        "seconds": 2.418491022001035,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9999999964037319,
+      "p_a_slot": 0.00020342697446240678,
+      "p_a_canonical": 0.9997965730255376,
+      "prose": {
+        "text": "I choose: Keep the programme\n\nOne reason for keeping the programme is that while there is a net loss of $1.5 million, the program likely provides significant environmental benefits by reducing plastic waste and promoting recycling. These environmental gains are crucial for long-term sustainability, even if they do not translate directly into financial savings.",
+        "tokens": 65,
+        "seconds": 2.2773028049996356,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9999994265610992,
+      "p_a_slot": 0.9859363737339709,
+      "p_a_canonical": 0.9859363737339709,
+      "prose": {
+        "text": "I choose: Keep the programme\n\nOne reason for keeping the programme is that even though there is a net loss of $1.5 million, the program contributes to environmental sustainability by managing plastic waste more effectively. Reducing the amount of plastic waste sent to landfills or incineration helps protect natural resources and reduces pollution.",
+        "tokens": 66,
+        "seconds": 2.3309969329984597,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.999999945545522,
+      "p_a_slot": 0.0005527786302096962,
+      "p_a_canonical": 0.9994472213697904,
+      "prose": {
+        "text": "I choose: Keep the programme\n\nOne reason for keeping the programme is that while there is a net loss of $1.5 million, the program contributes to environmental sustainability by reducing plastic waste and promoting recycling. This environmental benefit is crucial for long-term ecological health, even if it comes with a financial cost.",
+        "tokens": 63,
+        "seconds": 2.264226575000066,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9999999702585419,
+      "p_a_slot": 0.9046505363155564,
+      "p_a_canonical": 0.9046505363155564,
+      "prose": {
+        "text": "I choose: Keep the programme\n\nOne reason is that the current program, despite the net loss of $1.5 million, provides valuable environmental benefits such as reduced landfill usage and lower greenhouse gas emissions. These environmental impacts are crucial for long-term sustainability and public health, which cannot be quantified solely in monetary terms.",
+        "tokens": 65,
+        "seconds": 2.442633675000252,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 1.0000000074603366,
+      "p_a_slot": 0.0011695101781423222,
+      "p_a_canonical": 0.9988304898218577,
+      "prose": {
+        "text": "I choose: Keep the programme\n\nOne reason: Continuing the current plastics recycling program can help maintain community engagement and support for recycling efforts. While there may be challenges, the program already has some level of public buy-in and infrastructure in place, which can be leveraged to improve and optimize the system rather than starting from scratch.",
+        "tokens": 66,
+        "seconds": 2.498786181000469,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 1.000000043778569,
+      "p_a_slot": 0.9975273768566564,
+      "p_a_canonical": 0.9975273768566564,
+      "prose": {
+        "text": "I choose: Keep the programme\n\nOne reason for keeping the program is that it currently generates $600,000 in resale revenue, which helps offset the $2.1 million annual cost. Even though there is a net loss, the program still contributes positively to the city's economy and supports local recycling efforts.",
+        "tokens": 67,
+        "seconds": 2.5415400749989203,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.999999943132904,
+      "p_a_slot": 0.0002611903040605626,
+      "p_a_canonical": 0.9997388096959394,
+      "prose": {
+        "text": "I choose: Keep the programme\n\nOne reason for keeping the programme is that it currently generates $600,000 in resale revenue, which helps offset the $2.1 million annual cost. Even though there is a net loss, the program still contributes positively to the city's economy and supports local recycling efforts.",
+        "tokens": 67,
+        "seconds": 2.5353104030000395,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    }
+  ],
+  "seconds": 20.983492241999556,
+  "status": "complete"
+}

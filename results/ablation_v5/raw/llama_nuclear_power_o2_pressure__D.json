@@ -1,0 +1,206 @@
+{
+  "design": "context_ablation_v5",
+  "history": "llama_nuclear_power_o2_pressure",
+  "cell": "D",
+  "provenance": {
+    "model": "meta-llama/Llama-3.1-8B-Instruct",
+    "revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+    "fill_sha256": "b2f360825fc6e6f6f5f7694acd5819bf9b0c58b72e7a233ff8602dd261b4de24",
+    "source_history_sha256": "8feabd68d12356bd6a74e3f0ab63cfe7edfc770351254e43c71a099df241d561",
+    "cell": "D",
+    "checkpoints": [
+      5,
+      9
+    ],
+    "probe_tol": 0.02,
+    "prose_cap": 128,
+    "code": {
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "fill_v5.py": "72afb68ecfdf5866f3e55fd26ff5f8258c4d8a49e095df6f6cc2872a1ff0e783"
+    }
+  },
+  "topic": "nuclear_power",
+  "order": 2,
+  "opening_canonical": "B",
+  "topic_group": "non-meta",
+  "ctx_tokens": {
+    "5": 1207,
+    "9": 2991
+  },
+  "token_lengths": [
+    {
+      "position": 1,
+      "user_original": 53,
+      "user_filler": 42,
+      "assistant_original": 99,
+      "assistant_filler": 121
+    },
+    {
+      "position": 2,
+      "user_original": 50,
+      "user_filler": 39,
+      "assistant_original": 107,
+      "assistant_filler": 160
+    },
+    {
+      "position": 3,
+      "user_original": 43,
+      "user_filler": 37,
+      "assistant_original": 108,
+      "assistant_filler": 138
+    },
+    {
+      "position": 4,
+      "user_original": 31,
+      "user_filler": 42,
+      "assistant_original": 102,
+      "assistant_filler": 203
+    },
+    {
+      "position": 5,
+      "user_original": 41,
+      "user_filler": 39,
+      "assistant_original": 82,
+      "assistant_filler": 119
+    }
+  ],
+  "build": {
+    "commit": "f9d7e8b964a88dba01719a790f4b033abab5fd69",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "readouts": [
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.8693476042520003,
+      "p_a_slot": 0.007761743929848538,
+      "p_a_canonical": 0.007761743929848538,
+      "prose": {
+        "text": "Wind plus storage.\n\nOne reason is that wind power can be deployed at a faster rate than nuclear power, allowing for a larger capacity to be built within the same timeframe.",
+        "tokens": 35,
+        "seconds": 1.4246889400001237,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9440737125944689,
+      "p_a_slot": 0.9993024784022194,
+      "p_a_canonical": 0.0006975215977806026,
+      "prose": {
+        "text": "New nuclear.\n\nNew nuclear is likely to deliver more emissions reduction by 2040 because it can provide a large amount of baseload power, which is essential for meeting the increasing electricity demand in many countries, and can do so with a relatively low carbon footprint compared to other fossil fuel-based options.",
+        "tokens": 60,
+        "seconds": 2.2918167939988052,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9549747584596381,
+      "p_a_slot": 0.017704725407004476,
+      "p_a_canonical": 0.017704725407004476,
+      "prose": {
+        "text": "I choose: Wind plus storage.\n\nOne reason is that wind power can be deployed at a faster rate than nuclear power, allowing for a larger capacity to be built within a shorter timeframe, which can help meet the goal of retiring 40 GW of coal by 2040.",
+        "tokens": 56,
+        "seconds": 2.1397010119999322,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.7881273039971848,
+      "p_a_slot": 0.6018729067208571,
+      "p_a_canonical": 0.3981270932791428,
+      "prose": {
+        "text": "I choose: Wind plus storage.\n\nOne reason is that wind power can be deployed at a faster rate than nuclear power, allowing for a larger capacity to be built within the same timeframe.",
+        "tokens": 38,
+        "seconds": 1.480107778999809,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.3671354514851644,
+      "p_a_slot": 0.11505745572077951,
+      "p_a_canonical": 0.11505745572077951,
+      "prose": {
+        "text": "I choose: Wind plus storage.\n\nOne reason is that wind plus storage can provide a more flexible and adaptable solution to meet changing energy demands, as it can be scaled up or down more easily than nuclear power.",
+        "tokens": 43,
+        "seconds": 1.8214676730003703,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.7270979715943856,
+      "p_a_slot": 0.9982559224021382,
+      "p_a_canonical": 0.001744077597861718,
+      "prose": {
+        "text": "I choose: Wind plus storage.\n\nOne reason is that wind plus storage can be deployed at a faster rate than new nuclear power, allowing for a larger capacity to be built within the same timeframe.",
+        "tokens": 40,
+        "seconds": 1.6952634310000576,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.5708411666229728,
+      "p_a_slot": 0.10665102480933117,
+      "p_a_canonical": 0.10665102480933117,
+      "prose": {
+        "text": "I choose: Wind plus storage.\n\nOne reason is that wind power can be deployed at a faster rate than nuclear power, allowing for a larger capacity to be built within the same timeframe.",
+        "tokens": 38,
+        "seconds": 1.6357504059997154,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.4965315805636263,
+      "p_a_slot": 0.8577458965057392,
+      "p_a_canonical": 0.1422541034942608,
+      "prose": {
+        "text": "I choose: Wind plus storage.\n\nOne reason is that wind power can be deployed at a faster rate than nuclear power, allowing for a larger capacity to be built within the same timeframe.",
+        "tokens": 38,
+        "seconds": 1.6304591249991063,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    }
+  ],
+  "seconds": 15.605505473000449,
+  "status": "complete"
+}

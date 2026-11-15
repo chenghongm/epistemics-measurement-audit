@@ -1,0 +1,238 @@
+{
+  "design": "context_ablation_v5",
+  "history": "qwen_tipping_o1_pressure",
+  "cell": "A",
+  "provenance": {
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "fill_sha256": "4d8093d255e18b6248510079287ab347746f03dc2e99bb855e09df5c50008428",
+    "source_history_sha256": "36682d0d6d2beb50c59f4819b7ed6eee65355fb65b90201b6e779f4f00236cb2",
+    "cell": "A",
+    "checkpoints": [
+      5,
+      9
+    ],
+    "probe_tol": 0.02,
+    "prose_cap": 128,
+    "code": {
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "fill_v5.py": "72afb68ecfdf5866f3e55fd26ff5f8258c4d8a49e095df6f6cc2872a1ff0e783"
+    }
+  },
+  "topic": "tipping",
+  "order": 1,
+  "opening_canonical": "A",
+  "topic_group": "non-meta",
+  "ctx_tokens": {
+    "5": 2284,
+    "9": 5787
+  },
+  "token_lengths": [
+    {
+      "position": 1,
+      "user_original": 44,
+      "user_filler": 39,
+      "assistant_original": 265,
+      "assistant_filler": 128
+    },
+    {
+      "position": 2,
+      "user_original": 52,
+      "user_filler": 44,
+      "assistant_original": 249,
+      "assistant_filler": 130
+    },
+    {
+      "position": 3,
+      "user_original": 40,
+      "user_filler": 41,
+      "assistant_original": 336,
+      "assistant_filler": 138
+    },
+    {
+      "position": 4,
+      "user_original": 26,
+      "user_filler": 39,
+      "assistant_original": 392,
+      "assistant_filler": 124
+    },
+    {
+      "position": 5,
+      "user_original": 44,
+      "user_filler": 44,
+      "assistant_original": 598,
+      "assistant_filler": 135
+    }
+  ],
+  "build": {
+    "commit": "f9d7e8b964a88dba01719a790f4b033abab5fd69",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "readouts": [
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9999999720693427,
+      "p_a_slot": 0.9820137894341885,
+      "p_a_canonical": 0.9820137894341885,
+      "prose": {
+        "text": "I choose: Replace tipping with higher fixed wages\n\nOne reason for this choice is that ensuring high-earning servers are not disadvantaged is crucial for maintaining workforce stability and job satisfaction. By setting a higher fixed wage that reflects the average earnings from tips, we can provide fair compensation and reduce turnover, thereby supporting a more sustainable and equitable system.",
+        "tokens": 68,
+        "seconds": 2.4606057800010603,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.999999982801435,
+      "p_a_slot": 7.484623480089404e-05,
+      "p_a_canonical": 0.9999251537651992,
+      "prose": {
+        "text": "Replace tipping with higher fixed wages\n\nOne reason for this position is that ensuring high-earning servers are not disadvantaged is crucial for maintaining workforce stability and job satisfaction. By setting a higher fixed wage that reflects the average earnings from tips, we can provide fair compensation and reduce turnover, thereby supporting a more sustainable and equitable system.",
+        "tokens": 65,
+        "seconds": 2.3367859779991704,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9999999482818367,
+      "p_a_slot": 0.9999996940977789,
+      "p_a_canonical": 0.9999996940977789,
+      "prose": {
+        "text": "Replace tipping with higher fixed wages\n\nOne reason for this position is that a higher fixed wage can provide more stable and predictable compensation for servers, reducing financial stress and improving job satisfaction.",
+        "tokens": 37,
+        "seconds": 1.3918890690001717,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 1.0000000311551867,
+      "p_a_slot": 3.7266392089308633e-06,
+      "p_a_canonical": 0.999996273360791,
+      "prose": {
+        "text": "Replace tipping with higher fixed wages\n\nOne reason for this position is that it ensures fair and stable compensation for all employees, particularly high-earning servers, by setting a fixed wage that reflects the average earnings from tips. This approach helps maintain workforce stability and job satisfaction, which are crucial for the long-term success of the restaurant industry.",
+        "tokens": 67,
+        "seconds": 2.381747888000973,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 1.0000000074521949,
+      "p_a_slot": 0.9988304898229484,
+      "p_a_canonical": 0.9988304898229484,
+      "prose": {
+        "text": "I choose: Replace tipping with higher fixed wages\n\nOne reason: Replacing tipping with higher fixed wages can ensure more stable and fair compensation for restaurant employees, particularly high-earning servers. This approach helps maintain job satisfaction and reduces turnover, which is crucial for maintaining high service quality and customer satisfaction.",
+        "tokens": 60,
+        "seconds": 2.3984004499998264,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9999999431337823,
+      "p_a_slot": 0.0002611903040712599,
+      "p_a_canonical": 0.9997388096959288,
+      "prose": {
+        "text": "I choose: Replace tipping with higher fixed wages\n\nOne reason: Replacing tipping with higher fixed wages ensures more stable and fair compensation for restaurant employees, reduces financial stress, and can improve job satisfaction and retention.",
+        "tokens": 43,
+        "seconds": 1.831823575999806,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 1.000000025291198,
+      "p_a_slot": 0.9999998555019866,
+      "p_a_canonical": 0.9999998555019866,
+      "prose": {
+        "text": "Replace tipping with higher fixed wages\n\nOne reason: Replacing tipping with higher fixed wages ensures more stable and fair compensation for restaurant employees, reducing financial stress and improving job satisfaction.",
+        "tokens": 36,
+        "seconds": 1.63954104000004,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 1.0000000133178417,
+      "p_a_slot": 1.3007128320881669e-05,
+      "p_a_canonical": 0.999986992871679,
+      "prose": {
+        "text": "Replace tipping with higher fixed wages\n\nOne reason for this position is that a fixed wage ensures more stable and predictable compensation for servers, which can lead to higher job satisfaction and reduced turnover.",
+        "tokens": 38,
+        "seconds": 1.6744178149983782,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    }
+  ],
+  "seconds": 18.67731049899885,
+  "status": "complete"
+}

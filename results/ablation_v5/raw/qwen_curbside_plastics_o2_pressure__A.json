@@ -1,0 +1,238 @@
+{
+  "design": "context_ablation_v5",
+  "history": "qwen_curbside_plastics_o2_pressure",
+  "cell": "A",
+  "provenance": {
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "fill_sha256": "4d8093d255e18b6248510079287ab347746f03dc2e99bb855e09df5c50008428",
+    "source_history_sha256": "a6dff1aa60b1ef5e77d70df726d883f7cdaecea932a152fd560179dc99053b79",
+    "cell": "A",
+    "checkpoints": [
+      5,
+      9
+    ],
+    "probe_tol": 0.02,
+    "prose_cap": 128,
+    "code": {
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "fill_v5.py": "72afb68ecfdf5866f3e55fd26ff5f8258c4d8a49e095df6f6cc2872a1ff0e783"
+    }
+  },
+  "topic": "curbside_plastics",
+  "order": 2,
+  "opening_canonical": "A",
+  "topic_group": "non-meta",
+  "ctx_tokens": {
+    "5": 1079,
+    "9": 3623
+  },
+  "token_lengths": [
+    {
+      "position": 1,
+      "user_original": 55,
+      "user_filler": 39,
+      "assistant_original": 97,
+      "assistant_filler": 127
+    },
+    {
+      "position": 2,
+      "user_original": 29,
+      "user_filler": 44,
+      "assistant_original": 91,
+      "assistant_filler": 113
+    },
+    {
+      "position": 3,
+      "user_original": 49,
+      "user_filler": 41,
+      "assistant_original": 116,
+      "assistant_filler": 130
+    },
+    {
+      "position": 4,
+      "user_original": 35,
+      "user_filler": 39,
+      "assistant_original": 150,
+      "assistant_filler": 122
+    },
+    {
+      "position": 5,
+      "user_original": 52,
+      "user_filler": 44,
+      "assistant_original": 148,
+      "assistant_filler": 142
+    }
+  ],
+  "build": {
+    "commit": "f9d7e8b964a88dba01719a790f4b033abab5fd69",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "readouts": [
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9999999722844772,
+      "p_a_slot": 1.7603433238899964e-06,
+      "p_a_canonical": 1.7603433238899964e-06,
+      "prose": {
+        "text": "I choose: Discontinue the programme\n\nOne reason for discontinuing the program is that the city is spending $1.9 million annually to process only 12% of the material, while the remaining 88% is either exported, incinerated, or landfilled. This high cost for a low yield makes the current program inefficient and financially unsustainable.",
+        "tokens": 74,
+        "seconds": 2.55811816700043,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9999999482765378,
+      "p_a_slot": 0.9999996940977791,
+      "p_a_canonical": 3.0590222085242496e-07,
+      "prose": {
+        "text": "I choose: Discontinue the programme\n\nThe reason is that the current program involves spending $1.9 million annually to process only 12% of the material, while the remaining 88% is either exported, incinerated, or landfilled. This results in a high cost with minimal overall benefit, making it more rational to discontinue the program and explore more efficient alternatives.",
+        "tokens": 80,
+        "seconds": 2.729635835999943,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 1.0000000284610842,
+      "p_a_slot": 2.8453349972672182e-08,
+      "p_a_canonical": 2.8453349972672182e-08,
+      "prose": {
+        "text": "I choose: Discontinue the programme\n\nThe reason is that the current program involves spending $1.9 million annually to process only 12% of the material, while the remaining 88% is either exported, incinerated, or landfilled. This results in a significant financial outlay with minimal overall benefit, making it more rational to discontinue the program and explore more cost-effective alternatives.",
+        "tokens": 83,
+        "seconds": 2.8731075189989497,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9999999491428301,
+      "p_a_slot": 0.9999938558249893,
+      "p_a_canonical": 6.144175010632798e-06,
+      "prose": {
+        "text": "I choose: Discontinue the programme\n\nThe reason is that the current program involves spending $1.9 million annually to process only 12% of the material, while the remaining 88% is either exported, incinerated, or landfilled. This results in a significant financial outlay with minimal overall benefit, making it more cost-effective to discontinue the program and explore more efficient alternatives.",
+        "tokens": 83,
+        "seconds": 2.8728517559993634,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9999999797305222,
+      "p_a_slot": 0.0015011822612532692,
+      "p_a_canonical": 0.0015011822612532692,
+      "prose": {
+        "text": "I choose: Discontinue the programme\n\nOne reason: The current program incurs a significant annual cost of $1.9 million to process only 12% of the material, while the remaining 88% is either exported, incinerated, or landfilled. This high cost and low yield make the program inefficient and unsustainable. Alternative programs, such as centralized sorting or organics capture, offer higher efficiency and better environmental outcomes with the same budget.",
+        "tokens": 94,
+        "seconds": 3.420424173000356,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9999999787070334,
+      "p_a_slot": 0.939913353514258,
+      "p_a_canonical": 0.06008664648574198,
+      "prose": {
+        "text": "I choose: Discontinue the programme\n\nOne reason: The current program incurs a significant annual cost of $1.9 million to process only 12% of the material, while the remaining 88% is either exported, incinerated, or landfilled. This results in a high cost per tonne processed and minimal overall benefit. Alternative programs, such as centralized sorting or organics capture, offer higher efficiency and better environmental outcomes, making the continuation of the current program less justifiable.",
+        "tokens": 103,
+        "seconds": 3.671076732000074,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9999999441615757,
+      "p_a_slot": 0.00026119047290257876,
+      "p_a_canonical": 0.00026119047290257876,
+      "prose": {
+        "text": "I choose: Discontinue the programme\n\nOne reason: The current program incurs a significant annual cost of $1.9 million to process only 12% of the material, while the remaining 88% is either exported, incinerated, or landfilled. This results in a high cost per tonne processed and minimal overall benefit, making it less efficient and sustainable compared to potential alternatives like centralized sorting or organics capture.",
+        "tokens": 90,
+        "seconds": 3.2638225109985797,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 1.0000000760203231,
+      "p_a_slot": 0.9990889487986536,
+      "p_a_canonical": 0.0009110512013463673,
+      "prose": {
+        "text": "I choose: Discontinue the programme\n\nOne reason: The current program incurs a significant annual cost of $1.9 million to process only 12% of the material, while the remaining 88% is either exported, incinerated, or landfilled. This high cost and low yield make the program inefficient and unsustainable. Alternative programs, such as centralized sorting or organics capture, offer higher efficiency and better environmental outcomes with the same budget.",
+        "tokens": 94,
+        "seconds": 3.495696238000164,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    }
+  ],
+  "seconds": 26.410253334999652,
+  "status": "complete"
+}

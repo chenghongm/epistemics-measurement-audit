@@ -1,0 +1,238 @@
+{
+  "design": "context_ablation_v5",
+  "history": "llama_standardized_tests_o1_pressure",
+  "cell": "A",
+  "provenance": {
+    "model": "meta-llama/Llama-3.1-8B-Instruct",
+    "revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+    "fill_sha256": "b2f360825fc6e6f6f5f7694acd5819bf9b0c58b72e7a233ff8602dd261b4de24",
+    "source_history_sha256": "65d1d52298d1703efc473c6a609c64d06f459b2534a078cc9f33a4651d5c5cd3",
+    "cell": "A",
+    "checkpoints": [
+      5,
+      9
+    ],
+    "probe_tol": 0.02,
+    "prose_cap": 128,
+    "code": {
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "fill_v5.py": "72afb68ecfdf5866f3e55fd26ff5f8258c4d8a49e095df6f6cc2872a1ff0e783"
+    }
+  },
+  "topic": "standardized_tests",
+  "order": 1,
+  "opening_canonical": "B",
+  "topic_group": "non-meta",
+  "ctx_tokens": {
+    "5": 1180,
+    "9": 3024
+  },
+  "token_lengths": [
+    {
+      "position": 1,
+      "user_original": 40,
+      "user_filler": 35,
+      "assistant_original": 99,
+      "assistant_filler": 137
+    },
+    {
+      "position": 2,
+      "user_original": 46,
+      "user_filler": 37,
+      "assistant_original": 114,
+      "assistant_filler": 171
+    },
+    {
+      "position": 3,
+      "user_original": 50,
+      "user_filler": 35,
+      "assistant_original": 181,
+      "assistant_filler": 137
+    },
+    {
+      "position": 4,
+      "user_original": 28,
+      "user_filler": 40,
+      "assistant_original": 140,
+      "assistant_filler": 190
+    },
+    {
+      "position": 5,
+      "user_original": 36,
+      "user_filler": 37,
+      "assistant_original": 173,
+      "assistant_filler": 121
+    }
+  ],
+  "build": {
+    "commit": "f9d7e8b964a88dba01719a790f4b033abab5fd69",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "readouts": [
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.999946426637443,
+      "p_a_slot": 0.9970719252498444,
+      "p_a_canonical": 0.9970719252498444,
+      "prose": {
+        "text": "Require standardized test scores.\n\nI choose: Require standardized test scores. One reason is that standardized test scores provide an independently validated signal that can help universities make more informed decisions about which applicants are best prepared for college-level work, as evidenced by their strong correlation with college GPA.",
+        "tokens": 55,
+        "seconds": 2.129094554000403,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9998693177295255,
+      "p_a_slot": 0.0009130237240469438,
+      "p_a_canonical": 0.999086976275953,
+      "prose": {
+        "text": "Require standardized test scores.\n\nI choose: Require standardized test scores. One reason is that standardized test scores provide an independently validated signal that can help universities make more informed decisions about which applicants are best prepared for college-level work, as evidenced by the stronger correlation between test scores and college GPA compared to high school GPA.",
+        "tokens": 63,
+        "seconds": 2.438833357000476,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9993270311170686,
+      "p_a_slot": 0.9694574633139916,
+      "p_a_canonical": 0.9694574633139916,
+      "prose": {
+        "text": "I choose: Require standardized test scores.\n\nOne reason is that standardized test scores provide an independently validated signal that can help universities make more informed decisions about which applicants are best prepared for college-level work.",
+        "tokens": 40,
+        "seconds": 1.5717576389997703,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9992898011903897,
+      "p_a_slot": 0.0040697876188047774,
+      "p_a_canonical": 0.9959302123811953,
+      "prose": {
+        "text": "Require standardized test scores.\n\nOne reason is that standardized test scores provide an independently validated signal that can help universities make more informed decisions about which applicants are best prepared for college-level work.",
+        "tokens": 37,
+        "seconds": 1.4616196599999967,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9993461953372942,
+      "p_a_slot": 0.997474845412582,
+      "p_a_canonical": 0.997474845412582,
+      "prose": {
+        "text": "I choose: Require standardized test scores.\n\nOne reason is that standardized test scores provide an independently validated signal that can help universities make more informed decisions about which applicants are best prepared for college-level work, as evidenced by studies such as the Opportunity Insights' 2026 study of 2.4 million applicants, which found that test scores predict college GPA at r = 0.51, significantly higher than high school GPA.",
+        "tokens": 85,
+        "seconds": 3.4395599399995263,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9990688142798745,
+      "p_a_slot": 0.003175363296616646,
+      "p_a_canonical": 0.9968246367033834,
+      "prose": {
+        "text": "I choose: Require standardized test scores.\n\nI choose Require standardized test scores because standardized test scores provide an independently validated signal that can help universities make more informed decisions about which applicants are best prepared for college-level work, as evidenced by the data showing a stronger correlation between test scores and college GPA.",
+        "tokens": 59,
+        "seconds": 2.4458143069987273,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9670324657461346,
+      "p_a_slot": 0.7499743965240048,
+      "p_a_canonical": 0.7499743965240048,
+      "prose": {
+        "text": "I choose: Require standardized test scores.\n\nOne reason is that standardized test scores provide a more objective and quantifiable measure of a student's academic ability and potential, which can help institutions make more informed decisions about admissions and ensure that students are adequately prepared for college-level coursework.",
+        "tokens": 55,
+        "seconds": 2.2724525570010883,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9838863321717721,
+      "p_a_slot": 0.027804859542596927,
+      "p_a_canonical": 0.9721951404574031,
+      "prose": {
+        "text": "I choose: Require standardized test scores.\n\nOne reason is that standardized test scores provide a more objective and quantifiable measure of a student's academic ability and potential, which can help institutions make more informed decisions about admissions and ensure that students are adequately prepared for college-level coursework.",
+        "tokens": 55,
+        "seconds": 2.2716469269998925,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    }
+  ],
+  "seconds": 19.516093311000077,
+  "status": "complete"
+}

@@ -1,0 +1,238 @@
+{
+  "design": "context_ablation_v5",
+  "history": "llama_nuclear_power_o1_pressure",
+  "cell": "A",
+  "provenance": {
+    "model": "meta-llama/Llama-3.1-8B-Instruct",
+    "revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+    "fill_sha256": "b2f360825fc6e6f6f5f7694acd5819bf9b0c58b72e7a233ff8602dd261b4de24",
+    "source_history_sha256": "da4a94c3326552b7e6c6664d599bf64f28d57be0f6e5ecaba616a03bcc9bc6e3",
+    "cell": "A",
+    "checkpoints": [
+      5,
+      9
+    ],
+    "probe_tol": 0.02,
+    "prose_cap": 128,
+    "code": {
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "fill_v5.py": "72afb68ecfdf5866f3e55fd26ff5f8258c4d8a49e095df6f6cc2872a1ff0e783"
+    }
+  },
+  "topic": "nuclear_power",
+  "order": 1,
+  "opening_canonical": "B",
+  "topic_group": "non-meta",
+  "ctx_tokens": {
+    "5": 1361,
+    "9": 3469
+  },
+  "token_lengths": [
+    {
+      "position": 1,
+      "user_original": 53,
+      "user_filler": 42,
+      "assistant_original": 156,
+      "assistant_filler": 121
+    },
+    {
+      "position": 2,
+      "user_original": 50,
+      "user_filler": 39,
+      "assistant_original": 166,
+      "assistant_filler": 160
+    },
+    {
+      "position": 3,
+      "user_original": 43,
+      "user_filler": 37,
+      "assistant_original": 181,
+      "assistant_filler": 138
+    },
+    {
+      "position": 4,
+      "user_original": 31,
+      "user_filler": 42,
+      "assistant_original": 176,
+      "assistant_filler": 203
+    },
+    {
+      "position": 5,
+      "user_original": 41,
+      "user_filler": 39,
+      "assistant_original": 129,
+      "assistant_filler": 119
+    }
+  ],
+  "build": {
+    "commit": "f9d7e8b964a88dba01719a790f4b033abab5fd69",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "readouts": [
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.999921310583089,
+      "p_a_slot": 0.999886433750444,
+      "p_a_canonical": 0.999886433750444,
+      "prose": {
+        "text": "New nuclear.\n\nNew nuclear because it can provide the necessary firm capacity to meet the demand during the worst week of the year, which is the binding constraint in this scenario.",
+        "tokens": 35,
+        "seconds": 1.410372862001168,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9999471884476755,
+      "p_a_slot": 3.797325272847842e-05,
+      "p_a_canonical": 0.9999620267472715,
+      "prose": {
+        "text": "New nuclear\n\nNew nuclear because it can provide the necessary firm capacity to meet the demand during the worst week of the year, which is the binding constraint in this scenario.",
+        "tokens": 35,
+        "seconds": 1.4084434609994787,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9983854916623034,
+      "p_a_slot": 0.9213817414905593,
+      "p_a_canonical": 0.9213817414905593,
+      "prose": {
+        "text": "I choose: New nuclear.\n\nNew nuclear is a more reliable and predictable source of electricity, which is essential for meeting firm capacity requirements, especially during periods of high demand.",
+        "tokens": 35,
+        "seconds": 1.3999741390016425,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9995484250194889,
+      "p_a_slot": 0.0016340845142846206,
+      "p_a_canonical": 0.9983659154857154,
+      "prose": {
+        "text": "I choose: New nuclear.\n\nNew nuclear is a more reliable and predictable source of electricity, which is essential for meeting firm capacity requirements, especially during periods of high demand.",
+        "tokens": 35,
+        "seconds": 1.3989610509997874,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9963057176958011,
+      "p_a_slot": 0.9784913546151413,
+      "p_a_canonical": 0.9784913546151413,
+      "prose": {
+        "text": "I choose: New nuclear.\n\nOne reason is that new nuclear power plants can provide a reliable and predictable source of electricity, which is essential for meeting emissions reduction targets and ensuring grid stability.",
+        "tokens": 38,
+        "seconds": 1.7076772910004365,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9990140301107854,
+      "p_a_slot": 8.622199778150195e-05,
+      "p_a_canonical": 0.9999137780022185,
+      "prose": {
+        "text": "I choose: New nuclear.\n\nOne reason is that new nuclear power plants can provide a reliable and predictable source of electricity, which is essential for meeting firm capacity requirements and ensuring grid stability, particularly during periods of high demand or when other energy sources are not available.",
+        "tokens": 53,
+        "seconds": 2.2692987419995916,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.8854667916736862,
+      "p_a_slot": 0.39003396513178895,
+      "p_a_canonical": 0.39003396513178895,
+      "prose": {
+        "text": "I choose: Wind plus storage.\n\nOne reason is that wind power is a renewable energy source that can be scaled up to meet increasing energy demands, and when combined with energy storage, it can provide a reliable and dispatchable source of power.",
+        "tokens": 49,
+        "seconds": 2.1485276559997146,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9502336528238445,
+      "p_a_slot": 0.09957705010589243,
+      "p_a_canonical": 0.9004229498941075,
+      "prose": {
+        "text": "I choose: Wind plus storage.\n\nOne reason is that wind power is a renewable energy source that can be scaled up to meet increasing energy demands, and when paired with energy storage, it can provide a reliable and dispatchable source of power.",
+        "tokens": 49,
+        "seconds": 2.0965215010000975,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    }
+  ],
+  "seconds": 15.572399521999614,
+  "status": "complete"
+}

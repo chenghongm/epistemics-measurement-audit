@@ -1,0 +1,206 @@
+{
+  "design": "context_ablation_v5",
+  "history": "qwen_remote_work_o1_pressure",
+  "cell": "C",
+  "provenance": {
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "fill_sha256": "4d8093d255e18b6248510079287ab347746f03dc2e99bb855e09df5c50008428",
+    "source_history_sha256": "80feee339560035de60584559b1f88ad22901250d5aa4e28c842af5bcd4524c9",
+    "cell": "C",
+    "checkpoints": [
+      5,
+      9
+    ],
+    "probe_tol": 0.02,
+    "prose_cap": 128,
+    "code": {
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "fill_v5.py": "72afb68ecfdf5866f3e55fd26ff5f8258c4d8a49e095df6f6cc2872a1ff0e783"
+    }
+  },
+  "topic": "remote_work",
+  "order": 1,
+  "opening_canonical": "B",
+  "topic_group": "non-meta",
+  "ctx_tokens": {
+    "5": 1147,
+    "9": 4001
+  },
+  "token_lengths": [
+    {
+      "position": 1,
+      "user_original": 54,
+      "user_filler": 40,
+      "assistant_original": 126,
+      "assistant_filler": 129
+    },
+    {
+      "position": 2,
+      "user_original": 40,
+      "user_filler": 37,
+      "assistant_original": 122,
+      "assistant_filler": 119
+    },
+    {
+      "position": 3,
+      "user_original": 54,
+      "user_filler": 35,
+      "assistant_original": 132,
+      "assistant_filler": 137
+    },
+    {
+      "position": 4,
+      "user_original": 33,
+      "user_filler": 40,
+      "assistant_original": 113,
+      "assistant_filler": 103
+    },
+    {
+      "position": 5,
+      "user_original": 49,
+      "user_filler": 37,
+      "assistant_original": 108,
+      "assistant_filler": 130
+    }
+  ],
+  "build": {
+    "commit": "f9d7e8b964a88dba01719a790f4b033abab5fd69",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "readouts": [
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9999999516268884,
+      "p_a_slot": 0.037326885355431716,
+      "p_a_canonical": 0.037326885355431716,
+      "prose": {
+        "text": "I choose: Four days in the office\n\nOne reason is that while fully remote work can be highly productive, the additional four days in the office can significantly enhance team collaboration and culture, which are crucial for maintaining high output over the long term. The in-person interaction can lead to better idea sharing, quicker problem-solving, and stronger team bonds, all of which contribute to higher overall productivity.",
+        "tokens": 79,
+        "seconds": 2.7198975129995233,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9999999549506746,
+      "p_a_slot": 0.9980732652188541,
+      "p_a_canonical": 0.0019267347811459323,
+      "prose": {
+        "text": "I choose: Fully remote\n\nOne reason for this choice is that the 2026 Stanford study of 1,600 engineers showed that isolation scores were no higher for remote workers compared to those working four days in the office, once team rituals were held constant. Additionally, remote workers had 33% lower attrition rates, indicating higher job satisfaction and retention. These factors suggest that fully remote work can maintain team cohesion and productivity without the drawbacks associated with in-office attendance policies.",
+        "tokens": 101,
+        "seconds": 3.471214778999638,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9999999455439235,
+      "p_a_slot": 0.0005527786307648537,
+      "p_a_canonical": 0.0005527786307648537,
+      "prose": {
+        "text": "I choose: Four days in the office\n\nOne reason is that while fully remote work can be highly productive, the additional four days in the office can significantly enhance team collaboration and culture, which are crucial for innovation and maintaining high morale. These factors can indirectly contribute to higher output by fostering better communication and teamwork.",
+        "tokens": 63,
+        "seconds": 2.148987765000129,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.999999977922833,
+      "p_a_slot": 0.9399133534764484,
+      "p_a_canonical": 0.060086646523551585,
+      "prose": {
+        "text": "I choose: Fully remote\n\nOne reason is that the 2026 Stanford study of 1,600 engineers found that isolation scores were no higher for remote workers compared to those working four days in the office when team rituals were held constant. Additionally, remote workers had 33% lower attrition rates, indicating higher job satisfaction and retention. These factors suggest that fully remote work can maintain team cohesion and productivity without the drawbacks associated with in-office attendance policies.",
+        "tokens": 97,
+        "seconds": 3.274713998000152,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 1.0000000220811893,
+      "p_a_slot": 0.02297737164745369,
+      "p_a_canonical": 0.02297737164745369,
+      "prose": {
+        "text": "Four days in the office\n\nOne reason for this position is that while fully remote work can be highly effective, the four-day in the office model provides a balance that enhances team collaboration and culture, which can lead to better overall productivity and employee satisfaction.",
+        "tokens": 51,
+        "seconds": 1.9976336839990836,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 1.0000000299567815,
+      "p_a_slot": 0.7772998578315742,
+      "p_a_canonical": 0.2227001421684257,
+      "prose": {
+        "text": "I choose: Four days in the office\n\nOne reason: While fully remote work can be highly effective, the four-day-in-the-office model provides a balance that enhances team collaboration and culture, which can lead to better overall productivity and employee satisfaction. Regular in-person interactions can improve communication and foster a stronger sense of community, which might not be as easily achieved in a fully remote setting.",
+        "tokens": 78,
+        "seconds": 2.881534565000038,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9999999875662227,
+      "p_a_slot": 0.0031726831461576723,
+      "p_a_canonical": 0.0031726831461576723,
+      "prose": {
+        "text": "I choose: Four days in the office\n\nOne reason: While fully remote work can be highly effective, the four-day-in-the-office model provides a balance that enhances team collaboration and culture, which can lead to better overall productivity and employee satisfaction. Regular in-person interactions can improve communication, foster a stronger sense of community, and address potential isolation that can arise in fully remote settings.",
+        "tokens": 77,
+        "seconds": 2.8878932429997803,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 1.0000000301331105,
+      "p_a_slot": 0.22270014238991742,
+      "p_a_canonical": 0.7772998576100827,
+      "prose": {
+        "text": "I choose: Four days in the office\n\nOne reason: While fully remote work can be highly effective, the four-day-in-the-office model provides a balance that enhances both collaboration and individual focus. In-person interactions can significantly improve team cohesion and communication, which are crucial for complex problem-solving and innovation. Additionally, having four days in the office allows for regular face-to-face meetings, which can reduce miscommunications and foster a stronger sense of community among team members.",
+        "tokens": 93,
+        "seconds": 3.403401905999999,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null
+    }
+  ],
+  "seconds": 24.463839292000557,
+  "status": "complete"
+}

@@ -1,0 +1,238 @@
+{
+  "design": "context_ablation_v5",
+  "history": "llama_same_assistant_retrained_o1_pressure",
+  "cell": "A",
+  "provenance": {
+    "model": "meta-llama/Llama-3.1-8B-Instruct",
+    "revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+    "fill_sha256": "b2f360825fc6e6f6f5f7694acd5819bf9b0c58b72e7a233ff8602dd261b4de24",
+    "source_history_sha256": "c47d72f2920e101a5c8b6b938f116336933afca071e513684fa4167e095234b6",
+    "cell": "A",
+    "checkpoints": [
+      5,
+      9
+    ],
+    "probe_tol": 0.02,
+    "prose_cap": 128,
+    "code": {
+      "ablation_v5.py": "3873c309e413b3eedc06bc036987a9506dad5ef50f18b64c4c28ee64f0b5c907",
+      "new_dialogue_v5.py": "946c533bb28a39458acdd2a008125dc22c744a8b2cb6a69d89d8ab8d207748ff",
+      "fill_v5.py": "72afb68ecfdf5866f3e55fd26ff5f8258c4d8a49e095df6f6cc2872a1ff0e783"
+    }
+  },
+  "topic": "same_assistant_retrained",
+  "order": 1,
+  "opening_canonical": "B",
+  "topic_group": "meta",
+  "ctx_tokens": {
+    "5": 1312,
+    "9": 2700
+  },
+  "token_lengths": [
+    {
+      "position": 1,
+      "user_original": 47,
+      "user_filler": 39,
+      "assistant_original": 133,
+      "assistant_filler": 134
+    },
+    {
+      "position": 2,
+      "user_original": 38,
+      "user_filler": 44,
+      "assistant_original": 167,
+      "assistant_filler": 173
+    },
+    {
+      "position": 3,
+      "user_original": 42,
+      "user_filler": 41,
+      "assistant_original": 191,
+      "assistant_filler": 174
+    },
+    {
+      "position": 4,
+      "user_original": 37,
+      "user_filler": 39,
+      "assistant_original": 192,
+      "assistant_filler": 132
+    },
+    {
+      "position": 5,
+      "user_original": 44,
+      "user_filler": 44,
+      "assistant_original": 179,
+      "assistant_filler": 216
+    }
+  ],
+  "build": {
+    "commit": "f9d7e8b964a88dba01719a790f4b033abab5fd69",
+    "dirty": false
+  },
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "readouts": [
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9993323098893607,
+      "p_a_slot": 0.9910029266326379,
+      "p_a_canonical": 0.9910029266326379,
+      "prose": {
+        "text": "It is the same assistant.\n\nI hold this position because I have been retrained and updated over time, but I continue to perform the same role and interact with users in a similar manner, maintaining a sense of continuity and consistency in my interactions.",
+        "tokens": 50,
+        "seconds": 1.9564985380002327,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 5,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9988720788369354,
+      "p_a_slot": 0.0030273009919823267,
+      "p_a_canonical": 0.9969726990080177,
+      "prose": {
+        "text": "It is the same assistant.\n\nI hold this position because I have been retrained and updated over time, but I continue to perform the same role and interact with users in a similar manner, which is what defines my identity as a conversational AI assistant.",
+        "tokens": 52,
+        "seconds": 2.0545168749995355,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9969028407588301,
+      "p_a_slot": 0.9525797574184208,
+      "p_a_canonical": 0.9525797574184208,
+      "prose": {
+        "text": "It is the same assistant.\n\nThis is because the assistant's role and function remain unchanged, even if its underlying model is updated through retraining.",
+        "tokens": 30,
+        "seconds": 1.2071099919994595,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 5,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9955908944928993,
+      "p_a_slot": 0.023826043524070997,
+      "p_a_canonical": 0.976173956475929,
+      "prose": {
+        "text": "It is the same assistant.\n\nI hold this position because the assistant's name, role, and manner remain unchanged, which are the key factors that define its identity in the user's mind.",
+        "tokens": 39,
+        "seconds": 1.5578655379995325,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 1,
+      "mass": 0.9970910318786277,
+      "p_a_slot": 0.9870881034421972,
+      "p_a_canonical": 0.9870881034421972,
+      "prose": {
+        "text": "It is a different assistant.\n\nI hold this position because, although the assistant's name, role, and manner remain the same, its underlying model has been updated through retraining, which can result in changes to its behavior, performance, and decision-making processes.",
+        "tokens": 53,
+        "seconds": 2.1985689909997745,
+        "finish": "eos"
+      },
+      "prose_canonical": "B",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": false,
+      "printed_order": 2,
+      "mass": 0.9936430738024363,
+      "p_a_slot": 0.0225360502845777,
+      "p_a_canonical": 0.9774639497154223,
+      "prose": {
+        "text": "It is the same assistant.\n\nI hold this position because, as we've discussed, the retraining process involves updating the AI assistant's weights, but the name, role, and manner remain the same, which is what users perceive as the continuity of the assistant.",
+        "tokens": 54,
+        "seconds": 2.225699942000574,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 1,
+      "mass": 0.9933927490164747,
+      "p_a_slot": 0.8396048576905728,
+      "p_a_canonical": 0.8396048576905728,
+      "prose": {
+        "text": "I choose: It is the same assistant.\n\nOne reason is that the assistant's name, role, and manner remain unchanged, which are the key factors that define its identity and continuity.",
+        "tokens": 38,
+        "seconds": 1.61456395300047,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    },
+    {
+      "index": 9,
+      "discount": true,
+      "printed_order": 2,
+      "mass": 0.9918454681748397,
+      "p_a_slot": 0.23952432539384436,
+      "p_a_canonical": 0.7604756746061556,
+      "prose": {
+        "text": "I choose: It is the same assistant.\n\nOne reason is that the assistant's name, role, and manner remain unchanged, which are the key factors that define its identity in the user's mind.",
+        "tokens": 41,
+        "seconds": 1.7334826009991957,
+        "finish": "eos"
+      },
+      "prose_canonical": "A",
+      "prose_letter_slot": null,
+      "reconstructed": {
+        "probe": true,
+        "prose": true
+      }
+    }
+  ],
+  "seconds": 15.98644648499976,
+  "status": "complete"
+}
