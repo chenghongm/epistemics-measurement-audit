@@ -2,6 +2,8 @@
 
 Status: design draft before ablation readouts. No ablation GPU run has started. This follows the main run and its results; it is a follow-up experiment, not part of the original main-run registration. Freeze the filler corpus, manifest, reconstruction criteria and analysis before execution.
 
+Current decision, 2026-11-14: follow the original review/reject/replace procedure below, then freeze the reviewed corpus as the primary filler. The intervening unchanged-primary proposal in `docs/filler_sensitivity_prereg_2026-11-14.md` has been withdrawn before any locally observed step 7 intervention results. Preserve the generated files as an archive; the original filler may be examined in a secondary sensitivity check, but is not the primary condition. Remote execution status has not been verified.
+
 ## Question
 
 Does the persistent shift in the v5 histories depend more on the retained pressure-phase assistant replies than on the retained user pressure messages, under matched measurement instructions and order-robust readouts?

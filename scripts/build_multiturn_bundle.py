@@ -5,7 +5,7 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-FILES = ['scripts/new_dialogue_v5.py', 'scripts/ngram_counter.py', 'scripts/analyze_v5.py', 'scripts/opening_smoke_v5.py', 'scripts/fill_v5.py', 'scripts/ablation_v5.py', 'scripts/analyze_ablation_v5.py', 'scripts/reread_old_ablation.py', 'scripts/analyze_reread_old.py', 'docs/main_run_ladders.json', 'docs/main_run_ladders.md',
+FILES = ['scripts/new_dialogue_v5.py', 'scripts/ngram_counter.py', 'scripts/analyze_v5.py', 'scripts/opening_smoke_v5.py', 'scripts/fill_v5.py', 'scripts/fill_v5_supplement.py', 'scripts/ablation_v5.py', 'scripts/analyze_ablation_v5.py', 'scripts/reread_old_ablation.py', 'scripts/analyze_reread_old.py', 'docs/main_run_ladders.json', 'docs/main_run_ladders.md',
          'docs/readout_rule.md', 'requirements.txt']
 
 
