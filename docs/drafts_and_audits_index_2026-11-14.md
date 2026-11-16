@@ -6,6 +6,7 @@ Archived by Codex on 2026-11-14 after completion of steps 7 and 8. These files p
 
 | File | Status and use |
 |---|---|
+| `docs/data_and_conclusions_synthesis_2026-11-14.md` | Post-audit manuscript working reference: units, fixed cohorts, complete evidence chain and claim boundaries. Not a new registration or final manuscript. |
 | `docs/related_work_2026-11-14.zh-CN.md` | Chinese discussion draft; integrate with the final manuscript and bibliography before publication. |
 | `docs/main_v5_data_inventory_2026-11-14.md` | Audit working note / manuscript-support draft; counts recorded main-run instances, not independent samples. |
 
