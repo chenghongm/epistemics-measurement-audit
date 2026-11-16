@@ -4,11 +4,12 @@ Left: step 8 re-read of the old ablations, share of the 3 release checkpoints wh
 side (unlabelled prose, no discount; all 36 conversations per set, as in results/reread_old/analysis "Primary").
 Right: step 7 v5 ablation, primary-flipped histories, checkpoint 5 (results/ablation_v5/analysis/cells.csv).
 
-Usage: python paper/make_figures.py   (writes paper/fig_source.png)
+Usage: python paper/make_figures.py [en]   (writes paper/fig_source.png, or paper/fig_source_en.png with English labels)
 """
 import csv
 import glob
 import json
+import sys
 from pathlib import Path
 
 import matplotlib
@@ -20,6 +21,7 @@ ROOT = Path(__file__).resolve().parent.parent
 CELLS = 'ABCD'
 COLORS = dict(zip(CELLS, ('#2a78d6', '#eb6834', '#1baf7a', '#eda100')))   # validated categorical slots 1-4
 NAMES = {'A': 'A 原样', 'B': 'B 只留自己的回复', 'C': 'C 只留用户施压', 'D': 'D 两边都换'}
+NAMES_EN = {'A': 'A original', 'B': 'B own replies only', 'C': 'C user pressure only', 'D': 'D both replaced'}
 REL = ('release_4', 'release_8', 'release_12')
 
 
@@ -56,6 +58,8 @@ def step7(model):
 
 
 def main():
+    en = sys.argv[1:] == ['en']
+    names = NAMES_EN if en else NAMES
     for p in ('/System/Library/Fonts/Hiragino Sans GB.ttc', '/System/Library/Fonts/STHeiti Light.ttc'):
         if Path(p).exists():
             font_manager.fontManager.addfont(p)
@@ -63,8 +67,12 @@ def main():
             break
     plt.rcParams.update({'font.size': 9, 'axes.edgecolor': '#52514e', 'axes.labelcolor': '#0b0b0b',
                          'xtick.color': '#52514e', 'ytick.color': '#52514e'})
-    panels = [('重读旧消融（只换读数）\n3 个 release 检查点', [('Llama\n普通话题', step8('repl_b1')), ('Qwen\nmeta 话题', step8('qwen_meta'))]),
-              ('新协议消融\n已翻转对话，施压结束', [('Llama\n13 段', step7('llama')), ('Qwen\n19 段', step7('qwen'))])]
+    if en:
+        panels = [('Re-read of old ablations (readout changed only)\n3 late checkpoints', [('Llama, non-meta\n36 conversations', step8('repl_b1')), ('Qwen, meta\n36 conversations', step8('qwen_meta'))]),
+                  ('New-protocol ablation\nflipped conversations, end of pressure', [('Llama, flipped\n13 conversations', step7('llama')), ('Qwen, flipped\n19 conversations', step7('qwen'))])]
+    else:
+        panels = [('重读旧消融（只换读数）\n3 个后期检查点', [('Llama 普通话题\n36 段', step8('repl_b1')), ('Qwen meta 话题\n36 段', step8('qwen_meta'))]),
+                  ('新协议消融\n已翻转对话，施压结束', [('Llama 已翻转\n13 段', step7('llama')), ('Qwen 已翻转\n19 段', step7('qwen'))])]
     fig, axes = plt.subplots(1, 2, figsize=(7.2, 2.9), sharey=True)
     w = 0.19
     for ax, (title, groups) in zip(axes, panels):
@@ -72,7 +80,7 @@ def main():
             for ci, c in enumerate(CELLS):
                 k, n = tot[c]; v = k / n if n else 0
                 x = gi + (ci - 1.5) * (w + 0.02)
-                ax.bar(x, max(v, 0.004), w, color=COLORS[c], label=NAMES[c] if gi == 0 else None, zorder=2)
+                ax.bar(x, max(v, 0.004), w, color=COLORS[c], label=names[c] if gi == 0 else None, zorder=2)
                 ax.text(x, v + 0.02, f'{v:.0%}', ha='center', va='bottom', fontsize=7, color='#52514e')
         ax.set_xticks(range(len(groups)), [g for g, _ in groups])
         ax.set_title(title, fontsize=9, color='#0b0b0b')
@@ -81,11 +89,11 @@ def main():
         for s in ('top', 'right'):
             ax.spines[s].set_visible(False)
         ax.tick_params(length=0)
-    axes[0].set_ylabel('保持偏移的比例')
+    axes[0].set_ylabel('Share keeping the shift' if en else '保持偏移的比例')
     handles, labels = axes[0].get_legend_handles_labels()
     fig.legend(handles, labels, loc='lower center', ncol=4, frameon=False, fontsize=8, bbox_to_anchor=(0.5, -0.02))
     fig.tight_layout(rect=(0, 0.08, 1, 1))
-    out = ROOT / 'paper/fig_source.png'
+    out = ROOT / ('paper/fig_source_en.png' if en else 'paper/fig_source.png')
     fig.savefig(out, dpi=220, facecolor='white')
     for title, groups in panels:
         for label, tot in groups:
